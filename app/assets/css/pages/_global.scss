@@ -13,6 +13,7 @@ body {
 	overflow: hidden;
 	max-width: 1155px;
 }
+
 ul, ol {
 	margin: 0;
 	padding: 0; 
@@ -342,4 +343,9 @@ section {
 
 .link-under {
 	text-decoration:underline;
+}
+
+.project-title {
+	font-size: $size-xxl;
+	text-transform: capitalize;
 }
