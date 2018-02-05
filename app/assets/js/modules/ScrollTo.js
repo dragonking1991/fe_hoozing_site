@@ -15,5 +15,7 @@ export default class ScrollTo {
         setTimeout(function () {$('.solutions-slider').slick('slickGoTo', 1);},100);
       }
     });
+
+
   }
 }

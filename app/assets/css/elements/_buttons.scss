@@ -54,6 +54,7 @@
   text-align: center;
   position: relative;
   z-index: 1;
+  margin: 20px 0;
 
   .btn {
     display: inline-block;
@@ -96,14 +97,6 @@
   }
 }
 
-
-.btn--small {
-  height: auto;
-  min-width: none;
-  padding: 2px 5px;
-  color: #fff;
-  background: $blue;
-}
 
 .btn--blue {
   color: #fff;

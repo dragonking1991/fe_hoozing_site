@@ -1,3 +1,107 @@
+.hero-banner {
+	background: url(../images/dummy/home-above-the-fold.png) no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+	position: relative;
+
+}
+
+.banner-wrapper {
+	max-width: 850px;
+	margin: 10% auto 0;
+	h1 {
+		color: #fff;
+		font-size: $size-xxxl;
+	}
+	.select-wrapper {
+		background: #fff;
+	}
+	a {
+		margin:0 10px;
+	}
+	p,a{
+		color: #fff;
+	}
+	input {
+		width: 100%;
+	}
+
+	[class^='col-'] {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
+}
+
+.site-sumary {
+	max-width: 340px;
+	margin: 0 auto;
+	p {
+		display: inline-block;
+		width: 49%;
+		color: $color-default;
+		&:not(:last-child) {
+			border-right: 1px solid;
+		}
+	}
+	span {
+		font-size: $size-xl;
+	}
+}
+
+.search-map {
+	position: relative;
+
+	&:after {
+    content:'\f041';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: $gray-dark;
+    display: block;
+    font: normal normal normal 24px/1 FontAwesome;
+	}	
+}
+
+.what-have {
+	background: $gray-light;
+	span {
+		margin: 0 10px;
+	}
+	p {
+		margin-bottom: 0;
+		font-size: $size-m;
+		text-transform: capitalize;
+	}
+}
+
+.step {
+	display: inline-block;
+	vertical-align: top;
+	width: 24%;
+	position: relative;
+	&:not(:last-child) {
+		&:before {
+			content:'\f105';
+			display: block;
+			color: $color-light;
+			@include absolute(top 30% right -3%);
+			transform:translateY(-50%);
+			font: normal normal normal 42px/1 FontAwesome;
+		} 
+	}
+	i {
+		font-size: $size-xxxl;
+		color:$blue;
+	}
+	h3 {
+		text-transform: capitalize;
+		font-size: $size-ml;
+		margin: 20px 0;
+	}
+}
+
+
 .thumb-item {
 	position: relative;
 	margin-bottom: 10px;
@@ -137,6 +241,35 @@
 	@include absolute(bottom 3px left -5px)
 }
 
+.properties {
+	.tab-content {
+		margin-bottom: 30px;
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+}
+.properties__tab {
+	margin: 20px 0;
+	li {
+		margin:  0 10px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	a {
+		display: block;
+		color: $color-light;
+		padding: 3px 10px;
+		font-weight: bold;
+	}
+	.active a{
+		color: $color-default;
+		border: 1px solid $color-light;
+	}
+}
+
 .thumb-service, .icon-service {
 	color: $color-light;
 	white-space: nowrap;
@@ -195,6 +328,22 @@
 		width: 100%;
 	}
 }
+
+.item-project {
+	.btn-wrapper {
+		text-align: left;
+	}
+	.btn {
+		min-width: 135px;
+		color:$color-default;
+		font-size: $size-s;
+		&:not(:last-child){
+
+			margin-right: 10px;
+		}
+	}
+}
+
 .item-project__info {
 	padding: 5px 30px 20px;
 	border:1px solid $gray-medium;

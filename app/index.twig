@@ -1,17 +1,18 @@
 {% extends "_templates/layout.twig" %}
 
 {% block page %}
-<section class="banner">
+<section class="hero-banner">
 
-	<div class="banner-wrapper">
+	<div class="banner-wrapper text-center">
 		<h1>hello Saigon</h1>
 		<p>Popuplar Areas: 
-			<a href="#" class="link-under">Disctrict 1</a> 
-			<a href="#" class="link-under">Disctrict 2</a> 
-			<a href="#" class="link-under">Disctrict 3</a> 
-			<a href="#" class="link-under">Disctrict 7</a>
-			<a href="#" class="link-under">Disctrict 10</a>
+			<a href="#" class="link-under">district 1</a> 
+			<a href="#" class="link-under">district 2</a> 
+			<a href="#" class="link-under">district 3</a> 
+			<a href="#" class="link-under">district 7</a>
+			<a href="#" class="link-under">district 10</a>
 		</p>
+
 		<div class="row">
 			<div class="col-md-8">
 				<div class="form-group search-map">
@@ -28,6 +29,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="col-md-2">
 				<div class="select-wrapper select-bed">
@@ -38,6 +40,7 @@
 					</select>
 				</div>
 			</div>
+
 			<div class="col-md-2">
 				<div class="select-wrapper select-bath">
 					<select name="bath" id="bath">
@@ -57,6 +60,7 @@
 					</select>
 				</div>
 			</div>
+
 			<div class="col-md-2 ">
 				<div class="select-wrapper select-range">
 					<span class="range-text">Max</span>
@@ -67,6 +71,7 @@
 					</select>
 				</div>
 			</div>
+
 			<div class="col-md-4 ">
 				<div class="select-wrapper">
 					<select name="bath" id="bath">
@@ -78,7 +83,10 @@
 			</div>
 		</div>
 
-		<div class="btn-wrapper"><a href="#" class="btn btn-red">Search</a></div>
+		<div class="btn-wrapper">
+			<a href="#" class="btn btn--red">Search</a>
+		</div>
+
 		<div class="site-sumary">
 			<p>Total Properties <br /><span>3125</span></p>
 			<p>Total User <br /><span>426</span></p>
@@ -87,7 +95,7 @@
 </section>
 
 <section class="what-have">
-	<div class="container">
+	<div class="container text-center">
 		<p>
 			<span><i class="fa fa-trophy"></i> verified listing</span>
 			<span><i class="fa fa-language"></i> mutilanguage support</span>
@@ -105,7 +113,7 @@
 			<p>Find a long-term rental place that fits your preferences</p>
 		</div>
 		<div class="step">
-			<i class="fa fa-map"></i>
+			<i class="fa fa-map-o"></i>
 			<h3>Visit</h3>
 			<p>Finalise a date and time to visit the homes you like</p>
 		</div>
@@ -123,11 +131,12 @@
 </section>
 
 <section class="properties">
-	<div class="container text-center">
-		<h2 class="section-title ">Feature Properties</h2>
-		<ul class="properties__tab">
+	<div class="container">
+		<h2 class="section-title text-center">Feature Properties</h2>
+		<ul class="properties__tab text-center">
 			<li><a href="javascript:void(0);" data-tab="1">All</a></li>
-			<li><a href="javascript:void(0);" data-tab="2">DISTRICT 2</a></li>
+			<li><a href="javascript:void(0);" data-tab="2">DISTRICT 1</a></li>
+			<li class="active"><a href="javascript:void(0);" data-tab="2">DISTRICT 2</a></li>
 			<li><a href="javascript:void(0);" data-tab="3">DISTRICT 3</a></li>
 			<li><a href="javascript:void(0);" data-tab="4">DISTRICT 5</a></li>
 			<li><a href="javascript:void(0);" data-tab="5">DISTRICT 7</a></li>
@@ -515,8 +524,8 @@
 						<p class="info-detail">DISTRICT2 - 43Floor - 900 unit</p>
 						<p class="info-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
 						<div class="btn-wrapper">
-							<a class="btn" href="#"><i class="fa fa-long-arrow-right"></i> Read more</a>
-							<a class="btn" href="#"><i class="fa fa-building-o"></i> see list</a>
+							<a class="btn btn--small" href="#"><i class="fa fa-long-arrow-right"></i> Read more</a>
+							<a class="btn  btn--small" href="#"><i class="fa fa-building-o"></i> see list</a>
 						</div>
 					</div>
 				</div>
@@ -529,8 +538,8 @@
 						<p class="info-detail">DISTRICT2 - 43Floor - 900 unit</p>
 						<p class="info-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
 						<div class="btn-wrapper">
-							<a class="btn" href="#"><i class="fa fa-long-arrow-right"></i> Read more</a>
-							<a class="btn" href="#"><i class="fa fa-building-o"></i> see list</a>
+							<a class="btn btn--small" href="#"><i class="fa fa-long-arrow-right"></i> Read more</a>
+							<a class="btn  btn--small" href="#"><i class="fa fa-building-o"></i> see list</a>
 						</div>
 					</div>
 				</div>
@@ -543,8 +552,8 @@
 						<p class="info-detail">DISTRICT2 - 43Floor - 900 unit</p>
 						<p class="info-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
 						<div class="btn-wrapper">
-							<a class="btn" href="#"><i class="fa fa-long-arrow-right"></i> Read more</a>
-							<a class="btn" href="#"><i class="fa fa-building-o"></i> see list</a>
+							<a class="btn btn--small" href="#"><i class="fa fa-long-arrow-right"></i> Read more</a>
+							<a class="btn btn--small" href="#"><i class="fa fa-building-o"></i> see list</a>
 						</div>
 					</div>
 				</div>
@@ -564,7 +573,9 @@
 		<div class="row">
 			<div class="col-md-2">
 				<figure>
-					<img src="assets/images/dummy/china-town.png" name="china-town" alt="china-town" />
+					<a href="#">
+						<img src="assets/images/dummy/china-town.png" name="china-town" alt="china-town" />
+					</a>
 				</figure>
 				<figcaption>
 					China Town
@@ -572,7 +583,9 @@
 			</div>
 			<div class="col-md-2">
 				<figure>
-					<img src="assets/images/dummy/korea-town.png" name="korea-town" alt="korea-town" />
+					<a href="#">
+						<img src="assets/images/dummy/korea-town.png" name="korea-town" alt="korea-town" />
+					</a>
 				</figure>
 				<figcaption>
 					Korea Town
@@ -580,7 +593,9 @@
 			</div>
 			<div class="col-md-2">
 				<figure>
-					<img src="assets/images/dummy/little-japan.png" name="little-japan" alt="little-japan" />
+					<a href="#">
+						<img src="assets/images/dummy/little-japan.png" name="little-japan" alt="little-japan" />
+					</a>
 				</figure>
 				<figcaption>
 					little japan
@@ -588,7 +603,9 @@
 			</div>
 			<div class="col-md-2">
 				<figure>
-					<img src="assets/images/dummy/thao-dien.png" name="thao-dien" alt="thao-dien" />
+					<a href="#">
+						<img src="assets/images/dummy/thao-dien.png" name="thao-dien" alt="thao-dien" />
+					</a>
 				</figure>
 				<figcaption>
 					Thao Dien 
@@ -596,7 +613,9 @@
 			</div>
 			<div class="col-md-2">
 				<figure>
-					<img src="assets/images/dummy/phu-my-hung.png" name="phu-my-hung" alt="phu-my-hung" />
+					<a href="#">
+						<img src="assets/images/dummy/phu-my-hung.png" name="phu-my-hung" alt="phu-my-hung" />
+					</a>
 				</figure>
 				<figcaption>
 					phu my hung
@@ -604,7 +623,9 @@
 			</div>
 			<div class="col-md-2">
 				<figure>
-					<img src="assets/images/dummy/phan-xich-long.png" name="phan-xich-long" alt="phan-xich-long" />
+					<a href="#">
+						<img src="assets/images/dummy/phan-xich-long.png" name="phan-xich-long" alt="phan-xich-long" />
+					</a>
 				</figure>
 				<figcaption>
 					Phan Xich Long

@@ -1,0 +1,58 @@
+{% extends "_templates/layout.twig" %}
+
+{% block page %}
+	<section class="search-control">
+		<div class="container">
+			<div class="select-wrapper">
+				<select name="type" id="type">
+					<option  disabled="disabled" selected="selected" value="">Service Apartment</option>
+					<option value="Male">2000</option>
+					<option value="Female">2001</option>
+				</select>
+			</div>
+			<div class="select-wrapper">
+				<select name="type" id="type">
+					<option  disabled="disabled" selected="selected" value="">Any Amenites</option>
+					<option value="Male">2000</option>
+					<option value="Female">2001</option>
+				</select>
+			</div>
+			<div class="select-wrapper select-bed">
+				<select name="type" id="type">
+					<option  disabled="disabled" selected="selected" value=""> 1 bed</option>
+					<option value="Male">2000</option>
+					<option value="Female">2001</option>
+				</select>
+			</div>
+			
+			<div class="select-wrapper select-bath">
+				<select name="type" id="type">
+					<option  disabled="disabled" selected="selected" value=""> 1 bath</option>
+					<option value="Male">2000</option>
+					<option value="Female">2001</option>
+				</select>
+			</div>
+			<div class="select-wrapper select-range">
+				<span class="text-range">Min</span>
+				<select name="type" id="type">
+					<option  disabled="disabled" selected="selected" value=""> $200</option>
+					<option value="Male">2000</option>
+					<option value="Female">2001</option>
+				</select>
+			</div>
+			<div class="select-wrapper select-range">
+				<span class="text-range">Max</span>
+				<select name="type" id="type">
+					<option  disabled="disabled" selected="selected" value=""> $5000</option>
+					<option value="Male">2000</option>
+					<option value="Female">2001</option>
+				</select>
+			</div>
+
+			<a href="javascritp:void(0);" class="btn float-right"> More filter <i class="fa fa-angle-down"></i></a>
+			
+		</div>
+
+	</section>
+
+{% endblock %}

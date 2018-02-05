@@ -9,8 +9,9 @@
 	position: relative;
 	font-size: $size-ml;
 	text-align: center;
-	border: 2px solid;
+	border: 2px solid $gray-dark;
 	text-transform: uppercase;
+	z-index: 2;
 	span {
 		background: #fff;
 		color: $color-light;
@@ -66,7 +67,7 @@
 	}
 }
 
-.tab-control {
+.tab-link {
 	li {
 		display: inline-block;
 		margin-right: 30px;
@@ -77,7 +78,46 @@
 }
 
 .banner {
+	padding: 0;
+	position: relative;
 	img {
 		width: 100%;
+	}
+}
+
+.banner__info {
+	@include absolute(bottom left);
+	width: 100%;
+	background: rgba(#000, 0.6);
+	padding: 30px 0;
+	color: #fff;
+	border-bottom: 5px solid $gray-dark;
+}
+.score {
+	display: inline-block;
+	text-align: center;
+	vertical-align: text-bottom;
+}
+.number-circle {
+	font-size: $size-xxl;
+	display: inline-block;
+	line-height: 65px;
+	height: 65px;
+	width: 65px;
+	border:2px solid;
+	margin-bottom: 10px;
+	border-radius: 50%;
+}
+.project-info {
+	display: inline-block;
+	padding-left: 20px;
+
+	h1 {
+		margin:  0 0 10px;
+		text-transform: capitalize;
+		font-size: $size-xxl;
+	}
+	p {
+		margin-bottom: 0;
 	}
 }

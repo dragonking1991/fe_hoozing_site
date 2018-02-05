@@ -338,12 +338,13 @@ input {
 
 
   &:after {
-    content:'';
+    content:'\f0d7';
     position: absolute;
-    top: 18px;
-    right: 12px;
+    top: 13px;
+    right: 10px;
+    color: $gray-dark;
     display: block;
-    @extend .icon-down;
+    font: normal normal normal 18px/1 FontAwesome;
   }
 }
 
@@ -353,7 +354,7 @@ input {
   }
 }
 .range-text {
-  @include absolute( top 10px left 10px);
+  @include absolute( top 12px left 10px);
 }
 
 .select-bath {
