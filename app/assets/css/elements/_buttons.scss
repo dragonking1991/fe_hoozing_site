@@ -1,0 +1,154 @@
+.btn-burger {
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+
+  &:before, &:after, span {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    position: absolute;
+  }
+
+  &:before {
+    top: 3px;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+  span {
+    top: 11px;
+    left: 0;
+    transition: all 0.3s ease 0.2s;
+    @include clear-text;
+  }
+  &:after {
+    top: 19px;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+
+  &.active {
+    &:before {
+      top: 11px;
+      transform: rotate(135deg);
+      transition: all 0.3s ease 0.2s;
+    }
+    span {
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    &:after {
+      top: 11px;
+      transform: rotate(-135deg);
+      transition: all 0.3s ease 0.2s;
+    }
+  }
+}
+
+
+.btn-wrapper {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  .btn {
+    display: inline-block;
+  }
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 0 10px;
+  vertical-align: middle;
+  line-height: 43px;
+  min-width: 140px;
+  text-align: center;
+  height: 45px;
+  color: $gray-dark;
+  text-transform: uppercase;
+  border:1px solid $gray-dark;
+  font-weight: bold;
+  @include screen(medium){
+    &:hover{
+      color: #fff;
+      &:not(.btn--blue ):not(.btn--red ){
+        color: $blue;
+      } 
+    }
+    &:focus:not(.btn--blue ):not(.btn--red ):not(.btn-disable ) {
+      color: $blue;
+      box-shadow: 0 0 0 2px  lighten( $gray-dark, 20% );
+    }
+  }
+  &.btn-disable {
+    &:not(.btn--blue ):not(.btn--red ) {
+      color: lighten( $gray-dark, 30% );
+      border-color: lighten( $gray-dark, 30% );
+    }
+    &:focus{
+      box-shadow: none;
+    }
+  }
+}
+
+
+.btn--small {
+  height: auto;
+  min-width: none;
+  padding: 2px 5px;
+  color: #fff;
+  background: $blue;
+}
+
+.btn--blue {
+  color: #fff;
+  padding: 0 20px;
+  background-color: $blue;
+  border:none;
+  @include screen(medium){
+    &:focus:not(.btn-disable) {
+      box-shadow: 0 0 0 2px  lighten( $blue, 20% );
+    }
+    &:hover {
+      background: lighten( $blue, 10% );
+    }
+  }
+  &.btn-disable {
+    background: lighten( $blue, 30% );
+  }
+}
+
+.btn--red {
+  color: #fff;
+  padding: 0 20px;
+  background-color: $red;
+  border:none;
+  @include screen(medium){
+    &:focus {
+      box-shadow: 0 0 0 2px  lighten( $red, 20% );
+    }
+    &:hover {
+      background: lighten( $red, 10% );
+    }
+  }
+
+  &.btn-disable {
+    background: lighten( $red, 20% );
+  }
+}
+
+.btn--full {
+  width: 100%;
+}
+.btn--small {
+  height: auto;
+  min-width: 0;
+  padding: 0px 15px;
+  line-height: 32px;
+  font-size: 14px;
+}

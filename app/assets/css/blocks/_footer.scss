@@ -1,0 +1,165 @@
+footer {
+  border-top: 1px solid $color-light;
+	padding-top: 15px;
+  box-shadow: 0 0 10px #ccc;
+}
+.quick-link {
+  padding: 35px 0;
+
+  .slider-wrapper {
+    padding:  0 40px;
+
+  }
+
+  li {
+    padding: 0 5px;
+  }
+}
+
+.fast-connect {
+  
+  ul {
+    margin-bottom: 15px;
+  }
+}
+
+
+.block-title {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.social-media {
+  border-right: 2px solid #cbcbcb;
+  padding: 0 10px;
+ 	@include screen(medium) {
+		max-width: 184px;
+ 	}
+}
+.live-support {
+  padding: 0 20px;
+}
+
+.social-link {
+ 	@include screen(medium) {
+	  padding: 10px !important;
+ 	}
+
+  .col-5 {
+	 	@include screen(medium, false) {
+	  	float: left;
+	  	width: 49%;
+	 	}
+  }
+  .left {
+	 	@include screen(medium, false) {
+	 		text-align: center;
+	 	}
+  }
+
+	.txt {
+    color: #656565;
+    font-size: .75em;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.icon-fb-btn,.icon-youtube,.icon-chat {
+  margin-left: 10px;
+}
+
+.footer-link {
+	padding: 0 10px;
+}
+
+.btn-to-top {
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: .75em;
+  color: #656565;
+  text-align: center;
+  display: block;
+  position: fixed;
+  right: 13px;
+  bottom: 18px;
+  z-index: 999;
+
+	i {
+	  font-size: 2.5em;
+	  color: #f7ab03;
+	  min-height: 35px;
+	  text-align: center;
+	  display: block;
+	}
+}
+
+.fa-chevron-circle-up{
+  &:before {
+    content: "";
+    background: #f7ab03;
+    display: block;
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    @include screen(medium) {
+      left: 30%;
+    }
+  }
+  &:after {
+    content:'';
+    @include absolute(top left 31px);
+    @extend .icon-prev-large;
+    display: block;
+    transform: rotate(90deg) scale(0.5);
+  }
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
+.legal-link {
+  display: block;
+  float: right;
+  width: 190px;
+  font-size: .75em;
+  margin-right: 1%;
+  color: #8c8c8c;
+  display: inline-block;
+  margin-top: 1em;
+
+  @include screen(medium){
+	  text-align: right;
+  	float: none;
+	  width: 77%;
+  }  
+
+	a {
+    color: #009d30;
+    padding: 0 3px;    
+    white-space: nowrap;
+  }
+}
+
+.nestle-logo {
+  height: 53px;
+  background: url(../images/global/nestle-logo.jpg) left top no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 21%;
+  max-width: 126px;
+ 	@include screen(medium, false) {
+    margin-top: 1em;
+ 		float: left;
+ 	}
+}

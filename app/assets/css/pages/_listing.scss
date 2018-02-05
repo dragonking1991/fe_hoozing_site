@@ -1,0 +1,83 @@
+.listing-detail {
+	.block-title {
+		margin: 50px 0 20px;
+	}
+}
+
+.house-code {
+	padding: 10px 20px ;
+	position: relative;
+	font-size: $size-ml;
+	text-align: center;
+	border: 2px solid;
+	text-transform: uppercase;
+	span {
+		background: #fff;
+		color: $color-light;
+		font-size: $size-s;
+		padding: 10px;
+		width: 85%;
+		@include absolute(bottom -8px left 50%);
+    transform: translateX(-50%);
+    padding: 0 10px;
+
+	}
+}
+
+.block-signup {
+	padding: 0px 20px 30px;
+	border: 1px solid $color-light;
+	text-align: center;
+	input {
+		width: 100%;
+	}
+	form {
+		margin-top: 20px;
+	}
+	.btn {
+		margin-bottom: 20px;
+	}
+}
+
+.item-info {
+	display: flex;
+	figure {
+		width: 40%;
+		margin-bottom: 0;
+	}
+	h3 {
+		font-size: $size-default;
+		text-transform: capitalize;
+		margin-top: 20px;
+	}
+	p {
+		font-size: $size-tooltip;
+		margin-bottom: 0;
+	}
+	.item-desc {
+		width: 60%;
+		padding: 10px;
+		border: 1px solid #aaa;
+		border-left: none;
+	}
+	&:after {
+		content:'';
+		@extend .clearfix;
+	}
+}
+
+.tab-control {
+	li {
+		display: inline-block;
+		margin-right: 30px;
+	}
+	.active {
+		font-weight: bold;
+	}
+}
+
+.banner {
+	img {
+		width: 100%;
+	}
+}

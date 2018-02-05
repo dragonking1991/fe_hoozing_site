@@ -1,0 +1,16 @@
+{
+	"assetPath": "assets",
+	"title": "Hoozing",
+	"menu":[
+		{
+			"name": "Home",
+			"link": "index.html",
+			"sub": null
+		},
+		{
+			"name": "Template",
+			"link": "_template.html",
+			"sub": null
+		}
+	]
+}
