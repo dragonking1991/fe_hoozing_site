@@ -52,13 +52,13 @@
 			</select>
 		</div>
 
-		<a href="javascritp:void(0);" class="btn float-right"> More filter <i class="fa fa-angle-down"></i></a>
+		<a href="#collapseFilter" data-toggle="collapse" class="btn float-right" id="advance-filter" ><span class="notificate bg--red">1</span> More filter <i class="fa fa-angle-down"></i></a>
 
 	</section>
 
-	<section class="search-content">
+	<section class="search-content" data-module="SearchControl">
 
-		<div class="filter-wrapper">
+		<div class="filter-wrapper collapse" id="collapseFilter">
 			<div class="container">
 				<h3 class="block-title">Required Amenities</h3>
 				<div class="row">
@@ -246,10 +246,10 @@
 
 			<div class="search__layout">
 				<p> Layout 
-					<a href="javascritp:void(0);" class="active" data-layout="grid" title="Grid"><i class="fa fa-th-large"></i></a>
-					<a href="javascritp:void(0);" data-layout="list"  title="List"><i class="fa fa-bars"></i></a>
-					<a href="javascritp:void(0);" data-layout="map"  title="Map"><i class="fa fa-map"></i></a>
-					<a href="javascritp:void(0);" data-layout="project"  title="Project"><i class="fa fa-bank"></i></a>
+					<a href="javascritp:void(0);" class="active" data-toggle="tooltip" data-placement="top" data-layout="grid" title="Grid"><i class="fa fa-th-large"></i></a>
+					<a href="javascritp:void(0);" data-toggle="tooltip" data-placement="top" data-layout="list"  title="List"><i class="fa fa-bars"></i></a>
+					<a href="javascritp:void(0);" data-toggle="tooltip" data-placement="top" data-layout="map"  title="Map"><i class="fa fa-map"></i></a>
+					<a href="javascritp:void(0);" data-toggle="tooltip" data-placement="top" data-layout="project"  title="Project"><i class="fa fa-bank"></i></a>
 				</p>
 			</div>
 		</div>

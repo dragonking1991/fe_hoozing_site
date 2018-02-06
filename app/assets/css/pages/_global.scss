@@ -150,15 +150,13 @@ table, th, td {
 table {
 	width: 100%;
 	margin: 10px 0;
-	text-align: center;
+	text-align: left;
 }
 
 th,td {
 	padding: 5px;
 }
-th {
-	color: #fff;
-}
+
 .text-white {
 	color: #fff;
 }
@@ -245,19 +243,30 @@ hr {
 	}
 }
 
-.bg-red {
+.notificate {
+	color: #fff;
+	font-size: $size-tooltip;
+	width: 15px;
+  line-height: 15px;
+	height: 15px;
+	border-radius: 50%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.bg--red {
 	color: #fff;
 	background: $red !important;
 }
-.bg-green {
+.bg--green {
 	color: #fff;
 	background: $green !important;
 }
-.bg-yellow {
+.bg--yellow {
 	color: #fff;
 	background: $yellow !important;
 }
-.bg-blue {
+.bg--blue {
 	color: #fff;
 	background: $blue !important;
 }
@@ -338,7 +347,7 @@ button:focus {
 	font-weight: normal;
 }
 section {
-	padding: 30px 0;
+	padding: 10px 0 20px;
 }
 
 .link-under {

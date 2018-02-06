@@ -65,6 +65,7 @@
 
 .what-have {
 	background: $gray-light;
+	padding: 15px 0;
 	span {
 		margin: 0 10px;
 	}
@@ -153,7 +154,7 @@
 	}
 	button {
 		font-size: 0;
-		background: darken(#fff, 30%);
+		background: $color-light;
 		width: 12px;
 		height: 12px;
 		border-radius: 50%;
@@ -170,7 +171,7 @@
 
 .slick-arrow {
 	font-size: 0;
-	@include absolute(top 45% right 0px);
+	@include absolute(top 50% right);
 	width: 40px;
 	height: 40px;
 	background: none;
@@ -190,7 +191,7 @@
 	}
 	@include screen(medium){
 		&:hover{
-			background: rgba(0,0,0,0.5);
+			background: rgba(0,0,0,0.3);
 			&:after {
 				color: #fff;
 			}

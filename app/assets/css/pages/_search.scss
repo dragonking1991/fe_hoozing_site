@@ -10,6 +10,7 @@
   }
 }
 
+
 .search__show {
   font-size: 16px;
 
@@ -38,7 +39,7 @@
 }
 
 .search__layout {
-  span {
+  a {
     color: $color-light;
     margin-left: 10px; 
     cursor: pointer;
@@ -61,5 +62,27 @@
   .thumb-item {
     width: 20%;
     padding: 0 15px;
+  }
+
+}
+.thumb-list {
+  .thumb-item {
+    @include screen(medium) {
+      width: 50%;
+    }
+  }
+
+}
+
+.filter-wrapper {
+  .link {
+    margin-left: 10px;
+  }
+}
+
+#advance-filter.active {
+  .fa-angle-down {
+    transition:0.5s;
+    transform:rotate(180deg);
   }
 }

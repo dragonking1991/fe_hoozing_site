@@ -1,6 +1,56 @@
 {% extends "_templates/layout.twig" %}
 
 {% block page %}
+  <div class="container">
+
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#galleryDetail" data-toggle="modal">Open Lightbox</a></li>
+      <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="1">2nd Image</a></li>
+      <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="2">3rd Image</a></li>
+      <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="15">Open non existing Image</a></li>
+    </ul>
+
+    <div class="modal fade" id="galleryDetail">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body row">
+            <div class="col-md-8 gallery__slide">
+              <ul class="slider slider-for">
+                <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
+                <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
+                <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
+                <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
+                <li><img src="assets/images/slideimg/img5.jpg" alt=""></li>
+              </ul>
+              <ul class="slider slider-nav">
+                <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
+                <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
+                <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
+                <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
+                <li><img src="assets/images/slideimg/img5.jpg" alt=""></li>
+              </ul>
+            </div>
+            <div class="col-md-4 gallery__info">
+              <h3>Resort-like Apartment in Starhill District 7</h3>
+              <ul class="thumb-service">
+                <li><i class="fa fa-map-marker"></i> District 7</li>
+                <li><i class="fa fa-bed"></i> 1 bed </li>
+                <li><i class="fa fa-bath"></i> 1 bath</li
+                <li><i class="fa fa-map-marker"></i> District 7</li>
+                <li><i class="fa fa-bed"></i> 1 bed </li>
+                <li><i class="fa fa-bath"></i> 1 bath</li>         
+              </ul>
+              <div class="btn-wrapper">
+                <a href="#" class="btn btn--red btn--full">Request Inspection</a>
+                <a href="#" class="btn btn--full"><i class="fa fa-phone">Direct call</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
   <section class="banner">
     <img src="assets/images/dummy/featured-image-listing.png" />
   </section>
@@ -119,6 +169,46 @@
     <section class="list-table">
       <div class="container">
         <h2 class="section-title">Other Listing in Starhills</h2>
+
+
+        <table id="myTable" data-module="TableSort">
+          <tr>
+            <th>Name</th>
+            <th>Country</th>
+          </tr>
+          <tr>
+            <td>Berglunds snabbkop</td>
+            <td>Sweden</td>
+          </tr>
+          <tr>
+            <td>North/South</td>
+            <td>UK</td>
+          </tr>
+          <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Koniglich Essen</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Italy</td>
+          </tr>
+          <tr>
+            <td>Paris specialites</td>
+            <td>France</td>
+          </tr>
+          <tr>
+            <td>Island Trading</td>
+            <td>UK</td>
+          </tr>
+          <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Canada</td>
+          </tr>
+        </table>
       </div>
     </section>
     <section class="list-similar">

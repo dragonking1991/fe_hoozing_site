@@ -27,5 +27,7 @@ export default class form {
       }
     });
 
+    $('[data-toggle="tooltip"]').tooltip();
+
   }
 }
