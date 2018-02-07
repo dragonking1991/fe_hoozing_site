@@ -1,41 +1,52 @@
 {% extends "_templates/layout.twig" %}
 
 {% block page %}
-  <div class="container">
+<div class="container">
 
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#galleryDetail" data-toggle="modal">Open Lightbox</a></li>
-      <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="1">2nd Image</a></li>
-      <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="2">3rd Image</a></li>
-      <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="15">Open non existing Image</a></li>
-    </ul>
+  <ul class="nav nav-pills nav-stacked">
+    <li><a href="#galleryDetail" data-toggle="modal">Open Lightbox</a></li>
+    <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="1">2nd Image</a></li>
+    <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="2">3rd Image</a></li>
+    <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="15">Open non existing Image</a></li>
+  </ul>
 
-    <div class="modal fade" id="galleryDetail">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body row">
-            <div class="col-md-8 gallery__slide">
-              <ul class="slider slider-for">
-                <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
-                <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
-                <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
-                <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
-                <li><img src="assets/images/slideimg/img5.jpg" alt=""></li>
-              </ul>
-              <ul class="slider slider-nav">
-                <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
-                <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
-                <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
-                <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
-                <li><img src="assets/images/slideimg/img5.jpg" alt=""></li>
-              </ul>
-            </div>
-            <div class="col-md-4 gallery__info">
-              <h3>Resort-like Apartment in Starhill District 7</h3>
-              <ul class="thumb-service">
-                <li><i class="fa fa-map-marker"></i> District 7</li>
-                <li><i class="fa fa-bed"></i> 1 bed </li>
-                <li><i class="fa fa-bath"></i> 1 bath</li
+  
+
+  <div class="modal fade" id="galleryDetail">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body row">
+          <div class="col-md-8 gallery__slide" data-module="GallerySlide">
+            <ul class="slider gallery__for">
+              <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img5.jpg" alt=""></li>
+            </ul>
+            <p class="text-left">Photo 3/9: Bath room<br /> Real photo taken by Hoozing</p>
+            <ul class="slider gallery__nav">
+              <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
+              <li><img src="assets/images/slideimg/img5.jpg" alt=""></li>
+            </ul>
+          </div>
+          <div class="col-md-4 gallery__info">
+            <h3>Resort-like Apartment in Starhill District 7</h3>
+            <ul class="thumb-service">
+              <li><i class="fa fa-map-marker"></i> District 7</li>
+              <li><i class="fa fa-bed"></i> 1 bed </li>
+              <li><i class="fa fa-bath"></i> 1 bath</li
                 <li><i class="fa fa-map-marker"></i> District 7</li>
                 <li><i class="fa fa-bed"></i> 1 bed </li>
                 <li><i class="fa fa-bath"></i> 1 bath</li>         
@@ -405,4 +416,4 @@
 
       </div>
     </section>
-  {% endblock %}
+    {% endblock %}
