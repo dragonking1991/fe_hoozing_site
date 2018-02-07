@@ -80,9 +80,19 @@
   }
 }
 
-#advance-filter.active {
+.search-content--small {
+  max-width: 50%;
+}
+
+#advance-filter {
   .fa-angle-down {
     transition:0.5s;
-    transform:rotate(180deg);
+    font-size: 18px;
+    transform:rotate(0deg);
+  }
+  &.collapsed {
+    .fa-angle-down {
+      transform:rotate(-180deg);
+    }
   }
 }

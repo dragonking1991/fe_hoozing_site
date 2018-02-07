@@ -32,6 +32,9 @@
 	input {
 		width: 100%;
 	}
+	b {
+		font-size: 18px;
+	}
 	form {
 		margin-top: 20px;
 	}
@@ -108,6 +111,16 @@
 	margin-bottom: 10px;
 	border-radius: 50%;
 }
+
+.logo-icon {
+	display: inline-block;
+	background: url(../images/global/logo-icon.jpg);
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin-top: -40px;
+}
+
 .project-info {
 	display: inline-block;
 	padding-left: 20px;

@@ -18,16 +18,10 @@ export default class GallerySlide {
       asNavFor: '.gallery__nav'
     }
 
-
-    // $(el).imagesLoaded().done(function() {
-    // });
     $('#galleryDetail').on('show.bs.modal', function (e) {
       $(el).find('.gallery__for').slick(forSlide); 
       $(el).find('.gallery__nav').slick(navSlide);
-      $(el).find('.gallery__for').slick('slickGoTo', 0 );
-      $(el).find('.gallery__nav').slick('slickGoTo', 0 );
-    });
-    $('#galleryDetail').on('show.bs.modal', function (e) {
+      $(el).find('.gallery__for').slick('slickGoTo', 1 );
     });
   }
 }
