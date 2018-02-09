@@ -7,7 +7,7 @@ export default class ThumbSlide {
       infinite: true,
       arrows: true,
       autoplay: true,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 5000,
       slidesToShow: 1,
       slidesToScroll: 1
     });
