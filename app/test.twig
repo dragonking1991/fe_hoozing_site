@@ -1,0 +1,71 @@
+<div class="popup-wrapper thumb-item">
+	<div class="popup-price">$200</div>
+	<div class="thumb-gallery" data-module="ThumbSlide">
+		<ul class="thumb-list slider-wrapper">
+			<li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+			<li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+			<li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+		</ul>
+		<span class="love"><i class="fa fa-heart-o"></i></span>
+		<span class="price-tag">$600</span>
+	</div>
+	<div class="thumb-info">
+		<h4>house code 456</h4>
+		<a href="#"><h3>Pretty service appartment with bright bedroom</h3></a>
+		<ul class="thumb-service">
+			<li><i class="fa fa-map-marker"></i> <span>District 7</span></li>
+			<li><i class="fa fa-bed"></i> <span>1 bed </span></li>
+			<li><i class="fa fa-bath"></i> <span>1 bath</span></li>
+		</ul>
+	</div>
+</div>
+
+
+
+	<script type="text/javascript">
+	this.content = dom.createDOM('div', 'popup-wrapper');
+
+	this.popupPrice = dom.createDOM('div', 'popup-price');
+	this.thumbGallery = dom.createDOM('div', 'thumb-gallery');
+	this.thumbInfo  = dom.createDOM('div', 'thumb-info');
+
+	this.thumbList = dom.createDOM('ul', 'thumb-list slider-wrapper');
+	this.carouselItemactive  = dom.createDOM('li', 'carousel-item active');
+	this.carouselItem  = dom.createDOM('li', 'carousel-item');
+	this.imageThumb = dom.createDOM('img', 'popup__image');
+	this.carouselItem.appendChild(this.image);
+	this.imageThumb.src = 'assets/images/dummy/vinhomes-central-park.png';
+	this.imageThumb.alt = 'imgages';
+
+	this.love  = dom.createDOM('span', 'love');
+	this.iconLove  = dom.createDOM('i', 'fa fa-heart-o');
+	this.love.appendChild(this.iconLove);
+	this.priceTag  = dom.createDOM('span', 'price-tag');
+	this.priceTag.innerHTML  = "$600";
+
+	this.thumbCode  = dom.createDOM('h4');
+	this.thumbCode.innerHTML  = "house code 456";
+	this.thumbLink  = dom.createDOM('link');
+	this.thumbTitle  = dom.createDOM('h3');
+	this.thumbTitle.innerHTML  = "Pretty service appartment with bright bedroom";
+	this.thumbLink.appendChild(this.thumbTitle);
+
+
+	this.thumbService  = dom.createDOM('ul','thumb-service');
+
+	this.itemService  = dom.createDOM('li');
+	this.span  = dom.createDOM('span');
+	this.itemMarker  = dom.createDOM('i','fa fa-map-marker');
+	this.thumbBed  = dom.createDOM('i','fa fa-bed');
+	this.thumbbath  = dom.createDOM('i','fa fa-bath');
+
+
+
+
+	dom.appendMultiDOM(this.popupWrapper, [this.popupPrice, this.thumbGallery, this.thumbInfo]);
+	dom.appendMultiDOM(this.thumbGallery, [this.popupContent, this.gift, this.link]);
+	dom.appendMultiDOM(this.thumbService, [this.popupContent, this.gift, this.link]);
+	dom.appendMultiDOM(this.content, [this.popupIcon, this.popupWrapper]);
+	document.body.appendChild(this.content);
+
+	</script>

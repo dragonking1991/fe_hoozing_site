@@ -1,5 +1,4 @@
 import DOM from './DOM';
-import Day from './Day';
 
 export default class PopupDefined {
   constructor(param, ggmap) {
@@ -50,7 +49,7 @@ export default class PopupDefined {
       this.content.id = `content${this.id}`;
       this.popupIcon = dom.createDOM('div', 'popup__icon');
       this.image = dom.createDOM('img', 'popup__image');
-      this.popupIcon.appendChild(this.image);
+      this.popupIcon.innerHTML="hello";
       this.popupWrapper = dom.createDOM('div', 'popup-wrapper');
       this.popupClose = dom.createDOM('span', 'popup__close');
       this.popupTitle = dom.createDOM('div', 'popup__title');

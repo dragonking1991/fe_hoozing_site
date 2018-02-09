@@ -1,8 +1,6 @@
 import googlemap from 'load-google-maps-api';
-import Calendar from './Calendar';
-import Day from './Day';
 import DOM from './DOM';
-import Search from './SearchRedemption';
+// import Search from './SearchRedemption';
 import axios from 'axios';
 import PopupDefined from './PopupDefined';
 
@@ -17,27 +15,30 @@ export default class GoogleMapAPI {
       action: 'get_data',
       data: ''
     }));
-    axios({
-        method: 'post',
-        url: miloAPI,
-        data: form
-      })
-    // axios.get('_data/data.json')
-      .then(response => {
-        this.search = new Search({
-          fnChange: () => {
-            this.handleSearchResult(this.search.result);
-          },
-          fnGetData: () => {
-            return response.data;
-          }
-        });
-        this.storeArr = response.data.storeInfo;
-        this.init();
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    // axios({
+    //   method: 'post',
+    //   url: miloAPI,
+    //   data: form
+    // })
+    // .then(response => {
+    //   // this.search = new Search({
+    //   //   fnChange: () => {
+    //   //     this.handleSearchResult(this.search.result);
+    //   //   },
+    //   //   fnGetData: () => {
+    //   //     return response.data;
+    //   //   }
+    //   // });
+    //   this.storeArr = response.data.storeInfo;
+    //   this.init();
+    //   console.log(response)
+    // })
+    // .catch(error => {
+    //   console.log(error);
+    // });
+    this.storeArr = storeInfo;
+    this.init();
+    
 
   }
   init() {
@@ -82,7 +83,8 @@ export default class GoogleMapAPI {
     });
     dom.addMultiEvent(item.link, ['click', 'touchend'], (e) => {
       e.stopPropagation();
-      this.displayCalendar(item);
+
+      //click 
     });
     dom.addMultiEvent(item.popupClose, ['click', 'touchend'], (e) => {
       e.stopPropagation();
@@ -99,67 +101,56 @@ export default class GoogleMapAPI {
     popup.open();
   }
 
-  displayCalendar(item) {
-    let calendar = new Calendar();
-    item.storeEl.opendates.forEach(function (strDate) {
-      strDate = strDate.split('-');
-      calendar.addActiveDay(Number(strDate[0]), Number(strDate[1]), Number(strDate[2]));
-    });
-    calendar.updateCalendar();
-    calendar.drawCalendar();
-    calendar.show();
-  }
 
+  // handleSearchResult(searchResult) {
+  //   if (searchResult) {
+  //     if(!this.isBoundLatLng) {
+  //       let latLng = searchResult.split(' ');
+  //       this.map.panTo({
+  //         lat: Number(latLng[0]),
+  //         lng: Number(latLng[1])
+  //       })
+  //     } else {
+  //       let bounds = new google.maps.LatLngBounds();
+  //       this.storeArr.forEach(item => {
+  //         if(item.city === this.search.city) {
+  //           let latLng = new google.maps.LatLng(item.location);
+  //           bounds.extend(latLng);
+  //         }
+  //       });
+  //       this.map.fitBounds(bounds);
+  //       this.map.panToBounds(bounds);
+  //       if(this.map.getZoom() > 17) {
+  //         this.map.setZoom(17);
+  //       }
+  //     }
+  //   } else {
+  //     this.clearParticle();
+  //     this.drawOnMap(this.search.myPosition);
+  //   }
+  // }
 
-  handleSearchResult(searchResult) {
-    if (searchResult) {
-      if(!this.isBoundLatLng) {
-        let latLng = searchResult.split(' ');
-        this.map.panTo({
-          lat: Number(latLng[0]),
-          lng: Number(latLng[1])
-        })
-      } else {
-        let bounds = new google.maps.LatLngBounds();
-        this.storeArr.forEach(item => {
-          if(item.city === this.search.city) {
-            let latLng = new google.maps.LatLng(item.location);
-            bounds.extend(latLng);
-          }
-        });
-        this.map.fitBounds(bounds);
-        this.map.panToBounds(bounds);
-        if(this.map.getZoom() > 17) {
-          this.map.setZoom(17);
-        }
-      }
-    } else {
-      this.clearParticle();
-      this.drawOnMap(this.search.myPosition);
-    }
-  }
-
-  drawOnMap(position) {
-    const pos = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude
-    };
-    this.map.setCenter(pos);
-    this.marker = new google.maps.Marker({
-      position: pos,
-      map: this.map
-    });
-    this.circle = new google.maps.Circle({
-      strokeColor: '#000',
-      strokeOpacity: 0.3,
-      strokeWeight: 2,
-      fillColor: '#222',
-      fillOpacity: 0.3,
-      center: pos,
-      map: this.map,
-      radius: 2000
-    });
-  }
+  // drawOnMap(position) {
+  //   const pos = {
+  //     lat: position.coords.latitude,
+  //     lng: position.coords.longitude
+  //   };
+  //   this.map.setCenter(pos);
+  //   this.marker = new google.maps.Marker({
+  //     position: pos,
+  //     map: this.map
+  //   });
+  //   this.circle = new google.maps.Circle({
+  //     strokeColor: '#000',
+  //     strokeOpacity: 0.3,
+  //     strokeWeight: 2,
+  //     fillColor: '#222',
+  //     fillOpacity: 0.3,
+  //     center: pos,
+  //     map: this.map,
+  //     radius: 2000
+  //   });
+  // }
 
   clearParticle() {
     this.marker && this.marker.setMap(null);
