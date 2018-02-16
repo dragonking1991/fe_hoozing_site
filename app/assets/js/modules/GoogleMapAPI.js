@@ -15,28 +15,8 @@ export default class GoogleMapAPI {
       action: 'get_data',
       data: ''
     }));
-    // axios({
-    //   method: 'post',
-    //   url: miloAPI,
-    //   data: form
-    // })
-    // .then(response => {
-    //   // this.search = new Search({
-    //   //   fnChange: () => {
-    //   //     this.handleSearchResult(this.search.result);
-    //   //   },
-    //   //   fnGetData: () => {
-    //   //     return response.data;
-    //   //   }
-    //   // });
-    //   this.storeArr = response.data.storeInfo;
-    //   this.init();
-    //   console.log(response)
-    // })
-    // .catch(error => {
-    //   console.log(error);
-    // });
     this.storeArr = storeInfo;
+    console.log(storeInfo)
     this.init();
     
 
@@ -76,17 +56,12 @@ export default class GoogleMapAPI {
   }
 
   registerEventPopup(item) {
-    let dom = new DOM();
-    dom.addMultiEvent(item.content, ['click', 'touchend'], (e) => {
+    let ele = new DOM();
+    ele.addMultiEvent(item.content, ['click', 'touchend'], (e) => {
       e.stopPropagation();
       this.eventPopup(item);
     });
-    dom.addMultiEvent(item.link, ['click', 'touchend'], (e) => {
-      e.stopPropagation();
-
-      //click 
-    });
-    dom.addMultiEvent(item.popupClose, ['click', 'touchend'], (e) => {
+    ele.addMultiEvent(item.popupClose, ['click', 'touchend'], (e) => {
       e.stopPropagation();
       item.close();
     });
@@ -152,8 +127,8 @@ export default class GoogleMapAPI {
   //   });
   // }
 
-  clearParticle() {
-    this.marker && this.marker.setMap(null);
-    this.circle && this.circle.setMap(null);
-  }
+  // clearParticle() {
+  //   this.marker && this.marker.setMap(null);
+  //   this.circle && this.circle.setMap(null);
+  // }
 }

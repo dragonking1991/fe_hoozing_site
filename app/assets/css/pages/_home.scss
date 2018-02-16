@@ -122,6 +122,11 @@
 			}
 		}
 	}
+
+	.slick-slide {
+		font-size: 0;
+	}
+	 
 	.slick-arrow {
 		@include screen(medium) {
 			opacity: 0;
