@@ -44,14 +44,12 @@ export default class PopupDefined {
       this.getPanes().floatPane.appendChild(this.anchor);
     };
     Popup.prototype.init = function () {
-      let pathUrl = "assets/images/dummy/";
       let ele = new DOM();
       this.content = ele.addEle('div', 'row popup');
       this.content.id = `content${this.id}`;
 
 
       this.popupPrice = ele.addEle('div', 'popup__price');
-      this.popupPrice.innerHTML= "600$";
       this.popupWrapper = ele.addEle('div', 'popup-wrapper');
 
       
@@ -61,25 +59,20 @@ export default class PopupDefined {
 
       //popupGallery
       this.thumbList = ele.addEle('ul', 'thumb-list slider-wrapper');
-      this.carouselItem  = ele.addEle('li', 'carousel-item active');
       this.imageThumb = ele.addEle('img', 'popup__image');
+      this.carouselItem  = ele.addEle('li', 'carousel-item active');
       this.thumbList.appendChild(this.carouselItem);
       this.carouselItem.appendChild(this.imageThumb);
 
-      this.imageThumb.src = pathUrl + 'vinhomes-central-park.png';
-      this.imageThumb.alt = 'images';
       this.love  = ele.addEle('span', 'love');
       this.iconLove  = ele.addEle('i', 'fa fa-heart-o');
       this.love.appendChild(this.iconLove); 
       this.priceTag  = ele.addEle('span', 'price-tag');
-      this.priceTag.innerHTML  = "$600";
 
       //popupInfo
       this.houseCode = ele.addEle('h4');
-      this.houseCode.innerHTML  = "house code 456";
       this.houseLink  = ele.addEle('a', "link");
       this.houseTitle  = ele.addEle('h3');
-      this.houseTitle.innerHTML  = "Pretty service appartment with bright bedroom";
       this.houseLink.appendChild(this.houseTitle);
 
 
@@ -92,19 +85,16 @@ export default class PopupDefined {
     }
 
     Popup.prototype.setContent = function (code,name, price, linkAp, images) {
-      // if (this.isActive()) {
-      //   this.popupContent.innerHTML = `Open now (${timeOpen})`;
-      //   this.gift.innerHTML = `Gift Available: <b>${gift}</b>`;
-      // } else {
-      //   this.popupContent.innerHTML = `Close now`;
-      // }
-      // this.popupTitle.innerHTML = address;
-    }
-    Popup.prototype.isOpen = function () {
-      return this.content.classList.contains('show') ? true : false;
-    }
-    Popup.prototype.isActive = function () {
-      return this.storeEl.isOpen ? true : false;
+      let pathUrl = "assets/images/dummy/";
+      this.popupPrice.innerHTML= price;
+      console.lo
+      // this.carouselItem  = ele.addEle('li', 'carousel-item active');
+      this.imageThumb.src = pathUrl + images;
+      this.imageThumb.alt = 'images';
+      this.priceTag.innerHTML  = price;
+      this.houseCode.innerHTML  = `house code ${code}`;
+      this.houseTitle.innerHTML  = name;
+      this.houseLink.href = linkAp;
     }
 
     /** Called when the popup is removed from the map. */
