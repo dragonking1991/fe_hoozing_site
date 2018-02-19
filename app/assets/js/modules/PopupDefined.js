@@ -9,7 +9,7 @@ export default class PopupDefined {
    * The library reference: https://developers.google.com/maps/documentation/javascript/examples/overlay-popup
    *
    */
-  definePopupClass(param, ggmap) {
+   definePopupClass(param, ggmap) {
     /**
      * A customized popup on the map.
      * @param {!google.maps.LatLng} position
@@ -17,7 +17,7 @@ export default class PopupDefined {
      * @constructor
      * @extends {google.maps.OverlayView}
      */
-    let Popup = function (position, id, storeEl) {
+     let Popup = function (position, id, storeEl) {
       this.id = id;
       this.storeEl = storeEl;
       this.position = position;
@@ -59,10 +59,6 @@ export default class PopupDefined {
 
       //popupGallery
       this.thumbList = ele.addEle('ul', 'thumb-list slider-wrapper');
-      this.imageThumb = ele.addEle('img', 'popup__image');
-      this.carouselItem  = ele.addEle('li', 'carousel-item active');
-      this.thumbList.appendChild(this.carouselItem);
-      this.carouselItem.appendChild(this.imageThumb);
 
       this.love  = ele.addEle('span', 'love');
       this.iconLove  = ele.addEle('i', 'fa fa-heart-o');
@@ -85,12 +81,24 @@ export default class PopupDefined {
     }
 
     Popup.prototype.setContent = function (code,name, price, linkAp, images) {
+      let ele = new DOM();
       let pathUrl = "assets/images/dummy/";
       this.popupPrice.innerHTML= price;
-      console.lo
-      // this.carouselItem  = ele.addEle('li', 'carousel-item active');
-      this.imageThumb.src = pathUrl + images;
-      this.imageThumb.alt = 'images';
+      for (var i = images.length - 1; i >= 0; i--) {
+        if (i == images.length - 1) {
+          this.carouselItem  = ele.addEle('li', 'carousel-item active');
+        }
+        else {
+          this.carouselItem  = ele.addEle('li', 'carousel-item');
+        }
+        this.imageThumb = ele.addEle('img', 'popup__image');
+        this.imageThumb.src = pathUrl + images[i];
+        this.imageThumb.alt = 'images';
+        this.carouselItem.appendChild(this.imageThumb);
+        this.thumbList.appendChild(this.carouselItem);
+        this.thumbList.setAttribute("data-module", "ThumbSlide");
+
+      }
       this.priceTag.innerHTML  = price;
       this.houseCode.innerHTML  = `house code ${code}`;
       this.houseTitle.innerHTML  = name;

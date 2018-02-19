@@ -49,9 +49,8 @@ export default class GoogleMapAPI {
     let Popup = new PopupDefined(google.maps.OverlayView.prototype, this.map)._popup;
     this.storeArr.forEach((item, i) => {
       let popup = new Popup(new google.maps.LatLng(item.location.lat, item.location.lng), i, item);
-      // popup.setContent(item.address, item.opentime, item.gift);
       popup.setContent(item.code, item.name, item.price, item.linkAp, item.images) ;
-      console.log(item.code + " " + item.name + " " + item.price + " " + item.linkAp +" " + item.images[1]);
+      // console.log(item.code + " " + item.name + " " + item.price + " " + item.linkAp +" " + item.images[1]);
       popup.setMap(this.map);
       this.popupList.push(popup);
     });
