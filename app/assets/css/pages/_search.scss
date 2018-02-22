@@ -20,7 +20,7 @@
 
 
 
-.search__show {
+.search__list {
   font-size: 16px;
 
   > div {
@@ -43,11 +43,32 @@
   }
 }
 
+.open-map {
+  .map-result {
+    display: block;
+  }
+}
+
+.tab-content {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+.map-result {
+  display: none;
+}
+
 .search__result {
   font-weight: bold;
 }
 
 .search__layout {
+  display: inline-block;
+
+  li {
+    display: inline-block;
+  }
   a {
     color: $color-light;
     margin-left: 10px; 

@@ -168,6 +168,7 @@
 		display: inline-block;
 		margin: 0 5px;
 		vertical-align: middle;
+		transform: scale(0.9);
 
 	}
 	button {
@@ -180,6 +181,7 @@
 		border: none;
 	}
 	.slick-active {
+		transform: scale(1);
 		button {
 			background: #fff;
 		}

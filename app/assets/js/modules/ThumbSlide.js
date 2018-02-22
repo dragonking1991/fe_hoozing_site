@@ -12,7 +12,7 @@ export default class ThumbSlide {
       slidesToScroll: 1
     });
 
-    $(document).on('.love','click', function() {
+    $('.love').on('click', function() {
       $(this).addClass('loved').find(".fa-heart-o").removeClass('fa-heart-o').addClass('fa-heart');
     });
   }
