@@ -37,7 +37,8 @@ export default class GoogleMapAPI {
   drawPopupOnMap() {
     this.map = new google.maps.Map(document.getElementById('map'), {
       center: this.storeArr[0].location,
-      zoom: 15
+      zoom: 15,
+      gestureHandling: 'greedy'
     });
     this.initPopupList();
     this.popupList.forEach((item, i) => {

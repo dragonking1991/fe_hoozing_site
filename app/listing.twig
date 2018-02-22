@@ -3,14 +3,9 @@
 {% block page %}
 <div class="container">
 
- <!--  <ul class="nav nav-pills nav-stacked">
+  <ul class="nav nav-pills nav-stacked">
     <li><a href="#galleryDetail" data-toggle="modal">Open Lightbox</a></li>
-    <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="1">2nd Image</a></li>
-    <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="2">3rd Image</a></li>
-    <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="15">Open non existing Image</a></li>
-  </ul> -->
-
-
+  </ul>
 
   <div class="modal fade" id="galleryDetail">
     <div class="modal-dialog">
@@ -28,7 +23,7 @@
               <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
               <li><img src="assets/images/slideimg/img5.jpg" alt=""></li>
             </ul>
-            <p class="text-left">Photo 3/9: Bath room<br /> Real photo taken by Hoozing</p>
+            <p class="text-left">Photo <span class="counter-slide">3/9</span>: Bath room<br /> Real photo taken by Hoozing</p>
             <ul class="slider gallery__nav">
               <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
               <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
@@ -43,180 +38,269 @@
           </div>
           <div class="col-md-4 gallery__info">
             <h3>Resort-like Apartment in Starhill District 7</h3>
-            <ul class="thumb-service">
+            <ul class="thumb-service thumb--col-2">
               <li><i class="fa fa-map-marker"></i> District 7</li>
               <li><i class="fa fa-bed"></i> 1 bed </li>
-              <li><i class="fa fa-bath"></i> 1 bath</li
-                <li><i class="fa fa-map-marker"></i> District 7</li>
-                <li><i class="fa fa-bed"></i> 1 bed </li>
-                <li><i class="fa fa-bath"></i> 1 bath</li>         
-              </ul>
-              <div class="btn-wrapper">
-                <a href="#" class="btn btn--red btn--full">Request Inspection</a>
-                <a href="#" class="btn btn--full"><i class="fa fa-phone">Direct call</i></a>
-              </div>
+              <li><i class="fa fa-bath"></i> 1 bath</li>
+              <li><i class="fa fa-map-marker"></i> District 7</li>
+              <li><i class="fa fa-bed"></i> 1 bed </li>
+              <li><i class="fa fa-bath"></i> 1 bath</li>         
+            </ul>
+            <div class="btn-wrapper">
+              <a href="#" class="btn btn--red btn--full">Request Inspection</a>
+              <a href="#" class="btn btn--full"><i class="fa fa-phone"></i><span>Direct call</span></a>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
-  <section class="banner">
-    <img src="assets/images/dummy/featured-image-listing.png" />
-  </section>
-  <section class="listing-detail" data-module="ScrollTo"> 
-    <div class="container">
 
-      <div class="breadcrumb">
-        <a href="#"><i class="fa fa-home"></i></a>  
-        <i class="fa fa-angle-right"></i> 
-        <a href="#">District 7</a> <i class="fa fa-angle-right"></i> 
-        <a href="#">Starhill</a> <i class="fa fa-angle-right"></i> HD11845
-      </div>
+</div>
+<section class="banner">
+  <img src="assets/images/dummy/featured-image-listing.png" />
+</section>
+<section class="listing-detail" data-module="ScrollTo"> 
+  <div class="container">
 
-      <div class="row">
-        <div class="col-md-8">
+    <div class="breadcrumb">
+      <a href="#"><i class="fa fa-home"></i></a>  
+      <i class="fa fa-angle-right"></i> 
+      <a href="#">District 7</a> <i class="fa fa-angle-right"></i> 
+      <a href="#">Starhill</a> <i class="fa fa-angle-right"></i> HD11845
+    </div>
 
-          <ul class="tab-link">
-            <li class="active"><a href="javascript:void(0);" class="link-to" data-target="#overview"> Overview</a></li>
-            <li><a href="javascript:void(0);" class="link-to" data-target="#policy"> Policy</a></li>
-            <li><a href="javascript:void(0);" class="link-to" data-target="#amenities"> Amenities</a></li>
-            <li><a href="javascript:void(0);" class="link-to" data-target="#facilities"> Facilities</a></li>
+    <div class="row">
+      <div class="col-md-8">
+
+        <ul class="tab-link">
+          <li class="active"><a href="javascript:void(0);" class="link-to" data-target="#overview"> Overview</a></li>
+          <li><a href="javascript:void(0);" class="link-to" data-target="#policy"> Policy</a></li>
+          <li><a href="javascript:void(0);" class="link-to" data-target="#amenities"> Amenities</a></li>
+          <li><a href="javascript:void(0);" class="link-to" data-target="#facilities"> Facilities</a></li>
+        </ul>
+        <hr />
+
+        <div class="list-content">
+          <div class="house-code float-right">
+            h012345
+            <span>House Code</span>
+          </div>
+
+          <h2> Resort - like new Apartment in Starhill district 7</h2>
+          <div class="locate"><i class="fa fa-map-marker"></i> District 7</div>
+
+          <h3 class="block-title"> Description</h3>
+
+          <div class="row icon-service">
+            <div class="col-md-3"><i class="fa fa-building-o"></i> Apartment</div>  
+            <div class="col-md-3"><i class="fa fa-bath"></i> 1 Bathroom(s)</div>  
+            <div class="col-md-3"><i class="fa fa-bed"></i> 1 Bedroom(s)</div>  
+            <div class="col-md-3"><i class="fa fa-group"></i> 1 Bedroom(s)</div>  
+            <div class="col-md-3"><i class="fa fa-umbrella"></i> 1 Fullu Funished(s)</div>  
+          </div>
+
+          <h3 class="block-title" id="desciption">Description</h3>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodc tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+
+          <h3 class="block-title" id="policy">POLICY</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodc tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+
+          <h3 class="block-title" id="amenities">AMENITIES</h3>
+
+          <ul class="thumb-service thumb--col-4">
+            <li><i class="flaticon-a-badminton9"></i><span>badminton9</span></li>
+            <li><i class="flaticon-a-bicycle14"></i><span>bicycle14</span></li>
+            <li><i class="flaticon-a-cable4"></i><span>cable4</span></li>
+            <li><i class="flaticon-a-connection30"></i><span>connection30</span></li>
+            <li><i class="flaticon-a-cooking35"></i><span>cooking35</span></li>
+            <li><i class="flaticon-a-cooking7"></i><span>cooking7</span></li>
+            <li><i class="flaticon-a-covered16"></i><span>covered16</span></li>
+            <li><i class="flaticon-a-credit56"></i><span>credit56</span></li>
+            <li><i class="flaticon-a-customerservice14"></i><span>customerservice14</span></li>
+            <li><i class="flaticon-a-dog50"></i><span>dog50</span></li>
+            <li><i class="flaticon-a-first22"></i><span>first22</span></li>
+            <li><i class="flaticon-a-flame11"></i><span>flame11</span></li>
+            <li><i class="flaticon-a-fun"></i><span>fun</span></li>
+            <li><i class="flaticon-a-heating1"></i><span>heating1</span></li>
+            <li><i class="flaticon-a-kitchen56"></i><span>kitchen56</span></li>
+            <li><i class="flaticon-a-kitchen6"></i><span>kitchen6</span></li>
+            <li><i class="flaticon-a-logotype117"></i><span>logotype117</span></li>
+            <li><i class="flaticon-a-man244"></i><span>man244</span></li>
+            <li><i class="flaticon-a-medical12"></i><span>medical12</span></li>
+            <li><i class="flaticon-a-money385"></i><span>money385</span></li>
+            <li><i class="flaticon-a-network11"></i><span>network11</span></li>
+            <li><i class="flaticon-a-parking19"></i><span>parking19</span></li>
+            <li><i class="flaticon-a-parking6"></i><span>parking6</span></li>
+            <li><i class="flaticon-a-phonecall10"></i><span>phonecall10</span></li>
+            <li><i class="flaticon-a-pipe9"></i><span>pipe9</span></li>
+            <li><i class="flaticon-a-plug38"></i><span>plug38</span></li>
+            <li><i class="flaticon-a-policeman1"></i><span>policeman1</span></li>
+            <li><i class="flaticon-a-pool8"></i><span>pool8</span></li>
+            <li><i class="flaticon-a-public6"></i><span>public6</span></li>
+            <li><i class="flaticon-a-public8"></i><span>public8</span></li>
+            <li><i class="flaticon-a-racket1"></i><span>racket1</span></li>
+            <li><i class="flaticon-a-screens6"></i><span>screens6</span></li>
+            <li><i class="flaticon-a-shopper1"></i><span>shopper1</span></li>
+            <li><i class="flaticon-a-shopping-cart8"></i><span>cart8</span></li>
+            <li><i class="flaticon-a-smoke2"></i><span>smoke2</span></li>
+            <li><i class="flaticon-a-swimming21"></i><span>swimming21</span></li>
+            <li><i class="flaticon-a-tea24"></i><span>tea24</span></li>
+            <li><i class="flaticon-a-temperature1"></i><span>temperature1</span></li>
+            <li><i class="flaticon-a-terrace"></i><span>terrace</span></li>
+            <li><i class="flaticon-a-tub1"></i><span>tub1</span></li>
+            <li><i class="flaticon-a-washingmachine3"></i><span>washingmachine3</span></li>
+            <li><i class="flaticon-a-yoga13"></i><span>yoga13</span></li>
           </ul>
-          <hr />
-
-          <div class="list-content">
-            <div class="house-code float-right">
-              h012345
-              <span>House Code</span>
+          <h3 class="block-title" id="facilities">FACITLITIES</h3>
+          <ul class="thumb-service thumb--col-4">
+            <li><i class="flaticon-a-badminton9"></i><span>badminton9</span></li>
+            <li><i class="flaticon-a-bicycle14"></i><span>bicycle14</span></li>
+            <li><i class="flaticon-a-cable4"></i><span>cable4</span></li>
+            <li><i class="flaticon-a-connection30"></i><span>connection30</span></li>
+            <li><i class="flaticon-a-cooking35"></i><span>cooking35</span></li>
+            <li><i class="flaticon-a-cooking7"></i><span>cooking7</span></li>
+            <li><i class="flaticon-a-covered16"></i><span>covered16</span></li>
+            <li><i class="flaticon-a-credit56"></i><span>credit56</span></li>
+            <li><i class="flaticon-a-customerservice14"></i><span>customerservice14</span></li>
+            <li><i class="flaticon-a-dog50"></i><span>dog50</span></li>
+            <li><i class="flaticon-a-first22"></i><span>first22</span></li>
+            <li><i class="flaticon-a-flame11"></i><span>flame11</span></li>
+            <li><i class="flaticon-a-fun"></i><span>fun</span></li>
+            <li><i class="flaticon-a-heating1"></i><span>heating1</span></li>
+            <li><i class="flaticon-a-kitchen56"></i><span>kitchen56</span></li>
+            <li><i class="flaticon-a-kitchen6"></i><span>kitchen6</span></li>
+            <li><i class="flaticon-a-logotype117"></i><span>logotype117</span></li>
+            <li><i class="flaticon-a-man244"></i><span>man244</span></li>
+            <li><i class="flaticon-a-medical12"></i><span>medical12</span></li>
+            <li><i class="flaticon-a-money385"></i><span>money385</span></li>
+            <li><i class="flaticon-a-network11"></i><span>network11</span></li>
+            <li><i class="flaticon-a-parking19"></i><span>parking19</span></li>
+            <li><i class="flaticon-a-parking6"></i><span>parking6</span></li>
+            <li><i class="flaticon-a-phonecall10"></i><span>phonecall10</span></li>
+            <li><i class="flaticon-a-pipe9"></i><span>pipe9</span></li>
+            <li><i class="flaticon-a-plug38"></i><span>plug38</span></li>
+            <li><i class="flaticon-a-policeman1"></i><span>policeman1</span></li>
+            <li><i class="flaticon-a-pool8"></i><span>pool8</span></li>
+            <li><i class="flaticon-a-public6"></i><span>public6</span></li>
+            <li><i class="flaticon-a-public8"></i><span>public8</span></li>
+            <li><i class="flaticon-a-racket1"></i><span>racket1</span></li>
+            <li><i class="flaticon-a-screens6"></i><span>screens6</span></li>
+            <li><i class="flaticon-a-shopper1"></i><span>shopper1</span></li>
+            <li><i class="flaticon-a-shopping-cart8"></i><span>cart8</span></li>
+            <li><i class="flaticon-a-smoke2"></i><span>smoke2</span></li>
+            <li><i class="flaticon-a-swimming21"></i><span>swimming21</span></li>
+            <li><i class="flaticon-a-tea24"></i><span>tea24</span></li>
+            <li><i class="flaticon-a-temperature1"></i><span>temperature1</span></li>
+            <li><i class="flaticon-a-terrace"></i><span>terrace</span></li>
+            <li><i class="flaticon-a-tub1"></i><span>tub1</span></li>
+            <li><i class="flaticon-a-washingmachine3"></i><span>washingmachine3</span></li>
+            <li><i class="flaticon-a-yoga13"></i><span>yoga13</span></li>
+          </ul>
+          <h3 class="block-title" id="keywords">KEYWORDS</h3>
+          <div class="wrap-tag">
+            <a class="tags" href="#">Pet Allowed</a>
+            <a class="tags" href="#">Pet Allowed</a>
+            <a class="tags" href="#">Pet Allowed</a>
+            <a class="tags active" href="#">Pet Allowed</a>
+            <a class="tags" href="#">Pet Allowed</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="block-signup">
+          <span class="logo-icon"></span>
+          <p><b>$1,200</b> per month</p>
+          <span class="bg--green tag">POPULAR <i class="fa fa-star"></i></span>
+          <span><i class="fa fa-eye"></i> 230 views</span>
+          <form>
+            <div class="form-group">
+              <input type="text" name="" placeholder="Your name" />
             </div>
-
-            <h2> Resort - like new Apartment in Starhill district 7</h2>
-            <div class="locate"><i class="fa fa-map-marker"></i> District 7</div>
-
-            <h3 class="block-title"> Description</h3>
-
-            <div class="row icon-service">
-              <div class="col-md-3"><i class="fa fa-building-o"></i> Apartment</div>  
-              <div class="col-md-3"><i class="fa fa-bath"></i> 1 Bathroom(s)</div>  
-              <div class="col-md-3"><i class="fa fa-bed"></i> 1 Bedroom(s)</div>  
-              <div class="col-md-3"><i class="fa fa-group"></i> 1 Bedroom(s)</div>  
-              <div class="col-md-3"><i class="fa fa-umbrella"></i> 1 Fullu Funished(s)</div>  
+            <div class="form-group">
+              <input type="text" name="" placeholder="Your phone" />
             </div>
+            <div class="form-group">
+              <input type="email" name="" placeholder="Your email" />
+            </div>
+            <a href="#" class="btn btn--red btn--full">Request Inspectation</a>
+            <a href="#" class="link-share"><i class="fa fa-heart-o"></i> Favorite</a>
+            <a href="#" class="link-share"><i class="fa fa-envelope-o"></i> Share</a>
+          </form>
+        </div>
 
-            <h3 class="block-title" id="desciption">Description</h3>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodc tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-
-            <h3 class="block-title" id="policy">POLICY</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodc tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
-
-            <h3 class="block-title" id="amenities">AMENITIES</h3>
-            <h3 class="block-title" id="facilities">FACITLITIES</h3>
-            <h3 class="block-title" id="keywords">KEYWORDS</h3>
-            <div class="wrap-tag">
-              <span class="tag">Pet Allowed</span>
-              <span class="tag">Pet Allowed</span>
-              <span class="tag">Pet Allowed</span>
-              <span class="tag active">Pet Allowed</span>
-              <span class="tag">Pet Allowed</span>
+        <div class="block-info">
+          <h3 class="block-title">VIEW PROJECT INFO</h3>
+          <div class="item-info">
+            <figure>
+              <a href="#"><img src="assets/images/dummy/img-1.jpg" /></a>
+            </figure>
+            <div class="item-desc">
+              <h3><a href="#">Starhill</a></h3>
+              <p>DISTRICT 7 - 43 FLOORS - 900 UNITS</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="block-signup">
-            <span class="logo-icon"></span>
-            <p><b>$1,200</b> per month</p>
-            <span class="bg--green tag">POPULAR <i class="fa fa-star"></i></span>
-            <span><i class="fa fa-eye"></i> 230 views</span>
-            <form>
-              <div class="form-group">
-                <input type="text" name="" placeholder="Your name" />
-              </div>
-              <div class="form-group">
-                <input type="text" name="" placeholder="Your phone" />
-              </div>
-              <div class="form-group">
-                <input type="email" name="" placeholder="Your email" />
-              </div>
-              <a href="#" class="btn btn--red btn--full">Request Inspectation</a>
-              <a href="#" class="link-share"><i class="fa fa-heart-o"></i> Favorite</a>
-              <a href="#" class="link-share"><i class="fa fa-envelope-o"></i> Share</a>
-            </form>
-          </div>
-
-          <div class="block-info">
-            <h3 class="block-title">VIEW PROJECT INFO</h3>
-            <div class="item-info">
-              <figure>
-                <a href="#"><img src="assets/images/dummy/img-1.jpg" /></a>
-              </figure>
-              <div class="item-desc">
-                <h3><a href="#">Starhill</a></h3>
-                <p>DISTRICT 7 - 43 FLOORS - 900 UNITS</p>
-              </div>
-            </div>
-          </div>
-          <div class="block-neibourhood">
-            <h3 class="block-title">VIEW NEIBOURHOOD</h3>
-            <div class="item-info">
-              <figure>
-                <a href="#"><img src="assets/images/dummy/img-1.jpg" /></a>
-              </figure>
-              <div class="item-desc">
-                <h3><a href="#">Phu My Hung</a></h3>
-                <p>SAI GON MORDERN URBAN DISTRICT</p>
-              </div>
+        <div class="block-neibourhood">
+          <h3 class="block-title">VIEW NEIBOURHOOD</h3>
+          <div class="item-info">
+            <figure>
+              <a href="#"><img src="assets/images/dummy/img-1.jpg" /></a>
+            </figure>
+            <div class="item-desc">
+              <h3><a href="#">Phu My Hung</a></h3>
+              <p>SAI GON MORDERN URBAN DISTRICT</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="map-detail" data-module="MapDetail" data-pos =  "{ myType: 10.785 , count: 106.701 }">
-      <div class="map-content" id="map">
+  <section class="map-detail" data-module="MapDetail" data-pos =  "{ myType: 10.785 , count: 106.701 }">
+    <div class="map-content" id="map">
 
-        <script type="text/javascript">
-        var citymap = {
-          chicago: {
-            center: {lat: 10.785, lng: 106.701},
-            population: 2714856
-          }
-        };
-
-        var apartment = {
-          chicago: {
-            center: {lat: 10.785, lng: 106.701},
-            population: 2714856
-          }
-        };
-
-        function initMap() {
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 17,
-            center: {lat: 10.785, lng: 106.701}
-          });
-
-          for (var area in apartment) {
-            var cityCircle = new google.maps.Circle({
-              strokeColor: '#2378A7',
-              strokeOpacity: 0.8,
-              strokeWeight: 2,
-              fillColor: '#2378A7',
-              fillOpacity: 0.35,
-              map: map,
-              center: apartment[area].center,
-              radius: 200
-            });
-          }
+      <script type="text/javascript">
+      var citymap = {
+        chicago: {
+          center: {lat: 10.785, lng: 106.701},
+          population: 2714856
         }
-      
-        </script>
+      };
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwnpZ3COgfRLoO4wEEK2qjYJpUqj8eY4E&callback=initMap">
-        </script>
+      var apartment = {
+        chicago: {
+          center: {lat: 10.785, lng: 106.701},
+          population: 2714856
+        }
+      };
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: {lat: 10.785, lng: 106.701}
+        });
+
+        for (var area in apartment) {
+          var cityCircle = new google.maps.Circle({
+            strokeColor: '#2378A7',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#2378A7',
+            fillOpacity: 0.35,
+            map: map,
+            center: apartment[area].center,
+            radius: 200
+          });
+        }
+      }
+      
+      </script>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwnpZ3COgfRLoO4wEEK2qjYJpUqj8eY4E&callback=initMap">
+      </script>
     </div>
   </section>
 

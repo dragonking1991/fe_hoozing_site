@@ -275,7 +275,7 @@ hr {
 }
 
 .tag {
-	padding: 3px 10px;
+	padding: 3px 5px;
 	border-radius: 3px;
 	text-align: center;
 	margin-right: 5px;
@@ -353,8 +353,14 @@ section {
 	padding: 10px 0 20px;
 }
 
-.link-under {
-	text-decoration:underline;
+.link-district {
+	display: inline-block;
+	text-transform: capitalize;
+	li {
+		display: inline-block;
+		text-decoration:underline;
+		list-style: none;
+	}
 }
 
 .project-title {

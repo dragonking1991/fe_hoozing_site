@@ -1,6 +1,6 @@
 header {
   background-size: cover;
-  height: 42px;
+  min-height: 42px;
   position: relative;
   z-index: 101;
   padding: 10px 30px;
@@ -29,13 +29,86 @@ header {
     max-width: 135px;
   }
 }
+.wrapper-inputtags {
+  @include absolute(top 50% left 200px);
+  border:1px solid #333;
+  padding: 5px 10px;
+  min-height: 45px;
+  width: auto;
+  max-width: 500px;
+  border-radius: 3px;
+  transform:translateY(-50%);
+  vertical-align: middle;
+  
+  .fa {
+    color: #999;
+    font-size: 20px;
+    margin-right: 0;
+  }
+
+  input {
+    border:none;
+    height: 35px;
+    width: auto;
+    min-width: 150px;
+  }
+}
+#searchHeader {
+  padding-left: 40px;
+
+  &:before {
+    content:"\f002";
+    display: block;
+    color: #999;
+    @include absolute(top 22px left 10px);
+    transform:translateY(-50%);
+    font: normal normal normal 20px/1 FontAwesome;
+  } 
+  .btn-close {
+    background: none;
+    border:none;
+    outline: none;
+    padding: 0;
+    float: right;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 20px;
+  }
+}
+
+
+.bootstrap-tagsinput {
+  display: inline-block;
+
+  * {
+    display: inline-block;
+  }
+
+  [data-role="remove"] {
+    color:#333;
+    @extend .fa;
+    @extend .fa-close;
+    cursor: pointer;
+    &:before {
+      border-left: 1px solid;
+      padding-left: 3px;
+      margin-left: 3px;
+      font-size: 16px;
+    }
+  }
+  .label-info {
+    display: inline-block;
+    background: $gray-light;
+  }
+}
+
 
 nav {
   @include absolute(top left);
   width: 100%;
   @include screen(medium){
     position: relative;
-    max-width: 1000px;
+    max-width: 50%;
     margin: 0 auto;
     height: 100%; 
     float: right;

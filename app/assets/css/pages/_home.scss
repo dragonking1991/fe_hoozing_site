@@ -22,11 +22,8 @@
 	a {
 		margin:0 10px;
 	}
-	p,a{
+	label,a{
 		color: #fff;
-	}
-	input {
-		width: 100%;
 	}
 
 	[class^='col-'] {
@@ -54,6 +51,16 @@
 
 .search-map {
 	position: relative;
+	text-align: left;
+	background: #fff;
+	padding: 5px;
+	border:1px solid $color-light;
+
+	input {
+		border:none;
+		height: 35px;
+		min-width: 250px;
+	}
 
 	&:after {
     content:'\f041';
@@ -115,6 +122,7 @@
 		&:hover {
 			.slick-arrow {
 				opacity: 1;
+				background: rgba(0,0,0,0.3);
 			}
 			.thumb-mask:hover {
 				color: #fff;
@@ -301,13 +309,57 @@
 }
 
 .thumb-service, .icon-service {
-	color: $color-light;
+	color: #333;
+
 	span {
 		white-space: nowrap;
 		margin-right: 12px;
 	}
 	i {
 		width: 15px;
+		text-align: left;
+	}
+}
+
+.tags {
+	color: $color-light;
+	border: 1px solid;
+	display: inline-block;
+	padding: 8px;
+	border-radius: 3px;
+	margin-right: 5px;
+
+	&.active {
+		background: $blue;
+		color: #fff;
+	}
+	@include screen(medium) {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.thumb-service{
+	&:after {
+		@extend %clearfix;
+	}
+	li {
+		padding: 5px 0;
+	}
+}
+
+.thumb--col-2 {
+	li {
+		width: 50%;
+		float: left;
+	}
+}
+
+.thumb--col-4 {
+	li {
+		width: 25%;
+		float: left;
 	}
 }
 

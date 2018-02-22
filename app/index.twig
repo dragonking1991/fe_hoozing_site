@@ -5,87 +5,92 @@
 
 	<div class="banner-wrapper text-center">
 		<h1>hello Saigon</h1>
-		<p>Popuplar Areas: 
-			<a href="#" class="link-under">district 1</a> 
-			<a href="#" class="link-under">district 2</a> 
-			<a href="#" class="link-under">district 3</a> 
-			<a href="#" class="link-under">district 7</a>
-			<a href="#" class="link-under">district 10</a>
-		</p>
+		<label>Popuplar Areas:</label>
+			<ul class="link-district">
+				<li><a href="#">district 1</a> </li>
+				<li><a href="#">district 2</a> </li>
+				<li><a href="#">district 3</a> </li>
+				<li><a href="#">district 7</a></li>
+				<li><a href="#">district 10</a></li>
+			</ul>
 
-		<div class="row">
-			<div class="col-md-8">
-				<div class="form-group search-map">
-					<input type="text" name="" placeholder="Searcb by Locality or Project Name" />
+		<form id="search-banner">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="form-group search-map inputtags">
+				    <input type="text" value="District 1" id="search-header" data-role="tagsinput" placeholder="Searcb by Locality or Project Name" />
+					</div>
 				</div>
-			</div>
-			<div class="col-md-4 ">
-				<div class="select-wrapper">
-					<select name="type" id="type">
-						<option  disabled="disabled" selected="selected" value="">All Property Type</option>
-						<option value="Male">2000</option>
-						<option value="Female">2001</option>
-					</select>
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-2">
-				<div class="select-wrapper select-bed">
-					<select name="bath" id="bath">
-						<option disabled="disabled" selected="selected" value="">Any bed</option>
-						<option value="Male">1</option>
-						<option value="Female">2</option>
-					</select>
+				<div class="col-md-4 ">
+					<div class="select-wrapper">
+						<select name="type" id="type">
+							<option  disabled="disabled" selected="selected" value="">All Property Type</option>
+							<option value="Male">2000</option>
+							<option value="Female">2001</option>
+						</select>
+					</div>
 				</div>
 			</div>
 
-			<div class="col-md-2">
-				<div class="select-wrapper select-bath">
-					<select name="bath" id="bath">
-						<option disabled="disabled" selected="selected" value="">Any bath</option>
-						<option value="Male">1</option>
-						<option value="Female">2</option>
-					</select>
+			<div class="row">
+				<div class="col-md-2">
+					<div class="select-wrapper select-bed">
+						<select name="bath" id="bath">
+							<option disabled="disabled" selected="selected" value="">Any bed</option>
+							<option value="Male">1</option>
+							<option value="Female">2</option>
+						</select>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-2 ">
-				<div class="select-wrapper select-range">
-					<span class="range-text">Min</span>
-					<select name="min" id="min">
-						<option disabled="disabled" selected="selected" value="">0</option>
-						<option value="Male">$1000</option>
-						<option value="Female">$2000</option>
-					</select>
+
+				<div class="col-md-2">
+					<div class="select-wrapper select-bath">
+						<select name="bath" id="bath">
+							<option disabled="disabled" selected="selected" value="">Any bath</option>
+							<option value="Male">1</option>
+							<option value="Female">2</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-2 ">
+					<div class="select-wrapper select-range">
+						<span class="range-text">Min</span>
+						<select name="min" id="min">
+							<option disabled="disabled" selected="selected" value="">0</option>
+							<option value="Male">$1000</option>
+							<option value="Female">$2000</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-md-2 ">
+					<div class="select-wrapper select-range">
+						<span class="range-text">Max</span>
+						<select name="max" id="max">
+							<option disabled="disabled" selected="selected" value="">0</option>
+							<option value="Male">$1000</option>
+							<option value="Female">$2000</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-md-4 ">
+					<div class="select-wrapper">
+						<select name="bath" id="bath">
+							<option disabled="disabled" selected="selected" value="">Anybath</option>
+							<option value="Male">1</option>
+							<option value="Female">2</option>
+						</select>
+					</div>
 				</div>
 			</div>
 
-			<div class="col-md-2 ">
-				<div class="select-wrapper select-range">
-					<span class="range-text">Max</span>
-					<select name="max" id="max">
-						<option disabled="disabled" selected="selected" value="">0</option>
-						<option value="Male">$1000</option>
-						<option value="Female">$2000</option>
-					</select>
-				</div>
-			</div>
+			<div class="btn-wrapper">
+				<a href="#" class="btn btn--red">Search</a>
+			</div>	
+		</form>
 
-			<div class="col-md-4 ">
-				<div class="select-wrapper">
-					<select name="bath" id="bath">
-						<option disabled="disabled" selected="selected" value="">Anybath</option>
-						<option value="Male">1</option>
-						<option value="Female">2</option>
-					</select>
-				</div>
-			</div>
-		</div>
-
-		<div class="btn-wrapper">
-			<a href="#" class="btn btn--red">Search</a>
-		</div>
+		
 
 		<div class="site-sumary">
 			<p>Total Properties <br /><span>3125</span></p>

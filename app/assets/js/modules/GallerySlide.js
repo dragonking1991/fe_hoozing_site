@@ -7,7 +7,7 @@ export default class GallerySlide {
       asNavFor: '.gallery__for',
       centerMode: true,
       adaptiveHeight:false,
-      focusOnSelect: true
+      focusOnSelect: true,
     };
 
     var forSlide = {
@@ -18,9 +18,12 @@ export default class GallerySlide {
       asNavFor: '.gallery__nav'
     }
 
+    $(el).find('.gallery__for').slick(forSlide); 
+    $(el).find('.gallery__nav').slick(navSlide).on('afterChange', function(event, slick, currentSlide){
+      $(".gallery__slide").find('.counter-slide').html((currentSlide+1) + '/' + slick.slideCount);
+    });
+    
     $('#galleryDetail').on('show.bs.modal', function (e) {
-      $(el).find('.gallery__for').slick(forSlide); 
-      $(el).find('.gallery__nav').slick(navSlide);
       $(el).find('.gallery__for').slick('slickGoTo', 1 );
     });
   }

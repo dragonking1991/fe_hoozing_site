@@ -54,11 +54,12 @@ export default class PopupDefined {
 
       
       this.popupClose = ele.addEle('span', 'popup__close');
-      this.popupGallery = ele.addEle('div', 'thumb-gallery');
+      this.popupGallery = ele.addEle('div', 'thumb-gallery carousel slide');
       this.popupInfo = ele.addEle('div', 'thumb-info');
+      this.popupGallery.setAttribute("data-ride", "carousel");
 
       //popupGallery
-      this.thumbList = ele.addEle('ul', 'thumb-list slider-wrapper');
+      this.thumbList = ele.addEle('ul', 'thumb-list carousel-inner');
 
       this.love  = ele.addEle('span', 'love');
       this.iconLove  = ele.addEle('i', 'fa fa-heart-o');
@@ -97,6 +98,16 @@ export default class PopupDefined {
         this.carouselItem.appendChild(this.imageThumb);
         this.thumbList.appendChild(this.carouselItem);
         this.thumbList.setAttribute("data-module", "ThumbSlide");
+        // this.thumbList.slick({
+        //   fade: false,
+        //   dots:true,
+        //   infinite: true,
+        //   arrows: true,
+        //   autoplay: true,
+        //   autoplaySpeed: 5000,
+        //   slidesToShow: 1,
+        //   slidesToScroll: 1
+        // });
 
       }
       this.priceTag.innerHTML  = price;
