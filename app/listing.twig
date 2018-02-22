@@ -259,48 +259,12 @@
     </div>
   </section>
 
-  <section class="map-detail" data-module="MapDetail" data-pos =  "{ myType: 10.785 , count: 106.701 }">
+  <section class="map-detail" data-module="MapDetail" data-lat ="10.785" data-lng ="106.701">
+    <div class="map-info">
+      <h3>Resort like Stone-Hill</h3>
+      <p><i class="fa fa-map-marker"></i> <span>District 7</span></p>
+    </div>
     <div class="map-content" id="map">
-
-      <script type="text/javascript">
-      var citymap = {
-        chicago: {
-          center: {lat: 10.785, lng: 106.701},
-          population: 2714856
-        }
-      };
-
-      var apartment = {
-        chicago: {
-          center: {lat: 10.785, lng: 106.701},
-          population: 2714856
-        }
-      };
-
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 17,
-          center: {lat: 10.785, lng: 106.701}
-        });
-
-        for (var area in apartment) {
-          var cityCircle = new google.maps.Circle({
-            strokeColor: '#2378A7',
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: '#2378A7',
-            fillOpacity: 0.35,
-            map: map,
-            center: apartment[area].center,
-            radius: 200
-          });
-        }
-      }
-      
-      </script>
-
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwnpZ3COgfRLoO4wEEK2qjYJpUqj8eY4E&callback=initMap">
-      </script>
     </div>
   </section>
 
@@ -308,44 +272,55 @@
     <div class="container">
       <h2 class="section-title">Other Listing in Starhills</h2>
 
-
-      <table id="myTable" data-module="TableSort">
-        <tr>
-          <th>Name</th>
-          <th>Country</th>
-        </tr>
-        <tr>
-          <td>Berglunds snabbkop</td>
-          <td>Sweden</td>
-        </tr>
-        <tr>
-          <td>North/South</td>
-          <td>UK</td>
-        </tr>
-        <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Germany</td>
-        </tr>
-        <tr>
-          <td>Koniglich Essen</td>
-          <td>Germany</td>
-        </tr>
-        <tr>
-          <td>Magazzini Alimentari Riuniti</td>
-          <td>Italy</td>
-        </tr>
-        <tr>
-          <td>Paris specialites</td>
-          <td>France</td>
-        </tr>
-        <tr>
-          <td>Island Trading</td>
-          <td>UK</td>
-        </tr>
-        <tr>
-          <td>Laughing Bacchus Winecellars</td>
-          <td>Canada</td>
-        </tr>
+      <table id="myTable" data-module="TableSort" data-toggle="table"  data-sort-name="code" data-sort-order="asc">
+        <thead>
+          <tr>
+            <th data-field="code" data-sortable="true">House code</th>
+            <th data-field="numBed" data-sortable="true">Bedroom</th>
+            <th data-field="numBath" data-sortable="true">Bathroom</th>
+            <th data-field="area" data-sortable="true">Area</th>
+            <th data-field="floor" data-sortable="true">Floor</th>
+            <th data-field="furnished" data-sortable="true">Furnished</th>
+            <th data-field="view" data-sortable="true">View</th>
+            <th data-field="price" data-sortable="true">Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AH02163</td>
+            <td>1 bed</td>
+            <td>1 bath</td>
+            <td>80sqm</td>
+            <td>6th</td>
+            <td>furnished</td>
+            <td>River</td>
+            <td>$1000</td>
+            <td><a href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>BH02165</td>
+            <td>1 bed</td>
+            <td>1 bath</td>
+            <td>80sqm</td>
+            <td>6th</td>
+            <td>empty</td>
+            <td>River</td>
+            <td>$2000</td>
+            <td><a href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>H02165</td>
+            <td>1 bed</td>
+            <td>1 bath</td>
+            <td>70sqm</td>
+            <td>6th</td>
+            <td>empty</td>
+            <td>River</td>
+            <td>$3000</td>
+            <td><a href="#">View</a></td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </section>

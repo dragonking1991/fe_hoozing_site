@@ -91,8 +91,8 @@ header {
     cursor: pointer;
     &:before {
       border-left: 1px solid;
-      padding-left: 3px;
-      margin-left: 3px;
+      padding-left: 5px;
+      margin-left: 5px;
       font-size: 16px;
     }
   }
@@ -313,4 +313,28 @@ nav {
       // border-top: 1px solid #fff;
     }
   }
+}
+.tt-suggestion  {
+  display: block;
+  padding: 0 5px;
+}
+.tt-cursor {
+  background: $gray-light;
+}
+.tt-hint {
+  top:2px !important;
+}
+.tt-input{
+  vertical-align:baseline !important;
+}
+.typeahead { 
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 300px;
+  font-size:1.5em;
+}
+.tt-menu { 
+  width:300px;
+  background: #fff;
 }

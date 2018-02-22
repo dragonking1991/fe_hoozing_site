@@ -4,10 +4,26 @@
 	}
 }
 
+.map-detail {
+	position: relative;
+}
 .map-content {
 	min-height: 500px; 
 }
 
+.map-info {
+	@include absolute(top 30px left 60px);
+	width: 300px;
+	border:2px solid $blue;
+	z-index: 1;
+	background: #fff;
+	padding: 10px 20px;
+
+	h3 {
+    font-size: 22px;
+    text-transform: none;
+	}
+}
 .house-code {
 	padding: 10px 20px ;
 	position: relative;

@@ -14,11 +14,13 @@
 			<li><a href="#">district 10</a></li>
 		</ul>
 
-		<form id="search-banner">
+		<form id="banner-search" data-module="searchGroup">
 			<div class="row">
 				<div class="col-md-8">
 					<div class="form-group search-map inputtags">
-						<input type="text" value="District 1" id="search-banner" data-role="tagsinput" placeholder="Searcb by Locality or Project Name" />
+						<div id="input-banner">
+							<input type="text" value="District 1" data-role="tagsinput" placeholder="Searcb by Locality or Project Name" />
+						</div>
 					</div>
 				</div>
 				<div class="col-md-4 ">
@@ -91,27 +93,19 @@
 		</form>
 
 		<script>
-		var countries = new Bloodhound({
-			datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-			queryTokenizer: Bloodhound.tokenizers.whitespace,
-			prefetch: {
-				url: 'countries.json',
-				filter: function(list) {
-					return $.map(list, function(name) {
-						return { name: name }; });
-				}
-			}
-		});
-		countries.initialize();
+		// var countries = new Bloodhound({
+		// 	datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+		// 	queryTokenizer: Bloodhound.tokenizers.whitespace,
+		// 	prefetch: {
+		// 		url: 'countries.json',
+		// 		filter: function(list) {
+		// 			return $.map(list, function(name) {
+		// 				return { name: name }; });
+		// 		}
+		// 	}
+		// });
+		// countries.initialize();
 
-		$('#search-banner').tagsinput({
-			typeaheadjs: {
-				name: 'countries',
-				displayKey: 'name',
-				valueKey: 'name',
-				source: countries.ttAdapter()
-			}
-		});
 		</script>
 
 		

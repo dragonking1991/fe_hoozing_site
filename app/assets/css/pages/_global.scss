@@ -130,26 +130,12 @@ i {
 	color: #ff0000;
 }
 
-.desc {
-	margin: 15px auto;
-	padding: 0 7%;
-	font-size: 13px;
-	text-align: center;
-	line-height: 18px;
-	max-width: 540px;
-	@include screen(medium) {
-		max-width: 650px;
-		font-size: 16px;
-		line-height: 20px;
-	}
-}
 
 table, th, td {
 }
 
 table {
 	width: 100%;
-	margin: 10px 0;
 	text-align: left;
 }
 

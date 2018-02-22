@@ -11,5 +11,9 @@ export default class ThumbSlide {
       slidesToShow: 1,
       slidesToScroll: 1
     });
+
+    $(document).on('.love','click', function() {
+      $(this).addClass('loved').find(".fa-heart-o").removeClass('fa-heart-o').addClass('fa-heart');
+    });
   }
 }
