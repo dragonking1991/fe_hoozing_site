@@ -6,19 +6,19 @@
 	<div class="banner-wrapper text-center">
 		<h1>hello Saigon</h1>
 		<label>Popuplar Areas:</label>
-			<ul class="link-district">
-				<li><a href="#">district 1</a> </li>
-				<li><a href="#">district 2</a> </li>
-				<li><a href="#">district 3</a> </li>
-				<li><a href="#">district 7</a></li>
-				<li><a href="#">district 10</a></li>
-			</ul>
+		<ul class="link-district">
+			<li><a href="#">district 1</a> </li>
+			<li><a href="#">district 2</a> </li>
+			<li><a href="#">district 3</a> </li>
+			<li><a href="#">district 7</a></li>
+			<li><a href="#">district 10</a></li>
+		</ul>
 
 		<form id="search-banner">
 			<div class="row">
 				<div class="col-md-8">
 					<div class="form-group search-map inputtags">
-				    <input type="text" value="District 1" id="search-header" data-role="tagsinput" placeholder="Searcb by Locality or Project Name" />
+						<input type="text" value="District 1" id="search-banner" data-role="tagsinput" placeholder="Searcb by Locality or Project Name" />
 					</div>
 				</div>
 				<div class="col-md-4 ">
@@ -89,6 +89,30 @@
 				<a href="#" class="btn btn--red">Search</a>
 			</div>	
 		</form>
+
+		<script>
+		var countries = new Bloodhound({
+			datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+			queryTokenizer: Bloodhound.tokenizers.whitespace,
+			prefetch: {
+				url: 'countries.json',
+				filter: function(list) {
+					return $.map(list, function(name) {
+						return { name: name }; });
+				}
+			}
+		});
+		countries.initialize();
+
+		$('#search-banner').tagsinput({
+			typeaheadjs: {
+				name: 'countries',
+				displayKey: 'name',
+				valueKey: 'name',
+				source: countries.ttAdapter()
+			}
+		});
+		</script>
 
 		
 
