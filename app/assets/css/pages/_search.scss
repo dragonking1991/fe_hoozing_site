@@ -16,9 +16,18 @@
   width: 60%;
   float: right;
   min-height: 100vh;
+  display: none;
+  &.show {
+    display: inline-block;
+  }
 }
 
-
+.tab-content {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
 
 .search__list {
   font-size: 16px;
@@ -49,15 +58,6 @@
   }
 }
 
-.tab-content {
-  display: none;
-  &.active {
-    display: block;
-  }
-}
-.map-result {
-  display: none;
-}
 
 .search__result {
   font-weight: bold;
@@ -86,6 +86,11 @@
 
 .search-content {
   padding: 30px;
+}
+
+.search-content--reduce {
+  display: inline-block;
+  width: 40%;
 }
 
 .search-detail {
