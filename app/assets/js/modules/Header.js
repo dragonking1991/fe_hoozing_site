@@ -36,5 +36,10 @@ export default class Header {
 		$('.menu-user,.open--user-menu').click(function(event){
 		    event.stopPropagation();
 		});
+		$('#searchHeader .btn-close').click(function(event){
+			$('#searchHeader input').tagsinput('removeAll');
+		});
+
+
 	}
 }

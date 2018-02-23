@@ -32,14 +32,28 @@ header {
 .wrapper-inputtags {
   @include absolute(top 50% left 200px);
   border:1px solid #333;
-  padding: 5px 10px;
-  min-height: 45px;
+  padding: 0px;
+  height: 45px;
   width: auto;
   max-width: 500px;
+  overflow: hidden;
   border-radius: 3px;
-  transform:translateY(-50%);
+  transform:translate(20px,-50%);
   vertical-align: middle;
-  
+
+  &.collapse {
+    opacity: 0;
+  }
+
+  &.collapsing {
+    opacity: 0;
+  }
+
+  &.show {
+    transition:0.5s ease-out;
+    transform: translate(0,-50%);
+    opacity: 1;
+  }
   .fa {
     color: #999;
     font-size: 20px;
@@ -53,16 +67,21 @@ header {
     min-width: 150px;
   }
 }
-#searchHeader {
-  padding-left: 40px;
 
-  &:before {
-    content:"\f002";
-    display: block;
+.form-wrapper {
+  position: relative;
+  padding: 5px;
+  padding-left: 35px;
+}
+#searchHeader {
+
+
+  .btn-submit {
     color: #999;
-    @include absolute(top 22px left 10px);
-    transform:translateY(-50%);
-    font: normal normal normal 20px/1 FontAwesome;
+    @include absolute(bottom 12px left 8px);
+    background: none;
+    border: none;
+    outline: none;
   } 
   .btn-close {
     background: none;
@@ -80,7 +99,7 @@ header {
 .bootstrap-tagsinput {
   display: inline-block;
 
-  * {
+  > * {
     display: inline-block;
   }
 

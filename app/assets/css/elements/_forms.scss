@@ -313,7 +313,7 @@ input {
   }
 
   select {
-    padding: 0 30px 0 15px;
+    padding: 0 25px 0 15px;
     display: block;
     width: 100%;
     height: 45px;
@@ -369,7 +369,7 @@ input {
 
 .select-bath {
   select {
-    padding-left: 45px;
+    padding-left: 40px;
   }
   &:before {
     content:"\f2cd";
@@ -382,7 +382,7 @@ input {
 .select-bed {
   
   select {
-    padding-left: 45px;
+    padding-left: 40px;
   }
   &:before {
     content:"\f236";

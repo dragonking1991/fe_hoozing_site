@@ -1,8 +1,4 @@
 import googlemap from 'load-google-maps-api';
-import DOM from './DOM';
-// import Search from './SearchRedemption';
-import axios from 'axios';
-import PopupDefined from './PopupDefined';
 
 export default class MapDetail {
   constructor(el) {
