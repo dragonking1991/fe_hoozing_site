@@ -32,14 +32,15 @@ header {
 .wrapper-inputtags {
   @include absolute(top 50% left 200px);
   border:1px solid #333;
+  background: #fff;
   padding: 0px;
   height: 45px;
   width: auto;
   max-width: 500px;
-  overflow: hidden;
   border-radius: 3px;
   transform:translate(20px,-50%);
   vertical-align: middle;
+  z-index: 10;
 
   &.collapse {
     opacity: 0;
@@ -50,7 +51,7 @@ header {
   }
 
   &.show {
-    transition:0.5s ease-out;
+    transition:0.3s ease-out;
     transform: translate(0,-50%);
     opacity: 1;
   }
@@ -61,6 +62,7 @@ header {
   }
 
   input {
+    // display: none;
     border:none;
     height: 35px;
     width: auto;
@@ -68,13 +70,13 @@ header {
   }
 }
 
+
 .form-wrapper {
   position: relative;
-  padding: 5px;
-  padding-left: 35px;
+  padding: 5px 15px 5px 35px;
 }
 #searchHeader {
-
+  display: block;
 
   .btn-submit {
     color: #999;
@@ -98,6 +100,9 @@ header {
 
 .bootstrap-tagsinput {
   display: inline-block;
+  // max-width: 360px;
+  // overflow: hidden;
+  // height: 40px;
 
   > * {
     display: inline-block;
@@ -263,6 +268,15 @@ nav {
       }
     }
 
+    .open-search {
+      opacity: 0;
+      transiton:0.5s ease-out;
+
+      &.collapsed {
+        opacity: 1;
+      }
+    }
+
     @for $i from 1 to 7 {
       &:nth-child(#{$i}) {
         a {
@@ -335,7 +349,7 @@ nav {
 }
 .tt-suggestion  {
   display: block;
-  padding: 0 5px;
+  padding: 5px;
 }
 .tt-cursor {
   background: $gray-light;
@@ -354,6 +368,10 @@ nav {
   font-size:1.5em;
 }
 .tt-menu { 
-  width:300px;
+  width:auto;
+  min-width: 200px;
   background: #fff;
+  top: 120% !important;
+  border-radius: 3px;
 }
+

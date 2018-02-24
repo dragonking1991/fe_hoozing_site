@@ -14,13 +14,17 @@ export default class searchGroup {
 
     keysearch.initialize();
 
-    $('input').tagsinput({
+    $('.wrapper-inputtags input').tagsinput({
       typeaheadjs: {
         name: 'keysearch',
         displayKey: 'name',
         valueKey: 'name',
         source: keysearch.ttAdapter()
       }
+    });
+
+    $('.close-form').click(function(event){
+      $('#search-header').tagsinput('removeAll');
     });
 
   }

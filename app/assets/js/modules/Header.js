@@ -36,9 +36,13 @@ export default class Header {
 		$('.menu-user,.open--user-menu').click(function(event){
 		    event.stopPropagation();
 		});
-		$('#searchHeader .btn-close').click(function(event){
-			$('#searchHeader input').tagsinput('removeAll');
-		});
+		// $('#searchHeader .btn-close').click(function(event){
+		// 	$('#searchHeader input').tagsinput('destroy');
+		// });
+		
+		// $('.wrapper-inputtags').click(function(event){
+		// 	$(this).find('input').tagsinput('focus');
+		// });
 
 
 	}
