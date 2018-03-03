@@ -385,3 +385,38 @@ section {
 	}
 }
 
+.tt-suggestion  {
+	display: block;
+	padding: 5px;
+	@include screen(medium){
+		&:hover {
+			background: $gray-light;
+			cursor: pointer;
+		}
+	}  
+}
+.tt-cursor {
+	background: $gray-light;
+}
+.tt-hint {
+	top:2px !important;
+}
+.tt-input{
+	vertical-align:baseline !important;
+}
+.typeahead { 
+	border: 1px solid #CCCCCC;
+	border-radius: 4px;
+	padding: 8px 12px;
+	width: 300px;
+	font-size:1.5em;
+}
+.tt-menu { 
+	width:auto;
+	min-width: 200px;
+	background: #fff;
+	padding: 10px;
+	top: 120% !important;
+	border-radius: 3px;
+}
+

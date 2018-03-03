@@ -162,3 +162,39 @@
 .modal.and.carousel {
   position: fixed; // Needed because the carousel overrides the position property
 }
+
+.bar-request {
+	position: fixed;
+	top: -100px;
+	left: 0;
+	height: auto;
+	width: 100%;
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+	padding: 10px 0;
+	z-index: 9;
+	transition:0.5s;
+
+	&.show {
+		top: 0;
+	}
+
+
+	h3 {
+		font-size: 18px;
+		margin: 12px 0;
+	}
+	span {
+		margin-left: 25px;
+		font-weight: normal;
+		text-transform: none;
+	}
+	.btn {
+		z-index: 11;
+		position: relative;
+	}
+}
+
+// .gallery-house {
+// 	li
+// }

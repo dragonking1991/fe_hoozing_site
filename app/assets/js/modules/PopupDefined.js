@@ -61,20 +61,21 @@ export default class PopupDefined {
       //popupGallery
       this.thumbList = ele.addEle('ul', 'thumb-list carousel-inner');
 
-      this.love  = ele.addEle('span', 'love');
-      this.iconLove  = ele.addEle('i', 'fa fa-heart-o');
-      this.love.appendChild(this.iconLove); 
+      // this.love  = ele.addEle('span', 'love');
+      // this.iconLove  = ele.addEle('i', 'fa fa-heart-o');
+      // this.love.appendChild(this.iconLove); 
       this.priceTag  = ele.addEle('span', 'price-tag');
 
       //popupInfo
       this.houseCode = ele.addEle('h4');
-      this.houseLink  = ele.addEle('a', "link");
+      this.houseLink  = ele.addEle('a',);
       this.houseTitle  = ele.addEle('h3');
-      this.houseLink.appendChild(this.houseTitle);
+      this.houseTitle.appendChild(this.houseLink);
 
 
-      ele.multiEle(this.popupGallery, [this.thumbList, this.love, this.priceTag]);
-      ele.multiEle(this.popupInfo, [this.houseCode, this.houseLink, this.popupText]);
+      ele.multiEle(this.popupGallery, [this.thumbList, this.priceTag]);
+      // ele.multiEle(this.popupGallery, [this.thumbList, this.love, this.priceTag]);
+      ele.multiEle(this.popupInfo, [this.houseCode, this.houseTitle, this.popupText]);
 
       ele.multiEle(this.popupWrapper, [this.popupClose, this.popupGallery, this.popupInfo]);
       ele.multiEle(this.content, [this.popupPrice, this.popupWrapper]);
@@ -98,21 +99,10 @@ export default class PopupDefined {
         this.carouselItem.appendChild(this.imageThumb);
         this.thumbList.appendChild(this.carouselItem);
         this.thumbList.setAttribute("data-module", "ThumbSlide");
-        // this.thumbList.slick({
-        //   fade: false,
-        //   dots:true,
-        //   infinite: true,
-        //   arrows: true,
-        //   autoplay: true,
-        //   autoplaySpeed: 5000,
-        //   slidesToShow: 1,
-        //   slidesToScroll: 1
-        // });
-
       }
       this.priceTag.innerHTML  = price;
       this.houseCode.innerHTML  = `house code ${code}`;
-      this.houseTitle.innerHTML  = name;
+      this.houseLink.innerHTML  = name;
       this.houseLink.href = linkAp;
     }
 

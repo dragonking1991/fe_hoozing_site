@@ -1,48 +1,31 @@
 {% extends "_templates/layout.twig" %}
 
 {% block page %}
+<div class="bar-request">
+  <div class="container">
+    <a href="#" class="btn btn--red pull-right">Request Inspectation</a>
+    <h3>
+      RESORT - LIKE NEW APARTMENT IN STARHILL DISTRICT 7
+      <span class="price"><b>$1,200</b> per month</span>
+      <span class="bg--green tag">POPULAR <i class="fa fa-star"></i></span>
+    </h3>
+  </div>
+</div>
+
 <div class="container">
-
-  <ul class="nav nav-pills nav-stacked">
-    <li><a href="#galleryDetail" data-toggle="modal">Open Lightbox</a></li>
-  </ul>
-
   <div class="modal fade" id="galleryDetail">
     <div class="modal-dialog">
       <div class="modal-content">
         <a href="#galleryDetail" data-toggle="modal" class="close-modal"><i class="fa fa-close"></i></a>
         <div class="modal-body row">
-          <div class="col-md-8 gallery__slide" data-module="GallerySlide">
-            <ul class="slider gallery__for">
-              <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img5.jpg" alt=""></li>
-            </ul>
-            <p class="text-left">Photo <span class="counter-slide">3/9</span>: Bath room<br /> Real photo taken by Hoozing</p>
-            <ul class="slider gallery__nav">
-              <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img5.jpg" alt=""></li>
-            </ul>
+          <div class="col-md-8 gallery__slide" data-module="GalleryHouse">
+            <ul class="slider gallery__for"></ul>
+            <p class="text-left">Photo <span class="counter-slide">3/9</span>: <span class="room-name">Bath room</span><br /> Real photo taken by Hoozing</p>
+            <ul class="slider gallery__nav"></ul>
           </div>
           <div class="col-md-4 gallery__info">
-            <h3>Resort-like Apartment in Starhill District 7</h3>
+            <h3>house name</h3>
             <ul class="thumb-service thumb--col-2">
-              <li><i class="fa fa-map-marker"></i> District 7</li>
-              <li><i class="fa fa-bed"></i> 1 bed </li>
-              <li><i class="fa fa-bath"></i> 1 bath</li>
               <li><i class="fa fa-map-marker"></i> District 7</li>
               <li><i class="fa fa-bed"></i> 1 bed </li>
               <li><i class="fa fa-bath"></i> 1 bath</li>         
@@ -91,7 +74,7 @@
           <h2> Resort - like new Apartment in Starhill district 7</h2>
           <div class="locate"><i class="fa fa-map-marker"></i> District 7</div>
 
-          <h3 class="block-title"> Description</h3>
+          <h3 class="block-title"> Overview</h3>
 
           <ul class="thumb-service thumb--col-4">
             <li><i class="fa fa-building-o"></i> Apartment</li>  
@@ -99,6 +82,18 @@
             <li><i class="fa fa-bed"></i> 1 Bedroom(s)</li>  
             <li><i class="fa fa-group"></i> 1 Bedroom(s)</li>  
             <li><i class="fa fa-umbrella"></i> 1 Fullu Funished(s)</li>  
+          </ul>
+
+          <ul class="gallery-house row">
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img1.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img2.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img3.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img4.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img1.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img2.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img3.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img4.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img5.jpg" alt=""></a></li>
           </ul>
 
           <h3 class="block-title" id="desciption">Description</h3>
@@ -112,93 +107,50 @@
           <h3 class="block-title" id="amenities">AMENITIES</h3>
 
           <ul class="thumb-service thumb--col-4">
-            <li><i class="flaticon-a-badminton9"></i><span>badminton9</span></li>
-            <li><i class="flaticon-a-bicycle14"></i><span>bicycle14</span></li>
-            <li><i class="flaticon-a-cable4"></i><span>cable4</span></li>
-            <li><i class="flaticon-a-connection30"></i><span>connection30</span></li>
-            <li><i class="flaticon-a-cooking35"></i><span>cooking35</span></li>
-            <li><i class="flaticon-a-cooking7"></i><span>cooking7</span></li>
-            <li><i class="flaticon-a-covered16"></i><span>covered16</span></li>
-            <li><i class="flaticon-a-credit56"></i><span>credit56</span></li>
-            <li><i class="flaticon-a-customerservice14"></i><span>customerservice14</span></li>
-            <li><i class="flaticon-a-dog50"></i><span>dog50</span></li>
-            <li><i class="flaticon-a-first22"></i><span>first22</span></li>
-            <li><i class="flaticon-a-flame11"></i><span>flame11</span></li>
-            <li><i class="flaticon-a-fun"></i><span>fun</span></li>
-            <li><i class="flaticon-a-heating1"></i><span>heating1</span></li>
-            <li><i class="flaticon-a-kitchen56"></i><span>kitchen56</span></li>
-            <li><i class="flaticon-a-kitchen6"></i><span>kitchen6</span></li>
-            <li><i class="flaticon-a-logotype117"></i><span>logotype117</span></li>
-            <li><i class="flaticon-a-man244"></i><span>man244</span></li>
-            <li><i class="flaticon-a-medical12"></i><span>medical12</span></li>
-            <li><i class="flaticon-a-money385"></i><span>money385</span></li>
-            <li><i class="flaticon-a-network11"></i><span>network11</span></li>
-            <li><i class="flaticon-a-parking19"></i><span>parking19</span></li>
-            <li><i class="flaticon-a-parking6"></i><span>parking6</span></li>
-            <li><i class="flaticon-a-phonecall10"></i><span>phonecall10</span></li>
-            <li><i class="flaticon-a-pipe9"></i><span>pipe9</span></li>
-            <li><i class="flaticon-a-plug38"></i><span>plug38</span></li>
-            <li><i class="flaticon-a-policeman1"></i><span>policeman1</span></li>
-            <li><i class="flaticon-a-pool8"></i><span>pool8</span></li>
-            <li><i class="flaticon-a-public6"></i><span>public6</span></li>
-            <li><i class="flaticon-a-public8"></i><span>public8</span></li>
-            <li><i class="flaticon-a-racket1"></i><span>racket1</span></li>
-            <li><i class="flaticon-a-screens6"></i><span>screens6</span></li>
-            <li><i class="flaticon-a-shopper1"></i><span>shopper1</span></li>
-            <li><i class="flaticon-a-shopping-cart8"></i><span>cart8</span></li>
-            <li><i class="flaticon-a-smoke2"></i><span>smoke2</span></li>
-            <li><i class="flaticon-a-swimming21"></i><span>swimming21</span></li>
-            <li><i class="flaticon-a-tea24"></i><span>tea24</span></li>
-            <li><i class="flaticon-a-temperature1"></i><span>temperature1</span></li>
-            <li><i class="flaticon-a-terrace"></i><span>terrace</span></li>
-            <li><i class="flaticon-a-tub1"></i><span>tub1</span></li>
-            <li><i class="flaticon-a-washingmachine3"></i><span>washingmachine3</span></li>
-            <li><i class="flaticon-a-yoga13"></i><span>yoga13</span></li>
+            <li><i class="flaticon-a-airconditioned"></i><span>Air coditioner</span></li>
+            <li><i class="flaticon-a-cable4"></i><span>Microwave</span></li>
+            <li><i class="flaticon-a-connection30"></i><span>Internet</span></li>
+            <li><i class="flaticon-a-cooking35"></i><span>Electric chimney</span></li>
+            <li><i class="flaticon-a-cooking7"></i><span>Smook detector</span></li>
+            <li><i class="flaticon-a-dog50"></i><span>pet allowed</span></li>
+            <li><i class="flaticon-a-first22"></i><span>first Aid</span></li>
+            <li><i class="flaticon-a-flame11"></i><span>Fire Extingguisher</span></li>
+            <li><i class="flaticon-a-kitchen56"></i><span>Kitchen</span></li>
+            <li><i class="flaticon-a-kitchen6"></i><span>Dishwasher</span></li>
+            <li><i class="flaticon-a-logotype117"></i><span>Wifi</span></li>
+            <li><i class="flaticon-a-parking6"></i><span>Parking</span></li>
+            <li><i class="flaticon-a-pipe9"></i><span>essential</span></li>
+            <li><i class="flaticon-a-public8"></i><span>Elevator</span></li>
+            <li><i class="flaticon-a-screens6"></i><span>TV</span></li>
+            <li><i class="flaticon-a-swimming21"></i><span>Pool</span></li>
+            <li><i class="flaticon-a-temperature1"></i><span>Room heater</span></li>
+            <li><i class="flaticon-a-terrace"></i><span>Balcony</span></li>
+            <li><i class="flaticon-a-tub1"></i><span>Bathtub</span></li>
+            <li><i class="flaticon-a-washingmachine3"></i><span>washing machine</span></li>
           </ul>
           <h3 class="block-title" id="facilities">FACITLITIES</h3>
+
           <ul class="thumb-service thumb--col-4">
-            <li><i class="flaticon-a-badminton9"></i><span>badminton9</span></li>
-            <li><i class="flaticon-a-bicycle14"></i><span>bicycle14</span></li>
-            <li><i class="flaticon-a-cable4"></i><span>cable4</span></li>
-            <li><i class="flaticon-a-connection30"></i><span>connection30</span></li>
-            <li><i class="flaticon-a-cooking35"></i><span>cooking35</span></li>
-            <li><i class="flaticon-a-cooking7"></i><span>cooking7</span></li>
-            <li><i class="flaticon-a-covered16"></i><span>covered16</span></li>
-            <li><i class="flaticon-a-credit56"></i><span>credit56</span></li>
-            <li><i class="flaticon-a-customerservice14"></i><span>customerservice14</span></li>
-            <li><i class="flaticon-a-dog50"></i><span>dog50</span></li>
-            <li><i class="flaticon-a-first22"></i><span>first22</span></li>
-            <li><i class="flaticon-a-flame11"></i><span>flame11</span></li>
-            <li><i class="flaticon-a-fun"></i><span>fun</span></li>
-            <li><i class="flaticon-a-heating1"></i><span>heating1</span></li>
-            <li><i class="flaticon-a-kitchen56"></i><span>kitchen56</span></li>
-            <li><i class="flaticon-a-kitchen6"></i><span>kitchen6</span></li>
-            <li><i class="flaticon-a-logotype117"></i><span>logotype117</span></li>
-            <li><i class="flaticon-a-man244"></i><span>man244</span></li>
-            <li><i class="flaticon-a-medical12"></i><span>medical12</span></li>
-            <li><i class="flaticon-a-money385"></i><span>money385</span></li>
-            <li><i class="flaticon-a-network11"></i><span>network11</span></li>
-            <li><i class="flaticon-a-parking19"></i><span>parking19</span></li>
-            <li><i class="flaticon-a-parking6"></i><span>parking6</span></li>
-            <li><i class="flaticon-a-phonecall10"></i><span>phonecall10</span></li>
-            <li><i class="flaticon-a-pipe9"></i><span>pipe9</span></li>
-            <li><i class="flaticon-a-plug38"></i><span>plug38</span></li>
-            <li><i class="flaticon-a-policeman1"></i><span>policeman1</span></li>
-            <li><i class="flaticon-a-pool8"></i><span>pool8</span></li>
-            <li><i class="flaticon-a-public6"></i><span>public6</span></li>
-            <li><i class="flaticon-a-public8"></i><span>public8</span></li>
-            <li><i class="flaticon-a-racket1"></i><span>racket1</span></li>
-            <li><i class="flaticon-a-screens6"></i><span>screens6</span></li>
-            <li><i class="flaticon-a-shopper1"></i><span>shopper1</span></li>
-            <li><i class="flaticon-a-shopping-cart8"></i><span>cart8</span></li>
-            <li><i class="flaticon-a-smoke2"></i><span>smoke2</span></li>
-            <li><i class="flaticon-a-swimming21"></i><span>swimming21</span></li>
-            <li><i class="flaticon-a-tea24"></i><span>tea24</span></li>
-            <li><i class="flaticon-a-temperature1"></i><span>temperature1</span></li>
-            <li><i class="flaticon-a-terrace"></i><span>terrace</span></li>
-            <li><i class="flaticon-a-tub1"></i><span>tub1</span></li>
-            <li><i class="flaticon-a-washingmachine3"></i><span>washingmachine3</span></li>
-            <li><i class="flaticon-a-yoga13"></i><span>yoga13</span></li>
+            <li><i class="flaticon-a-public6"></i><span>Community hall</span></li>
+            <li><i class="flaticon-a-badminton9"></i><span>badminton court</span></li>
+            <li><i class="flaticon-a-phonecall10"></i><span>Intercom</span></li>
+            <li><i class="flaticon-a-bicycle14"></i><span>Gymnasium</span></li>
+            <li><i class="flaticon-a-tea24"></i><span>Coffee shop</span></li>
+            <li><i class="flaticon-a-money385"></i><span>Access card</span></li>
+            <li><i class="flaticon-a-shopper1"></i><span>Shooping mall</span></li>
+            <li><i class="flaticon-a-yoga13"></i><span>Yoga &amp; meditation</span></li>
+            <li><i class="flaticon-a-customerservice14"></i><span>Maintance staff</span></li>
+            <li><i class="flaticon-a-shopping-cart8"></i><span>supper market</span></li>
+            <li><i class="flaticon-a-swimming21"></i><span>Swimming Pool</span></li>
+            <li><i class="flaticon-a-policeman1"></i><span>Security Guards</span></li>
+            <li><i class="flaticon-a-pool8"></i><span>Indoor game</span></li>
+            <li><i class="flaticon-a-medical12"></i><span>Phamacy</span></li>
+            <li><i class="flaticon-a-man244"></i><span>Banking /ATM</span></li>
+            <li><i class="flaticon-a-racket1"></i><span>tennis court</span></li>
+            <li><i class="flaticon-a-covered16"></i><span>Restaurant</span></li>            
+            <li><i class="flaticon-a-network11"></i><span>Club house</span></li>
+            <li><i class="flaticon-a-plug38"></i><span>24h Electricity Backup</span></li>
+            <li><i class="flaticon-a-parking19"></i><span>Parking</span></li>
           </ul>
           <h3 class="block-title" id="keywords">KEYWORDS</h3>
           <div class="wrap-tag">

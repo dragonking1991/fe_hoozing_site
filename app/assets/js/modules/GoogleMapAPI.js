@@ -16,8 +16,22 @@ export default class GoogleMapAPI {
       data: ''
     }));
     this.storeArr = storeInfo;
-    console.log(storeInfo)
     this.init();
+
+    // $(".select-home").on('click', function() {
+    //   let lat = $(this).parents('.thumb-item').attr('data-lat');
+    //   let lng = $(this).parents('.thumb-item').attr('data-lng');
+    // });
+    var selectMap = document.getElementsByClassName("select-home");
+
+    var myFunction = function() {
+      // var attribute = this.getAttribute("data-myattribute");
+      // alert('s');
+    };
+
+    for (var i = 0; i < selectMap.length; i++) {
+      selectMap[i].addEventListener('click', myFunction, false);
+    }
     
 
   }
@@ -46,6 +60,11 @@ export default class GoogleMapAPI {
     });
   }
 
+  clickPanto(lat,long) {
+    var latLng = new google.maps.LatLng(lat, long); 
+    this.map.panTo(latLng); 
+  }
+
   initPopupList() {
     let Popup = new PopupDefined(google.maps.OverlayView.prototype, this.map)._popup;
     this.storeArr.forEach((item, i) => {
@@ -62,6 +81,7 @@ export default class GoogleMapAPI {
     ele.addMultiEvent(item.content, ['click', 'touchend'], (e) => {
       e.stopPropagation();
       this.eventPopup(item);
+      // this.clickPanto(5,6);
     });
     ele.addMultiEvent(item.popupClose, ['click', 'touchend'], (e) => {
       e.stopPropagation();
