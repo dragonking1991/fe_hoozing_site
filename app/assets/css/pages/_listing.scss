@@ -195,6 +195,18 @@
 	}
 }
 
-// .gallery-house {
-// 	li
-// }
+.gallery-house {
+	li {
+		overflow: hidden;
+		height: 75px;
+		text-align: center;
+		margin: 5px 0;
+		position: relative;
+	}
+	img {
+		@include absolute(top 50% left 50%);
+		transform: translate(-50%,-50%);
+		height: 100%;
+		width: auto;
+	}
+}

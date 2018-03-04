@@ -6,10 +6,13 @@ export default class GalleryHouse {
       let warpperImg;
       warpperImg = document.createElement('li');
       warpperImg.innerHTML = html;
-
       $(".gallery__for, .gallery__nav").append(warpperImg);
     });
 
+    let title = $('.list-content').find('h2').html();
+    let service = $('.list-content').find('.thumb-overview').html();
+    $('#galleryDetail').find('h3').html(title);
+    $('#galleryDetail').find('.thumb-service').html(service);
 
     var navSlide = {
       arrows: true,

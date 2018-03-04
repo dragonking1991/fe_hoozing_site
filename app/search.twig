@@ -62,36 +62,43 @@
 		<a href="#collapseFilter" data-toggle="collapse" class="close-modal"><i class="fa fa-close"></i></a>
 		<div class="container">
 			<h3 class="block-title">Basic fetures</h3>
-			<div class="input-group date" data-provide="datepicker-inline">
-				<input type="text" class="form-control">
-				<div class="input-group-addon">
-					<span class="glyphicon glyphicon-th"></span>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="input-group date" data-provide="datepicker-inline">
+						<input type="text" class="form-control">
+						<div class="input-group-addon">
+							<span class="glyphicon glyphicon-th"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="select-wrapper">
+						<select name="type" id="type">
+							<option  disabled="disabled" selected="selected" value="">Acomodates</option>
+							<option value="Male">2000</option>
+							<option value="Female">2001</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="select-wrapper">
+						<select name="type" id="type">
+							<option  disabled="disabled" selected="selected" value="">Furnishment</option>
+							<option value="Male">2000</option>
+							<option value="Female">2001</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="select-wrapper">
+						<select name="type" id="type">
+							<option  disabled="disabled" selected="selected" value="">Floor Area</option>
+							<option value="Male">2000</option>
+							<option value="Female">2001</option>
+						</select>
+					</div>
 				</div>
 			</div>
-
-			<div class="select-wrapper select--big">
-				<select name="type" id="type">
-					<option  disabled="disabled" selected="selected" value="">Acomodates</option>
-					<option value="Male">2000</option>
-					<option value="Female">2001</option>
-				</select>
-			</div>
-
-			<div class="select-wrapper select--big">
-				<select name="type" id="type">
-					<option  disabled="disabled" selected="selected" value="">Furnishment</option>
-					<option value="Male">2000</option>
-					<option value="Female">2001</option>
-				</select>
-			</div>
-			<div class="select-wrapper select--big">
-				<select name="type" id="type">
-					<option  disabled="disabled" selected="selected" value="">Floor Area</option>
-					<option value="Male">2000</option>
-					<option value="Female">2001</option>
-				</select>
-			</div>
-
 
 			<h3 class="block-title">Required Amenities</h3>
 			<div class="row">
@@ -791,7 +798,8 @@
 						<span class="price-tag">$600</span>
 					</div>
 					<div class="thumb-info">
-						<a href="#0" class="select-home"><h4>house code 456</h4></a>
+						<h4><a href="#0" class="select-home">house code 456</a></h4>
+
 						<h3>
 							<a href="#">Pretty service appartment with bright bedroom</a>
 						</h3>

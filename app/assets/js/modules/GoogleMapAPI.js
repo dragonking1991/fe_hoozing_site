@@ -23,6 +23,7 @@ export default class GoogleMapAPI {
     //   let lng = $(this).parents('.thumb-item').attr('data-lng');
     // });
     var selectMap = document.getElementsByClassName("select-home");
+    console.log(selectMap)
 
     var myFunction = function() {
       // var attribute = this.getAttribute("data-myattribute");
@@ -35,6 +36,11 @@ export default class GoogleMapAPI {
     
 
   }
+  clickPanto(lat,long) {
+    var latLng = new google.maps.LatLng(lat, long); 
+    this.map.panTo(latLng); 
+  }
+  
   init() {
     googlemap({
       key: 'AIzaSyBzlEqFy__g-R9CoVzOfdxTAFBdLAIbTOM'
@@ -60,10 +66,6 @@ export default class GoogleMapAPI {
     });
   }
 
-  clickPanto(lat,long) {
-    var latLng = new google.maps.LatLng(lat, long); 
-    this.map.panTo(latLng); 
-  }
 
   initPopupList() {
     let Popup = new PopupDefined(google.maps.OverlayView.prototype, this.map)._popup;
