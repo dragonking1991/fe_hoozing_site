@@ -17,28 +17,6 @@ export default class GoogleMapAPI {
     }));
     this.storeArr = storeInfo;
     this.init();
-
-    // $(".select-home").on('click', function() {
-    //   let lat = $(this).parents('.thumb-item').attr('data-lat');
-    //   let lng = $(this).parents('.thumb-item').attr('data-lng');
-    // });
-    var selectMap = document.getElementsByClassName("select-home");
-    console.log(selectMap)
-
-    var myFunction = function() {
-      // var attribute = this.getAttribute("data-myattribute");
-      // alert('s');
-    };
-
-    for (var i = 0; i < selectMap.length; i++) {
-      selectMap[i].addEventListener('click', myFunction, false);
-    }
-    
-
-  }
-  clickPanto(lat,long) {
-    var latLng = new google.maps.LatLng(lat, long); 
-    this.map.panTo(latLng); 
   }
   
   init() {
@@ -64,6 +42,26 @@ export default class GoogleMapAPI {
     this.popupList.forEach((item, i) => {
       this.registerEventPopup(item);
     });
+
+    const thisMap = this.map;
+
+    $(".select-home").on('click', function() {
+      $('.thumb-item').removeClass('selected');
+      $(this).parents('.thumb-item').addClass('selected');
+      let lat = $(this).parents('.thumb-item').attr('data-lat');
+      let lng = $(this).parents('.thumb-item').attr('data-lng');
+      let code = $(this).parents('.thumb-item').attr('data-code');
+      let latLng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng)); 
+      thisMap.panTo(latLng);
+
+      $('.popup-bubble-content').removeClass('show');
+      $('.popup-bubble-content').find('.popup__price').removeClass('hide');
+      $('.popup-bubble-content').find('.popup-wrapper').removeClass('show-popup'); 
+
+      $('#'+ code).addClass('show');
+      $('#'+ code).find('.popup__price').addClass('hide');
+      $('#'+ code).find('.popup-wrapper').addClass('show-popup'); 
+    });
   }
 
 
@@ -83,7 +81,9 @@ export default class GoogleMapAPI {
     ele.addMultiEvent(item.content, ['click', 'touchend'], (e) => {
       e.stopPropagation();
       this.eventPopup(item);
-      // this.clickPanto(5,6);
+      let idContent = item.content.id;
+      $('.thumb-item').removeClass('selected');
+      $('.thumb-item[data-code="'+ idContent + '"]').addClass('selected');
     });
     ele.addMultiEvent(item.popupClose, ['click', 'touchend'], (e) => {
       e.stopPropagation();

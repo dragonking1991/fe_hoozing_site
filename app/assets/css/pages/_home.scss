@@ -119,6 +119,15 @@
 .thumb-item {
 	position: relative;
 	margin-bottom: 10px;
+	transition:0.5s ease-out;
+
+	&.selected {
+		background: $blue;
+
+		a, span {
+			color: #fff;
+		}
+	}
 
 	@include screen(medium) {
 		&:hover {

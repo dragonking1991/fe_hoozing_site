@@ -45,8 +45,7 @@ export default class PopupDefined {
     };
     Popup.prototype.init = function () {
       let ele = new DOM();
-      this.content = ele.addEle('div', 'row popup');
-      this.content.id = `content${this.id}`;
+      this.content = ele.addEle('div', 'row popup thumb-item');
 
 
       this.popupPrice = ele.addEle('div', 'popup__price');
@@ -85,6 +84,7 @@ export default class PopupDefined {
     Popup.prototype.setContent = function (code,name, price, linkAp, images) {
       let ele = new DOM();
       let pathUrl = "assets/images/dummy/";
+      this.content.id = code;
       this.popupPrice.innerHTML= price;
       for (var i = images.length - 1; i >= 0; i--) {
         if (i == images.length - 1) {

@@ -9,7 +9,12 @@
   <link rel="icon" type="image/png" href="{{assetPath}}/images/favicons/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="{{assetPath}}/images/favicons/favicon-16x16.png" sizes="16x16" />
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=vietnamese" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=vietnamese" rel="stylesheet"> -->
+
+
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=vietnamese" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin,vietnamese"/></noscript>
+
 
   <!-- build:css {{assetPath}}/css/vendor.css -->
   <!-- bower:css -->
@@ -21,7 +26,6 @@
   <!-- endbower -->
   <!-- endbuild -->
 
-  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
   <!-- build:css {{assetPath}}/css/app.css -->
   <link rel="stylesheet" href="{{assetPath}}/css/app.css">
 	<!-- endbuild -->
@@ -73,7 +77,6 @@
 <script src="/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
-<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 
 <script src="{{assetPath}}/js/app.js"></script>
