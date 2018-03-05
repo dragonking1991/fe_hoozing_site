@@ -1,6 +1,27 @@
+.modal {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-dialog {
+  margin: 6% auto 0;
+}
 .modal-dialog {
   max-width: 80%;
   color: #fff;
+  
+  .slick-arrow {
+    font-size: 0;
+    position: absolute;
+    top: -350%;
+    right: -40px;
+    z-index: 10;
+  }
+  .slick-prev {
+    left: -40px;
+  }
+  h3 {
+    text-transform: none;
+  }
 }
 
 .modal-content {
@@ -8,9 +29,13 @@
   .thumb-service {
     color: #fff;
     span {
-      
+
     }
   }
+}
+
+.gallery__info {
+  padding: 0 55px;
 }
 
 .gallery__slide {
@@ -21,6 +46,7 @@
   }
   li {
     overflow: hidden;
+    background: rgba(0, 0, 0, 0.75);
   }
 }
 
@@ -41,9 +67,12 @@
     cursor: pointer;
   }
   img {
-    opacity: 0.6;
-    transition:0.3s ease;
+    opacity: 0.4;
+    transition:0.3s ease-out;
     height: 90px;
+  }
+  .slick-arrow {
+    height: 100%;
   }
 
   .slick-current {

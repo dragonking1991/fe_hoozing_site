@@ -5,7 +5,7 @@ export default class ScrollTo {
       if ($(window).width() < 1024) {
         offset = 20;
       } else {
-        offset = 120;
+        offset = 0;
       }
       if ($(this.getAttribute('data-target')).length) {
         e.preventDefault();
@@ -15,6 +15,18 @@ export default class ScrollTo {
         setTimeout(function () {$('.solutions-slider').slick('slickGoTo', 1);},100);
       }
     });
+
+
+    $(window).on('scroll', function() {
+      var target = $('.block-signup').offset().top + $('.block-signup').height();
+      var scrollPos = $(window).scrollTop();
+      if( target <= scrollPos  ) {
+        $('.bar-request').addClass('show');
+      }
+      else {
+        $('.bar-request').removeClass('show');
+      }
+    })
 
 
   }

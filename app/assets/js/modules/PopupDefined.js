@@ -9,7 +9,7 @@ export default class PopupDefined {
    * The library reference: https://developers.google.com/maps/documentation/javascript/examples/overlay-popup
    *
    */
-  definePopupClass(param, ggmap) {
+   definePopupClass(param, ggmap) {
     /**
      * A customized popup on the map.
      * @param {!google.maps.LatLng} position
@@ -17,7 +17,7 @@ export default class PopupDefined {
      * @constructor
      * @extends {google.maps.OverlayView}
      */
-    let Popup = function (position, id, storeEl) {
+     let Popup = function (position, id, storeEl) {
       this.id = id;
       this.storeEl = storeEl;
       this.position = position;
@@ -44,49 +44,66 @@ export default class PopupDefined {
       this.getPanes().floatPane.appendChild(this.anchor);
     };
     Popup.prototype.init = function () {
-      let dom = new DOM();
-      this.content = dom.createDOM('div', 'row popup');
-      this.content.id = `content${this.id}`;
-      this.popupIcon = dom.createDOM('div', 'popup__icon');
-      this.image = dom.createDOM('img', 'popup__image');
-      this.popupIcon.innerHTML="hello";
-      this.popupWrapper = dom.createDOM('div', 'popup-wrapper');
-      this.popupClose = dom.createDOM('span', 'popup__close');
-      this.popupTitle = dom.createDOM('div', 'popup__title');
-      this.popupText = dom.createDOM('div', 'popup__text');
-      this.popupContent = dom.createDOM('div', 'popup__content');
-      this.gift = dom.createDOM('div', 'popup__gift');
-      this.link = dom.createDOM('link', 'link');
-      this.link.href = '#';
-      // this.image.src = 'assets/images/icons/icon-milo.png';
-      this.image.src = iconMilo;
-      this.image.alt = 'logo';
-      if (this.isActive()) {
-        this.link.style.display = 'none';
-      } else {
-        this.image.style.opacity = 0.6;
-        this.link.innerHTML = 'Check opening calendar >';
-      }
-      dom.appendMultiDOM(this.popupWrapper, [this.popupClose, this.popupTitle, this.popupText]);
-      dom.appendMultiDOM(this.popupText, [this.popupContent, this.gift, this.link]);
-      dom.appendMultiDOM(this.content, [this.popupIcon, this.popupWrapper]);
+      let ele = new DOM();
+      this.content = ele.addEle('div', 'row popup thumb-item');
+
+
+      this.popupPrice = ele.addEle('div', 'popup__price');
+      this.popupWrapper = ele.addEle('div', 'popup-wrapper');
+
+      
+      this.popupClose = ele.addEle('span', 'popup__close');
+      this.popupGallery = ele.addEle('div', 'thumb-gallery carousel slide');
+      this.popupInfo = ele.addEle('div', 'thumb-info');
+      this.popupGallery.setAttribute("data-ride", "carousel");
+
+      //popupGallery
+      this.thumbList = ele.addEle('ul', 'thumb-list carousel-inner');
+
+      // this.love  = ele.addEle('span', 'love');
+      // this.iconLove  = ele.addEle('i', 'fa fa-heart-o');
+      // this.love.appendChild(this.iconLove); 
+      this.priceTag  = ele.addEle('span', 'price-tag');
+
+      //popupInfo
+      this.houseCode = ele.addEle('h4');
+      this.houseLink  = ele.addEle('a',);
+      this.houseTitle  = ele.addEle('h3');
+      this.houseTitle.appendChild(this.houseLink);
+
+
+      ele.multiEle(this.popupGallery, [this.thumbList, this.priceTag]);
+      // ele.multiEle(this.popupGallery, [this.thumbList, this.love, this.priceTag]);
+      ele.multiEle(this.popupInfo, [this.houseCode, this.houseTitle, this.popupText]);
+
+      ele.multiEle(this.popupWrapper, [this.popupClose, this.popupGallery, this.popupInfo]);
+      ele.multiEle(this.content, [this.popupPrice, this.popupWrapper]);
       document.body.appendChild(this.content);
     }
 
-    Popup.prototype.setContent = function (address, timeOpen, gift) {
-      if (this.isActive()) {
-        this.popupContent.innerHTML = `Open now (${timeOpen})`;
-        this.gift.innerHTML = `Gift Available: <b>${gift}</b>`;
-      } else {
-        this.popupContent.innerHTML = `Close now`;
+    Popup.prototype.setContent = function (code,name, price, linkAp, images) {
+      let ele = new DOM();
+      let pathUrl = "assets/images/dummy/";
+      this.content.id = code;
+      this.popupPrice.innerHTML= price;
+      for (var i = images.length - 1; i >= 0; i--) {
+        if (i == images.length - 1) {
+          this.carouselItem  = ele.addEle('li', 'carousel-item active');
+        }
+        else {
+          this.carouselItem  = ele.addEle('li', 'carousel-item');
+        }
+        this.imageThumb = ele.addEle('img', 'popup__image');
+        this.imageThumb.src = pathUrl + images[i];
+        this.imageThumb.alt = 'images';
+        this.carouselItem.appendChild(this.imageThumb);
+        this.thumbList.appendChild(this.carouselItem);
+        this.thumbList.setAttribute("data-module", "ThumbSlide");
       }
-      this.popupTitle.innerHTML = address;
-    }
-    Popup.prototype.isOpen = function () {
-      return this.content.classList.contains('show') ? true : false;
-    }
-    Popup.prototype.isActive = function () {
-      return this.storeEl.isOpen ? true : false;
+      this.priceTag.innerHTML  = price;
+      this.houseCode.innerHTML  = `house code ${code}`;
+      this.houseLink.innerHTML  = name;
+      this.houseLink.href = linkAp;
     }
 
     /** Called when the popup is removed from the map. */
@@ -110,12 +127,12 @@ export default class PopupDefined {
     };
     Popup.prototype.close = function () {
       this.content.classList.remove('show');
-      this.popupIcon.classList.remove('show-popup');
+      this.popupPrice.classList.remove('hide');
       this.popupWrapper.classList.remove('show-popup');
     };
     Popup.prototype.open = function () {
       this.content.classList.add('show');
-      this.popupIcon.classList.add('show-popup');
+      this.popupPrice.classList.add('hide');
       this.popupWrapper.classList.add('show-popup');
     };
     /** Stops clicks/drags from bubbling up to the map. */

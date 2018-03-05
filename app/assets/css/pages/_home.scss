@@ -7,8 +7,11 @@
 }
 
 .banner-wrapper {
-	max-width: 850px;
-	margin: 10% auto 0;
+	position: absolute;
+	width: 850px;
+	@include absolute( top 50% left 50%);
+	transform:translate(-50%, -50%);
+
 	h1 {
 		color: #fff;
 		font-size: $size-xxxl;
@@ -19,11 +22,8 @@
 	a {
 		margin:0 10px;
 	}
-	p,a{
+	label,a{
 		color: #fff;
-	}
-	input {
-		width: 100%;
 	}
 
 	[class^='col-'] {
@@ -51,6 +51,18 @@
 
 .search-map {
 	position: relative;
+	text-align: left;
+	background: #fff;
+	padding: 5px;
+	padding-right: 30px;
+	border:1px solid $color-light;
+
+	input {
+		border:none;
+		height: 35px;
+		min-width: 250px;
+		max-width: 100%;
+	}
 
 	&:after {
     content:'\f041';
@@ -107,11 +119,21 @@
 .thumb-item {
 	position: relative;
 	margin-bottom: 10px;
+	transition:0.5s ease-out;
+
+	&.selected {
+		background: $blue;
+
+		a, span {
+			color: #fff;
+		}
+	}
 
 	@include screen(medium) {
 		&:hover {
 			.slick-arrow {
 				opacity: 1;
+				background: rgba(0,0,0,0.3);
 			}
 			.thumb-mask:hover {
 				color: #fff;
@@ -119,6 +141,15 @@
 			}
 		}
 	}
+
+	a {
+		color: $blue;
+	}
+
+	.slick-slide {
+		font-size: 0;
+	}
+	 
 	.slick-arrow {
 		@include screen(medium) {
 			opacity: 0;
@@ -151,6 +182,7 @@
 		display: inline-block;
 		margin: 0 5px;
 		vertical-align: middle;
+		transform: scale(0.9);
 
 	}
 	button {
@@ -163,6 +195,7 @@
 		border: none;
 	}
 	.slick-active {
+		transform: scale(1);
 		button {
 			background: #fff;
 		}
@@ -293,13 +326,69 @@
 }
 
 .thumb-service, .icon-service {
-	color: $color-light;
+	color: #333;
+
 	span {
 		white-space: nowrap;
 		margin-right: 12px;
 	}
 	i {
 		width: 15px;
+		text-align: left;
+	}
+}
+
+.tags {
+	color: $color-light;
+	border: 1px solid;
+	display: inline-block;
+	padding: 8px;
+	border-radius: 3px;
+	margin-right: 5px;
+
+	&.active {
+		background: $blue;
+		color: #fff;
+	}
+	@include screen(medium) {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.thumb-service{
+	&:after {
+		@extend %clearfix;
+	}
+	li {
+		padding: 5px 0;
+	}
+	i {
+		font-size: 20px;
+	}
+	.info-fa {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 10px;
+		color: #999;
+		b {
+			color: #333;
+		}
+	}
+}
+
+.thumb--col-2 {
+	li {
+		width: 50%;
+		float: left;
+	}
+}
+
+.thumb--col-4 {
+	li {
+		width: 25%;
+		float: left;
 	}
 }
 
@@ -346,6 +435,11 @@
 }
 .item-project__img {
 	margin: 0;
+	img {
+		width: 100%;
+	}
+}
+.carousel-item {
 	img {
 		width: 100%;
 	}

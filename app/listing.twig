@@ -1,222 +1,223 @@
 {% extends "_templates/layout.twig" %}
 
 {% block page %}
+<div class="bar-request">
+  <div class="container">
+    <a href="#" class="btn btn--red pull-right">Request Inspectation</a>
+    <h3>
+      RESORT - LIKE NEW APARTMENT IN STARHILL DISTRICT 7
+      <span class="price"><b>$1,200</b> per month</span>
+      <span class="bg--green tag">POPULAR <i class="fa fa-star"></i></span>
+    </h3>
+  </div>
+</div>
+
 <div class="container">
-
-  <ul class="nav nav-pills nav-stacked">
-    <li><a href="#galleryDetail" data-toggle="modal">Open Lightbox</a></li>
-    <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="1">2nd Image</a></li>
-    <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="2">3rd Image</a></li>
-    <li><a href="#galleryDetail" data-toggle="modal" data-slide-to="15">Open non existing Image</a></li>
-  </ul>
-
-
-
   <div class="modal fade" id="galleryDetail">
     <div class="modal-dialog">
       <div class="modal-content">
+        <a href="#galleryDetail" data-toggle="modal" class="close-modal"><i class="fa fa-close"></i></a>
         <div class="modal-body row">
-          <div class="col-md-8 gallery__slide" data-module="GallerySlide">
-            <ul class="slider gallery__for">
-              <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img5.jpg" alt=""></li>
-            </ul>
-            <p class="text-left">Photo 3/9: Bath room<br /> Real photo taken by Hoozing</p>
-            <ul class="slider gallery__nav">
-              <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img1.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img2.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img3.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img4.jpg" alt=""></li>
-              <li><img src="assets/images/slideimg/img5.jpg" alt=""></li>
-            </ul>
+          <div class="col-md-8 gallery__slide" data-module="GalleryHouse">
+            <ul class="slider gallery__for"></ul>
+            <p class="text-left">Photo <span class="counter-slide">3/9</span>: <span class="room-name">Bath room</span><br /> Real photo taken by Hoozing</p>
+            <ul class="slider gallery__nav"></ul>
           </div>
           <div class="col-md-4 gallery__info">
-            <h3>Resort-like Apartment in Starhill District 7</h3>
-            <ul class="thumb-service">
+            <h3>house name</h3>
+            <ul class="thumb-service thumb--col-2">
               <li><i class="fa fa-map-marker"></i> District 7</li>
               <li><i class="fa fa-bed"></i> 1 bed </li>
-              <li><i class="fa fa-bath"></i> 1 bath</li
-                <li><i class="fa fa-map-marker"></i> District 7</li>
-                <li><i class="fa fa-bed"></i> 1 bed </li>
-                <li><i class="fa fa-bath"></i> 1 bath</li>         
-              </ul>
-              <div class="btn-wrapper">
-                <a href="#" class="btn btn--red btn--full">Request Inspection</a>
-                <a href="#" class="btn btn--full"><i class="fa fa-phone">Direct call</i></a>
-              </div>
+              <li><i class="fa fa-bath"></i> 1 bath</li>         
+            </ul>
+            <div class="btn-wrapper">
+              <a href="#" class="btn btn--red btn--full">Request Inspection</a>
+              <a href="#" class="btn btn--full"><i class="fa fa-phone"></i><span>Direct call</span></a>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
-  <section class="banner">
-    <img src="assets/images/dummy/featured-image-listing.png" />
-  </section>
-  <section class="listing-detail" data-module="ScrollTo"> 
-    <div class="container">
 
-      <div class="breadcrumb">
-        <a href="#"><i class="fa fa-home"></i></a>  
-        <i class="fa fa-angle-right"></i> 
-        <a href="#">District 7</a> <i class="fa fa-angle-right"></i> 
-        <a href="#">Starhill</a> <i class="fa fa-angle-right"></i> HD11845
-      </div>
+</div>
+<section class="banner">
+  <img src="assets/images/dummy/featured-image-listing.png" />
+</section>
+<section class="listing-detail" data-module="ScrollTo"> 
+  <div class="container">
 
-      <div class="row">
-        <div class="col-md-8">
+    <div class="breadcrumb">
+      <a href="#"><i class="fa fa-home"></i></a>  
+      <i class="fa fa-angle-right"></i> 
+      <a href="#">District 7</a> <i class="fa fa-angle-right"></i> 
+      <a href="#">Starhill</a> <i class="fa fa-angle-right"></i> HD11845
+    </div>
 
-          <ul class="tab-link">
-            <li class="active"><a href="javascript:void(0);" class="link-to" data-target="#overview"> Overview</a></li>
-            <li><a href="javascript:void(0);" class="link-to" data-target="#policy"> Policy</a></li>
-            <li><a href="javascript:void(0);" class="link-to" data-target="#amenities"> Amenities</a></li>
-            <li><a href="javascript:void(0);" class="link-to" data-target="#facilities"> Facilities</a></li>
+    <div class="row">
+      <div class="col-md-8">
+
+        <ul class="tab-link">
+          <li class="active"><a href="javascript:void(0);" class="link-to" data-target="#overview"> Overview</a></li>
+          <li><a href="javascript:void(0);" class="link-to" data-target="#policy"> Policy</a></li>
+          <li><a href="javascript:void(0);" class="link-to" data-target="#amenities"> Amenities</a></li>
+          <li><a href="javascript:void(0);" class="link-to" data-target="#facilities"> Facilities</a></li>
+        </ul>
+        <hr />
+
+        <div class="list-content">
+          <div class="house-code float-right">
+            h012345
+            <span>House Code</span>
+          </div>
+
+          <h2> Resort - like new Apartment in Starhill district 7</h2>
+          <div class="locate"><i class="fa fa-map-marker"></i> District 7</div>
+
+          <h3 class="block-title"> Overview</h3>
+
+          <ul class="thumb-service thumb--col-4 thumb-overview">
+            <li><i class="fa fa-building-o"></i> Apartment</li>  
+            <li><i class="fa fa-bath"></i> 1 Bathroom(s)</li>  
+            <li><i class="fa fa-bed"></i> 1 Bedroom(s)</li>  
+            <li><i class="fa fa-group"></i> 1 Bedroom(s)</li>  
+            <li><i class="fa fa-umbrella"></i> 1 Fullu Funished(s)</li>  
           </ul>
-          <hr />
 
-          <div class="list-content">
-            <div class="house-code float-right">
-              h012345
-              <span>House Code</span>
+          <ul class="gallery-house row">
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img1.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img2.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img3.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img4.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img1.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img2.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img3.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img4.jpg" alt=""></a></li>
+            <li class="col-md-2"><a href="#galleryDetail" data-toggle="modal"><img src="assets/images/slideimg/img5.jpg" alt=""></a></li>
+          </ul>
+
+          <h3 class="block-title" id="desciption">Description</h3>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodc tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+
+          <h3 class="block-title" id="policy">POLICY</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodc tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+
+          <h3 class="block-title" id="amenities">AMENITIES</h3>
+
+          <ul class="thumb-service thumb--col-4">
+            <li><i class="flaticon-a-airconditioned"></i><span>Air coditioner</span></li>
+            <li><i class="flaticon-a-cable4"></i><span>Microwave</span></li>
+            <li><i class="flaticon-a-connection30"></i><span>Internet</span></li>
+            <li><i class="flaticon-a-cooking35"></i><span>Electric chimney</span></li>
+            <li><i class="flaticon-a-cooking7"></i><span>Smook detector</span></li>
+            <li><i class="flaticon-a-dog50"></i><span>pet allowed</span></li>
+            <li><i class="flaticon-a-first22"></i><span>first Aid</span></li>
+            <li><i class="flaticon-a-flame11"></i><span>Fire Extingguisher</span></li>
+            <li><i class="flaticon-a-kitchen56"></i><span>Kitchen</span></li>
+            <li><i class="flaticon-a-kitchen6"></i><span>Dishwasher</span></li>
+            <li><i class="flaticon-a-logotype117"></i><span>Wifi</span></li>
+            <li><i class="flaticon-a-parking6"></i><span>Parking</span></li>
+            <li><i class="flaticon-a-pipe9"></i><span>essential</span></li>
+            <li><i class="flaticon-a-public8"></i><span>Elevator</span></li>
+            <li><i class="flaticon-a-screens6"></i><span>TV</span></li>
+            <li><i class="flaticon-a-swimming21"></i><span>Pool</span></li>
+            <li><i class="flaticon-a-temperature1"></i><span>Room heater</span></li>
+            <li><i class="flaticon-a-terrace"></i><span>Balcony</span></li>
+            <li><i class="flaticon-a-tub1"></i><span>Bathtub</span></li>
+            <li><i class="flaticon-a-washingmachine3"></i><span>washing machine</span></li>
+          </ul>
+          <h3 class="block-title" id="facilities">FACITLITIES</h3>
+
+          <ul class="thumb-service thumb--col-4">
+            <li><i class="flaticon-a-public6"></i><span>Community hall</span></li>
+            <li><i class="flaticon-a-badminton9"></i><span>badminton court</span></li>
+            <li><i class="flaticon-a-phonecall10"></i><span>Intercom</span></li>
+            <li><i class="flaticon-a-bicycle14"></i><span>Gymnasium</span></li>
+            <li><i class="flaticon-a-tea24"></i><span>Coffee shop</span></li>
+            <li><i class="flaticon-a-money385"></i><span>Access card</span></li>
+            <li><i class="flaticon-a-shopper1"></i><span>Shooping mall</span></li>
+            <li><i class="flaticon-a-yoga13"></i><span>Yoga &amp; meditation</span></li>
+            <li><i class="flaticon-a-customerservice14"></i><span>Maintance staff</span></li>
+            <li><i class="flaticon-a-shopping-cart8"></i><span>supper market</span></li>
+            <li><i class="flaticon-a-swimming21"></i><span>Swimming Pool</span></li>
+            <li><i class="flaticon-a-policeman1"></i><span>Security Guards</span></li>
+            <li><i class="flaticon-a-pool8"></i><span>Indoor game</span></li>
+            <li><i class="flaticon-a-medical12"></i><span>Phamacy</span></li>
+            <li><i class="flaticon-a-man244"></i><span>Banking /ATM</span></li>
+            <li><i class="flaticon-a-racket1"></i><span>tennis court</span></li>
+            <li><i class="flaticon-a-covered16"></i><span>Restaurant</span></li>            
+            <li><i class="flaticon-a-network11"></i><span>Club house</span></li>
+            <li><i class="flaticon-a-plug38"></i><span>24h Electricity Backup</span></li>
+            <li><i class="flaticon-a-parking19"></i><span>Parking</span></li>
+          </ul>
+          <h3 class="block-title" id="keywords">KEYWORDS</h3>
+          <div class="wrap-tag">
+            <a class="tags" href="#">Pet Allowed</a>
+            <a class="tags" href="#">Pet Allowed</a>
+            <a class="tags" href="#">Pet Allowed</a>
+            <a class="tags active" href="#">Pet Allowed</a>
+            <a class="tags" href="#">Pet Allowed</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="block-signup">
+          <span class="logo-icon"></span>
+          <p><b>$1,200</b> per month</p>
+          <span class="bg--green tag">POPULAR <i class="fa fa-star"></i></span>
+          <span><i class="fa fa-eye"></i> 230 views</span>
+          <form>
+            <div class="form-group">
+              <input type="text" name="" placeholder="Your name" />
             </div>
-
-            <h2> Resort - like new Apartment in Starhill district 7</h2>
-            <div class="locate"><i class="fa fa-map-marker"></i> District 7</div>
-
-            <h3 class="block-title"> Description</h3>
-
-            <div class="row icon-service">
-              <div class="col-md-3"><i class="fa fa-building-o"></i> Apartment</div>  
-              <div class="col-md-3"><i class="fa fa-bath"></i> 1 Bathroom(s)</div>  
-              <div class="col-md-3"><i class="fa fa-bed"></i> 1 Bedroom(s)</div>  
-              <div class="col-md-3"><i class="fa fa-group"></i> 1 Bedroom(s)</div>  
-              <div class="col-md-3"><i class="fa fa-umbrella"></i> 1 Fullu Funished(s)</div>  
+            <div class="form-group">
+              <input type="text" name="" placeholder="Your phone" />
             </div>
+            <div class="form-group">
+              <input type="email" name="" placeholder="Your email" />
+            </div>
+            <a href="#" class="btn btn--red btn--full">Request Inspectation</a>
+            <a href="#" class="link-share"><i class="fa fa-heart-o"></i> Favorite</a>
+            <a href="#" class="link-share"><i class="fa fa-envelope-o"></i> Share</a>
+          </form>
+        </div>
 
-            <h3 class="block-title" id="desciption">Description</h3>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodc tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-
-            <h3 class="block-title" id="policy">POLICY</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodc tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
-
-            <h3 class="block-title" id="amenities">AMENITIES</h3>
-            <h3 class="block-title" id="facilities">FACITLITIES</h3>
-            <h3 class="block-title" id="keywords">KEYWORDS</h3>
-            <div class="wrap-tag">
-              <span class="tag">Pet Allowed</span>
-              <span class="tag">Pet Allowed</span>
-              <span class="tag">Pet Allowed</span>
-              <span class="tag active">Pet Allowed</span>
-              <span class="tag">Pet Allowed</span>
+        <div class="block-info">
+          <h3 class="block-title">VIEW PROJECT INFO</h3>
+          <div class="item-info">
+            <figure>
+              <a href="#"><img src="assets/images/dummy/img-1.jpg" /></a>
+            </figure>
+            <div class="item-desc">
+              <h3><a href="#">Starhill</a></h3>
+              <p>DISTRICT 7 - 43 FLOORS - 900 UNITS</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="block-signup">
-            <span class="logo-icon"></span>
-            <p><b>$1,200</b> per month</p>
-            <span class="bg--green tag">POPULAR <i class="fa fa-star"></i></span>
-            <span><i class="fa fa-eye"></i> 230 views</span>
-            <form>
-              <div class="form-group">
-                <input type="text" name="" placeholder="Your name" />
-              </div>
-              <div class="form-group">
-                <input type="text" name="" placeholder="Your phone" />
-              </div>
-              <div class="form-group">
-                <input type="email" name="" placeholder="Your email" />
-              </div>
-              <a href="#" class="btn btn--red btn--full">Request Inspectation</a>
-              <a href="#" class="link-share"><i class="fa fa-heart-o"></i> Favorite</a>
-              <a href="#" class="link-share"><i class="fa fa-envelope-o"></i> Share</a>
-            </form>
-          </div>
-
-          <div class="block-info">
-            <h3 class="block-title">VIEW PROJECT INFO</h3>
-            <div class="item-info">
-              <figure>
-                <a href="#"><img src="assets/images/dummy/img-1.jpg" /></a>
-              </figure>
-              <div class="item-desc">
-                <h3><a href="#">Starhill</a></h3>
-                <p>DISTRICT 7 - 43 FLOORS - 900 UNITS</p>
-              </div>
-            </div>
-          </div>
-          <div class="block-neibourhood">
-            <h3 class="block-title">VIEW NEIBOURHOOD</h3>
-            <div class="item-info">
-              <figure>
-                <a href="#"><img src="assets/images/dummy/img-1.jpg" /></a>
-              </figure>
-              <div class="item-desc">
-                <h3><a href="#">Phu My Hung</a></h3>
-                <p>SAI GON MORDERN URBAN DISTRICT</p>
-              </div>
+        <div class="block-neibourhood">
+          <h3 class="block-title">VIEW NEIBOURHOOD</h3>
+          <div class="item-info">
+            <figure>
+              <a href="#"><img src="assets/images/dummy/img-1.jpg" /></a>
+            </figure>
+            <div class="item-desc">
+              <h3><a href="#">Phu My Hung</a></h3>
+              <p>SAI GON MORDERN URBAN DISTRICT</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="map-detail" data-module="MapDetail" data-pos =  "{ myType: 10.785 , count: 106.701 }">
-      <div class="map-content" id="map">
-
-        <script type="text/javascript">
-        var citymap = {
-          chicago: {
-            center: {lat: 10.785, lng: 106.701},
-            population: 2714856
-          }
-        };
-
-        var apartment = {
-          chicago: {
-            center: {lat: 10.785, lng: 106.701},
-            population: 2714856
-          }
-        };
-
-        function initMap() {
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 17,
-            center: {lat: 10.785, lng: 106.701}
-          });
-
-          for (var area in apartment) {
-            var cityCircle = new google.maps.Circle({
-              strokeColor: '#2378A7',
-              strokeOpacity: 0.8,
-              strokeWeight: 2,
-              fillColor: '#2378A7',
-              fillOpacity: 0.35,
-              map: map,
-              center: apartment[area].center,
-              radius: 200
-            });
-          }
-        }
-      
-        </script>
-
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwnpZ3COgfRLoO4wEEK2qjYJpUqj8eY4E&callback=initMap">
-        </script>
+  <section class="map-detail" data-module="MapDetail" data-lat ="10.785" data-lng ="106.701">
+    <div class="map-info">
+      <h3>Resort like Stone-Hill</h3>
+      <p><i class="fa fa-map-marker"></i> <span>District 7</span></p>
+    </div>
+    <div class="map-content" id="map">
     </div>
   </section>
 
@@ -224,44 +225,55 @@
     <div class="container">
       <h2 class="section-title">Other Listing in Starhills</h2>
 
-
-      <table id="myTable" data-module="TableSort">
-        <tr>
-          <th>Name</th>
-          <th>Country</th>
-        </tr>
-        <tr>
-          <td>Berglunds snabbkop</td>
-          <td>Sweden</td>
-        </tr>
-        <tr>
-          <td>North/South</td>
-          <td>UK</td>
-        </tr>
-        <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Germany</td>
-        </tr>
-        <tr>
-          <td>Koniglich Essen</td>
-          <td>Germany</td>
-        </tr>
-        <tr>
-          <td>Magazzini Alimentari Riuniti</td>
-          <td>Italy</td>
-        </tr>
-        <tr>
-          <td>Paris specialites</td>
-          <td>France</td>
-        </tr>
-        <tr>
-          <td>Island Trading</td>
-          <td>UK</td>
-        </tr>
-        <tr>
-          <td>Laughing Bacchus Winecellars</td>
-          <td>Canada</td>
-        </tr>
+      <table id="myTable" data-module="TableSort" data-toggle="table"  data-sort-name="code" data-sort-order="asc">
+        <thead>
+          <tr>
+            <th data-field="code" data-sortable="true">House code</th>
+            <th data-field="numBed" data-sortable="true">Bedroom</th>
+            <th data-field="numBath" data-sortable="true">Bathroom</th>
+            <th data-field="area" data-sortable="true">Area</th>
+            <th data-field="floor" data-sortable="true">Floor</th>
+            <th data-field="furnished" data-sortable="true">Furnished</th>
+            <th data-field="view" data-sortable="true">View</th>
+            <th data-field="price" data-sortable="true">Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AH02163</td>
+            <td>1 bed</td>
+            <td>1 bath</td>
+            <td>80sqm</td>
+            <td>6th</td>
+            <td>furnished</td>
+            <td>River</td>
+            <td>$1000</td>
+            <td><a href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>BH02165</td>
+            <td>1 bed</td>
+            <td>1 bath</td>
+            <td>80sqm</td>
+            <td>6th</td>
+            <td>empty</td>
+            <td>River</td>
+            <td>$2000</td>
+            <td><a href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>H02165</td>
+            <td>1 bed</td>
+            <td>1 bath</td>
+            <td>70sqm</td>
+            <td>6th</td>
+            <td>empty</td>
+            <td>River</td>
+            <td>$3000</td>
+            <td><a href="#">View</a></td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </section>
@@ -284,7 +296,7 @@
           </div>
           <div class="thumb-info">
             <h4>house code 456</h4>
-            <a href="#"><h3>Pretty service appartment with bright bedroom</h3></a>
+            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
             <div class="thumb-service">
               <span><i class="fa fa-map-marker"></i> District 7</span>
               <span><i class="fa fa-bed"></i> 1 bed </span>
@@ -306,7 +318,7 @@
           </div>
           <div class="thumb-info">
             <h4>house code 456</h4>
-            <a href="#"><h3>Pretty service appartment with bright bedroom</h3></a>
+            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
             <div class="thumb-service">
               <span><i class="fa fa-map-marker"></i> District 7</span>
               <span><i class="fa fa-bed"></i> 1 bed </span>
@@ -328,7 +340,7 @@
           </div>
           <div class="thumb-info">
             <h4>house code 456</h4>
-            <a href="#"><h3>Pretty service appartment with bright bedroom</h3></a>
+            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
             <div class="thumb-service">
               <span><i class="fa fa-map-marker"></i> District 7</span>
               <span><i class="fa fa-bed"></i> 1 bed </span>
@@ -350,7 +362,7 @@
           </div>
           <div class="thumb-info">
             <h4>house code 456</h4>
-            <a href="#"><h3>Pretty service appartment with bright bedroom</h3></a>
+            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
             <div class="thumb-service">
               <span><i class="fa fa-map-marker"></i> District 7</span>
               <span><i class="fa fa-bed"></i> 1 bed </span>
@@ -381,7 +393,7 @@
           </div>
           <div class="thumb-info">
             <h4>house code 456</h4>
-            <a href="#"><h3>Pretty service appartment with bright bedroom</h3></a>
+            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
             <div class="thumb-service">
               <span><i class="fa fa-map-marker"></i> District 7</span>
               <span><i class="fa fa-bed"></i> 1 bed </span>
@@ -403,7 +415,7 @@
           </div>
           <div class="thumb-info">
             <h4>house code 456</h4>
-            <a href="#"><h3>Pretty service appartment with bright bedroom</h3></a>
+            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
             <div class="thumb-service">
               <span><i class="fa fa-map-marker"></i> District 7</span>
               <span><i class="fa fa-bed"></i> 1 bed </span>
@@ -425,7 +437,7 @@
           </div>
           <div class="thumb-info">
             <h4>house code 456</h4>
-            <a href="#"><h3>Pretty service appartment with bright bedroom</h3></a>
+            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
             <div class="thumb-service">
               <span><i class="fa fa-map-marker"></i> District 7</span>
               <span><i class="fa fa-bed"></i> 1 bed </span>
@@ -447,7 +459,7 @@
           </div>
           <div class="thumb-info">
             <h4>house code 456</h4>
-            <a href="#"><h3>Pretty service appartment with bright bedroom</h3></a>
+            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
             <div class="thumb-service">
               <span><i class="fa fa-map-marker"></i> District 7</span>
               <span><i class="fa fa-bed"></i> 1 bed </span>

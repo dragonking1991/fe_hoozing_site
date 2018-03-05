@@ -9,18 +9,25 @@
   <link rel="icon" type="image/png" href="{{assetPath}}/images/favicons/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="{{assetPath}}/images/favicons/favicon-16x16.png" sizes="16x16" />
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=vietnamese" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=vietnamese" rel="stylesheet"> -->
 
-	<!-- build:css {{assetPath}}/css/vendor.css -->
-	<!-- bower:css -->
-	<link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css" />
-	<link rel="stylesheet" href="/bower_components/magnific-popup/dist/magnific-popup.css" />
-	<!-- endbower -->
+
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=vietnamese" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin,vietnamese"/></noscript>
+
+
+  <!-- build:css {{assetPath}}/css/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/magnific-popup/dist/magnific-popup.css" />
+  <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css" />
+  <link rel="stylesheet" href="/bower_components/bootstrap-table/src/bootstrap-table.css" />
+  <link rel="stylesheet" href="/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" />
+  <link rel="stylesheet" href="/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
+  <!-- endbower -->
   <!-- endbuild -->
-  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
 
-	<!-- build:css {{assetPath}}/css/app.css -->
-	<link rel="stylesheet" href="{{assetPath}}/css/app.css">
+  <!-- build:css {{assetPath}}/css/app.css -->
+  <link rel="stylesheet" href="{{assetPath}}/css/app.css">
 	<!-- endbuild -->
 
 </head>
@@ -34,7 +41,6 @@
     }
     window.miloAPI = "https://milo-vietnam.asiadigitalhub.com/milo_redemption_api/redemption/";
     window.accessToken = "ce088026e1e29bbe6d48d3bfc719ec89";
-    window.iconMilo = 'https://milo-vietnam.asiadigitalhub.com/sites/milo-global-vietnam/themes/milo_redemption/images/icons/icon-milo.png';
     window.errorNotify = '';
     window.errorBrowse = '';
 
@@ -58,19 +64,23 @@
 
 <!-- build:js {{assetPath}}/js/vendor.js -->
 <!-- bower:js -->
-<script src="/bower_components/slick-carousel/slick/slick.js"></script>
 <script src="/bower_components/magnific-popup/dist/jquery.magnific-popup.js"></script>
 <script src="/bower_components/jquery-ui/jquery-ui.js"></script>
 <script src="/bower_components/ev-emitter/ev-emitter.js"></script>
 <script src="/bower_components/imagesloaded/imagesloaded.js"></script>
 <script src="/bower_components/popper.js/dist/umd/popper.js"></script>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
+<script src="/bower_components/slick-carousel/slick/slick.js"></script>
+<script src="/bower_components/bootstrap-table/src/bootstrap-table.js"></script>
+<script src="/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js"></script>
+<script src="/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
-<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 
 <script src="{{assetPath}}/js/app.js"></script>
 
-<script src="http://www.youtube.com/player_api"></script>
 
 
 </body>

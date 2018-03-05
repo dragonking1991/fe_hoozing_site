@@ -15,32 +15,10 @@ export default class GoogleMapAPI {
       action: 'get_data',
       data: ''
     }));
-    // axios({
-    //   method: 'post',
-    //   url: miloAPI,
-    //   data: form
-    // })
-    // .then(response => {
-    //   // this.search = new Search({
-    //   //   fnChange: () => {
-    //   //     this.handleSearchResult(this.search.result);
-    //   //   },
-    //   //   fnGetData: () => {
-    //   //     return response.data;
-    //   //   }
-    //   // });
-    //   this.storeArr = response.data.storeInfo;
-    //   this.init();
-    //   console.log(response)
-    // })
-    // .catch(error => {
-    //   console.log(error);
-    // });
     this.storeArr = storeInfo;
     this.init();
-    
-
   }
+  
   init() {
     googlemap({
       key: 'AIzaSyBzlEqFy__g-R9CoVzOfdxTAFBdLAIbTOM'
@@ -57,36 +35,57 @@ export default class GoogleMapAPI {
   drawPopupOnMap() {
     this.map = new google.maps.Map(document.getElementById('map'), {
       center: this.storeArr[0].location,
-      zoom: 15
+      zoom: 15,
+      gestureHandling: 'greedy'
     });
     this.initPopupList();
     this.popupList.forEach((item, i) => {
       this.registerEventPopup(item);
     });
+
+    const thisMap = this.map;
+
+    $(".select-home").on('click', function() {
+      $('.thumb-item').removeClass('selected');
+      $(this).parents('.thumb-item').addClass('selected');
+      let lat = $(this).parents('.thumb-item').attr('data-lat');
+      let lng = $(this).parents('.thumb-item').attr('data-lng');
+      let code = $(this).parents('.thumb-item').attr('data-code');
+      let latLng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng)); 
+      thisMap.panTo(latLng);
+
+      $('.popup-bubble-content').removeClass('show');
+      $('.popup-bubble-content').find('.popup__price').removeClass('hide');
+      $('.popup-bubble-content').find('.popup-wrapper').removeClass('show-popup'); 
+
+      $('#'+ code).addClass('show');
+      $('#'+ code).find('.popup__price').addClass('hide');
+      $('#'+ code).find('.popup-wrapper').addClass('show-popup'); 
+    });
   }
+
 
   initPopupList() {
     let Popup = new PopupDefined(google.maps.OverlayView.prototype, this.map)._popup;
     this.storeArr.forEach((item, i) => {
       let popup = new Popup(new google.maps.LatLng(item.location.lat, item.location.lng), i, item);
-      popup.setContent(item.address, item.opentime, item.gift);
+      popup.setContent(item.code, item.name, item.price, item.linkAp, item.images) ;
+      // console.log(item.code + " " + item.name + " " + item.price + " " + item.linkAp +" " + item.images[1]);
       popup.setMap(this.map);
       this.popupList.push(popup);
     });
   }
 
   registerEventPopup(item) {
-    let dom = new DOM();
-    dom.addMultiEvent(item.content, ['click', 'touchend'], (e) => {
+    let ele = new DOM();
+    ele.addMultiEvent(item.content, ['click', 'touchend'], (e) => {
       e.stopPropagation();
       this.eventPopup(item);
+      let idContent = item.content.id;
+      $('.thumb-item').removeClass('selected');
+      $('.thumb-item[data-code="'+ idContent + '"]').addClass('selected');
     });
-    dom.addMultiEvent(item.link, ['click', 'touchend'], (e) => {
-      e.stopPropagation();
-
-      //click 
-    });
-    dom.addMultiEvent(item.popupClose, ['click', 'touchend'], (e) => {
+    ele.addMultiEvent(item.popupClose, ['click', 'touchend'], (e) => {
       e.stopPropagation();
       item.close();
     });
@@ -102,58 +101,4 @@ export default class GoogleMapAPI {
   }
 
 
-  // handleSearchResult(searchResult) {
-  //   if (searchResult) {
-  //     if(!this.isBoundLatLng) {
-  //       let latLng = searchResult.split(' ');
-  //       this.map.panTo({
-  //         lat: Number(latLng[0]),
-  //         lng: Number(latLng[1])
-  //       })
-  //     } else {
-  //       let bounds = new google.maps.LatLngBounds();
-  //       this.storeArr.forEach(item => {
-  //         if(item.city === this.search.city) {
-  //           let latLng = new google.maps.LatLng(item.location);
-  //           bounds.extend(latLng);
-  //         }
-  //       });
-  //       this.map.fitBounds(bounds);
-  //       this.map.panToBounds(bounds);
-  //       if(this.map.getZoom() > 17) {
-  //         this.map.setZoom(17);
-  //       }
-  //     }
-  //   } else {
-  //     this.clearParticle();
-  //     this.drawOnMap(this.search.myPosition);
-  //   }
-  // }
-
-  // drawOnMap(position) {
-  //   const pos = {
-  //     lat: position.coords.latitude,
-  //     lng: position.coords.longitude
-  //   };
-  //   this.map.setCenter(pos);
-  //   this.marker = new google.maps.Marker({
-  //     position: pos,
-  //     map: this.map
-  //   });
-  //   this.circle = new google.maps.Circle({
-  //     strokeColor: '#000',
-  //     strokeOpacity: 0.3,
-  //     strokeWeight: 2,
-  //     fillColor: '#222',
-  //     fillOpacity: 0.3,
-  //     center: pos,
-  //     map: this.map,
-  //     radius: 2000
-  //   });
-  // }
-
-  clearParticle() {
-    this.marker && this.marker.setMap(null);
-    this.circle && this.circle.setMap(null);
-  }
 }

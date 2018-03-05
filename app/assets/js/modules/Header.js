@@ -1,40 +1,45 @@
 export default class Header {
 	constructor(el) {
-		$('.btn-burger').on('click', function(e) {
-			e.preventDefault();
+		
 
-			if ($(this).hasClass('active')) {
-				$(this).removeClass('active');
-				$('.nav__menu').removeClass('active');
-				$('.nav__menu a').removeClass('animate');
-			} else {
-				$(this).addClass('active');
-				$('.nav__menu').addClass('active');
-				setTimeout(function () {
-					$('.nav__menu a').addClass('animate');
-				}, 100)
+		$('.open-search').on('click',function(){
+			$(".bg-popup").addClass('show');
+			// $("#searchHeader .tt-input").tagsinput('focus');
+			$("#searchHeader .tt-input").focus();
+			$(".nav__menu").addClass('off');
+
+		});
+		$('#searchHeader .close-form').on('click',function(){
+			$(".bg-popup").removeClass('show');
+			$(".nav__menu").removeClass('off');
+		});
+		$('.bg-popup').on('click',function(){
+			$("#searchHeader .close-form").trigger('click');
+		});
+
+
+    var keysearch = new Bloodhound({
+      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      prefetch: {
+        url: 'assets/js/keysearch.json',
+        filter: function(list) {
+          return $.map(list, function(keysearch) {
+            return { name: keysearch }; });
+        }
+      }
+    });
+
+    keysearch.initialize();
+		$('.bootstrap-tagsinput input').tagsinput({
+			typeaheadjs: {
+				name: 'keysearch',
+				displayKey: 'name',
+				valueKey: 'name',
+				source: keysearch.ttAdapter()
 			}
-
-			$(window).on('scroll', function(){
-				if ($(window).width() < 1025 && $('.btn-burger').hasClass('active')) {
-					$('.btn-burger').removeClass('active');
-					$('.nav__menu').removeClass('active');
-					$('.nav__menu a').removeClass('animate');
-				}
-			})
 		});
 
-		//menu user
-		$('.open--user-menu').on('click',function(){
-			$('.menu-user').toggleClass('hidden');
-		});
 
-		$(window).click(function() {
-			$('.menu-user').addClass('hidden');
-		});
-
-		$('.menu-user,.open--user-menu').click(function(event){
-		    event.stopPropagation();
-		});
 	}
 }
