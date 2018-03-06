@@ -1,6 +1,5 @@
 export default class GalleryHouse {
   constructor(el) {
-    this.changeMaxHeight();
     $('.gallery-house a').each(function (index, value) {
       let html = $(this).html();
       let warpperImg;
@@ -34,6 +33,7 @@ export default class GalleryHouse {
     }
 
     $(el).find('.gallery__for').slick(forSlide); 
+    
     $(el).find('.gallery__nav').slick(navSlide).on('afterChange', function(event, slick, currentSlide){
       $(".gallery__slide").find('.counter-slide').html((currentSlide+1) + '/' + slick.slideCount);
     });
@@ -46,15 +46,4 @@ export default class GalleryHouse {
     });
   }
 
-  changeMaxHeight(){
-    var maxHeight = 0;
-    $('.gallery-house img').each(function() {
-      // maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).outerHeight();
-      console.log($("this"))
-    });
-
-    $('.gallery-house li').each(function() {
-      // $(this).outerHeight(maxHeight);
-    });
-  }
 }

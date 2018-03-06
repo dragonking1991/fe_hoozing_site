@@ -4,7 +4,7 @@ import DOM from './DOM';
 import axios from 'axios';
 import PopupDefined from './PopupDefined';
 
-export default class GoogleMapAPI {
+export default class MapResult {
   constructor() {
     this.popupList = [];
     this.myLocation = {};
@@ -45,7 +45,7 @@ export default class GoogleMapAPI {
 
     const thisMap = this.map;
 
-    $(".select-home").on('click', function() {
+    $(document).on('click', '.select-home', function() {
       $('.thumb-item').removeClass('selected');
       $(this).parents('.thumb-item').addClass('selected');
       let lat = $(this).parents('.thumb-item').attr('data-lat');

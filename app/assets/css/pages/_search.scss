@@ -91,6 +91,9 @@
 .search-content--reduce {
   display: inline-block;
   width: 40%;
+  max-height: 100vh;
+  overflow-y:auto;
+
 }
 
 .search-detail {

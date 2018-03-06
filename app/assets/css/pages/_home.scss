@@ -119,10 +119,11 @@
 .thumb-item {
 	position: relative;
 	margin-bottom: 10px;
-	transition:0.5s ease-out;
+	transition:0.3s ease-out;
 
 	&.selected {
 		background: $blue;
+		border-radius: 3px;
 
 		a, span {
 			color: #fff;
@@ -164,11 +165,16 @@
 	background: rgba(#000, 0.4);
 	padding: 20% 40px 0;
 	text-align: center;
-	color:#fff;
+	color:#fff !important;
 	z-index: 3;
 	text-transform: uppercase;
 	font-size: $size-m;
-	
+	// transition:0.3 ease-out;
+	@include screen(medium) {
+		&:hover {
+			background: rgba(#000, 0.3);
+		}
+	}
 }
 
 

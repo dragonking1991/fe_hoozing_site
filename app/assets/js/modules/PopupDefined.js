@@ -45,17 +45,16 @@ export default class PopupDefined {
     };
     Popup.prototype.init = function () {
       let ele = new DOM();
-      this.content = ele.addEle('div', 'row popup thumb-item');
+      this.content = ele.addEle('div', 'row popup');
 
 
       this.popupPrice = ele.addEle('div', 'popup__price');
-      this.popupWrapper = ele.addEle('div', 'popup-wrapper');
+      this.popupWrapper = ele.addEle('div', 'popup-wrapper thumb-item');
 
       
       this.popupClose = ele.addEle('span', 'popup__close');
       this.popupGallery = ele.addEle('div', 'thumb-gallery carousel slide');
       this.popupInfo = ele.addEle('div', 'thumb-info');
-      this.popupGallery.setAttribute("data-ride", "carousel");
 
       //popupGallery
       this.thumbList = ele.addEle('ul', 'thumb-list carousel-inner');

@@ -5,7 +5,7 @@ export default class ScrollTo {
       if ($(window).width() < 1024) {
         offset = 20;
       } else {
-        offset = 0;
+        offset = 50;
       }
       if ($(this.getAttribute('data-target')).length) {
         e.preventDefault();
