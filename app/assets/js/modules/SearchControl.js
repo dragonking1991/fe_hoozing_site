@@ -10,5 +10,19 @@ export default class SearchControl {
 				this.checked = false; 
 			});
 		});
+		
+    $(el).jplist({
+      itemsBox: '.list-box',
+      itemPath: '.thumb-item',
+      panelPath: '.jplist-panel',
+      storage: 'localstorage',
+      storageName: 'mixed-controls-local-storage',
+      effect: 'fade',
+      redrawCallback: function(collection, $dataview, statuses){
+        $(".list-box").find(".slider-wrapper").each(function(){
+          $(this).slick('refresh');
+        });
+      }
+    });
 	}
 }

@@ -7,9 +7,8 @@ export default class SwitchTab {
 			$(".tab-content").removeClass("active");
 			$("#search-" + layout).addClass("active");
 			$("#search-" + layout).find(".slider-wrapper").each(function(){
-				// console.log('a');
-				$(this).slick('slickGoTo', 1 );
-			})
+				$(this).slick('refresh');
+			});
 
 			if(layout == "mapview"){
 				$(".map-result").addClass("show");
