@@ -10,8 +10,6 @@
   }
 }
 
-
-
 .map-result{
   width: 60%;
   float: right;
@@ -255,6 +253,8 @@
       cursor: context-menu;
       display: block;
       opacity: 1;
+      width: 100%;
+      padding: 0;
       max-width: 300px;
       transition: all .5s ease-in-out;
       .popup__close {

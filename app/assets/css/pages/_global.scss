@@ -467,7 +467,7 @@ section {
 		}
 	}
 }
-.jplist-label {
+.jplist-label, .jplist-range-slider, .jplist-date-picker-range {
 	display: inline-block;
 	float: none;
 }
@@ -503,13 +503,20 @@ section {
 		@include absolute(top 30px left);
 	}
 }
+
 .jplist-pagination {
+	display: block;
 	text-align: center;
 
 	> *{ 
 		display: inline-block;
 	}
 }
+
+.jplist-one-page {
+	display: none;
+}
+
 .jplist-panel {
 	width: 100%;
 

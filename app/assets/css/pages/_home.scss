@@ -65,13 +65,13 @@
 	}
 
 	&:after {
-    content:'\f041';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: $gray-dark;
-    display: block;
-    font: normal normal normal 24px/1 FontAwesome;
+		content:'\f041';
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		color: $gray-dark;
+		display: block;
+		font: normal normal normal 24px/1 FontAwesome;
 	}	
 }
 
@@ -150,7 +150,7 @@
 	.slick-slide {
 		font-size: 0;
 	}
-	 
+
 	.slick-arrow {
 		@include screen(medium) {
 			opacity: 0;
@@ -227,7 +227,7 @@
 		font: normal normal normal 45px/1 FontAwesome;
 		color: darken(#fff, 20%);
 		@include absolute(top 46% left 52%);
-    transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
 	}
 	@include screen(medium){
 		&:hover{
@@ -280,7 +280,7 @@
 	@include absolute(top 10px right 10px)
 	i {
 		margin: 0;
-    vertical-align: top;
+		vertical-align: top;
 	}
 }
 .tag-cate {
@@ -401,7 +401,14 @@
 .icon-service {
 	color: $color-default;
 }
-.thumb-list {
+
+.grid {
+	.thumb-item {
+		-ms-flex: 0 0 50%;
+		flex: 0 0 20%;
+	}
+}
+.listview {
 	&:after {
 		@extend .clearfix;
 	}
@@ -424,6 +431,14 @@
 			margin: 0;
 		}
 	}
+
+	.service-more {
+		display: block;
+	}
+}
+
+.service-more {
+	display: none;
 }
 
 .carousel-indicators li {
