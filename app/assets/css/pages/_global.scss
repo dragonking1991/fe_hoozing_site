@@ -419,3 +419,124 @@ section {
 	border-radius: 3px;
 }
 
+.jplist-pagesbox {
+
+	button {
+		background: none;
+		width: 40px;
+		height: 40px;
+		border:none;
+		border-radius: 50%;
+		color: $blue;
+		font-size: 16px;
+		font-weight: bold;
+		transition:0.3s ease-out;
+		text-shadow:none;
+		&:hover {
+			background: #fff;
+			opacity:0.8;
+		}
+	}
+	.jplist-current {
+		background: $blue;
+		color: #fff;
+		&:hover {
+			color: #fff;
+			background: $blue;
+		}
+
+	}
+}
+.jplist-pagingprev,.jplist-pagingnext {
+
+	button {
+		position: relative;
+		background: none;
+		width: 38px;
+		height: 38px;
+		font-size: 0;
+		border:2px solid $blue;
+		border-radius: 50%;
+		color: $blue;
+		&:before {
+			@include absolute(top 50% left 50%);
+			transform: translate(-50%,-50%);
+			color: $blue;
+			display: block;
+			font: normal normal normal 28px/1 FontAwesome;
+		}
+	}
+}
+.jplist-label {
+	display: inline-block;
+	float: none;
+}
+.text-filter-box {
+	display: inline-block;
+	vertical-align: middle;
+}
+.jplist-drop-down {
+	text-align: left;
+	background: #fff;
+	display: inline-block;
+	vertical-align: middle;
+	height: 30px;
+	float: none;
+	margin: 4px 10px;
+
+	.jplist-dd-panel {
+		height: 30px;
+		float: none;
+		line-height: 30px;
+		&:after {
+			content: '\f0d7';
+			position: absolute;
+			top: 6px;
+			right: 10px;
+			color: #999;
+			display: block;
+			font: normal normal normal 18px/1 FontAwesome;
+		}
+	}
+
+	ul {
+		@include absolute(top 30px left);
+	}
+}
+.jplist-pagination {
+	text-align: center;
+
+	> *{ 
+		display: inline-block;
+	}
+}
+.jplist-panel {
+	width: 100%;
+
+	input[type="text"] {
+		height: 30px;
+	}
+	label {
+		float: none;
+	}
+}
+.jplist-first {
+	&:before {
+		content:'\f100';
+	}
+}
+.jplist-prev {
+	&:before {
+		content:'\f104';
+	}
+}
+.jplist-next {
+	&:before {
+		content:'\f105';
+	}
+}
+.jplist-last {
+	&:before {
+		content:'\f101';
+	}
+}

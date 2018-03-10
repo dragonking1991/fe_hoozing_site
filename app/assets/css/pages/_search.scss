@@ -22,6 +22,10 @@
   }
 }
 
+.wrap-tab {
+  padding: 30px;
+}
+
 .tab-content {
   display: none;
   &.active {
@@ -85,15 +89,13 @@
 }
 
 .search-content {
-  padding: 30px;
 }
 
-.search-content--reduce {
+.tab--reduce {
   display: inline-block;
   width: 40%;
   max-height: 100vh;
   overflow-y:auto;
-
 }
 
 .search-detail {
@@ -125,6 +127,7 @@
 
 .filter-wrapper {
   position: relative;
+  padding: 30px;
   .link {
     margin-left: 10px;
   }

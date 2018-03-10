@@ -24,9 +24,9 @@
   <link rel="stylesheet" href="/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" />
   <link rel="stylesheet" href="/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
   <link rel="stylesheet" href="/bower_components/jplist/dist/css/jplist.core.min.css" />
-  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
   <!-- endbower -->
   <!-- endbuild -->
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
 
   <!-- build:css {{assetPath}}/css/app.css -->
   <link rel="stylesheet" href="{{assetPath}}/css/app.css">
@@ -41,7 +41,6 @@
     if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) {
       window.isIE = true;
     }
-    window.miloAPI = "https://milo-vietnam.asiadigitalhub.com/milo_redemption_api/redemption/";
     window.accessToken = "ce088026e1e29bbe6d48d3bfc719ec89";
     window.errorNotify = '';
     window.errorBrowse = '';
@@ -52,60 +51,35 @@
     <!-------------------->
 
     <!-- MAIN CONTENT -->
-    {% block page %}{% endblock %}
-      <!-------------------->
+    {% block page %}
+    {% endblock %}
+    <!-------------------->
 
-      <!-- FOOTER -->
-      {% include 'footer.twig' %}
-      <!-------------------->
-
-
-
-{# <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4=" crossorigin="anonymous"></script> #}
-
-<!-- build:js {{assetPath}}/js/vendor.js -->
-<!-- bower:js -->
-<script src="/bower_components/jquery/dist/jquery.js"></script>
-<script src="/bower_components/jquery-ui/jquery-ui.js"></script>
-<script src="/bower_components/magnific-popup/dist/jquery.magnific-popup.js"></script>
-<script src="/bower_components/ev-emitter/ev-emitter.js"></script>
-<script src="/bower_components/imagesloaded/imagesloaded.js"></script>
-<script src="/bower_components/popper.js/dist/umd/popper.js"></script>
-<script src="/bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
-<script src="/bower_components/slick-carousel/slick/slick.js"></script>
-<script src="/bower_components/bootstrap-table/src/bootstrap-table.js"></script>
-<script src="/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js"></script>
-<script src="/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
-<script src="/bower_components/jplist/dist/js/jplist.core.min.js"></script>
-<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
-
-
-<script src="{{assetPath}}/js/app.js"></script>
-
-  <script>
-        $('document').ready(function(){
-            // $('#demo').jplist({
-            //     itemsBox: '.list'
-            //     ,itemPath: '.list-item'
-            //     ,panelPath: '.jplist-panel'
-            //     ,storage: 'localstorage'
-            //     ,storageName: 'mixed-controls-local-storage'
-            // }); 
-              $('#search-mapview').jplist({
-                itemsBox: '.list-box'
-                ,itemPath: '.thumb-item'
-                ,panelPath: '.jplist-panel'
-                ,storage: 'localstorage'
-                ,storageName: 'mixed-controls-local-storage'
-                ,effect: 'fade'
-            });
-        });
-    </script>
+    <!-- FOOTER -->
+    {% include 'footer.twig' %}
+    <!-------------------->
 
 
 
-</body>
-</html>
+    <!-- build:js {{assetPath}}/js/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="/bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="/bower_components/ev-emitter/ev-emitter.js"></script>
+    <script src="/bower_components/imagesloaded/imagesloaded.js"></script>
+    <script src="/bower_components/popper.js/dist/umd/popper.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
+    <script src="/bower_components/slick-carousel/slick/slick.js"></script>
+    <script src="/bower_components/bootstrap-table/src/bootstrap-table.js"></script>
+    <script src="/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js"></script>
+    <script src="/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+    <script src="/bower_components/jplist/dist/js/jplist.core.min.js"></script>
+    <!-- endbower -->
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- endbuild -->
+
+    <script src="{{assetPath}}/js/app.js"></script>
+
+  </body>
+  </html>

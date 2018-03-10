@@ -36,6 +36,7 @@ export default class MapResult {
     this.map = new google.maps.Map(document.getElementById('map'), {
       center: this.storeArr[0].location,
       zoom: 15,
+      animation: google.maps.Animation.DROP,
       gestureHandling: 'greedy'
     });
     this.initPopupList();
