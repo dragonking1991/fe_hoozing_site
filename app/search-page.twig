@@ -60,7 +60,7 @@
 
     <div class="search-detail">
       <div class="wrap-tab tab--reduce">
-        
+
         <div class="filter-wrapper collapse" id="collapseFilter">
           <a href="#collapseFilter" data-toggle="collapse" class="close-modal"><i class="fa fa-close"></i></a>
           <div class="container">
@@ -270,47 +270,61 @@
           <li><i class="fa fa-angle-right"></i> <a href="#">District 7</a></li>
           <li><i class="fa fa-angle-right"></i> One Bedroom Service Apartment</li>
         </ul>
-        <div class=" tab-content active" id="search-list" data-module="SortList">
-          <div class="jplist-panel">
+        <div class="jplist-panel">
 
-            <span data-type="<b>{all} Listing </b>" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging"></span>
+          <span data-type="<b>{all} Listing </b>" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging"></span>
 
-            Sort by
-            <div class="jplist-drop-down" data-control-type="sort-drop-down" data-control-name="sort" data-control-action="sort"> 
-              <ul>
-                <li><span data-path="default">Sort by</span></li>
-                <li><span data-path="h3" data-order="asc" data-type="text">Title A-Z</span></li>
-                <li><span data-path="h3" data-order="desc" data-type="text">Title Z-A</span></li>
-                <li><span data-path=".price-tag" data-order="asc" data-type="number">Price asc</span></li>
-                <li><span data-path=".price-tag" data-order="desc" data-type="number">Price desc</span></li>
-              </ul>
-            </div>
-
-
-            <label>Layout</label> 
-            <ul class="search__layout" data-module="SwitchTab">
-              <li><a href="javascript:void(0);" class="active" data-toggle="tooltip" data-placement="top" data-layout="grid" title="Grid"><i class="fa fa-th-large"></i></a></li>
-              <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="listview"  title="List"><i class="fa fa-bars"></i></a></li>
-              <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="mapview"  title="Map"><i class="fa fa-map"></i></a></li>
-              <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="project"  title="Project"><i class="fa fa-bank"></i></a></li>
+          Sort by
+          <div class="jplist-drop-down" data-control-type="sort-drop-down" data-control-name="sort" data-control-action="sort"> 
+            <ul>
+              <li><span data-path="default">Sort by</span></li>
+              <li><span data-path="h3" data-order="asc" data-type="text">Title A-Z</span></li>
+              <li><span data-path="h3" data-order="desc" data-type="text">Title Z-A</span></li>
+              <li><span data-path=".price-tag" data-order="asc" data-type="number">Price asc</span></li>
+              <li><span data-path=".price-tag" data-order="desc" data-type="number">Price desc</span></li>
             </ul>
-
-            <div class="text-filter-box">
-              <input data-path="h3" type="text" value="" placeholder="Filter by Title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" />
-            </div>
-
-            <div class="jplist-drop-down" data-control-type="items-per-page-drop-down" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true">
-              <ul>
-                <li><span data-number="2" data-default="true"> 2 per page </span></li>
-                <li><span data-number="5"> 5 per page </span></li>
-                <li><span data-number="10" > 10 per page </span></li>
-                <li><span data-number="all"> View All </span></li>
-              </ul>
-            </div>
-
-            <div class="jplist-pagination" data-control-animate-to-top="true" data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-storage="false"></div>
-
           </div>
+
+
+          <label>Layout</label> 
+          <ul class="search__layout" data-module="SwitchTab">
+            <li><a href="javascript:void(0);" class="active" data-toggle="tooltip" data-placement="top" data-layout="grid" title="Grid"><i class="fa fa-th-large"></i></a></li>
+            <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="listview"  title="List"><i class="fa fa-bars"></i></a></li>
+            <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="mapview"  title="Map"><i class="fa fa-map"></i></a></li>
+            <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="project"  title="Project"><i class="fa fa-bank"></i></a></li>
+          </ul>
+
+          <div class="text-filter-box">
+            <input data-path="h3" type="text" value="" placeholder="Filter by Title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" />
+          </div>
+
+          <div class="jplist-drop-down" data-control-type="items-per-page-drop-down" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true">
+            <ul>
+              <li><span data-number="2"> 2 per page </span></li>
+              <li><span data-number="4" data-default="true"> 4 per page </span></li>
+              <li><span data-number="all"> View All </span></li>
+            </ul>
+          </div>
+
+          {# <div data-control-type="date-picker-range-filter" data-control-name="date-picker-range-filter"  data-control-action="filter" data-path=".date"  data-datetime-format="{month}/{day}/{year}" class="jplist-date-picker-range">
+
+            <!-- prev date -->
+            <i class="fa fa-calendar jplist-icon" aria-hidden="true"></i>       
+            <input type="text" class="date-picker" placeholder="Datepicker" data-type="prev" />
+
+            <!-- gap -->
+            <i class="fa fa-minus gap" aria-hidden="true"></i>
+
+            <!-- next date -->
+            <i class="fa fa-calendar jplist-icon" aria-hidden="true"></i> 
+            <input type="text" class="date-picker" placeholder="Datepicker" data-type="next"/>
+          </div> #}  
+
+
+          <div class="jplist-pagination" data-control-animate-to-top="true" data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-storage="false"></div>
+
+        </div>
+        <div class=" tab-content active" id="search-list" data-module="SortList">
           <div class="row list-box">
 
             <div class="thumb-item col-md-6" data-date="03/03/2017" data-code="mh021" data-lng="106.67094305726" data-lat="10.750648587535" data-city="Ho Chi Minh">
@@ -332,7 +346,12 @@
                 <div class="thumb-service">
                   <span><i class="fa fa-map-marker"></i> District 7</span>
                   <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>          
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
                 </div>
               </div>
             </div>
@@ -355,7 +374,12 @@
                 <div class="thumb-service">
                   <span><i class="fa fa-map-marker"></i> District 7</span>
                   <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>          
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
                 </div>
               </div>
             </div>
@@ -378,7 +402,12 @@
                 <div class="thumb-service">
                   <span><i class="fa fa-map-marker"></i> District 7</span>
                   <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>          
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
                 </div>
               </div>
             </div>
@@ -401,7 +430,12 @@
                 <div class="thumb-service">
                   <span><i class="fa fa-map-marker"></i> District 7</span>
                   <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>          
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
                 </div>
               </div>
             </div>
@@ -424,7 +458,12 @@
                 <div class="thumb-service">
                   <span><i class="fa fa-map-marker"></i> District 7</span>
                   <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>          
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
                 </div>
               </div>
             </div>
@@ -447,7 +486,12 @@
                 <div class="thumb-service">
                   <span><i class="fa fa-map-marker"></i> District 7</span>
                   <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>          
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
                 </div>
               </div>
             </div>          
@@ -483,7 +527,13 @@
                 <div class="thumb-service">
                   <span><i class="fa fa-map-marker"></i> District 7</span>
                   <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>          
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>  
+                          
                 </div>
               </div>
             </div>
@@ -506,7 +556,12 @@
                 <div class="thumb-service">
                   <span><i class="fa fa-map-marker"></i> District 7</span>
                   <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>          
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
                 </div>
               </div>
             </div>
@@ -529,7 +584,12 @@
                 <div class="thumb-service">
                   <span><i class="fa fa-map-marker"></i> District 7</span>
                   <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>          
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
                 </div>
               </div>
             </div>
@@ -552,7 +612,12 @@
                 <div class="thumb-service">
                   <span><i class="fa fa-map-marker"></i> District 7</span>
                   <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>          
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
                 </div>
               </div>
             </div>

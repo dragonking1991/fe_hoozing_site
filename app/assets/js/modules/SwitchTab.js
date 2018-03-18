@@ -5,19 +5,39 @@ export default class SwitchTab {
 			$("a[data-layout]").removeClass('active');
 			$(this).addClass('active');
 			$(".tab-content").removeClass("active");
-			$("#search-" + layout).addClass("active");
-			$("#search-" + layout).find(".slider-wrapper").each(function(){
-				$(this).slick('refresh');
-			});
+			$(".search-content").removeClass('mapview listview grid');
 
-			if(layout == "mapview"){
-				$(".map-result").addClass("show");
-				$(".search-content").addClass("search-content--reduce");
+			// mapview
+			$(".wrap-tab").removeClass("tab--reduce");
+			$(".map-result").removeClass("show");
+
+			if ( layout == "project") {
+				$("#search-" + layout).addClass("active");
+				$("#search-" + layout).find(".slider-wrapper").each(function(){
+					$(this).slick('refresh');
+				});
 			}
 			else {
-				$(".map-result").removeClass("show");
-				$(".search-content").removeClass("search-content--reduce");
+				
+				$("#search-list").addClass("active");
+				$("#search-list").find(".slider-wrapper").each(function(){
+					$(this).slick('refresh');
+				});
+
+				// mapview
+				if(layout == "mapview"){
+					$(".map-result").addClass("show");
+					$(".wrap-tab").addClass("tab--reduce");
+					$('.search-content').addClass('mapview');
+				}
+				if(layout == "listview"){
+					$('.search-content').addClass('listview');
+				}
+				if(layout == "grid"){
+					$('.search-content').addClass('grid');
+				}
 			}
+
 		});
 
 	}
