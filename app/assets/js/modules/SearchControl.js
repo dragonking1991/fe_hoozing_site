@@ -21,7 +21,7 @@ export default class SearchControl {
 			effect: 'fade',
 			redrawCallback: function(collection, $dataview, statuses){
 				$(".list-box").find(".slider-wrapper").each(function(){
-					// $(this).slick('refresh');
+					$(this).slick('refresh');
 				});
 			}
 		});
