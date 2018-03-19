@@ -85,3 +85,17 @@
 
 }
 
+#inspectionForm {
+  .modal-body  {
+    max-width: 1020px;
+    margin: 0 auto;
+    background: #fff;
+    color: #333;
+  }
+  .row {
+    width: 100%;
+  }
+  .thumb-service {
+    color: #333;
+  }
+}

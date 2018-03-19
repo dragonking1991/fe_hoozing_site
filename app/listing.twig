@@ -3,7 +3,7 @@
 {% block page %}
 <div class="bar-request">
   <div class="container">
-    <a href="#" class="btn btn--red pull-right">Request Inspectation</a>
+    <a href="#inspectionForm" data-toggle="modal" class="btn btn--red pull-right">Request Inspectation</a>
     <h3>
       RESORT - LIKE NEW APARTMENT IN STARHILL DISTRICT 7
       <span class="price"><b>$1,200</b> per month</span>
@@ -34,6 +34,49 @@
               <a href="#" class="btn btn--red btn--full">Request Inspection</a>
               <a href="#" class="btn btn--full"><i class="fa fa-phone"></i><span>Direct call</span></a>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="inspectionForm">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body row">
+          <h2> Resort - like new Apartment in Starhill district 7</h2>
+          <div class="locate"><i class="fa fa-map-marker"></i> District 7</div>
+          <div class="house-code float-right">
+            h012345
+            <span>House Code</span>
+          </div>
+          <div class="row">
+            <div class="col-5">
+              <p><b>$1200</b> per month</p>
+              <ul class="thumb-service thumb--col-2 thumb-overview">
+                <li><i class="fa fa-building-o"></i> Apartment</li>  
+                <li><i class="fa fa-bath"></i> 1 Bathroom(s)</li>  
+                <li><i class="fa fa-bed"></i> 1 Bedroom(s)</li>  
+                <li><i class="fa fa-group"></i> 1 Bedroom(s)</li>  
+                <li><i class="fa fa-umbrella"></i> 1 Fullu Funished(s)</li>  
+              </ul>
+            </div>
+            <div class="col-7">
+              <form>
+                <div class="input-wrapper">
+                  <input type="text" placeholder="Name [required]" id="name" name="name" required="required">
+                </div>
+                <div class="input-wrapper">
+                  <input type="email" placeholder="Email [required] " id="email" name="email" required="required">
+                </div>
+                <div class="input-wrapper">
+                  <input type="tel" placeholder="Phone [optional] " id="email" name="email" required="required">
+                </div>
+                <div class="input-wrapper textarea-wrapper">
+                  <textarea rows="4" placeholder="Hello, I'm interest in  Resort  Apartment in Starhill district 7. Please sent me the current available and additional detail.Thanks"></textarea>
+                </div>
+              </form>
+            </div> 
           </div>
         </div>
       </div>
@@ -178,7 +221,7 @@
             <div class="form-group">
               <input type="email" name="" placeholder="Your email" />
             </div>
-            <a href="#" class="btn btn--red btn--full">Request Inspectation</a>
+            <a href="#inspectionForm" data-toggle="modal" class="btn btn--red btn--full">Request Inspectation</a>
             <a href="#" class="link-share"><i class="fa fa-heart-o"></i> Favorite</a>
             <a href="#" class="link-share"><i class="fa fa-envelope-o"></i> Share</a>
           </form>
