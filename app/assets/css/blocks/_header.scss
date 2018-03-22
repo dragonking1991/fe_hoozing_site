@@ -4,6 +4,7 @@ header {
   position: relative;
   z-index: 101;
   padding: 10px 30px;
+  box-shadow: 0 0 20px #aaa;
   @include screen(medium){ 
     min-height: 73px;
     background: #fff;

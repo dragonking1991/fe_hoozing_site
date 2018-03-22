@@ -1,8 +1,9 @@
 footer {
   border-top: 1px solid $color-light;
 	padding-top: 15px;
-  box-shadow: 0 0 10px #ccc;
-  text-align: center;
+  background: url( ../../assets/images/global/footer-background.png) no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 20px #aaa;
 }
 .quick-link {
   padding: 0 0 40px;
@@ -15,6 +16,9 @@ footer {
   li {
     padding: 0 5px;
   }
+}
+.copyright {
+  text-align: center;
 }
 
 .fast-connect {
