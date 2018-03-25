@@ -12,7 +12,8 @@
     "bootstrap-table": "^1.11.1",
     "bootstrap-tagsinput": "^0.8.0",
     "bootstrap-datepicker": "^1.7.1",
-    "jplist": "^5.2.0"
+    "jplist": "^5.2.0",
+    "malihu-custom-scrollbar-plugin": "^3.1.5"
   },
   "devDependencies": {},
   "overrides": {

@@ -1,7 +1,8 @@
 .listing-detail {
-	.block-title {
-		margin: 50px 0 20px;
-	}
+}
+.block-title {
+	margin: 50px 0 20px;
+	width: 100%;
 }
 
 .map-detail {
@@ -32,6 +33,7 @@
 	border: 2px solid $gray-dark;
 	text-transform: uppercase;
 	z-index: 2;
+	float: right;
 	span {
 		background: #fff;
 		color: $color-light;
