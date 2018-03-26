@@ -167,30 +167,6 @@ input {
   }
 }
 
-.input-btn {
-  position: relative;
-  i {
-    margin-right: 0;
-  }
-  input {
-    width: 100%;
-    padding-right: 50px;
-  } 
-  button {
-    width: 45px;
-    height: 45px;
-    font-size: 42px;
-    background: $blue;
-    border: none;
-    outline: none;
-    color: #fff;
-    line-height: 0;
-    @include absolute(top  right);
-  }
-    
-
-}
-
 input {
   height: 45px;
 }
@@ -277,11 +253,30 @@ input {
   position: relative;
   margin-bottom: 10px;
   border-radius: 3px;
+  background: #fff;
+  text-align: left;
   @include screen(medium) {
     &:hover {
+      z-index: 4;
       ul {
         display: block;
       }
+    }
+  }
+  &.show {
+    z-index: 4;
+    ul {
+      display: block;
+    }
+  }
+  span {
+    text-transform: capitalize;
+  }
+
+  label {
+    color: #333;
+    &:after,&:before {
+      color: $red;
     }
   }
 
@@ -301,6 +296,52 @@ input {
 
 /* Select */
 .select-wrapper {
+  cursor: pointer;
+  padding: 0 10px;
+  text-align: left;
+  &:hover {
+    @include screen(medium) {
+      z-index: 3;
+      ul {
+        display: block;
+      }
+    }
+  }
+  &.show {
+    z-index: 3;
+    ul {
+      display: block;
+    }
+  }
+  span {
+    text-align: left;
+    line-height: 45px;
+    margin-left: 10px;
+    text-transform: capitalize;
+  }
+
+  ul {
+    background: #fff;
+    @include absolute(top 100% left)
+    width: 100%;
+    display: none;
+    text-align: left;
+    max-height: 180px;
+    overflow-y:scroll;
+  }
+  li {
+    padding: 3px 10px;
+    &.active {
+      color: $red;
+    }
+    &:hover {
+      background: $gray-light;
+    }
+  }
+}
+
+//
+.select-wrapper {
   width: 100%;
   height: 45px;
   margin-bottom: 10px;
@@ -312,6 +353,7 @@ input {
   &.input-box {
     margin-top: 10px;
   }
+
 
   select {
     padding: 0 25px 0 15px;
@@ -369,6 +411,7 @@ input {
 }
 
 .select-bath {
+  padding-left: 30px;
   select {
     padding-left: 40px;
   }
@@ -381,6 +424,7 @@ input {
   }
 }
 .select-bed {
+  padding-left: 30px;
   
   select {
     padding-left: 40px;

@@ -34,12 +34,12 @@ header {
   display: block !important;
 }
 .wrapper-inputtags {
-  @include absolute(top 50% left 20%);
+  @include absolute(top 50% left 12%);
   border:1px solid #333;
   background: #fff;
   padding: 0px;
   height: 45px;
-  width: 60%;
+  width: 30%;
   border-radius: 3px;
   transform:translate(40px,-50%);
   transition:0.3s transform ease-out;

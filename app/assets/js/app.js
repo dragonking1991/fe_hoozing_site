@@ -38,7 +38,5 @@ $(window).on('load', function() {
   let popupModule = new (require(`./modules/OpenPopup`).default)();
   window.popup = popupModule;
 
-  let progressModule = new (require(`./modules/Progress`).default)();
-  window.progress = progressModule;
 });
 
