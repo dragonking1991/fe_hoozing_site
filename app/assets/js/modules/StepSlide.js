@@ -1,11 +1,11 @@
-export default class LinkSlide {
+export default class StepSlide {
 	constructor(el) {
     var $el = $(el).find('.slider-wrapper');
     $el.slick({
       fade: false,
-      dots:false,
+      dots:true,
       infinite: true,
-      arrows: true,
+      arrows: false,
       slidesToShow: 1,
       slidesToScroll: 1,
       mobileFirst:true,

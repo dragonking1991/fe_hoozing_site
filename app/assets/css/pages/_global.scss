@@ -333,10 +333,14 @@ button:focus {
 }
 
 .section-title {
-	font-size: 42px;
 	text-transform: capitalize;
-	margin-bottom: 40px;
 	font-weight: normal;
+	font-size: 28px;
+	margin-bottom: 20px;
+	@include screen(medium){
+		font-size: 42px;
+		margin-bottom: 40px;
+	}
 }
 section {
 	padding: 10px 0 20px;
@@ -345,10 +349,14 @@ section {
 .link-district {
 	display: inline-block;
 	text-transform: capitalize;
+	margin-bottom: 20px;
 	li {
 		display: inline-block;
-		text-decoration:underline;
 		list-style: none;
+		color: #fff;
+	}
+	a {
+		text-decoration:underline;
 	}
 }
 
@@ -396,10 +404,10 @@ section {
 	}  
 }
 .f-right {
- float: right;
+	float: right;
 }
 .f-left {
- float: left;
+	float: left;
 }
 
 

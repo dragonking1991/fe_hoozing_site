@@ -1,20 +1,40 @@
 .hero-banner {
-	background: url(../images/dummy/home-above-the-fold.png) no-repeat;
+	// background: url(../images/dummy/home-above-the-fold.png) no-repeat;
+	// min-height: 100vh;
 	background-size: cover;
-	min-height: 100vh;
 	position: relative;
+	padding: 0;
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 48%;
 
 }
 
+.slide-bg {
+	background: #000;
+	font-size: 0;
+	img {
+		width: 100%;
+		opacity: 0.7;
+	}
+}
+
 .banner-wrapper {
-	position: absolute;
-	width: 850px;
-	@include absolute( top 50% left 50%);
-	transform:translate(-50%, -50%);
+	@include screen(medium) {
+		width: 850px;
+		@include absolute( top 50% left 50%);
+		transform:translate(-50%, -50%);
+	}
 
 	h1 {
 		color: #fff;
 		font-size: $size-xxxl;
+		span {
+			display: none;
+		}
+		.active{
+			display: block;
+		}
 	}
 	.select-wrapper {
 		background: #fff;
@@ -37,7 +57,7 @@
 	p {
 		display: inline-block;
 		width: 49%;
-		color: $color-default;
+		color: #fff;
 		&:not(:last-child) {
 			border-right: 1px solid;
 		}
@@ -87,30 +107,50 @@
 	}
 }
 
+.steps {
+	.slick-dots {
+		bottom: 0;
+		.slick-active button{
+			background: $blue; 
+		}
+	}
+}
 .step {
 	display: inline-block;
 	vertical-align: top;
-	width: 24%;
-	position: relative;
-	&:not(:last-child) {
-		&:before {
+	position: relative; 
+	padding: 0 5px;
+	&:before {
+		@include screen(medium){
 			content:'\f105';
 			display: block;
 			color: $color-light;
 			@include absolute(top 30% right -3%);
 			transform:translateY(-50%);
 			font: normal normal normal 42px/1 FontAwesome;
-		} 
+		}
+	} 
+	&:not(:last-child) {
 	}
 	i {
-		font-size: $size-xxxl;
 		color:$blue;
+		font-size: 42px;
+		@include screen(medium){
+			font-size: $size-xxxl;
+		}
 	}
 	h3 {
 		text-transform: capitalize;
 		font-size: $size-ml;
-		margin: 20px 0;
+		margin: 10px 0;
+		@include screen(medium){
+			margin: 20px 0;
+		}
 	}
+	p {
+		padding:  0 10px 10px;
+	}
+
 }
 
 
@@ -150,9 +190,7 @@
 	}
 
 	.slick-arrow {
-		@include screen(medium) {
-			opacity: 0;
-		}
+		opacity: 0;
 	}
 }
 
@@ -309,6 +347,11 @@
 			display: block;
 		}
 	}
+
+	[class^='col-'] {
+		float: left;
+		min-height: 1px;
+	}
 }
 .properties__tab {
 	margin: 20px 0;
@@ -460,6 +503,11 @@
 		width: 50px;
 		height: 50px;
 		opacity: 0;
+		background: #fff;
+		box-shadow: 0 2px 10px #000;
+		&:after {
+			color: #333;
+		}
 	}
 	.slick-prev {
 		left: -5px;
@@ -516,3 +564,13 @@
 	font-size: 13px;
 	line-height: 18px;
 }
+
+.neighborhood {
+	padding: 10px 0 40px; 
+
+	.item {
+		padding: 0 10px;
+	}
+	
+}
+
