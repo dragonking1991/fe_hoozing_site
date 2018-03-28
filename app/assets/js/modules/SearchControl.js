@@ -11,7 +11,6 @@ export default class SearchControl {
 			});
 		});
 
-
 		$(el).jplist({
 			itemsBox: '.list-box',
 			itemPath: '.thumb-item',
