@@ -1,6 +1,17 @@
 export default class Header {
 	constructor(el) {
 		
+		$('.btn-burger').on('click', function(e) {
+			e.preventDefault();
+
+			if ($(this).hasClass('active')) {
+				$(this).removeClass('active');
+				$('.main-menu').removeClass('active');
+			} else {
+				$(this).addClass('active');
+				$('.main-menu').addClass('active');
+			}
+		});
 
 		$('.open-search').on('click',function(){
 			$(".bg-popup").addClass('show');

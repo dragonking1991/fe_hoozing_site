@@ -1,39 +1,40 @@
 .btn-burger {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 50px;
+  height: 50px;
   position: relative;
+  @extend .show-for-small;
 
   &:before, &:after, span {
     content: '';
     display: block;
-    width: 24px;
-    height: 2px;
-    background-color: #fff;
+    width: 20px;
+    height: 3px;
+    background-color: $colorBurger;
     border-radius: 2px;
     position: absolute;
   }
 
   &:before {
-    top: 3px;
-    left: 0;
+    top: 16px;
+    left: 15px;
     transition: all 0.3s ease;
   }
   span {
-    top: 11px;
-    left: 0;
+    top: 22px;
+    left: 15px;
     transition: all 0.3s ease 0.2s;
     @include clear-text;
   }
   &:after {
-    top: 19px;
-    left: 0;
+    top: 28px;
+    left: 15px;
     transition: all 0.3s ease;
   }
 
   &.active {
     &:before {
-      top: 11px;
+      top: 18px;
       transform: rotate(135deg);
       transition: all 0.3s ease 0.2s;
     }
@@ -42,13 +43,16 @@
       transition: all 0.3s ease;
     }
     &:after {
-      top: 11px;
+      top: 18px;
       transform: rotate(-135deg);
       transition: all 0.3s ease 0.2s;
     }
   }
 }
 
+.hamburger {
+  @include hamburger($colorBurger, $colorBurger, 30px, 20px, 2px, 3);
+}
 
 .btn-wrapper {
   text-align: center;
