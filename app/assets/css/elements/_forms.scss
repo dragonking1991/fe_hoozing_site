@@ -430,8 +430,8 @@ input {
     content:"\f2cd";
     display: block;
     color: #333;
-    font: normal normal normal 18px/1 FontAwesome;
-    @include absolute(top 10px left 10px);
+    font: normal normal normal 16px/1 FontAwesome;
+    @include absolute(top 12px left 10px);
   }
 }
 .select-bed {
@@ -442,8 +442,8 @@ input {
     content:"\f236";
     display: block;
     color: #333;
-    font: normal normal normal 18px/1 FontAwesome;
-    @include absolute(top 12px left 10px);
+    font: normal normal normal 16px/1 FontAwesome;
+    @include absolute(top 14px left 10px);
   }
 }
 

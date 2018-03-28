@@ -1,12 +1,23 @@
 footer {
-  border-top: 1px solid $color-light;
-	padding-top: 15px;
-  background: url( ../../assets/images/global/footer-background.png) no-repeat;
-  background-size: cover;
-  box-shadow: 0 0 20px #aaa;
+  @include screen(medium){
+    padding-top: 15px;
+    border-top: 1px solid $color-light;
+    background: url( ../../assets/images/global/footer-background.png) no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 20px #aaa;
+  }
   
   .block-title {
     margin: 20px 0;
+  }
+}
+.copyright {
+  @include screen(medium,false){
+    p{
+      margin: 0;
+      padding: 10px 0;
+      border-top: 1px solid $color-light;
+    }
   }
 }
 .quick-link {
@@ -26,7 +37,7 @@ footer {
 }
 
 .fast-connect {
-  
+
   ul {
     margin-bottom: 15px;
   }
@@ -38,41 +49,46 @@ footer {
   margin: 15px 0;
   text-transform: capitalize;
 }
-
+.social {
+  @include screen(medium,false){
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
 .social-media {
   border-right: 2px solid #cbcbcb;
   padding: 0 10px;
- 	@include screen(medium) {
-		max-width: 184px;
- 	}
+  @include screen(medium) {
+    max-width: 184px;
+  }
 }
 .live-support {
   padding: 0 20px;
 }
 
 .social-link {
- 	@include screen(medium) {
-	  padding: 10px !important;
- 	}
+  @include screen(medium) {
+   padding: 10px !important;
+ }
 
-  .col-5 {
-	 	@include screen(medium, false) {
-	  	float: left;
-	  	width: 49%;
-	 	}
+ .col-5 {
+   @include screen(medium, false) {
+    float: left;
+    width: 49%;
   }
-  .left {
-	 	@include screen(medium, false) {
-	 		text-align: center;
-	 	}
-  }
+}
+.left {
+ @include screen(medium, false) {
+  text-align: center;
+}
+}
 
-	.txt {
-    color: #656565;
-    font-size: .75em;
-    display: inline-block;
-    vertical-align: middle;
-  }
+.txt {
+  color: #656565;
+  font-size: .75em;
+  display: inline-block;
+  vertical-align: middle;
+}
 }
 
 .icon-fb-btn,.icon-youtube,.icon-chat {
@@ -95,13 +111,13 @@ footer {
   bottom: 18px;
   z-index: 999;
 
-	i {
-	  font-size: 2.5em;
-	  color: #f7ab03;
-	  min-height: 35px;
-	  text-align: center;
-	  display: block;
-	}
+  i {
+   font-size: 2.5em;
+   color: #f7ab03;
+   min-height: 35px;
+   text-align: center;
+   display: block;
+ }
 }
 
 .fa-chevron-circle-up{
@@ -148,16 +164,16 @@ footer {
   margin-top: 1em;
 
   @include screen(medium){
-	  text-align: right;
-  	float: none;
-	  width: 77%;
-  }  
+   text-align: right;
+   float: none;
+   width: 77%;
+ }  
 
-	a {
-    color: #009d30;
-    padding: 0 3px;    
-    white-space: nowrap;
-  }
+ a {
+  color: #009d30;
+  padding: 0 3px;    
+  white-space: nowrap;
+}
 }
 
 .nestle-logo {
@@ -168,8 +184,8 @@ footer {
   vertical-align: bottom;
   width: 21%;
   max-width: 126px;
- 	@include screen(medium, false) {
+  @include screen(medium, false) {
     margin-top: 1em;
- 		float: left;
- 	}
+    float: left;
+  }
 }

@@ -146,7 +146,14 @@
 .btn--small {
   height: auto;
   min-width: 0;
-  padding: 0px 15px;
+  padding: 0px 10px;
   line-height: 32px;
-  font-size: 14px;
+  font-size: 12px;
+  min-width: 110px;
+  @include screen(medium){
+    min-width: 135px;
+    font-size: 14px;
+    padding: 0px 15px;
+
+  }
 }

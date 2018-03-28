@@ -348,7 +348,10 @@ button:focus {
 	}
 }
 section {
-	padding: 10px 0 20px;
+	padding: 10px 0;
+	@include screen(medium){
+		padding: 10px 0 20px;
+	}
 }
 
 .link-district {

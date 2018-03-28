@@ -15,14 +15,14 @@
 }
 
 .slide-bg {
-	background: #000;
+	background: #333;
 	font-size: 0;
 	@include screen(medium, false){
 		display:none;
 	}
 	img {
 		width: 100%;
-		opacity: 0.8;
+		opacity: 0.9;
 	}
 }
 
@@ -33,9 +33,33 @@
 		transform:translate(-50%, -50%);
 	}
 
+
+	.link-arrow {
+		color: $red;
+		text-decoration: underline;
+		position: relative;
+		margin-bottom: 10px;
+		float: right;
+		&:after {
+			content:'\f0d7';
+			position: absolute;
+			color: $red;
+			display: block;
+			font: normal normal normal 18px/1 FontAwesome;
+			right: -15px;
+			top: 2px;
+			transform:rotate(180deg);
+		}
+		&.collapsed {
+			&:after {
+				transform:rotate(0deg);
+			}
+		}
+	}
+
 	h1 {
 		color: #fff;
-		font-size:32px;
+		font-size:28px;
 		@include screen(medium) {
 			font-size: $size-xxxl;
 		}
@@ -67,9 +91,12 @@
 .site-sumary {
 	max-width: 340px;
 	margin: 0 auto;
+	@extend .clearfix;
 	p {
-		display: inline-block;
+		float:left;
 		width: 49%;
+		padding: 5px 0;
+		background: rgba(0,0,0,0.1);
 		color: #fff;
 		&:not(:last-child) {
 			border-right: 1px solid;
@@ -133,16 +160,16 @@
 	vertical-align: top;
 	position: relative; 
 	padding: 0 5px;
-	&:before {
-		@include screen(medium){
-			content:'\f105';
-			display: block;
-			color: $color-light;
-			@include absolute(top 30% right -3%);
-			transform:translateY(-50%);
-			font: normal normal normal 42px/1 FontAwesome;
+	.fa-angle-right {
+		color: $color-light;
+		@include absolute(top 30% right -3%);
+		transform:translateY(-50%);
+		font-size: 42px;
+		@include screen(medium, false){
+			display: none;
 		}
-	} 
+	}
+
 	&:not(:last-child) {
 	}
 	i {
@@ -154,14 +181,15 @@
 	}
 	h3 {
 		text-transform: capitalize;
-		font-size: $size-ml;
+		font-size: 22px;
 		margin: 10px 0;
 		@include screen(medium){
+			font-size: $size-ml;
 			margin: 20px 0;
 		}
 	}
 	p {
-		padding:  0 10px 10px;
+		padding:  0 20px 10px;
 	}
 
 }
@@ -585,7 +613,6 @@
 		text-align: left;
 	}
 	.btn {
-		min-width: 135px;
 		color:$color-default;
 		font-size: $size-s;
 		&:not(:last-child){
@@ -596,9 +623,13 @@
 }
 
 .item-project__info {
-	padding: 5px 30px 20px;
+	padding: 5px 10px 20px;
 	border:1px solid $gray-medium;
 	border-top: none;
+	@include screen(medium){
+		padding: 5px 30px 20px;
+
+	}
 }
 
 .info-detail {
@@ -621,3 +652,12 @@
 	
 }
 
+
+#more-filter {
+	@include screen(medium,false){
+		display: none;;
+		&.show {
+			display: block;
+		}
+	}
+}

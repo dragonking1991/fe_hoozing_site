@@ -9,6 +9,8 @@ export default class SlideBg {
       autoplaySpeed: 5000,
       arrows: false,
       slidesToShow: 1,
+      fade: true,
+      cssEase: 'linear',
       slidesToScroll: 1,
       mobileFirst:true
     };

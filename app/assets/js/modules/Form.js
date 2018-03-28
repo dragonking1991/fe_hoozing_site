@@ -30,6 +30,17 @@ export default class Form {
         $(this).removeClass('show');
       }
     });
+
+
+    $(document).on('click', function(e) 
+    {
+      var container = $(".select-wrapper, .checkbox-list");
+
+      if (!container.is(e.target) && container.has(e.target).length === 0) 
+      {
+        container.removeClass('show');
+      }
+    });
     $('.select-wrapper li').on('click',function(){
       $(this).parents(".select-wrapper").find('li').removeClass('active'); 
       $(this).addClass('active').parents(".select-wrapper").removeClass('show').find('span').html($(this).html());
