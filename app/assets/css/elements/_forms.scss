@@ -263,6 +263,18 @@ input {
       }
     }
   }
+
+
+  &:after {
+    content:'\f0d7';
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    color: $gray-dark;
+    display: block;
+    font: normal normal normal 18px/1 FontAwesome;
+  }
+
   &.show {
     z-index: 4;
     ul {
@@ -285,7 +297,8 @@ input {
     @include absolute(top 43px left);
     width: 100%;
     background: #fff;
-    z-index: 1; 
+    z-index: 1;
+    z-index:2;
     border: 1px solid #ddd;
   }
   li {
@@ -472,4 +485,8 @@ input {
 }
 .error-field {
   border-color: #ff0000;
+}
+
+.jplist-drop-down .jplist-dd-panel:after {
+  z-index:1;
 }

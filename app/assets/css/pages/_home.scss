@@ -1,11 +1,15 @@
 .hero-banner {
-	position: relative;
-	overflow: hidden;
+	padding:0;
+	padding-bottom:45%;
+	height:0;
+	overflow:hidden;
+
 	@include screen(medium,false){
+		height:auto;
 		background: url(../images/dummy/home.png) no-repeat;
 		background-size: cover;
 		padding: 20px;
-		paddaing-bottom:100%;
+		padding-bottom:10%;
 	}
 
 }
