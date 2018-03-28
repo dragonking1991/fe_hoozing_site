@@ -6,6 +6,11 @@ body {
 	font-family: $font_default;
 	font-size: $size-default;
 	overflow-x: hidden;
+	font-size:13px;
+	@include screen(medium){
+		font-size: $size-default;
+
+	}
 }
 
 .container {
@@ -335,7 +340,7 @@ button:focus {
 .section-title {
 	text-transform: capitalize;
 	font-weight: normal;
-	font-size: 28px;
+	font-size: 26px;
 	margin-bottom: 20px;
 	@include screen(medium){
 		font-size: 42px;

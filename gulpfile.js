@@ -221,7 +221,7 @@ gulp.task('serve', () => {
   runSequence(['wiredep','twig', 'sprite'], ['css', 'js', 'fonts'], () => {
     browserSync.init({
       notify: false,
-      port: 9000,
+      port: 9100,
       reloadDelay: 100,
       logLevel: 'info',
       online: true,

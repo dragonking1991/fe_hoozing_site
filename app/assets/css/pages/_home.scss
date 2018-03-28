@@ -1,18 +1,21 @@
 .hero-banner {
-	// background: url(../images/dummy/home-above-the-fold.png) no-repeat;
-	// min-height: 100vh;
-	background-size: cover;
 	position: relative;
-	padding: 0;
-	height: 0;
 	overflow: hidden;
-	padding-bottom: 48%;
+	@include screen(medium,false){
+		background: url(../images/dummy/home.png) no-repeat;
+		background-size: cover;
+		padding: 20px;
+		paddaing-bottom:100%;
+	}
 
 }
 
 .slide-bg {
 	background: #000;
 	font-size: 0;
+	@include screen(medium, false){
+		display:none;
+	}
 	img {
 		width: 100%;
 		opacity: 0.8;
@@ -28,7 +31,10 @@
 
 	h1 {
 		color: #fff;
-		font-size: $size-xxxl;
+		font-size:32px;
+		@include screen(medium) {
+			font-size: $size-xxxl;
+		}
 		span {
 			display: none;
 		}
@@ -50,6 +56,9 @@
 	}
 
 }
+
+
+
 
 .site-sumary {
 	max-width: 340px;
@@ -230,11 +239,13 @@
 	button {
 		font-size: 0;
 		background: $color-light;
-		width: 12px;
-		height: 12px;
-		border-radius: 50%;
 		outline: none;
 		border: none;
+		padding:0;
+		border-radius: 50%;
+		width: 12px;
+		height: 12px;
+
 	}
 	.slick-active {
 		transform: scale(1);
@@ -294,6 +305,16 @@
 .thumb-gallery {
 	margin-bottom: 15px;
 	position: relative;
+
+	.slick-dot {
+		button {
+
+			@include screen(medium, false){
+				width: 6px;
+				height: 6px;
+			}
+		}
+	}
 }
 .thumb-info {
 	h4 {
@@ -303,8 +324,11 @@
 	}
 	h3 {
 		color: $color-default;
-		font-size: $size-default;
+		font-size: 13px;
 		text-transform: capitalize;
+		@include screen(medium){
+			font-size: $size-default;
+		}
 	}
 
 }
@@ -334,8 +358,11 @@
 	padding: 3px 10px;
 	background: #000;
 	color: #fff;
-	font-size: $size-m;
+	font-size: 12px;
 	@include absolute(bottom 3px left -5px)
+	@include screen(medium){
+		font-size: $size-m;
+	}
 }
 
 .properties {
@@ -377,11 +404,47 @@
 
 	span {
 		white-space: nowrap;
-		margin-right: 12px;
+		margin-right: 5px;
+		@include screen(medium){
+			margin-right: 12px;
+
+		}
+
 	}
 	i {
-		width: 15px;
+		width: 10px;
+		font-size:12px;
 		text-align: left;
+		@include screen(medium){
+			width: 15px;
+		}
+	}
+}
+
+.thumb-service{
+	&:after {
+		@extend %clearfix;
+	}
+	li {
+		padding: 5px 0;
+	}
+	i {
+		font-size: 12px;
+		@include screen(medium){
+			font-size: 20px;
+		}
+	}
+	.info-fa {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 5px;
+		color: #999;
+		@include screen(medium){
+			margin-left: 10px;
+		}
+		b {
+			color: #333;
+		}
 	}
 }
 
@@ -404,26 +467,6 @@
 	}
 }
 
-.thumb-service{
-	&:after {
-		@extend %clearfix;
-	}
-	li {
-		padding: 5px 0;
-	}
-	i {
-		font-size: 20px;
-	}
-	.info-fa {
-		display: inline-block;
-		vertical-align: middle;
-		margin-left: 10px;
-		color: #999;
-		b {
-			color: #333;
-		}
-	}
-}
 
 .thumb--col-2 {
 	li {

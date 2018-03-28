@@ -21,9 +21,13 @@ export default class Form {
       }
     });
 
-    $('.select-wrapper').on('click',function(){
-      if ($(window).width() < 1024) {
-        $(this).toggleClass('show');
+    $('.select-wrapper, .checkbox-list').on('click',function(){
+      if ($(window).width() < 1024 && !$(this).hasClass('show')) {
+        $('.select-wrapper,.checkbox-list').removeClass('show');
+        $(this).addClass('show');
+      }
+      else {
+        $(this).removeClass('show');
       }
     });
     $('.select-wrapper li').on('click',function(){

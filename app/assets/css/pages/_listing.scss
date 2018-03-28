@@ -21,8 +21,8 @@
 	padding: 10px 20px;
 
 	h3 {
-    font-size: 22px;
-    text-transform: none;
+		font-size: 22px;
+		text-transform: none;
 	}
 }
 .house-code {
@@ -41,8 +41,8 @@
 		padding: 10px;
 		width: 85%;
 		@include absolute(bottom -8px left 50%);
-    transform: translateX(-50%);
-    padding: 0 10px;
+		transform: translateX(-50%);
+		padding: 0 10px;
 
 	}
 }
@@ -118,24 +118,46 @@
 	@include absolute(bottom left);
 	width: 100%;
 	background: rgba(#000, 0.6);
-	padding: 30px 0;
+	padding: 10px 0;
 	color: #fff;
-	border-bottom: 5px solid $gray-dark;
+	border-bottom: 1px solid $gray-dark;
+	@include screen(medium){
+		padding: 30px 0;
+		border-width: 5px;
+	}
 }
+
+
+.banner-project {
+	background:url("/assets/images/dummy/hoozing_star-hill.png") no-repeat center;
+	background-size:cover;
+	height:0;
+	padding-bottom: 100%;
+	@include screen(medium){
+		@include responsive-bg-image(1440,617);
+	}
+}
+
 .score {
 	display: inline-block;
 	text-align: center;
 	vertical-align: text-bottom;
 }
 .number-circle {
-	font-size: $size-xxl;
+	font-size: 20px;
 	display: inline-block;
-	line-height: 65px;
-	height: 65px;
-	width: 65px;
-	border:2px solid;
+	line-height: 38px;
+	height: 40px;
+	width: 40px;
+	border: 2px solid;
 	margin-bottom: 10px;
 	border-radius: 50%;
+	@include screen(medium){
+		font-size: $size-xxl;
+		line-height: 65px;
+		height: 65px;
+		width: 65px;
+	}
 }
 
 .logo-icon {
@@ -154,7 +176,10 @@
 	h1 {
 		margin:  0 0 10px;
 		text-transform: capitalize;
-		font-size: $size-xxl;
+		font-size: 14px;;
+		@include screen(medium){
+			font-size: $size-xxl;
+		}
 	}
 	p {
 		margin-bottom: 0;
@@ -162,7 +187,7 @@
 }
 
 .modal.and.carousel {
-  position: fixed; // Needed because the carousel overrides the position property
+	position: fixed; // Needed because the carousel overrides the position property
 }
 
 .bar-request {

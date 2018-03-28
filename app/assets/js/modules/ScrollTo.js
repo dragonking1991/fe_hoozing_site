@@ -18,13 +18,15 @@ export default class ScrollTo {
 
 
     $(window).on('scroll', function() {
-      var target = $('.block-signup').offset().top + $('.block-signup').height();
-      var scrollPos = $(window).scrollTop();
-      if( target <= scrollPos  ) {
-        $('.bar-request').addClass('show');
-      }
-      else {
-        $('.bar-request').removeClass('show');
+      if($(".bar-request").length){
+        var target = $('.block-signup').offset().top + $('.block-signup').height();
+        var scrollPos = $(window).scrollTop();
+        if( target <= scrollPos  ) {
+          $('.bar-request').addClass('show');
+        }
+        else {
+          $('.bar-request').removeClass('show');
+        }
       }
     })
 
