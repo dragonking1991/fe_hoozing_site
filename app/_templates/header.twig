@@ -4,9 +4,35 @@
   </a>
   <form id="searchHeader" class="wrapper-inputtags">
     <div class="form-wrapper">
-      <input type="text" value="" id="search-header" data-role="tagsinput" />
-      <a class="close-form" href="javascript:void(0)" ><i class="fa fa-close"></i></a>
+      <div class="box-suggest">
+        <div class="suggest__quick">
+          <h3>Quick Searches</h3>
+          <a href="#" >All</a><a href="#" >District 1</a><a href="#" >Vinhomes CP</a><a href="#" >Pet Friendly</a>
+        </div>
+        <div class="suggest__recent">
+          <h3>Recent Searches</h3>
+          <ul class="suggest-list list-recent">
+            <li><a href="#">HCM city</a></li>
+            <li><a href="#">Thao Dien</a></li>
+          </ul>
+          <!-- <ul class="suggest-list list-place">
+            <li><a href="#">HCM city</a></li>
+            <li><a href="#">Thao Dien</a></li>
+          </ul> -->
+        </div>
+        <div class="suggest__recent">
+          <h3>Recent Searches</h3>
+          <ul class="suggest-list list-recent">
+            <li><a href="#">HCM city</a></li>
+            <li><a href="#">Thao Dien</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- <input type="text" value="" id="search-header" data-role="tagsinput" /> -->
+      <input type="text" value="" id="search-header" autocomplete="off" />
       <a href="#0" class="btn-submit"><i class="fa fa-search"></i></a>
+      <!-- <a class="close-form" href="javascript:void(0)" ><i class="fa fa-close"></i></a> -->
     </div>
   </form>
   <nav>
@@ -14,6 +40,9 @@
       <span>Menu</span>
     </a>
     <ul class="main-menu clearfix">
+      <li class="phone-number">
+        <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>84902823393</a>
+      </li>
       <li>
         <a href="listing.html"><i class="fa fa-file-text-o" aria-hidden="true"></i>List your property</a>
       </li>

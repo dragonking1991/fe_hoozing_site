@@ -1,8 +1,12 @@
 .listing-detail {
 }
 .block-title {
-	margin: 50px 0 20px;
+	margin: 20px 0;
 	width: 100%;
+	@include screen(medium){
+	margin: 50px 0 20px;
+
+	}
 }
 
 .map-detail {
@@ -10,6 +14,13 @@
 }
 .map-content {
 	min-height: 500px; 
+}
+.list-content {
+	h2 {
+		@include screen(medium, false){
+			font-size: 22px;
+		}
+	}
 }
 
 .map-info {
@@ -39,6 +50,7 @@
 		color: $color-light;
 		font-size: $size-s;
 		padding: 10px;
+		white-space: nowrap;
 		width: 85%;
 		@include absolute(bottom -8px left 50%);
 		transform: translateX(-50%);
@@ -217,6 +229,7 @@
 		margin-left: 25px;
 		font-weight: normal;
 		text-transform: none;
+		margin: 5px;
 	}
 	.btn {
 		z-index: 11;

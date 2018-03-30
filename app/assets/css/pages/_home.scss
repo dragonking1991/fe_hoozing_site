@@ -78,11 +78,12 @@
 		color: #fff;
 	}
 
-	[class^='col-'] {
-		padding-right: 10px;
-		padding-left: 10px;
-	}
+}
 
+[class^='col-'] {
+	@include screen(medium, false){
+		padding: 0 10px;
+	}
 }
 
 
@@ -231,7 +232,9 @@
 	}
 
 	.slick-arrow {
-		opacity: 0;
+		@include screen(medium){
+			opacity: 0;
+		}
 	}
 }
 
@@ -437,7 +440,9 @@
 	span {
 		white-space: nowrap;
 		margin-right: 5px;
+		font-size: 11px;
 		@include screen(medium){
+			font-size: 14px;
 			margin-right: 12px;
 
 		}
@@ -461,7 +466,7 @@
 		padding: 5px 0;
 	}
 	i {
-		font-size: 12px;
+		font-size: 11px;
 		@include screen(medium){
 			font-size: 20px;
 		}
@@ -477,16 +482,20 @@
 		b {
 			color: #333;
 		}
+		p {
+			margin-bottom: 0;
+		}
+
 	}
 }
 
 .tags {
-	color: $color-light;
+	color: #aaa;
 	border: 1px solid;
 	display: inline-block;
-	padding: 8px;
+	padding: 2px 8px;
 	border-radius: 3px;
-	margin-right: 5px;
+	margin: 5px 2px;
 
 	&.active {
 		background: $blue;
@@ -509,8 +518,13 @@
 
 .thumb--col-4 {
 	li {
-		width: 25%;
+		width: 50%;
 		float: left;
+		@include screen(medium) {
+			width: 25%;
+
+		}
+
 	}
 }
 
@@ -575,11 +589,15 @@
 .project {
 	.slick-arrow {
 		border-radius: 50%;
-		width: 50px;
-		height: 50px;
+		width: 40px;
+		height: 40px;
 		opacity: 0;
 		background: #fff;
 		box-shadow: 0 2px 10px #000;
+		@include screen(medium){
+			width: 50px;
+			height: 50px;
+		}
 		&:after {
 			color: #333;
 		}
@@ -644,7 +662,9 @@
 }
 
 .neighborhood {
-	padding: 10px 0 40px; 
+	@include screen(medium){
+		padding: 10px 0 40px; 
+	}
 
 	.item {
 		padding: 0 10px;

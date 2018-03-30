@@ -17,11 +17,16 @@ export default class MapDetail {
 
   }
   drawPopupOnMap(lat,lng) {
-    this.map = new google.maps.Map(document.getElementById('map'), {
+    let option = {
       center: {lat: lat, lng: lng},
       zoom: 17,
       mapTypeControl: false
-    });
+    };
+    if($(window).width() < 1024){
+      option.zoom = 15;
+    }
+
+    this.map = new google.maps.Map(document.getElementById('map'), option);
 
     var cityCircle = new google.maps.Circle({
       strokeColor: '#2378A7',
