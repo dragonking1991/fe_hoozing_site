@@ -93,25 +93,44 @@ header {
 .box-suggest {
   height: 0;
   opacity: 0;
-  padding: 30px;
+  overflow: hidden;
+  padding: 10px 30px 20px;
   background: #fff;
   @include absolute(top 100% left);
   width: 100%;
   h3 {
     color: #333;
-    margin: 10px 0;
+    margin: 20px 0;
+  }
+  a{
+    display: block;
+  }
+  li {
+    @include screen(medium) {
+      &:hover {
+        background: $blue;
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &.active {
+    height: auto;
+    opacity: 1;
   }
 }
 .suggest-list {
   li {
     position: relative;
     padding-left: 25px;
-    margin-bottom: 5px;
+    padding: 6px 30px;
     &:before {
       content: "";
       position: absolute;
-      top: 2px;
-      left: 0;
+      top: 8px;
+      left: 5px;
       color: #999;
       display: block;
       font: normal normal normal 18px/1 FontAwesome;
@@ -172,15 +191,7 @@ header {
 
 #searchHeader {
   @extend .hide-for-small;
-  &:hover {
-    @include screen(medium){
-      .box-suggest {
-        height: auto;
-        opacity: 1;
-      }
-    }
 
-  }
   .collapse.show {
     display: inline-block;
   }

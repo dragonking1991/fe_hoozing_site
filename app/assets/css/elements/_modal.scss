@@ -48,8 +48,15 @@
     overflow: hidden;
     background: rgba(0, 0, 0, 0.75);
   }
+
 }
 
+#galleryDetail {
+  [class*='col-'] {
+    padding: 0 20px;
+  }
+  
+}
 .gallery__for {
   margin-bottom: 20px;
   li{

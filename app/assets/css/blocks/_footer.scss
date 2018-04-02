@@ -11,6 +11,13 @@ footer {
     margin: 20px 0;
   }
 }
+.footer__submit-email {
+  input {
+    width: 65%;
+    vertical-align: top;
+  }
+}
+
 .copyright {
   @include screen(medium,false){
     p{

@@ -15,14 +15,14 @@
 }
 
 .slide-bg {
-	background: #333;
+	background: #999;
 	font-size: 0;
 	@include screen(medium, false){
 		display:none;
 	}
 	img {
 		width: 100%;
-		opacity: 0.9;
+		opacity: 0.8;
 	}
 }
 
@@ -60,8 +60,10 @@
 	h1 {
 		color: #fff;
 		font-size:28px;
+		text-transform: none;
 		@include screen(medium) {
 			font-size: $size-xxxl;
+			margin-bottom: 30px;
 		}
 		span {
 			display: none;
@@ -232,8 +234,14 @@
 	}
 
 	.slick-arrow {
-		@include screen(medium){
-			opacity: 0;
+		opacity: 0;
+	}
+	.slick-dots {
+		button {
+			@include screen(medium, false){
+				width: 5px; 
+				height: 5px;
+			}
 		}
 	}
 }
@@ -368,11 +376,16 @@
 
 }
 .love {
-	font-size: 32px;
+	font-size: 16px;
 	color: #fff;
 	line-height: 0;
 	cursor: pointer;
 	@include absolute(top 10px right 10px)
+	@include screen(medium){
+		font-size: 32px;
+		top: 5px;
+		right: 5px;
+	}
 	i {
 		margin: 0;
 		vertical-align: top;
@@ -383,7 +396,10 @@
 	font-size: $size-xs;
 	text-transform: uppercase;
 	color: #fff;
-	@include absolute(bottom 36px left -5px)
+	@include absolute(bottom 32px left -5px)
+	@include screen(medium){
+		bottom: 36px;
+	}
 
 	i {
 		margin: 0;
@@ -409,18 +425,60 @@
 			display: block;
 		}
 	}
-
-	[class^='col-'] {
-		float: left;
-		min-height: 1px;
-	}
 }
 .properties__tab {
 	margin: 20px 0;
+	border:none;
+	@include screen(medium, false){
+		border-radius: 3px;
+		position: relative;
+		height: 30px;
+		max-width: 200px;
+		margin: 0 auto;
+		padding: 5px 10px;
+		border:1px solid $gray-medium;
+	}
+
+
+	&:after {
+		top: 5px;
+		@include screen(medium){
+			display: none;
+		}
+	}
+	span {
+		line-height: normal;
+		display: block;
+		@include screen(medium){
+			display: none;
+		}
+	}
+
+	ul {
+		height: none;
+		overflow: auto;
+		z-index: 3;
+		background: #fff;
+		width: 100%;
+		text-align: left !important;
+		@include absolute(top 110% left);
+		@include screen(medium){
+			position: static;
+			display: block !important;
+		}
+	}
+	&.show {
+		ul{
+			height: auto;
+		}
+	}
 	li {
 		margin:  0 10px;
 		display: inline-block;
 		vertical-align: top;
+		@include screen(medium, false){
+			display: block;
+		}
 	}
 	a {
 		display: block;
@@ -428,9 +486,18 @@
 		padding: 3px 10px;
 		font-weight: bold;
 	}
-	.active a{
-		color: $color-default;
-		border: 1px solid $color-light;
+	.active {
+		@include screen(medium){
+			background: none !important; 
+		}
+		a{
+			color: $color-default;
+			text-decoration: none;
+			@include screen(medium){
+				background: none;
+				border: 1px solid $color-light;
+			}
+		}
 	}
 }
 
@@ -516,7 +583,7 @@
 	}
 }
 
-.thumb--col-4 {
+.thumb--4 {
 	li {
 		width: 50%;
 		float: left;
@@ -669,7 +736,7 @@
 	.item {
 		padding: 0 10px;
 	}
-	
+
 }
 
 

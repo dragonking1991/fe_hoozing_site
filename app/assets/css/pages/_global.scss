@@ -30,9 +30,23 @@ ul, ol {
 	outline: none;
 }
 
-// .row {
-// 	@extend .clearfix;
-// }
+.row {
+	display: block;
+	flex-wrap:unset;
+	margin-right: -10px;
+	margin-left: -10px;
+}
+[class*='col-'] {
+	flex:unset;
+	float: left;
+	padding: 0 10px;
+	min-height: 1px;
+}
+.order-md-last {
+	@include screen(medium){
+		float: right;
+	}
+}
 .col {
 	@include screen(medium){
 		float: left;
@@ -176,12 +190,12 @@ th,td {
 	display: none !important;
 }
 .show-for-small {
-	@include screen(medium){
+	@include screen(small){
 		display: none !important;
 	}
 }
 .hide-for-small {
-	@include screen(medium,false){
+	@include screen(small,false){
 		display: none !important;
 	}
 }

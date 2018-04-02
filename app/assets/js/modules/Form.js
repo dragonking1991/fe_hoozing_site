@@ -31,13 +31,19 @@ export default class Form {
       }
     });
 
+    $('.form_suggest-search').find('input').on('focus', function(){
+      $('.form_suggest-search').find('.box-suggest').toggleClass('active');
+    });
+    $('.form_suggest-search').find('input').on('blur', function(){
+      $('.form_suggest-search').find('.box-suggest').removeClass('active');
+    });
+
 
     $(document).on('click', function(e) 
     {
       var container = $(".select-wrapper, .checkbox-list");
 
-      if (!container.is(e.target) && container.has(e.target).length === 0) 
-      {
+      if (!container.is(e.target) && container.has(e.target).length === 0) {
         container.removeClass('show');
       }
     });
