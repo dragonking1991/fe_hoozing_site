@@ -5,13 +5,14 @@ export default class SwitchTab {
 			$("a[data-layout]").removeClass('active');
 			$(this).addClass('active');
 			$(".tab-content").removeClass("active");
-			$(".search-content").removeClass('mapview listview grid');
+			$(".search-content").removeClass('mapview listview grid project');
 
 			// mapview
 			$(".wrap-tab").removeClass("tab--reduce");
 			$(".map-result").removeClass("show");
 
 			if ( layout == "project") {
+				$('.search-content').addClass('project');
 				$("#search-" + layout).addClass("active");
 				$("#search-" + layout).find(".slider-wrapper").each(function(){
 					$(this).slick('refresh');

@@ -1,4 +1,4 @@
-.hero-banner {
+.section-hero-banner {
 	padding:0;
 	padding-bottom:45%;
 	height:0;
@@ -136,7 +136,7 @@
 	}	
 }
 
-.what-have {
+.section-what-have {
 	background: $gray-light;
 	padding: 15px 0;
 	margin-bottom: 10px;
@@ -150,7 +150,7 @@
 	}
 }
 
-.steps {
+.section-steps {
 	.slick-dots {
 		bottom: 0;
 		.slick-active button{
@@ -416,7 +416,7 @@
 	}
 }
 
-.properties {
+.section-properties {
 	.tab-content {
 		margin-bottom: 30px;
 		display: none;
@@ -561,7 +561,7 @@
 	border: 1px solid;
 	display: inline-block;
 	padding: 2px 8px;
-	border-radius: 3px;
+	border-radius: 5px;
 	margin: 5px 2px;
 
 	&.active {
@@ -653,7 +653,8 @@
 	}
 }
 
-.project {
+.section-project {
+
 	.slick-arrow {
 		border-radius: 50%;
 		width: 40px;
@@ -728,7 +729,7 @@
 	line-height: 18px;
 }
 
-.neighborhood {
+.section-neighborhood {
 	@include screen(medium){
 		padding: 10px 0 40px; 
 	}

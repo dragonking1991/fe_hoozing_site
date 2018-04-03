@@ -2,12 +2,12 @@ export default class Form {
   constructor(el) {
 
     $('[data-toggle="tooltip"]').tooltip();
-    $('input, textarea').on('focus',function(){
-      var wrap_input = $(this).parents('.input-wrapper');
-      if( !wrap_input.hasClass('focus') ){
-        wrap_input.addClass('focus');
-      }
-    });
+    // $('input, textarea').on('focus',function(){
+    //   var wrap_input = $(this).parents('.input-wrapper');
+    //   if( !wrap_input.hasClass('focus') ){
+    //     wrap_input.addClass('focus');
+    //   }
+    // });
     $(document).on( 'change','input', function(){
       var wrap_input = $(this).parents('.input-wrapper');
       if( !wrap_input.hasClass('focus') ){
