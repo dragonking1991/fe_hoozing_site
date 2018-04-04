@@ -7,16 +7,23 @@
 }
 .modal-dialog {
   color: #fff;
+
+  @media (min-width: 576px){
+    max-width: none;
+  }
   @include screen(medium){
     max-width: 80%;
   }
-  
+
   .slick-arrow {
     font-size: 0;
     position: absolute;
-    top: -350%;
+    top: -220%;
     z-index: 10;
     right: 0;
+    @include screen(medium){
+      top: -350%;
+    }
   }
   .slick-prev {
     left: 0;
@@ -41,6 +48,7 @@
 }
 
 .gallery__slide {
+  padding-top: 20px !important;
   text-align: center;
   img {
     display: inline-block;
@@ -65,7 +73,14 @@
     max-height: 500px;
   }
   img {
-    height: 500px;
+    height: 200px;
+
+    @include screen(small){
+      height: 300px;
+    }
+    @include screen(large){
+      height: 500px;
+    }
   }
 }
 .gallery__nav {

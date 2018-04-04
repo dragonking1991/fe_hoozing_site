@@ -22,9 +22,6 @@
 
 .wrap-tab {
   padding: 10px;
-  @include screen(medium){
-    padding: 30px;
-  }
 }
 
 .tab-content {
@@ -88,9 +85,22 @@
     color: $color-default;
   }
 }
+.list-check {
+  @extend .clearfix;
+  li {
+    float: left;
+    width: 50%;
+    @include screen(medium){
+      width: 25%;
+    }
+  }
+}
 
 .search-content {
   padding: 0;
+  .thumb-item {
+    padding: 10px;
+  }
 }
 
 .tab--reduce {
@@ -157,7 +167,7 @@
 
 .filter-wrapper {
   position: relative;
-  padding: 30px;
+  padding: 10px 0;
   .link {
     margin-left: 10px;
   }
@@ -552,6 +562,5 @@
 }
 
 .list-box {
-  align-items: center;
-  justify-content: center;
+  text-align: left;
 }

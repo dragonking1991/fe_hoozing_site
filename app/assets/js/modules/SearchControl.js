@@ -3,11 +3,17 @@ export default class SearchControl {
 
 		$('[data-toggle="tooltip"]').tooltip();
 		$('[data-toggle="collapse"]').collapse();
+		$(".filter-wrapper input[type='checkbox']").change(function() {
+			var countCheck = $(".filter-wrapper input[type='checkbox']:checked").size();
+			$(el).find(".notificate").html(countCheck);
+		});
 
 
 		$(".clear-filter").on('click', function(){
 			$('.filter-wrapper input[type=checkbox]').each(function(){ 
 				this.checked = false; 
+				var countCheck = $(".filter-wrapper input[type='checkbox']:checked").size();
+				$(el).find(".notificate").html(countCheck);
 			});
 		});
 
@@ -24,5 +30,5 @@ export default class SearchControl {
 				});
 			}
 		});
-  }
+	}
 }

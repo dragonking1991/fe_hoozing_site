@@ -305,7 +305,7 @@ nav {
   }
 
   li {
-    height: 46px;
+    // height: 46px;
     @include screen(medium){
       height: auto;
       display: inline-block;
