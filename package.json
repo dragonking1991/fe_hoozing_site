@@ -55,9 +55,9 @@
     }
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
     "gulp-wait": "^0.0.2",
-    "axios": "^0.17.1",
     "load-google-maps-api": "^1.0.1"
   },
   "config": {

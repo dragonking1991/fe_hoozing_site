@@ -4,12 +4,20 @@ export default class SlideNeighborhood {
     $el.slick({
       fade: false,
       dots:false,
-      infinite: false,
+      infinite: true,
       arrows: false,
       slidesToShow: 1,
-      slidesToScroll: 2,
+      slidesToScroll: 1,
       mobileFirst:true,
-      variableWidth: true
+      variableWidth: true,
+      responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          variableWidth: false,
+          slidesToShow: 6
+        }
+      }]
     });
   }
 }

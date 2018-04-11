@@ -32,22 +32,19 @@ export default class GalleryHouse {
       asNavFor: '.gallery__nav'
     }
 
-    // $(el).find('.gallery__for').slick(forSlide).on('lazyLoaded', function(event, slick, currentSlide){
-    //   $(this).slick('refresh');
-    //   alert('s')
-    // });
-    $('.btn__photo').on('click', function(){
-          // $(el).find('.gallery__for').slick('refresh');
-    });
- 
-    
     $(el).find('.gallery__nav').slick(navSlide).on('afterChange', function(event, slick, currentSlide){
       $(".gallery__slide").find('.counter-slide').html((currentSlide+1) + '/' + slick.slideCount);
       console.log(currentSlide)
     });
+    $(el).find('.gallery__for').slick(forSlide);
+
 
     $(".gallery-house li").on('click', function(){
       $(el).find('.gallery__for').slick('slickGoTo', $(this).index() );
+    });
+
+    $('.btn__photo').on('click', function(){
+      $(el).find('.gallery__for').slick('slickGoTo', 1 );
     });
 
     $('#galleryDetail').on('show.bs.modal', function (e) {

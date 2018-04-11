@@ -12,9 +12,11 @@
 .map-detail {
 	position: relative;
 }
+
 .map-content {
 	min-height: 500px; 
 }
+
 .list-content {
 	h2 {
 		@include screen(medium, false){
@@ -24,12 +26,16 @@
 }
 
 .map-info {
-	@include absolute(top 30px left 60px);
-	width: 300px;
+	@include absolute(top 30px left 20px);
+	width: 280px;
 	border:2px solid $blue;
 	z-index: 1;
 	background: #fff;
 	padding: 10px 20px;
+	@include screen(medium){
+		width: 300px;
+		left: 60px;
+	}
 
 	h3 {
 		font-size: 22px;
@@ -105,7 +111,11 @@
 }
 
 .tab-content {
+	margin: 10px 0;
+	@include  screen(medium){
 	margin: 30px 0;
+
+	}
 }
 
 .tab-link {
@@ -131,11 +141,11 @@
 	.btn {
 		margin-left: 10px;
 		background: #fff;
-    font-size: 12px;
-    padding: 0 10px;
-    height: 30px;
-    line-height: 30px;
-    min-width: 100px;
+		font-size: 12px;
+		padding: 0 10px;
+		height: 30px;
+		line-height: 30px;
+		min-width: 100px;
 	}
 }
 

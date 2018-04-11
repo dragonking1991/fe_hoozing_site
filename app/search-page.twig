@@ -85,7 +85,7 @@
     </div>
 
     <div class="select-wrapper select-range select--small">
-      Min <span>0</span>
+      <label>Min <span>0</span></label>
       <ul>
         <li class="active">0</li>
         <li>$10000</li>
@@ -104,7 +104,7 @@
     </div>
 
     <div class="select-wrapper select-range select--small">
-      Max <span>0</span>
+      <label>Max <span>0</span></label>
       <ul>
         <li class="active">0</li>
         <li>$10000</li>
@@ -136,7 +136,7 @@
           <div class="row">
             <div class="col-md-3">
               <div class="input-group date" data-provide="datepicker-inline">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" >
                 <div class="input-group-addon">
                   <span class="glyphicon glyphicon-th"></span>
                 </div>
@@ -333,7 +333,7 @@
         </div>
       </div>
 
-      <div class="jplist-panel">
+      <div class="jplist-panel hide-for-small">
 
         <span data-type="<b class='list-count'>{all} Listing </b>" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging"></span>
 
@@ -368,11 +368,12 @@
             <li><span data-number="all"> View All </span></li>
           </ul>
         </div>
-
-
-        <div class="jplist-pagination" data-control-animate-to-top="true" data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-storage="false"></div>
-
       </div>
+
+      <div class="jplist-panel">
+        <div class="jplist-pagination" data-control-animate-to-top="true" data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-storage="false"></div>
+      </div>
+
       <div class=" tab-content active" id="search-list">
         <div class="row list-box">
 
@@ -802,7 +803,25 @@
 
     <div class="map-result show hide-for-small" data-module="MapResult">
       <div id="map" style="height: 100vh"></div>
-    </div>
+
+      <ul id="style-selector-control" class="map-control">
+
+        <li class="radio-wrapper">
+          <input type="radio" id="all" name="abc" >
+          <label for="all">all</label>
+        </li>
+
+        <li class="radio-wrapper">
+          <input type="radio" id="transit" name="abc" >
+          <label for="transit">Transit</label>
+        </li>
+
+        <li class="radio-wrapper">
+          <input type="radio" id="social-buiding" name="abc">
+          <label for="social-buiding">School, Park,..</label>
+        </li>
+      </div>
+    </ul>
   </div>
 </section>
 

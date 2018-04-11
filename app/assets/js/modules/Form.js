@@ -1,13 +1,9 @@
+
 export default class Form {
   constructor(el) {
 
     $('[data-toggle="tooltip"]').tooltip();
-    // $('input, textarea').on('focus',function(){
-    //   var wrap_input = $(this).parents('.input-wrapper');
-    //   if( !wrap_input.hasClass('focus') ){
-    //     wrap_input.addClass('focus');
-    //   }
-    // });
+
     $(document).on( 'change','input', function(){
       var wrap_input = $(this).parents('.input-wrapper');
       if( !wrap_input.hasClass('focus') ){
@@ -19,6 +15,12 @@ export default class Form {
       if( wrap_input.hasClass('focus') && $(this).val() == '' ){
         wrap_input.removeClass('focus');
       }
+    });
+
+    $('[data-toggle]').on('click',function(e){
+      var blockToggle = $(this).attr('data-toggle');
+      $(this).toggleClass('active');
+      $(blockToggle).toggleClass('show');
     });
 
     $('.select-wrapper, .checkbox-list').on('click',function(){
@@ -34,20 +36,23 @@ export default class Form {
     $('.form_suggest-search').find('input').on('focus', function(){
       $('.form_suggest-search').find('.box-suggest').toggleClass('active');
     });
+
     $('.form_suggest-search').find('input').on('blur', function(){
       $('.form_suggest-search').find('.box-suggest').removeClass('active');
     });
 
 
-    $(document).on('click', function(e) 
-    {
+    $(document).on('click', function(e){
       var container = $(".select-wrapper, .checkbox-list");
 
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         container.removeClass('show');
       }
     });
-    $('.select-wrapper li').on('click',function(){
+
+    $('.select-wrapper li').on('click',function(e){
+      e.stopPropagation();
+      $(this).parents('.select-wrapper').removeClass('show');
       $(this).parents(".select-wrapper").find('li').removeClass('active'); 
       $(this).addClass('active').parents(".select-wrapper").removeClass('show').find('span').html($(this).html());
     });
@@ -58,7 +63,5 @@ export default class Form {
         wrap_input.addClass('focus');
       }
     });
-
-
   }
 }

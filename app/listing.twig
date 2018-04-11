@@ -45,6 +45,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
+          <a href="#inspectionForm" data-toggle="modal" class="close-modal"><i class="fa fa-close"></i></a>
           <div class="block-title">
             <h2> Resort - like new Apartment in Starhill district 7</h2>
             <div class="house-code">
@@ -94,7 +95,7 @@
   <img src="assets/images/dummy/featured-image-listing.png" />
   <div class="banner__button">
     <a href="#galleryDetail" data-toggle="modal" class="btn btn__photo">View Photo</a>
-    <a href="javascript:void(0)" class="btn">View 360</a>
+    <a href="javascript:void(0)" class="btn bg--red">View 360</a>
   </div>
 </section>
 <section class="listing-detail" data-module="ScrollTo"> 
@@ -155,7 +156,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
 
           <h3 class="block-title" id="policy">POLICY</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodc tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodc tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
 
           <h3 class="block-title" id="amenities">AMENITIES</h3>
 
@@ -265,265 +266,266 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="map-detail" data-module="MapDetail" data-lat ="10.785" data-lng ="106.701">
-    <div class="map-info">
-      <h3>Resort like Stone-Hill</h3>
-      <p><i class="fa fa-map-marker"></i> <span>District 7</span></p>
-    </div>
-    <div class="map-content" id="map">
-    </div>
-  </section>
+<section class="map-detail" data-module="MapDetail" data-lat ="10.785" data-lng ="106.701">
+  <div class="map-info">
+    <h3>Resort like Stone-Hill</h3>
+    <p><i class="fa fa-map-marker"></i> <span>District 7</span></p>
+  </div>
+  <div class="map-content" id="map">
+  </div>
+</section>
 
-  <section class="list-table">
-    <div class="container">
-      <h2 class="section-title">Other Listing in Starhills</h2>
+<section class="list-table">
+  <div class="container">
+    <h2 class="section-title">Other Listing in Starhills</h2>
 
-      <table id="myTable" data-module="TableSort" data-toggle="table"  data-sort-name="code" data-sort-order="asc">
-        <thead>
-          <tr>
-            <th data-field="code" data-sortable="true">House code</th>
-            <th data-field="numBed" data-sortable="true">Bedroom</th>
-            <th data-field="numBath" data-sortable="true">Bathroom</th>
-            <th data-field="area" data-sortable="true">Area</th>
-            <th data-field="floor" data-sortable="true">Floor</th>
-            <th data-field="furnished" data-sortable="true">Furnished</th>
-            <th data-field="view" data-sortable="true">View</th>
-            <th data-field="price" data-sortable="true">Price</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>AH02163</td>
-            <td>1 bed</td>
-            <td>1 bath</td>
-            <td>80sqm</td>
-            <td>6th</td>
-            <td>furnished</td>
-            <td>River</td>
-            <td>$1000</td>
-            <td><a href="#">View</a></td>
-          </tr>
-          <tr>
-            <td>BH02165</td>
-            <td>1 bed</td>
-            <td>1 bath</td>
-            <td>80sqm</td>
-            <td>6th</td>
-            <td>empty</td>
-            <td>River</td>
-            <td>$2000</td>
-            <td><a href="#">View</a></td>
-          </tr>
-          <tr>
-            <td>H02165</td>
-            <td>1 bed</td>
-            <td>1 bath</td>
-            <td>70sqm</td>
-            <td>6th</td>
-            <td>empty</td>
-            <td>River</td>
-            <td>$3000</td>
-            <td><a href="#">View</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-  <section class="list-similar">
-    <div class="container">
+    <table id="myTable" data-module="TableSort" data-toggle="table"  data-sort-name="code" data-sort-order="asc">
+      <thead>
+        <tr>
+          <th data-field="code" data-sortable="true">House code</th>
+          <th data-field="numBed" data-sortable="true">Bedroom</th>
+          <th data-field="numBath" data-sortable="true">Bathroom</th>
+          <th data-field="area" data-sortable="true">Area</th>
+          <th data-field="floor" data-sortable="true">Floor</th>
+          <th data-field="furnished" data-sortable="true">Furnished</th>
+          <th data-field="view" data-sortable="true">View</th>
+          <th data-field="price" data-sortable="true">Price</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AH02163</td>
+          <td>1 bed</td>
+          <td>1 bath</td>
+          <td>80sqm</td>
+          <td>6th</td>
+          <td>furnished</td>
+          <td>River</td>
+          <td>$1000</td>
+          <td><a href="#">View</a></td>
+        </tr>
+        <tr>
+          <td>BH02165</td>
+          <td>1 bed</td>
+          <td>1 bath</td>
+          <td>80sqm</td>
+          <td>6th</td>
+          <td>empty</td>
+          <td>River</td>
+          <td>$2000</td>
+          <td><a href="#">View</a></td>
+        </tr>
+        <tr>
+          <td>H02165</td>
+          <td>1 bed</td>
+          <td>1 bath</td>
+          <td>70sqm</td>
+          <td>6th</td>
+          <td>empty</td>
+          <td>River</td>
+          <td>$3000</td>
+          <td><a href="#">View</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="list-similar">
+  <div class="container">
 
-      <h2 class="section-title">Similar Listings</h2>
-      <div class="row">
-        <div class="col-6 col-md-3 thumb-item">
-          <div class="thumb-gallery">
-            <div class="thumb-slide" data-module="ThumbSlide">
-              <ul class="thumb-img slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-            </div>
-            <span class="love"><i class="fa fa-heart-o"></i></span>
-            <span class="price-tag">$600</span>
+    <h2 class="section-title">Similar Listings</h2>
+    <div class="row">
+      <div class="col-6 col-md-3 thumb-item">
+        <div class="thumb-gallery">
+          <div class="thumb-slide" data-module="ThumbSlide">
+            <ul class="thumb-img slider-wrapper">
+              <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+            </ul>
           </div>
-          <div class="thumb-info">
-            <h4>house code 456</h4>
-            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
-            <div class="thumb-service">
-              <span><i class="fa fa-map-marker"></i> District 7</span>
-              <span><i class="fa fa-bed"></i> 1 bed </span>
-              <span><i class="fa fa-bath"></i> 1 bath</span>          
-            </div>
+          <span class="love"><i class="fa fa-heart-o"></i></span>
+          <span class="price-tag">$600</span>
+        </div>
+        <div class="thumb-info">
+          <h4>house code 456</h4>
+          <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
+          <div class="thumb-service">
+            <span><i class="fa fa-map-marker"></i> District 7</span>
+            <span><i class="fa fa-bed"></i> 1 bed </span>
+            <span><i class="fa fa-bath"></i> 1 bath</span>          
           </div>
         </div>
-        <div class="col-6 col-md-3 thumb-item">
-          <div class="thumb-gallery">
-            <div class="thumb-slide" data-module="ThumbSlide">
-              <ul class="thumb-img slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-            </div>
-            <span class="love"><i class="fa fa-heart-o"></i></span>
-            <span class="price-tag">$600</span>
+      </div>
+      <div class="col-6 col-md-3 thumb-item">
+        <div class="thumb-gallery">
+          <div class="thumb-slide" data-module="ThumbSlide">
+            <ul class="thumb-img slider-wrapper">
+              <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+            </ul>
           </div>
-          <div class="thumb-info">
-            <h4>house code 456</h4>
-            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
-            <div class="thumb-service">
-              <span><i class="fa fa-map-marker"></i> District 7</span>
-              <span><i class="fa fa-bed"></i> 1 bed </span>
-              <span><i class="fa fa-bath"></i> 1 bath</span>          
-            </div>
+          <span class="love"><i class="fa fa-heart-o"></i></span>
+          <span class="price-tag">$600</span>
+        </div>
+        <div class="thumb-info">
+          <h4>house code 456</h4>
+          <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
+          <div class="thumb-service">
+            <span><i class="fa fa-map-marker"></i> District 7</span>
+            <span><i class="fa fa-bed"></i> 1 bed </span>
+            <span><i class="fa fa-bath"></i> 1 bath</span>          
           </div>
         </div>
-        <div class="col-6 col-md-3 thumb-item">
-          <div class="thumb-gallery">
-            <div class="thumb-slide" data-module="ThumbSlide">
-              <ul class="thumb-img slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-            </div>
-            <span class="love"><i class="fa fa-heart-o"></i></span>
-            <span class="price-tag">$600</span>
+      </div>
+      <div class="col-6 col-md-3 thumb-item">
+        <div class="thumb-gallery">
+          <div class="thumb-slide" data-module="ThumbSlide">
+            <ul class="thumb-img slider-wrapper">
+              <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+            </ul>
           </div>
-          <div class="thumb-info">
-            <h4>house code 456</h4>
-            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
-            <div class="thumb-service">
-              <span><i class="fa fa-map-marker"></i> District 7</span>
-              <span><i class="fa fa-bed"></i> 1 bed </span>
-              <span><i class="fa fa-bath"></i> 1 bath</span>          
-            </div>
+          <span class="love"><i class="fa fa-heart-o"></i></span>
+          <span class="price-tag">$600</span>
+        </div>
+        <div class="thumb-info">
+          <h4>house code 456</h4>
+          <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
+          <div class="thumb-service">
+            <span><i class="fa fa-map-marker"></i> District 7</span>
+            <span><i class="fa fa-bed"></i> 1 bed </span>
+            <span><i class="fa fa-bath"></i> 1 bath</span>          
           </div>
         </div>
-        <div class="col-6 col-md-3 thumb-item">
-          <div class="thumb-gallery">
-            <div class="thumb-slide" data-module="ThumbSlide">
-              <ul class="thumb-img slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-            </div>
-            <span class="love"><i class="fa fa-heart-o"></i></span>
-            <span class="price-tag">$600</span>
+      </div>
+      <div class="col-6 col-md-3 thumb-item">
+        <div class="thumb-gallery">
+          <div class="thumb-slide" data-module="ThumbSlide">
+            <ul class="thumb-img slider-wrapper">
+              <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+            </ul>
           </div>
-          <div class="thumb-info">
-            <h4>house code 456</h4>
-            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
-            <div class="thumb-service">
-              <span><i class="fa fa-map-marker"></i> District 7</span>
-              <span><i class="fa fa-bed"></i> 1 bed </span>
-              <span><i class="fa fa-bath"></i> 1 bath</span>          
-            </div>
+          <span class="love"><i class="fa fa-heart-o"></i></span>
+          <span class="price-tag">$600</span>
+        </div>
+        <div class="thumb-info">
+          <h4>house code 456</h4>
+          <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
+          <div class="thumb-service">
+            <span><i class="fa fa-map-marker"></i> District 7</span>
+            <span><i class="fa fa-bed"></i> 1 bed </span>
+            <span><i class="fa fa-bath"></i> 1 bath</span>          
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="list-newly">
-    <div class="container">
+<section class="list-newly">
+  <div class="container">
 
-      <h2 class="section-title">Newly-added Listings</h2>
-      <div class="row">
-        <div class="col-6 col-md-3 thumb-item">
-          <div class="thumb-gallery">
-            <div class="thumb-slide" data-module="ThumbSlide">
-              <ul class="thumb-img slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-            </div>
-            <span class="love"><i class="fa fa-heart-o"></i></span>
-            <span class="price-tag">$600</span>
+    <h2 class="section-title">Newly-added Listings</h2>
+    <div class="row">
+      <div class="col-6 col-md-3 thumb-item">
+        <div class="thumb-gallery">
+          <div class="thumb-slide" data-module="ThumbSlide">
+            <ul class="thumb-img slider-wrapper">
+              <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+            </ul>
           </div>
-          <div class="thumb-info">
-            <h4>house code 456</h4>
-            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
-            <div class="thumb-service">
-              <span><i class="fa fa-map-marker"></i> District 7</span>
-              <span><i class="fa fa-bed"></i> 1 bed </span>
-              <span><i class="fa fa-bath"></i> 1 bath</span>          
-            </div>
-          </div>
+          <span class="love"><i class="fa fa-heart-o"></i></span>
+          <span class="price-tag">$600</span>
         </div>
-        <div class="col-6 col-md-3 thumb-item">
-          <div class="thumb-gallery">
-            <div class="thumb-slide" data-module="ThumbSlide">
-              <ul class="thumb-img slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-            </div>
-            <span class="love"><i class="fa fa-heart-o"></i></span>
-            <span class="price-tag">$600</span>
-          </div>
-          <div class="thumb-info">
-            <h4>house code 456</h4>
-            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
-            <div class="thumb-service">
-              <span><i class="fa fa-map-marker"></i> District 7</span>
-              <span><i class="fa fa-bed"></i> 1 bed </span>
-              <span><i class="fa fa-bath"></i> 1 bath</span>          
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3 thumb-item">
-          <div class="thumb-gallery">
-            <div class="thumb-slide" data-module="ThumbSlide">
-              <ul class="thumb-img slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-            </div>
-            <span class="love"><i class="fa fa-heart-o"></i></span>
-            <span class="price-tag">$600</span>
-          </div>
-          <div class="thumb-info">
-            <h4>house code 456</h4>
-            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
-            <div class="thumb-service">
-              <span><i class="fa fa-map-marker"></i> District 7</span>
-              <span><i class="fa fa-bed"></i> 1 bed </span>
-              <span><i class="fa fa-bath"></i> 1 bath</span>          
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3 thumb-item">
-          <div class="thumb-gallery">
-            <div class="thumb-slide" data-module="ThumbSlide">
-              <ul class="thumb-img slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-            </div>
-            <span class="love"><i class="fa fa-heart-o"></i></span>
-            <span class="price-tag">$600</span>
-          </div>
-          <div class="thumb-info">
-            <h4>house code 456</h4>
-            <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
-            <div class="thumb-service">
-              <span><i class="fa fa-map-marker"></i> District 7</span>
-              <span><i class="fa fa-bed"></i> 1 bed </span>
-              <span><i class="fa fa-bath"></i> 1 bath</span>          
-            </div>
+        <div class="thumb-info">
+          <h4>house code 456</h4>
+          <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
+          <div class="thumb-service">
+            <span><i class="fa fa-map-marker"></i> District 7</span>
+            <span><i class="fa fa-bed"></i> 1 bed </span>
+            <span><i class="fa fa-bath"></i> 1 bath</span>          
           </div>
         </div>
       </div>
-
+      <div class="col-6 col-md-3 thumb-item">
+        <div class="thumb-gallery">
+          <div class="thumb-slide" data-module="ThumbSlide">
+            <ul class="thumb-img slider-wrapper">
+              <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+            </ul>
+          </div>
+          <span class="love"><i class="fa fa-heart-o"></i></span>
+          <span class="price-tag">$600</span>
+        </div>
+        <div class="thumb-info">
+          <h4>house code 456</h4>
+          <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
+          <div class="thumb-service">
+            <span><i class="fa fa-map-marker"></i> District 7</span>
+            <span><i class="fa fa-bed"></i> 1 bed </span>
+            <span><i class="fa fa-bath"></i> 1 bath</span>          
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 thumb-item">
+        <div class="thumb-gallery">
+          <div class="thumb-slide" data-module="ThumbSlide">
+            <ul class="thumb-img slider-wrapper">
+              <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+            </ul>
+          </div>
+          <span class="love"><i class="fa fa-heart-o"></i></span>
+          <span class="price-tag">$600</span>
+        </div>
+        <div class="thumb-info">
+          <h4>house code 456</h4>
+          <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
+          <div class="thumb-service">
+            <span><i class="fa fa-map-marker"></i> District 7</span>
+            <span><i class="fa fa-bed"></i> 1 bed </span>
+            <span><i class="fa fa-bath"></i> 1 bath</span>          
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 thumb-item">
+        <div class="thumb-gallery">
+          <div class="thumb-slide" data-module="ThumbSlide">
+            <ul class="thumb-img slider-wrapper">
+              <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+              <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+            </ul>
+          </div>
+          <span class="love"><i class="fa fa-heart-o"></i></span>
+          <span class="price-tag">$600</span>
+        </div>
+        <div class="thumb-info">
+          <h4>house code 456</h4>
+          <h3><a href="#">Pretty service appartment with bright bedroom</a></h3>
+          <div class="thumb-service">
+            <span><i class="fa fa-map-marker"></i> District 7</span>
+            <span><i class="fa fa-bed"></i> 1 bed </span>
+            <span><i class="fa fa-bath"></i> 1 bath</span>          
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
-  {% endblock %}
+
+  </div>
+</section>
+{% endblock %}

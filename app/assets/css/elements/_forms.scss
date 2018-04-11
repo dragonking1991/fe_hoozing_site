@@ -310,7 +310,7 @@ input {
 /* Select */
 .select-wrapper {
   cursor: pointer;
-  padding: 0 10px;
+  padding: 0;
   text-align: left;
   &:hover {
     @include screen(medium) {
@@ -319,6 +319,9 @@ input {
         display: block;
       }
     }
+  }
+  label {
+    margin-left: 10px;
   }
   &.show {
     z-index: 3;

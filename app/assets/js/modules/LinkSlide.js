@@ -6,14 +6,14 @@ export default class LinkSlide {
       dots:false,
       infinite: true,
       arrows: true,
-      slidesToShow: 1,
+      slidesToShow: 2,
       slidesToScroll: 1,
       mobileFirst:true,
       responsive: [
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1
         }
       },{

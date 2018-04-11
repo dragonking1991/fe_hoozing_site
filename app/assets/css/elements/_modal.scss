@@ -2,9 +2,25 @@
   background: rgba(0, 0, 0, 0.6);
 }
 
+.close-modal {
+  @include absolute(top -40px right);
+  color: $gray-medium; 
+  font-size: 28px;
+  z-index: 10;
+
+  i {
+    margin: 0;
+  }
+
+  &:hover {
+    color: #999;
+  }
+}
+
 .modal-dialog {
   margin: 6% auto 0;
 }
+
 .modal-dialog {
   color: #fff;
 
@@ -35,6 +51,7 @@
 
 .modal-content {
   background: none;
+  padding: 0 10px;
   .thumb-service {
     color: #fff;
     span {
@@ -63,7 +80,10 @@
 
 #galleryDetail {
   [class*='col-'] {
-    padding: 0 20px;
+    padding: 0 10px;
+    @include screen(small){
+      padding: 0 20px;
+    }
   }
   
 }
@@ -73,7 +93,7 @@
     max-height: 500px;
   }
   img {
-    height: 200px;
+    height: 220px;
 
     @include screen(small){
       height: 300px;
@@ -110,7 +130,7 @@
 #inspectionForm {
   .modal-body  {
     max-width: 1020px;
-    margin: 0 auto;
+    margin: 20px auto;
     background: #fff;
     color: #333;
     padding: 20px 10px;

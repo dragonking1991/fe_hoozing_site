@@ -46,6 +46,33 @@ export default class MapResult {
 
     const thisMap = this.map;
 
+    var styleControl = document.getElementById('style-selector-control');
+    thisMap.controls[google.maps.ControlPosition.LEFT_CENTER].push(styleControl);
+
+    document.getElementById('all').addEventListener('click', function() {
+        thisMap.setOptions({styles: styles['default']});
+    });
+    document.getElementById('social-buiding').addEventListener('click', function() {
+        thisMap.setOptions({styles: styles['hideTransit']});
+    });
+    document.getElementById('transit').addEventListener('click', function() {
+        thisMap.setOptions({styles: styles['hideBuilding']});
+    });
+
+    var styles = {
+      default: null,
+      hideBuilding: [{
+        featureType: 'poi',
+        stylers: [{visibility: 'off'}]
+      }],
+      hideTransit: [{
+        featureType: 'transit',
+        elementType: 'labels.icon',
+        stylers: [{visibility: 'off'}]
+      }]
+    };
+
+
     $(document).on('click', '.select-home', function() {
       $('.thumb-item').removeClass('selected');
       $(this).parents('.thumb-item').addClass('selected');

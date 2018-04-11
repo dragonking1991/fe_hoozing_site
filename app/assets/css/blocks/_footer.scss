@@ -32,7 +32,14 @@ footer {
 
   .slider-wrapper {
     padding:  0 40px;
-
+    &:hover {
+        
+      @include screen(medium){
+        .slick-arrow{
+          background: rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
   }
 
   li {

@@ -15,7 +15,7 @@
 }
 
 .slide-bg {
-	background: #999;
+	background: #eee;
 	font-size: 0;
 	@include screen(medium, false){
 		display:none;
@@ -52,7 +52,7 @@
 			top: 2px;
 			transform:rotate(180deg);
 		}
-		&.collapsed {
+		&.active {
 			&:after {
 				transform:rotate(0deg);
 			}
@@ -657,7 +657,7 @@
 	}
 }
 
-.section-project {
+.slide-project {
 
 	.slick-arrow {
 		border-radius: 50%;
