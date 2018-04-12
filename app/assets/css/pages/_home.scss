@@ -15,7 +15,7 @@
 }
 
 .slide-bg {
-	background: #eee;
+	background: #656565;
 	font-size: 0;
 	@include screen(medium, false){
 		display:none;
@@ -26,38 +26,44 @@
 	}
 }
 
+.link-arrow {
+	color: $red;
+	text-decoration: underline;
+	position: relative;
+	margin-bottom: 10px;
+	margin-right: 15px;
+	float: right;
+	&:after {
+		content:'\f0d7';
+		position: absolute;
+		color: $red;
+		display: block;
+		font: normal normal normal 18px/1 FontAwesome;
+		right: -15px;
+		top: 2px;
+		transform:rotate(180deg);
+	}
+	&.active {
+		&:after {
+			transform:rotate(0deg);
+		}
+	}
+}
 .banner-wrapper {
 	@include screen(medium) {
 		width: 850px;
 		@include absolute( top 50% left 50%);
 		transform:translate(-50%, -50%);
 	}
+
+
+	.link-arrow {
+		color: $red;
+	}
 	[class*='col-'] {
 		padding: 0 10px;
 	}
 
-	.link-arrow {
-		color: $red;
-		text-decoration: underline;
-		position: relative;
-		margin-bottom: 10px;
-		float: right;
-		&:after {
-			content:'\f0d7';
-			position: absolute;
-			color: $red;
-			display: block;
-			font: normal normal normal 18px/1 FontAwesome;
-			right: -15px;
-			top: 2px;
-			transform:rotate(180deg);
-		}
-		&.active {
-			&:after {
-				transform:rotate(0deg);
-			}
-		}
-	}
 
 	h1 {
 		color: #fff;
@@ -78,7 +84,6 @@
 		background: #fff;
 	}
 	a {
-		margin:0 10px;
 		color: #fff;
 	}
 
@@ -90,6 +95,11 @@
 	}
 }
 
+.link-district{
+	li {
+		padding: 0 10px;
+	}
+}
 
 
 
@@ -564,9 +574,12 @@
 	color: #aaa;
 	border: 1px solid;
 	display: inline-block;
-	padding: 2px 8px;
-	border-radius: 5px;
-	margin: 5px 2px;
+	border-radius: 6px;
+	margin: 2px;
+	padding: 0px 8px;
+	@include screen(medium){
+		padding: 2px 8px;
+	}
 
 	&.active {
 		background: $blue;

@@ -1,12 +1,24 @@
 .search-control {
-  padding: 30px;
   background: #f9f9f9;
   border-top: 1px solid $gray-medium;
   border-bottom: 1px solid $gray-medium;
+  padding: 10px;
+  position: relative;
+  @include screen(medium){
+    padding: 30px;
+  }
 
+  .wrap-tag {
+    margin: 10px 0; 
+  }
   .select-wrapper, .checkbox-list {
     display: inline-block;
     margin-bottom: 0;
+  }
+  .btn-submit {
+    @include screen(medium,false){
+      top: 3px;
+    }
   }
 }
 
@@ -88,9 +100,11 @@
 .list-check {
   @extend .clearfix;
   li {
-    float: left;
-    width: 50%;
+    display: inline-block;
+    vertical-align: top; 
+    width: 49%;
     @include screen(medium){
+      float: left;
       width: 25%;
     }
   }
@@ -100,6 +114,9 @@
   padding: 0;
   .thumb-item {
     padding: 10px;
+    @include screen(medium){
+      padding: 15px;
+    }
   }
 }
 
@@ -586,4 +603,14 @@
   font-size: 14px;
   line-height: 30px;
   vertical-align: baseline;
+}
+.list-info {
+  text-align: left;
+  padding: 0;
+  border-top:1px solid;
+  margin-top: 10px;
+  @include screen(medium){
+
+    padding: 20px 10px;
+  }
 }

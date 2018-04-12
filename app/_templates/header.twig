@@ -19,7 +19,7 @@
 
       </div>
       <input type="text" value="" id="search-header" autocomplete="off" />
-      <a href="#0" class="btn-submit"><i class="fa fa-search"></i></a>
+      <button class="btn-submit"><i class="fa fa-search"></i></button>
       <!-- <input type="text" value="" id="search-header" data-role="tagsinput" /> -->
       <!-- <a class="close-form" href="javascript:void(0)" ><i class="fa fa-close"></i></a> -->
     </div>
@@ -28,7 +28,20 @@
     <a href="javascript:void(0);" class="btn-burger">
       <span>Menu</span>
     </a>
+    <a href="javascript:void(0);" data-toggle="#search-box" class="icon-search">
+      <span>Search</span>
+    </a>
     <ul class="main-menu clearfix">
+      <li class="show-for-small">
+        <div class="form-wrapper search-form">
+          <input type="text" value="" id="search-header" autocomplete="off" />
+          <button class="btn-submit"><i class="fa fa-search"></i></button>
+        </div>
+      </li>
+      <li class="menu__login">
+        <a href="upload.html"><i class="fa fa-user-circle" aria-hidden="true"></i>login</a>
+        <span>Hi, Thanh</span>
+      </li>
       <li class="phone-number">
         <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>84902823393</a>
       </li>
@@ -38,10 +51,359 @@
       <li>
         <a href="project.html"><i class="fa fa-heart" aria-hidden="true"></i>Favorite</a>
       </li>
-      <li>
-        <a href="upload.html"><i class="fa fa-user-circle" aria-hidden="true"></i>login</a>
-      </li>
     </ul>
   </nav>
 </header>
 <div class="bg-popup"></div>
+
+
+
+<div class="box__search toggle-block" id="search-box">
+  <form id="form-search">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="form-group search-map inputtags">
+          <div id="input-banner">
+            <input type="text" value="" data-role="tagsinput" placeholder="Searcb by Locality or Project Name" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="checkbox-list">
+          <span>All Property Types</span>
+          <ul>
+            <li class="checkbox-wrapper">
+              <input type="checkbox" id="tnc" name="tnc" checked="checked">
+              <label for="tnc">Apartment</label>
+            </li>
+            <li class="checkbox-wrapper">
+              <input type="checkbox" id="tnc1" name="tnc1" checked="checked">
+              <label for="tnc1">Service Apartment</label>
+            </li>
+            <li class="checkbox-wrapper">
+              <input type="checkbox" id="tnc3" name="tnc3" checked="checked">
+              <label for="tnc3">Town house</label>
+            </li>
+            <li class="checkbox-wrapper">
+              <input type="checkbox" id="tnc4" name="tnc4" checked="checked">
+              <label for="tnc4">Other</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-4 order-md-last">
+        <div class="checkbox-list">
+          <span>Require amenities</span> 
+          <ul>
+            <li class="checkbox-wrapper">
+              <input type="checkbox" id="require" name="require" checked="checked">
+              <label for="require">Apartment</label>
+            </li>
+            <li class="checkbox-wrapper">
+              <input type="checkbox" id="require1" name="require1" checked="checked">
+              <label for="require1">Service Apartment</label>
+            </li>
+            <li class="checkbox-wrapper">
+              <input type="checkbox" id="require3" name="require3" checked="checked">
+              <label for="require3">Town house</label>
+            </li>
+            <li class="checkbox-wrapper">
+              <input type="checkbox" id="require4" name="require4" checked="checked">
+              <label for="require4">Other</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="select-wrapper select-bed">
+          <span>Any Bed</span>
+          <ul>
+            <li class="active">Any Bed</li>
+            <li>1+</li>
+            <li>2+</li>
+            <li>3+</li>
+            <li>4+</li>
+            <li>5+</li>
+            <li>6+</li>
+            <li>1+</li>
+            <li>2+</li>
+            <li>3+</li>
+            <li>4+</li>
+            <li>5+</li>
+            <li>6+</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <div class="select-wrapper select-bath">
+          <span>Any bath</span>
+          <ul>
+            <li class="active">Any bath</li>
+            <li>1+</li>
+            <li>2+</li>
+            <li>3+</li>
+            <li>4+</li>
+            <li>5+</li>
+            <li>6+</li>
+            <li>1+</li>
+            <li>2+</li>
+            <li>3+</li>
+            <li>4+</li>
+            <li>5+</li>
+            <li>6+</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6 col-md-2 ">
+        <div class="select-wrapper select-range">
+          <label>Min <span>0</span></label>
+          <ul>
+            <li class="active">0</li>
+            <li>$10000</li>
+            <li>$20000</li>
+            <li>$30000</li>
+            <li>$40000</li>
+            <li>$50000</li>
+            <li>$60000</li>
+            <li>$10000</li>
+            <li>$20000</li>
+            <li>$30000</li>
+            <li>$40000</li>
+            <li>$50000</li>
+            <li>$60000</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-2 ">
+        <div class="select-wrapper select-range">
+          <label>Max <span>0</span></label>
+          <ul>
+            <li class="active">0</li>
+            <li>$10000</li>
+            <li>$20000</li>
+            <li>$30000</li>
+            <li>$40000</li>
+            <li>$50000</li>
+            <li>$60000</li>
+            <li>$10000</li>
+            <li>$20000</li>
+            <li>$30000</li>
+            <li>$40000</li>
+            <li>$50000</li>
+            <li>$60000</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="javascript:void(0)" data-toggle="#search__morefilter" class="link-arrow show-for-small">Show more</a>
+
+    <div class="clearfix"></div>
+
+    <div id="search__morefilter" class="toggle-block">
+
+      <h3 class="block-title">Basic fetures</h3>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="input-group date" data-provide="datepicker-inline">
+            <input type="text" class="form-control" >
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-th"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="select-wrapper">
+            <select name="type" id="type">
+              <option  disabled="disabled" selected="selected" value="">Acomodates</option>
+              <option value="Male">2000</option>
+              <option value="Female">2001</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="select-wrapper">
+            <select name="type" id="type">
+              <option  disabled="disabled" selected="selected" value="">Furnishment</option>
+              <option value="Male">2000</option>
+              <option value="Female">2001</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="select-wrapper">
+            <select name="type" id="type">
+              <option  disabled="disabled" selected="selected" value="">Floor Area</option>
+              <option value="Male">2000</option>
+              <option value="Female">2001</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="block-title">Required Amenities</h3>
+      <ul class="list-check">
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="tv" name="tv">
+            <label for="tv">TV</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="microwave" name="microwave">
+            <label for="microwave">Microwave</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="aircondition" name="aircondition">
+            <label for="aircondition">Air contitioner</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="chimney" name="chimney">
+            <label for="chimney">Electric chimney</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="smock-detector" name="smock-detector">
+            <label for="smock-detector">Smoke detector</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="fire-extinguisher" name="fire-extinguisher">
+            <label for="fire-extinguisher">Fire extinguisher</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="balcony" name="balcony">
+            <label for="balcony">Balcony</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="first-aid-kit" name="first-aid-kit">
+            <label for="first-aid-kit">First Aid Kit</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="bathtub" name="bathtub">
+            <label for="bathtub">Bathtub</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="geyser" name="geyser">
+            <label for="geyser">Geyser</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="essentails" name="essentails">
+            <label for="essentails">Essentails</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="dish-washer" name="dish-washer">
+            <label for="dish-washer">Dish washer</label>
+          </div>
+        </li>
+      </ul>
+      <a href="#" class="more"> More amenties</a>
+      <br />
+      <h3 class="block-title">Required Facilities</h3>
+      <ul class="list-check">
+
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="e-backup" name="e-backup">
+            <label for="e-backup">24Hr Electricity Backup</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="parking" name="parking">
+            <label for="parking">Parking</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="community-hall" name="community-hall">
+            <label for="community-hall">Community Hall</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="club" name="club">
+            <label for="club">Club House</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="restaurant" name="restaurant">
+            <label for="restaurant">Restaurant</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="coffee-shop" name="coffee-shop">
+            <label for="coffee-shop">Coffee-shop</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="banking-atm" name="banking-atm">
+            <label for="banking-atm">Banking/ ATM</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="phamacy" name="phamacy">
+            <label for="phamacy">Phamacy</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="shopping-mall" name="shopping-mall">
+            <label for="shopping-mall">Shopping mall</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="supermarket" name="supermarket">
+            <label for="supermarket">Supermarket</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="swimming-pool" name="swimming-pool">
+            <label for="swimming-pool">Swimming Pool</label>
+          </div>
+        </li>
+        <li>
+          <div class="checkbox-wrapper check-switch">
+            <input type="checkbox" id="gymnasiums" name="gymnasiums">
+            <label for="gymnasiums">Gymnasiums</label>
+          </div>
+        </li>
+      </ul>
+      <a href="#" class="more"> More amenties</a>
+    </div>
+
+    <div class="btn-wrapper">
+      <a href="search-page.html" class="btn btn--red">Search</a>
+    </div>  
+  </form>
+</div>

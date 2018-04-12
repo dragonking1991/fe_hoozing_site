@@ -199,11 +199,21 @@ th,td {
 		display: none !important;
 	}
 }
+.show-for-medium {
+	@include screen(medium){
+		display: none !important;
+	}
+}
+.hide-for-medium {
+	@include screen(medium,false){
+		display: none !important;
+	}
+}
 .hide {
-	display: none;
+	display: none !important;
 }
 .show {
-	display: block;
+	display: block !important;
 }
 
 
@@ -266,19 +276,19 @@ hr {
 }
 
 .bg--red {
-	color: #fff;
+	color: #fff !important;
 	background: $red !important;
 }
 .bg--green {
-	color: #fff;
+	color: #fff !important;
 	background: $green !important;
 }
 .bg--yellow {
-	color: #fff;
+	color: #fff !important;
 	background: $yellow !important;
 }
 .bg--blue {
-	color: #fff;
+	color: #fff !important;
 	background: $blue !important;
 }
 
@@ -594,4 +604,7 @@ section {
 	&:before {
 		content:'\f101';
 	}
+}
+.toggle-block {
+	display: none;
 }

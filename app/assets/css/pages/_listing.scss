@@ -112,10 +112,6 @@
 
 .tab-content {
 	margin: 10px 0;
-	@include  screen(medium){
-	margin: 30px 0;
-
-	}
 }
 
 .tab-link {

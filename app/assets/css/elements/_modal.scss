@@ -3,11 +3,13 @@
 }
 
 .close-modal {
-  @include absolute(top -40px right);
+  @include absolute(top -15px right);
   color: $gray-medium; 
   font-size: 28px;
   z-index: 10;
-
+  @include screen(medium){
+    top: -40px;
+  }
   i {
     margin: 0;
   }
@@ -79,8 +81,9 @@
 }
 
 #galleryDetail {
+
   [class*='col-'] {
-    padding: 0 10px;
+    padding: 0;
     @include screen(small){
       padding: 0 20px;
     }

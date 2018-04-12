@@ -47,7 +47,7 @@ export default class MapResult {
     const thisMap = this.map;
 
     var styleControl = document.getElementById('style-selector-control');
-    thisMap.controls[google.maps.ControlPosition.LEFT_CENTER].push(styleControl);
+    thisMap.controls[google.maps.ControlPosition.BOTTOM].push(styleControl);
 
     document.getElementById('all').addEventListener('click', function() {
         thisMap.setOptions({styles: styles['default']});

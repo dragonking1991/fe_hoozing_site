@@ -10,7 +10,43 @@ header {
     background: #fff;
     width: 100%;
   }
+
+  .btn-submit {
+    color: #999;
+    @include absolute(top 10px right 8px);
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  .close-form {
+    @include absolute(top 6px right 8px);
+    background: none;
+    border:none;
+    outline: none;
+    padding: 0;
+    font-size: 20px;
+  }
 }
+
+.menu__login {
+  @include screen(medium){
+    float: right;
+  }
+  span {
+    display: none;
+  }
+  &.login--member {
+    a {
+      display: none;
+    }
+    span {
+      display: block;
+      padding: 15px 10px;
+    }
+  }
+}
+
 
 .logo {
   position: absolute;
@@ -190,27 +226,14 @@ header {
 }
 
 #searchHeader {
-  @extend .hide-for-small;
+  @include screen(medium, false){
+    display: none;
+  }
 
   .collapse.show {
     display: inline-block;
   }
 
-  .btn-submit {
-    color: #999;
-    @include absolute(top 12px left 8px);
-    background: none;
-    border: none;
-    outline: none;
-  }
-  .close-form {
-    @include absolute(top 6px right 8px);
-    background: none;
-    border:none;
-    outline: none;
-    padding: 0;
-    font-size: 20px;
-  }
 }
 
 
@@ -253,7 +276,6 @@ nav {
 
   .btn-burger {
     @include absolute(top left );
-    @extend .show-for-small;
   }
 }
 
@@ -262,14 +284,23 @@ nav {
   overflow:hidden;
   height:0;
   opacity: 0;
+  padding: 0 10px;
   @include screen(medium){
     opacity: 1;
     display: block;
+    padding: 0;
     height: auto;
     float: right;
     padding-top: 15px;
     text-align: right;
     background: none;
+  }
+
+  .form-wrapper {
+    padding: 5px 0;
+    input {
+      width: 100%;
+    }
   }
 
   &.active {
@@ -281,33 +312,35 @@ nav {
     @include absolute(top 50px left);
 
     li {
+      // transform:translate(0,0);
+      // opacity: 1;
       width:100%;
       @include screen(medium){
         width:auto;
       }
-
-      @for $i from 1 to 4 {
-        &:nth-child(#{$i}) {
-          a {
-            @include screen(medium, false){
-              transition-delay: ($i * 0.1s) + 0.1s;
-            }
-          }
-        }
-      }
     }
     a{
-      transform:translate(0,0);
-      opacity: 1;
       background: #fff; 
       padding: 0 10px;
     }
   }
 
   li {
-    // height: 46px;
+    @include screen(medium,false){
+      // opacity: 0;
+      // transform: translateX(40px);
+      // transition: all 0.2s ease-out;
+
+      @for $i from 1 to 5 {
+        &:nth-child(#{$i}) {
+          transition-delay: ($i * 0.12s) + 0.1s;
+        }
+      }
+    }
+
     @include screen(medium){
       height: auto;
+      border:none;
       display: inline-block;
       background: none !important;
       position: relative;
@@ -316,9 +349,15 @@ nav {
       transition:0.3s ease-out;
       opacity: 1;
       transform: scale(1);
-
     }
 
+
+    & + li {
+
+      @include screen(medium, false){
+        border-bottom:1px solid $blue;
+      }
+    }
 
     &.active {
       a {
@@ -329,6 +368,8 @@ nav {
       }
     }
   }
+
+
   &.off {
     li {
       transform: scale(0.9, 0.9);
@@ -345,10 +386,6 @@ nav {
     letter-spacing: 1px;
     padding: 0 5px;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.85);
-    transform: translateX(40px);
-    opacity: 0;
-    transition: all 0.2s ease-out 0.05s;
-    border-bottom: 1px solid $blue;
     @include screen(medium,false){
       br {
         display: none;
@@ -433,15 +470,6 @@ nav {
     }
   }
 
-  @for $i from 1 to 7 {
-    &:nth-child(#{$i}) {
-      a {
-        @include screen(medium, false){
-          transition-delay: ($i * 0.1s) + 0.1s;
-        }
-      }
-    }
-  }
 
   &.active {
     display: block;
@@ -503,3 +531,68 @@ nav {
   }
 }
 
+
+.search-form {
+  padding: 0;
+  position: relative;
+
+  .btn-submit {
+    color: #999;
+    @include absolute(top 12px right 8px);
+    background: none;
+    border: none;
+    outline: none;
+    @include screen(medium, false){
+      top: 8px;
+      right: 0px;
+      font-size: 16px; 
+    }
+  }
+  input {
+    height: 35px;
+    width: 100%;
+  }
+}
+.box__search {
+  padding: 10px; 
+  @include absolute(top 50px left);
+  width: 100%;
+  z-index: 5;
+  background: #fff;
+  box-shadow: 0 0 5px #333;
+
+  .btn {
+    width: 100%;
+  }
+  .link-arrow {
+    color: $red;
+    text-decoration: none;
+  }
+}
+
+.icon-search {
+  @include absolute(top right) 
+  width: 50px;
+  height: 50px;
+  font-size: 0;
+  transition:0.3s;
+  @include screen(medium){
+    display: none;
+  }
+  &:after {
+    content:"\f002";
+    position: absolute;
+    color: #333;
+    display: block;
+    font: normal normal normal 18px/1 FontAwesome;
+    font-size: 20px;
+    top: 45%;
+    left: 60%;
+    transform: translate(-50%,-50%);
+  }
+  &.active {
+    &:after {
+      content: '\f00d';
+    }
+  }
+}
