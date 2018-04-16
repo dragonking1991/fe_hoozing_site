@@ -2,7 +2,7 @@ export default class SearchControl {
 	constructor(el) {
 
 		$('[data-toggle="tooltip"]').tooltip();
-		$('[data-toggle="collapse"]').collapse();
+		// $('[data-toggle="collapse"]').collapse();
 		$(".filter-wrapper input[type='checkbox']").change(function() {
 			var countCheck = $(".filter-wrapper input[type='checkbox']:checked").size();
 			$(el).find(".notificate").html(countCheck);

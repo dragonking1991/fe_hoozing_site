@@ -19,6 +19,9 @@ export default class Header {
 			$("#searchHeader .tt-input").focus();
 			$(".nav__menu").addClass('off');
 
+			$(".btn-burger").addClass('active');
+			$('.main-menu').addClass('active');
+
 		});
 		$('#searchHeader .close-form').on('click',function(){
 			$(".bg-popup").removeClass('show');
@@ -29,19 +32,19 @@ export default class Header {
 		});
 
 
-    var keysearch = new Bloodhound({
-      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-      queryTokenizer: Bloodhound.tokenizers.whitespace,
-      prefetch: {
-        url: 'assets/js/keysearch.json',
-        filter: function(list) {
-          return $.map(list, function(keysearch) {
-            return { name: keysearch }; });
-        }
-      }
-    });
+		var keysearch = new Bloodhound({
+			datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+			queryTokenizer: Bloodhound.tokenizers.whitespace,
+			prefetch: {
+				url: 'assets/js/keysearch.json',
+				filter: function(list) {
+					return $.map(list, function(keysearch) {
+						return { name: keysearch }; });
+				}
+			}
+		});
 
-    keysearch.initialize();
+		keysearch.initialize();
 		$('.bootstrap-tagsinput input').tagsinput({
 			typeaheadjs: {
 				name: 'keysearch',

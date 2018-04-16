@@ -29,6 +29,9 @@
   display: none;
   &.show {
     display: inline-block;
+    @include screen(medium,false){
+      display: none !important;
+    }
   }
 }
 
@@ -115,7 +118,7 @@
   .thumb-item {
     padding: 10px;
     @include screen(medium){
-      padding: 15px;
+      padding: 10px;
     }
   }
 }
@@ -569,6 +572,7 @@
 
 .list-box {
   text-align: left;
+  padding: 10px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -606,7 +610,7 @@
 }
 .list-info {
   text-align: left;
-  padding: 0;
+  padding: 20px 0 0;
   border-top:1px solid;
   margin-top: 10px;
   @include screen(medium){
