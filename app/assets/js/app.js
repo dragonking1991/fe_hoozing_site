@@ -1,42 +1,45 @@
 import 'babel-polyfill';
 import 'normalize-css';
-// const FastClick = require('fastclick');
+// import 'modernizr';
+import $ from 'jquery';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap-table/dist/bootstrap-table.min.css';
+import '../css/app.scss';
+
+import 'bootstrap/dist/js/bootstrap.min.js';
+import '../../_data/app.json';
+const FastClick = require('fastclick');
 const moduleElements = document.querySelectorAll('[data-module]');
 
+for (let i = 0; i < moduleElements.length; i++) {
+  let el = moduleElements[i];
+  let name = el.getAttribute('data-module');
 
-$(window).on('load', function() {
-  for (let i = 0; i < moduleElements.length; i++) {
-    let el = moduleElements[i];
-    let name = el.getAttribute('data-module');
+  if (/\s*,\s*/.test(name)) {
 
-    if (/\s*,\s*/.test(name)) {
+	  // data-module="module1, module2"
+  	let re = /\s*,\s*/;
+  	let nameList = name.split(re);
 
-  	  // data-module="module1, module2"
-    	let re = /\s*,\s*/;
-    	let nameList = name.split(re);
+  	for (let j = 0; j < nameList.length; j++) {
+  		let Module = require(`./modules/${nameList[j]}`).default;
+  		new Module(el)
+  	}
+  } else if (/\s/.test(name)) {
 
-    	for (let j = 0; j < nameList.length; j++) {
-    		let Module = require(`./modules/${nameList[j]}`).default;
-    		new Module(el)
-    	}
-    } else if (/\s/.test(name)) {
-
-  	  // data-module="module1 module2"
-    	let re = /\s/;
-    	let nameList = name.split(re);
-    	for (let j = 0; j < nameList.length; j++) {
-    		let Module = require(`./modules/${nameList[j]}`).default;
-    		new Module(el)
-    	}
-    } else {
-  	  let Module = require(`./modules/${name}`).default;
-  	  new Module(el)
-    }
+	  // data-module="module1 module2"
+  	let re = /\s/;
+  	let nameList = name.split(re);
+  	for (let j = 0; j < nameList.length; j++) {
+  		let Module = require(`./modules/${nameList[j]}`).default;
+  		new Module(el)
+  	}
+  } else {
+	  let Module = require(`./modules/${name}`).default;
+	  new Module(el)
   }
+}
 
-  // export class to window
-  let popupModule = new (require(`./modules/OpenPopup`).default)();
-  window.popup = popupModule;
-
+document.addEventListener("DOMContentLoaded", function(event) {
+	FastClick.attach(document.body);
 });
-

@@ -1,3 +1,10 @@
+
+
+
+import $ from 'jquery';
+import slick from 'slick-carousel';
+import 'slick-carousel/slick/slick.css';
+
 export default class SlideProject {
 	constructor(el) {
     var $el = $(el).find('.slider-wrapper');

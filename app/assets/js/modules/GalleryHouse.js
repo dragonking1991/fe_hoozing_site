@@ -1,3 +1,9 @@
+
+
+import $ from 'jquery';
+import slick from 'slick-carousel';
+import 'slick-carousel/slick/slick.css';
+
 export default class GalleryHouse {
   constructor(el) {
     $('.gallery-house a').each(function (index, value) {

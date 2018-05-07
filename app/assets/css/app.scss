@@ -1,13 +1,11 @@
-// bower:scss
-@import "bower_components/slick-carousel/slick/slick.scss";
-// endbower
+
+
+@import "./fonts";
 
 @import "./base/**/*";
 
 @import "./elements/**/*";
 
 @import "./blocks/**/*";
-
-@import "./pages/global";
 
 @import "./pages/*";

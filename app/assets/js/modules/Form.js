@@ -1,8 +1,9 @@
 
+
 export default class Form {
   constructor(el) {
 
-    $('[data-toggle="tooltip"]').tooltip();
+    // $('[data-toggle="tooltip"]').tooltip();
 
     $(document).on( 'change','input', function(){
       var wrap_input = $(this).parents('.input-wrapper');
@@ -17,14 +18,25 @@ export default class Form {
       }
     });
 
-    $('[data-toggle]').on('click',function(e){
-      var blockToggle = $(this).attr('data-toggle');
+    $('[data-show]').on('click',function(e){
+      var blockToggle = $(this).attr('data-show');
       $(this).toggleClass('active');
-      $(blockToggle).toggleClass('show');
+      if ( !$(blockToggle).hasClass('show')) {
+        $(blockToggle).addClass('show');
+      }
+      else {
+        $(blockToggle).removeClass('show');
+      }
     });
 
-    $('.select-wrapper, .checkbox-list').on('click',function(){
-      if ($(window).width() < 1024 && !$(this).hasClass('show')) {
+    $('.close-modal').on('click',function(){
+      var target = $(this).data('close');
+      $(target).removeClass('show');
+    });
+
+    $('.select-wrapper, .checkbox-list').on('click',function(e){
+      e.stopPropagation();
+      if ($(window).width() < 1025 && !$(this).hasClass('show')) {
         $('.select-wrapper,.checkbox-list').removeClass('show');
         $(this).addClass('show');
       }

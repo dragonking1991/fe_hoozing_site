@@ -16,8 +16,8 @@
     margin-bottom: 0;
   }
   .btn-submit {
-    @include screen(medium,false){
-      top: 3px;
+    top: 3px;
+    @include screen(medium){
     }
   }
 }
@@ -28,9 +28,9 @@
   min-height: 100vh;
   display: none;
   &.show {
-    display: inline-block;
-    @include screen(medium,false){
-      display: none !important;
+    display: none !important;
+    @include screen(medium){
+      display: inline-block !important;
     }
   }
 }
@@ -48,6 +48,7 @@
 
 .search__list {
   font-size: 16px;
+  margin: 30px 0 10px;
 
   > div {
     display: inline-block;
@@ -106,6 +107,7 @@
     display: inline-block;
     vertical-align: top; 
     width: 49%;
+    min-width: 150px;
     @include screen(medium){
       float: left;
       width: 25%;
@@ -128,18 +130,13 @@
     display: inline-block;
     width: 40%;
     max-height: 100vh;
+    overflow: hidden;
     overflow-y:auto;
   }
 }
 
 .search-detail {
   .thumb-item {
-    text-align: left;
-    display: inline-block;
-    float: none;
-    @include screen(medium, false){
-      max-width: 50%;
-    }
   }
   .tab-content {
     text-align: center;
@@ -190,6 +187,10 @@
   padding: 10px 0;
   .link {
     margin-left: 10px;
+  }
+
+  .btn-wrapper {
+    text-align: left;
   }
 
   .close-modal {
@@ -373,8 +374,9 @@
     border-radius: 10px;
     z-index: 100;
     display: block;
-    @include screen(small, false) {
       max-width: 90%;
+    @include screen(small) {
+      max-width: 100%;
     }
     .calendar-close {
       cursor: pointer;
@@ -443,9 +445,9 @@
         cursor: pointer;
         float: left;
         width: percentage(1/7);
-        padding: 20px;
-        @include screen(small, false) {
           padding: 5px;
+        @include screen(small) {
+        padding: 20px;
         }
         &.cur-date {
           background-color: #222;
@@ -476,14 +478,15 @@
 
 .search-wrapper {
   position: absolute;
-  left: 150px;
-  top: 10px;
-  width: 500px;
-  @include screen(small, false) {
     left: 50%;
     top: 50px;
     width: 90%;
     transform: translateX(-50%);
+  @include screen(small) {
+    left: 150px;
+    top: 10px;
+    width: 500px;
+    transform:none;
   }
   .select-location {
     padding: 5px 25px 5px 15px;
@@ -493,7 +496,7 @@
     position: relative;
     width: 100%;
     background: #fff;
-    @include screen(small, false) {
+    @include screen(small) {
     }
     .location-default {
       border: none;
@@ -611,10 +614,10 @@
 .list-info {
   text-align: left;
   padding: 20px 0 0;
-  border-top:1px solid;
-  margin-top: 10px;
+  border-top:1px solid #c3c3c3;
+  margin-top: 30px;
   @include screen(medium){
 
-    padding: 20px 10px;
+    padding: 20px 0;
   }
 }

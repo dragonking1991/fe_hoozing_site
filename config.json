@@ -1,18 +1,9 @@
 {
-	"src": {
-		"css": "app/assets/css/app.scss",
-		"js": "app/assets/js/*.js",
-		"fonts": "app/assets/fonts/*.ttf"
-	},
-	"tmp": {
-		"css": ".tmp/assets/css",
-		"js": ".tmp/assets/js",
-		"fonts": ".tmp/assets/fonts"
-	},
-	"dist": {
-		"css": "dist/assets/css",
-		"js": "",
-		"img": "dist/assets/images",
-		"fonts": "dist/assets/fonts"
-	}
+	"src": "app",
+	"tmp": ".tmp",
+	"dist": "dist",
+	"css": "assets/css",
+	"js": "assets/js",
+	"img": "assets/images",
+	"fonts": "assets/fonts"
 }

@@ -1,8 +1,9 @@
+
 export default class ScrollTo {
   constructor(el) {
     $(el).on('click', '.link-to', function(e){
       var offset = 0;
-      if ($(window).width() < 1024) {
+      if ($(window).width() < 1025) {
         offset = 20;
       } else {
         offset = 50;

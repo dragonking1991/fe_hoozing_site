@@ -17,6 +17,7 @@ body {
 	padding-bottom: 1px;
 	overflow: hidden;
 	max-width: 1155px;
+	width: auto;
 }
 
 ul, ol {
@@ -30,18 +31,18 @@ ul, ol {
 	outline: none;
 }
 
-.row {
-	display: block;
-	flex-wrap:unset;
-	margin-right: -10px;
-	margin-left: -10px;
-}
-[class*='col-'] {
-	flex:unset;
-	float: left;
-	padding: 0 15px;
-	min-height: 1px;
-}
+// .row {
+// 	display: block;
+// 	flex-wrap:unset;
+// 	margin-right: -10px;
+// 	margin-left: -10px;
+// }
+// [class*='col-'] {
+// 	flex:unset;
+// 	float: left;
+// 	padding: 0 15px;
+// 	min-height: 1px;
+// }
 .order-md-last {
 	@include screen(medium){
 		float: right;
@@ -195,8 +196,9 @@ th,td {
 	}
 }
 .hide-for-small {
-	@include screen(small,false){
-		display: none !important;
+	display: none !important;
+	@include screen(small){
+		display: block !important;
 	}
 }
 .show-for-medium {
@@ -205,17 +207,14 @@ th,td {
 	}
 }
 .hide-for-medium {
-	@include screen(medium,false){
-		display: none !important;
+	display: none !important;
+	@include screen(medium){
+		display: block !important;
 	}
 }
 .hide {
 	display: none !important;
 }
-.show {
-	display: block !important;
-}
-
 
 
 .clearfix {
@@ -347,7 +346,7 @@ button:focus {
 }
 
 .breadcrumb {
-	align-items:center;
+	text-align: left;
 	background: none; 
 	color: $color-light;
 	padding: 20px 0;
@@ -356,8 +355,9 @@ button:focus {
 		font-size: $size-default;
 		margin-right: 5px;
 	}
-	i {
-		font-size: $size-default;
+	> li + li:before {
+		content: "\f105";
+		font: normal normal normal 18px/1 FontAwesome;
 	}
 }
 
@@ -388,7 +388,12 @@ section {
 		color: #fff;
 	}
 	a {
-		text-decoration:underline;
+		border-bottom: 1px solid;
+		&:hover {
+			@include screen(medium){
+				text-decoration: none;
+			}
+		}
 	}
 }
 
@@ -568,6 +573,8 @@ section {
 
 	> *{ 
 		display: inline-block;
+    vertical-align: middle;
+    margin: 10px 5px 0;
 	}
 }
 
@@ -607,4 +614,17 @@ section {
 }
 .toggle-block {
 	display: none;
+}
+.glyphicon,.input-group-addon  {
+	display: none;
+}
+.table {
+	margin-bottom: 0;
+	padding: 0 !important;
+}
+.carousel-item {
+	display: none;
+	&.active {
+		display: block;
+	}
 }

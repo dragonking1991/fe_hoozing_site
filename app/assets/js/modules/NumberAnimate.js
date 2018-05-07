@@ -1,3 +1,4 @@
+
 export default class NumberAnimate {
 	constructor(el) {
 		

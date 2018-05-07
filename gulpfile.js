@@ -1,15 +1,11 @@
 
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
-const browserSync = require('browser-sync').create();
 const del = require('del');
-const wiredep = require('wiredep').stream;
 const merge = require('merge-stream');
 const runSequence = require('run-sequence');
-const wait = require('gulp-wait');
 
 const $ = gulpLoadPlugins();
-const reload = browserSync.reload;
 
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
@@ -18,117 +14,18 @@ const path = require('path');
 
 let dev = true;
 let assetPath = 'assets';
-let config = {
-  "src": {
-    "css": "app/"+ assetPath +"/css/app.scss",
-    "js": "app/"+ assetPath +"/js/*.js",
-    "fonts": "app/"+ assetPath +"/fonts/*.ttf"
-  },
-  "tmp": {
-    "css": ".tmp/"+ assetPath +"/css",
-    "js": ".tmp/"+ assetPath +"/js",
-    "fonts": ".tmp/"+ assetPath +"/fonts"
-  },
-  "dist": {
-    "css": "dist/"+ assetPath +"/css",
-    "js": "dist/"+ assetPath +"/js",
-    "fonts": "dist/"+ assetPath +"/fonts",
-    "img": "dist/"+ assetPath +"/images"
-  }
-};
-
-gulp.task('css', () => {
-  return gulp.src(config.src.css)
-    .pipe(wait(500))
-    .pipe($.plumber({errorHandler: $.notify.onError('Error: <%= error.message %>')}))
-    .pipe($.if(dev, $.sourcemaps.init()))
-    .pipe($.sassGlob({
-      ignorePaths: [
-        '**/_global.scss'
-      ]
-    }))
-    .pipe($.sass.sync({
-      outputStyle: 'expanded',
-      precision: 10,
-      includePaths: ['.']
-    }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({browsers: ['> 1%', 'last 5 versions', 'Firefox ESR']}))
-    .pipe($.if(dev, $.sourcemaps.write('.'), $.cssnano({safe: true, autoprefixer: false})))
-    .pipe($.if(dev, gulp.dest(config.tmp.css), gulp.dest(config.dist.css)))
-    .pipe($.plumber.stop())
-    .pipe(reload({stream: true}));
-});
-
-gulp.task('twig-watch', ['twig'], function (done) {
-  browserSync.reload();
-  done();
-});
-gulp.task('js-watch', ['js'], function (done) {
-  browserSync.reload();
-  done();
-});
+const config = require('./config.json');
 
 gulp.task('js', () => {
-  return gulp.src(config.src.js)
-    .pipe($.plumber({
-      errorHandler: function(err) {
-        console.log(err);
-        this.emit('end');
-      }
-    }))
+  return gulp.src(`${config.src.js}/app.js`)
     .pipe(webpackStream(require('./webpack.dev.js'), webpack))
-    .pipe(gulp.dest(config.tmp.js))
-    .pipe($.plumber.stop());
-});
-
-gulp.task('build:css', () => {
-  dev = false;
-  gulp.start('css');
+    .pipe(gulp.dest(config.tmp));
 });
 
 gulp.task('build:js', () => {
-  return gulp.src(config.src.js)
-    .pipe($.plumber({
-      errorHandler: function(err) {
-        console.log(err);
-        this.emit('end');
-      }
-    }))
+  return gulp.src(`${config.src.js}/app.js`)
     .pipe(webpackStream(require('./webpack.prod.js'), webpack))
-    .pipe(gulp.dest(config.dist.js))
-    .pipe($.plumber.stop());
-});
-
-gulp.task('html', ['css', 'build:js'], () => {
-  let indexTwig = gulp.src([
-    'app/index.twig',
-    '!app/'+ assetPath +'/**'
-    ])
-    .pipe($.data(function(file) {
-      return JSON.parse(fs.readFileSync('./app/_data/app.json', 'utf-8'));;
-    }))
-    .pipe($.twig())
-    .pipe($.useref({searchPath: ['app', '.']}))
-    .pipe($.if('*.js', $.uglify()))
-    .pipe($.if(/\.css$/, $.cssnano({safe: true, autoprefixer: false})))
-    .pipe(gulp.dest('dist'));
-
-  let othersTwig = gulp.src([
-    '!app/index.twig',
-    'app/*.twig',
-    '!app/'+ assetPath +'/**'
-    ])
-    .pipe($.data(function(file) {
-      return JSON.parse(fs.readFileSync('./app/_data/app.json', 'utf-8'));;
-    }))
-    .pipe($.twig())
-    .pipe($.useref({
-      noAssets: true,
-      searchPath: ['app', '.']
-    }))
-    .pipe(gulp.dest('dist'));
-
-  return merge(indexTwig, othersTwig);
+    .pipe(gulp.dest(config.dist));
 });
 
 gulp.task('images', () => {
@@ -140,7 +37,7 @@ gulp.task('images', () => {
     '!app/'+ assetPath +'/images/sprites/**'
     ])
     .pipe($.plumber({errorHandler: $.notify.onError('Error: <%= error.message %>')}))
-    .pipe(gulp.dest(config.dist.img))
+    .pipe(gulp.dest(`${config.dist}/${config.img}`))
     .pipe($.plumber.stop());
 });
 
@@ -199,17 +96,6 @@ gulp.task('extras', () => {
   }).pipe(gulp.dest('dist'));
 });
 
-gulp.task('twig', function () {
-  return gulp.src('app/*.twig')
-    .pipe($.plumber({errorHandler: $.notify.onError('Error: <%= error.message %>')}))
-    .pipe($.data(function(file) {
-      return JSON.parse(fs.readFileSync('./app/_data/app.json', 'utf-8'));
-    }))
-    .pipe($.twig())
-    .pipe(gulp.dest('.tmp/'))
-    .pipe($.plumber.stop());
-});
-
 gulp.task('clean', function() {
   return gulp.src(['.tmp/', 'dist/'], { read: false })
     .pipe($.rimraf({
@@ -218,55 +104,11 @@ gulp.task('clean', function() {
 });
 
 gulp.task('serve', () => {
-  runSequence(['wiredep','twig', 'sprite'], ['css', 'js', 'fonts'], () => {
-    browserSync.init({
-      notify: false,
-      port: 9200,
-      reloadDelay: 100,
-      logLevel: 'info',
-      online: true,
-      open: 'external',
-      server: {
-        baseDir: ['.tmp', 'app'],
-        directory: true,
-        routes: {
-          '/bower_components': 'bower_components'
-        }
-      }
-    });
-
-    gulp.watch([
-      'app/'+ assetPath +'/images/**/*',
-      '.tmp/'+ assetPath +'/fonts/**/*'
-    ]).on('change', reload);
-
-    gulp.watch(['app/**/*.twig', 'app/_data/app.json'], ['twig-watch']);
-    gulp.watch('app/'+ assetPath +'/css/**/*.scss', ['css']);
-    gulp.watch('app/'+ assetPath +'/js/**/*.js', ['js-watch']);
-    gulp.watch('app/'+ assetPath +'/images/icons/**/*.png', ['sprite']);
-    gulp.watch('app/'+ assetPath +'/images/sprites/**/*.png', ['sprite']);
-    gulp.watch('app/'+ assetPath +'/fonts/**/*', ['fonts']);
-    gulp.watch('bower.json', ['wiredep', 'fonts']);
-  });
-});
-
-// inject bower components
-gulp.task('wiredep', () => {
-  gulp.src('app/'+ assetPath +'/css/*.scss')
-    .pipe(wiredep({
-      ignorePath: /^(\.\.\/)+/
-    }))
-    .pipe(gulp.dest('app/'+ assetPath +'/css'));
-
-  gulp.src('app/**/*.twig')
-    .pipe(wiredep({
-      ignorePath: /^(\.\.\/)*\.\./
-    }))
-    .pipe(gulp.dest('app'));
+  runSequence(['sprite'], ['js', 'fonts']);
 });
 
 gulp.task('build', () => {
-  runSequence(['wiredep','sprite'], ['html', 'images', 'fonts', 'extras'], () => {
+  runSequence(['sprite'], ['build:js', 'images', 'fonts', 'extras'], () => {
     return gulp.src('dist/**/*');
   });
 });

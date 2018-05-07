@@ -1,8 +1,15 @@
 input {
   padding: 0 10px;
+  border: 1px solid #c3c3c3; 
 }
 .input-group {
   margin-bottom: 10px;
+  display: block;
+  
+  .form-control {
+    float: none;
+    height: 45px;
+  }
 }
 /* Checkbox */
 .checkbox-wrapper {
@@ -147,12 +154,12 @@ input {
 //     padding-right: 9px;
 //   }
 // }
-[class='col-4']:first-child {
-	padding-right: 0;
-}
-[class='col-4'] {
-	padding-left: 18px;
-}
+// [class='col-4']:first-child {
+// 	padding-right: 0;
+// }
+// [class='col-4'] {
+// 	padding-left: 18px;
+// }
 .wrap-form{
 	max-width: 540px;
 	margin: 0 auto;
@@ -161,11 +168,6 @@ input {
   @include screen(medium){
     padding-top: 0;
     max-width: 360px;
-  }
-
-  .col-6 {
-  	width: 50%;
-  	float: left;
   }
 }
 
@@ -251,7 +253,9 @@ input {
 
 .checkbox-list {
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 0 10px;
+  line-height: 45px;
+  height: 45px;
   position: relative;
   margin-bottom: 10px;
   border-radius: 3px;
@@ -340,12 +344,14 @@ input {
 
   ul {
     background: #fff;
-    @include absolute(top 100% left)
-    width: 100%;
+    @include absolute(top 100% left -1px)
+    width: 101%;
     display: none;
     text-align: left;
     max-height: 180px;
     overflow-y:scroll;
+    border:1px solid #c6c6c6;
+    border-top: none;
   }
   li {
     padding: 3px 10px;
@@ -363,7 +369,7 @@ input {
   width: 100%;
   height: 45px;
   margin-bottom: 10px;
-  border-radius: 3px;
+  // border-radius: 3px;
   position: relative;
   background: #fff;
   border: 1px solid #c6c6c6;

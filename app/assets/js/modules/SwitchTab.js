@@ -1,3 +1,6 @@
+import $ from 'jquery';
+import slick from 'slick-carousel';
+
 export default class SwitchTab {
 	constructor(el) {
 		$("a[data-layout]").on('click', function(){

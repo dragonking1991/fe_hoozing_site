@@ -1,3 +1,8 @@
+
+
+import $ from 'jquery';
+import slick from 'slick-carousel';
+
 export default class SlideBg {
 	constructor(el) {
     var $el = $(el).find('.slider-wrapper');

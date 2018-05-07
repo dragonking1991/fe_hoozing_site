@@ -19,8 +19,9 @@
 
 .list-content {
 	h2 {
-		@include screen(medium, false){
-			font-size: 22px;
+		font-size: 22px;
+		@include screen(medium){
+			font-size: 32px;
 		}
 	}
 }
@@ -160,7 +161,7 @@
 
 
 .banner-project {
-	background:url("/assets/images/dummy/hoozing_star-hill.png") no-repeat center;
+	background:url("../images/dummy/hoozing_star-hill.png") no-repeat center;
 	background-size:cover;
 	height:0;
 	padding-bottom: 100%;
@@ -247,12 +248,12 @@
 		}
 	}
 	.btn {
-		@include screen(medium, false){
-			line-height: 30px;
-			font-size: 10px;
-			padding: 0 10px;
-			text-align: center;
-			height: 30px;
+		line-height: 30px;
+		font-size: 10px;
+		padding: 0 10px;
+		text-align: center;
+		height: 30px;
+		@include screen(medium){
 
 		}
 	}
@@ -260,8 +261,8 @@
 	.inspect__info {
 		margin-top: 20px;
 		.btn {
-			@include screen(medium, false){
-				width: 100%;
+			width: 100%;
+			@include screen(medium){
 			}
 		}
 	}
@@ -308,4 +309,11 @@
 .view-more {
 	color: $blue;
 	border-bottom: 1px solid;
+}
+
+.block-aside {
+	display: none;
+	@include screen(medium){
+		display: block;
+	}
 }

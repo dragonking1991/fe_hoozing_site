@@ -1,937 +1,855 @@
-{% extends "_templates/layout.twig" %}
+{% extends "./_templates/layout.twig" %}
 
 {% block page %}
-<section class="search-content" data-module="SearchControl">
+<script>
+window.isIE = false;
+if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) {
+  window.isIE = true;
+}
+window.accessToken = "ce088026e1e29bbe6d48d3bfc719ec89";
+window.errorNotify = '';
+window.errorBrowse = '';
 
-  <div class="search-control hide-for-medium">
-    <div class="checkbox-list select--big">
-      <span>Service Apartment</span> 
-      <ul>
-        <li class="checkbox-wrapper">
-          <input type="checkbox" id="service" name="service" checked="checked">
-          <label for="service">Apartment</label>
-        </li>
-        <li class="checkbox-wrapper">
-          <input type="checkbox" id="service1" name="service1" checked="checked">
-          <label for="service1">Service Apartment</label>
-        </li>
-        <li class="checkbox-wrapper">
-          <input type="checkbox" id="service3" name="service3" checked="checked">
-          <label for="service3">Town house</label>
-        </li>
-        <li class="checkbox-wrapper">
-          <input type="checkbox" id="service4" name="service4" checked="checked">
-          <label for="service4">Other</label>
-        </li>
-      </ul>
+</script>
+<main class="site-main">
+  <section class="search-content" data-module="SearchControl">
+
+    <div class="search-control hide-for-medium">
+      <div class="checkbox-list select--big">
+        <span>Service Apartment</span> 
+        <ul>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="service" name="service" checked="checked">
+            <label for="service">Apartment</label>
+          </li>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="service1" name="service1" checked="checked">
+            <label for="service1">Service Apartment</label>
+          </li>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="service3" name="service3" checked="checked">
+            <label for="service3">Town house</label>
+          </li>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="service4" name="service4" checked="checked">
+            <label for="service4">Other</label>
+          </li>
+        </ul>
+      </div>
+      <div class="checkbox-list select--big">
+        <span>Require amenities</span> 
+        <ul>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="require" name="require" checked="checked">
+            <label for="require">Apartment</label>
+          </li>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="require1" name="require1" checked="checked">
+            <label for="require1">Service Apartment</label>
+          </li>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="require3" name="require3" checked="checked">
+            <label for="require3">Town house</label>
+          </li>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="require4" name="require4" checked="checked">
+            <label for="require4">Other</label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="select-wrapper select-bed select--small">
+        <span>Any bed</span>
+        <ul>
+          <li class="active">Any bed</li>
+          <li>1+</li>
+          <li>2+</li>
+          <li>3+</li>
+          <li>4+</li>
+          <li>5+</li>
+          <li>6+</li>
+          <li>1+</li>
+          <li>2+</li>
+          <li>3+</li>
+          <li>4+</li>
+          <li>5+</li>
+          <li>6+</li>
+        </ul>
+      </div>
+      <div class="select-wrapper select-bath select--small">
+        <span>Any bath</span>
+        <ul>
+          <li class="active">Any bath</li>
+          <li>1+</li>
+          <li>2+</li>
+          <li>3+</li>
+          <li>4+</li>
+          <li>5+</li>
+          <li>6+</li>
+          <li>1+</li>
+          <li>2+</li>
+          <li>3+</li>
+          <li>4+</li>
+          <li>5+</li>
+          <li>6+</li>
+        </ul>
+      </div>
+
+      <div class="select-wrapper select-range select--small">
+        <label>Min <span>0</span></label>
+        <ul>
+          <li class="active">0</li>
+          <li>$10000</li>
+          <li>$20000</li>
+          <li>$30000</li>
+          <li>$40000</li>
+          <li>$50000</li>
+          <li>$60000</li>
+          <li>$10000</li>
+          <li>$20000</li>
+          <li>$30000</li>
+          <li>$40000</li>
+          <li>$50000</li>
+          <li>$60000</li>
+        </ul>
+      </div>
+
+      <div class="select-wrapper select-range select--small">
+        <label>Max <span>0</span></label>
+        <ul>
+          <li class="active">0</li>
+          <li>$10000</li>
+          <li>$20000</li>
+          <li>$30000</li>
+          <li>$40000</li>
+          <li>$50000</li>
+          <li>$60000</li>
+          <li>$10000</li>
+          <li>$20000</li>
+          <li>$30000</li>
+          <li>$40000</li>
+          <li>$50000</li>
+          <li>$60000</li>
+        </ul>
+      </div>
+
+      <a href="javascript:void(0)" data-show="#collapseFilter" class="btn f-right"><span class="notificate bg--red">0</span> More filter <i class="fa fa-angle-down"></i></a>
+
     </div>
-    <div class="checkbox-list select--big">
-      <span>Require amenities</span> 
-      <ul>
-        <li class="checkbox-wrapper">
-          <input type="checkbox" id="require" name="require" checked="checked">
-          <label for="require">Apartment</label>
-        </li>
-        <li class="checkbox-wrapper">
-          <input type="checkbox" id="require1" name="require1" checked="checked">
-          <label for="require1">Service Apartment</label>
-        </li>
-        <li class="checkbox-wrapper">
-          <input type="checkbox" id="require3" name="require3" checked="checked">
-          <label for="require3">Town house</label>
-        </li>
-        <li class="checkbox-wrapper">
-          <input type="checkbox" id="require4" name="require4" checked="checked">
-          <label for="require4">Other</label>
-        </li>
-      </ul>
+    <div class="search-control show-for-medium">
+      <div class="search-form">
+        <input type="text" value="" id="search-header" autocomplete="off" />
+        <button class="btn-submit"><i class="fa fa-map-marker"></i></button>
+      </div>
+      <div class="wrap-tag">
+        <a class="tags bg--blue" href="#">Service apartment</a>
+        <a class="tags bg--blue" href="#">5+ Amenities</a>
+        <a class="tags bg--blue" href="#">1+ bed</a>
+        <a class="tags bg--blue" href="#">1+ bath</a>
+        <a class="tags bg--blue" href="#">Max: $700</a>
+      </div>
+      <p>Great! We’ve found <strong>523 listings</strong> that match well your search criteria.</p>
     </div>
 
-    <div class="select-wrapper select-bed select--small">
-      <span>Any bed</span>
-      <ul>
-        <li class="active">Any bed</li>
-        <li>1+</li>
-        <li>2+</li>
-        <li>3+</li>
-        <li>4+</li>
-        <li>5+</li>
-        <li>6+</li>
-        <li>1+</li>
-        <li>2+</li>
-        <li>3+</li>
-        <li>4+</li>
-        <li>5+</li>
-        <li>6+</li>
-      </ul>
-    </div>
-    <div class="select-wrapper select-bath select--small">
-      <span>Any bath</span>
-      <ul>
-        <li class="active">Any bath</li>
-        <li>1+</li>
-        <li>2+</li>
-        <li>3+</li>
-        <li>4+</li>
-        <li>5+</li>
-        <li>6+</li>
-        <li>1+</li>
-        <li>2+</li>
-        <li>3+</li>
-        <li>4+</li>
-        <li>5+</li>
-        <li>6+</li>
-      </ul>
-    </div>
+    <div class="search-detail">
+      <div class="wrap-tab tab--reduce">
 
-    <div class="select-wrapper select-range select--small">
-      <label>Min <span>0</span></label>
-      <ul>
-        <li class="active">0</li>
-        <li>$10000</li>
-        <li>$20000</li>
-        <li>$30000</li>
-        <li>$40000</li>
-        <li>$50000</li>
-        <li>$60000</li>
-        <li>$10000</li>
-        <li>$20000</li>
-        <li>$30000</li>
-        <li>$40000</li>
-        <li>$50000</li>
-        <li>$60000</li>
-      </ul>
-    </div>
-
-    <div class="select-wrapper select-range select--small">
-      <label>Max <span>0</span></label>
-      <ul>
-        <li class="active">0</li>
-        <li>$10000</li>
-        <li>$20000</li>
-        <li>$30000</li>
-        <li>$40000</li>
-        <li>$50000</li>
-        <li>$60000</li>
-        <li>$10000</li>
-        <li>$20000</li>
-        <li>$30000</li>
-        <li>$40000</li>
-        <li>$50000</li>
-        <li>$60000</li>
-      </ul>
-    </div>
-
-    <a href="javascript:void(0)" data-toggle="#collapseFilter" class="btn float-right"><span class="notificate bg--red">0</span> More filter <i class="fa fa-angle-down"></i></a>
-
-  </div>
-  <div class="search-control show-for-medium">
-    <div class="search-form">
-      <input type="text" value="" id="search-header" autocomplete="off" />
-      <button class="btn-submit"><i class="fa fa-map-marker"></i></button>
-    </div>
-    <div class="wrap-tag">
-      <a class="tags bg--blue" href="#">Service apartment</a>
-      <a class="tags bg--blue" href="#">5+ Amenities</a>
-      <a class="tags bg--blue" href="#">1+ bed</a>
-      <a class="tags bg--blue" href="#">1+ bath</a>
-      <a class="tags bg--blue" href="#">Max: $700</a>
-    </div>
-    <p>Great! We’ve found <strong>523 listings</strong> that match well your search criteria.</p>
-  </div>
-
-  <div class="search-detail">
-    <div class="wrap-tab tab--reduce">
-
-      <div class="filter-wrapper collapse" id="collapseFilter">
-        <a href="#collapseFilter" data-toggle="collapse" class="close-modal"><i class="fa fa-close"></i></a>
-        <div class="container">
-          <h3 class="block-title">Basic fetures</h3>
-          <div class="row">
-            <div class="col-md-3">
-              <div class="input-group date" data-provide="datepicker-inline">
-                <input type="text" class="form-control" >
-                <div class="input-group-addon">
-                  <span class="glyphicon glyphicon-th"></span>
+        <div class="filter-wrapper collapse" id="collapseFilter">
+          <a href="javascript:void(0)" data-close="#collapseFilter" class="close-modal"><i class="fa fa-close"></i></a>
+          <div class="container">
+            <h3 class="block-title">Basic fetures</h3>
+            <div class="row">
+              <div class="col-xs-6 col-lg-3">
+                <div class="input-group date" data-provide="datepicker-inline">
+                  <input type="text" class="form-control" >
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-lg-3">
+                <div class="select-wrapper">
+                  <select name="type" id="type">
+                    <option  disabled="disabled" selected="selected" value="">Acomodates</option>
+                    <option value="Male">2000</option>
+                    <option value="Female">2001</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-xs-6 col-lg-3">
+                <div class="select-wrapper">
+                  <select name="type" id="type">
+                    <option  disabled="disabled" selected="selected" value="">Furnishment</option>
+                    <option value="Male">2000</option>
+                    <option value="Female">2001</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-xs-6 col-lg-3">
+                <div class="select-wrapper">
+                  <select name="type" id="type">
+                    <option  disabled="disabled" selected="selected" value="">Floor Area</option>
+                    <option value="Male">2000</option>
+                    <option value="Female">2001</option>
+                  </select>
                 </div>
               </div>
             </div>
-            <div class="col-md-3">
-              <div class="select-wrapper">
-                <select name="type" id="type">
-                  <option  disabled="disabled" selected="selected" value="">Acomodates</option>
-                  <option value="Male">2000</option>
-                  <option value="Female">2001</option>
-                </select>
-              </div>
+
+            <h3 class="block-title">Required Amenities</h3>
+            <ul class="list-check">
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_tv" name="f_tv">
+                  <label for="f_tv">TV</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_microwave" name="f_microwave">
+                  <label for="f_microwave">Microwave</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_aircondition" name="f_aircondition">
+                  <label for="f_aircondition">Air contitioner</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_chimney" name="f_chimney">
+                  <label for="f_chimney">Electric chimney</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_smock-detector" name="f_smock-detector">
+                  <label for="f_smock-detector">Smoke detector</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_fire-extinguisher" name="f_fire-extinguisher">
+                  <label for="f_fire-extinguisher">Fire extinguisher</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_balcony" name="f_balcony">
+                  <label for="f_balcony">Balcony</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_first-aid-kit" name="f_first-aid-kit">
+                  <label for="f_first-aid-kit">First Aid Kit</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_bathtub" name="f_bathtub">
+                  <label for="f_bathtub">Bathtub</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_geyser" name="f_geyser">
+                  <label for="f_geyser">Geyser</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_essentails" name="f_essentails">
+                  <label for="f_essentails">Essentails</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_dish-washer" name="f_dish-washer">
+                  <label for="f_dish-washer">Dish washer</label>
+                </div>
+              </li>
+            </ul>
+            <a href="#" class="more"> More amenties</a>
+            <br />
+            <h3 class="block-title">Required Facilities</h3>
+            <ul class="list-check">
+
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="e-backup" name="e-backup">
+                  <label for="e-backup">24Hr Electricity Backup</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="parking" name="parking">
+                  <label for="parking">Parking</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="community-hall" name="community-hall">
+                  <label for="community-hall">Community Hall</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="club" name="club">
+                  <label for="club">Club House</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="restaurant" name="restaurant">
+                  <label for="restaurant">Restaurant</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="coffee-shop" name="coffee-shop">
+                  <label for="coffee-shop">Coffee-shop</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="banking-atm" name="banking-atm">
+                  <label for="banking-atm">Banking/ ATM</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="phamacy" name="phamacy">
+                  <label for="phamacy">Phamacy</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="shopping-mall" name="shopping-mall">
+                  <label for="shopping-mall">Shopping mall</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="supermarket" name="supermarket">
+                  <label for="supermarket">Supermarket</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="swimming-pool" name="swimming-pool">
+                  <label for="swimming-pool">Swimming Pool</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="gymnasiums" name="gymnasiums">
+                  <label for="gymnasiums">Gymnasiums</label>
+                </div>
+              </li>
+            </ul>
+            <a href="#" class="more"> More amenties</a>
+
+            <div class="btn-wrapper text-left">
+              <a href="#" class="btn btn--blue"> Apply</a>
+              <a href="#" class="link clear-filter"> Clear Filters</a>
             </div>
-            <div class="col-md-3">
-              <div class="select-wrapper">
-                <select name="type" id="type">
-                  <option  disabled="disabled" selected="selected" value="">Furnishment</option>
-                  <option value="Male">2000</option>
-                  <option value="Female">2001</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="select-wrapper">
-                <select name="type" id="type">
-                  <option  disabled="disabled" selected="selected" value="">Floor Area</option>
-                  <option value="Male">2000</option>
-                  <option value="Female">2001</option>
-                </select>
-              </div>
+          </div>
+        </div>
+
+        <div class="jplist-panel search__list hide-for-small">
+
+          <span data-type="<b class='list-count'>{all} Listing </b>" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging"><b class='list-count'>625 Listing </b></span>
+
+          <div class="search__sort">
+            <label for="sortlist">Sort by</label>
+
+            <div class="select-wrapper">
+              <select name="sortlist" id="sortlist">
+                <option selected="selected" value=""> Day (newest)</option>
+                <option value="Male">2000</option>
+                <option value="Female">2001</option>
+              </select>
             </div>
           </div>
 
-          <h3 class="block-title">Required Amenities</h3>
-          <ul class="list-check">
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="tv" name="tv">
-                <label for="tv">TV</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="microwave" name="microwave">
-                <label for="microwave">Microwave</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="aircondition" name="aircondition">
-                <label for="aircondition">Air contitioner</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="chimney" name="chimney">
-                <label for="chimney">Electric chimney</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="smock-detector" name="smock-detector">
-                <label for="smock-detector">Smoke detector</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="fire-extinguisher" name="fire-extinguisher">
-                <label for="fire-extinguisher">Fire extinguisher</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="balcony" name="balcony">
-                <label for="balcony">Balcony</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="first-aid-kit" name="first-aid-kit">
-                <label for="first-aid-kit">First Aid Kit</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="bathtub" name="bathtub">
-                <label for="bathtub">Bathtub</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="geyser" name="geyser">
-                <label for="geyser">Geyser</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="essentails" name="essentails">
-                <label for="essentails">Essentails</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="dish-washer" name="dish-washer">
-                <label for="dish-washer">Dish washer</label>
-              </div>
-            </li>
+          <!-- Sort by
+          <div class="jplist-drop-down" data-control-type="sort-drop-down" data-control-name="sort" data-control-action="sort"> 
+            <ul>
+              <li><span data-path="default">Sort by</span></li>
+              <li><span data-path="h3" data-order="asc" data-type="text">Title A-Z</span></li>
+              <li><span data-path="h3" data-order="desc" data-type="text">Title Z-A</span></li>
+              <li><span data-path=".price-tag" data-order="asc" data-type="number">Price asc</span></li>
+              <li><span data-path=".price-tag" data-order="desc" data-type="number">Price desc</span></li>
+            </ul>
+          </div> -->
+
+
+          <label>Layout</label> 
+          <ul class="search__layout" data-module="SwitchTab">
+            <li><a href="javascript:void(0);" class="active" data-toggle="tooltip" data-placement="top" data-layout="mapview"  title="Map"><i class="fa fa-map"></i></a></li>
+            <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="grid" title="Grid"><i class="fa fa-th-large"></i></a></li>
+            <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="listview"  title="List"><i class="fa fa-bars"></i></a></li>
+            <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="project"  title="Project"><i class="fa fa-bank"></i></a></li>
           </ul>
-          <a href="#" class="more"> More amenties</a>
-          <br />
-          <h3 class="block-title">Required Facilities</h3>
-          <ul class="list-check">
 
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="e-backup" name="e-backup">
-                <label for="e-backup">24Hr Electricity Backup</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="parking" name="parking">
-                <label for="parking">Parking</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="community-hall" name="community-hall">
-                <label for="community-hall">Community Hall</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="club" name="club">
-                <label for="club">Club House</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="restaurant" name="restaurant">
-                <label for="restaurant">Restaurant</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="coffee-shop" name="coffee-shop">
-                <label for="coffee-shop">Coffee-shop</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="banking-atm" name="banking-atm">
-                <label for="banking-atm">Banking/ ATM</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="phamacy" name="phamacy">
-                <label for="phamacy">Phamacy</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="shopping-mall" name="shopping-mall">
-                <label for="shopping-mall">Shopping mall</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="supermarket" name="supermarket">
-                <label for="supermarket">Supermarket</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="swimming-pool" name="swimming-pool">
-                <label for="swimming-pool">Swimming Pool</label>
-              </div>
-            </li>
-            <li>
-              <div class="checkbox-wrapper check-switch">
-                <input type="checkbox" id="gymnasiums" name="gymnasiums">
-                <label for="gymnasiums">Gymnasiums</label>
-              </div>
-            </li>
-          </ul>
-          <a href="#" class="more"> More amenties</a>
+          <!-- <div class="text-filter-box">
+            <input data-path="h3" type="text" value="" placeholder="Filter by Title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" />
+          </div> -->
 
-          <div class="btn-wrapper text-left">
-            <a href="#" class="btn btn--blue"> Apply</a>
-            <a href="#" class="link clear-filter"> Clear Filters</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="jplist-panel hide-for-small">
-
-        <span data-type="<b class='list-count'>{all} Listing </b>" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging"></span>
-
-        Sort by
-        <div class="jplist-drop-down" data-control-type="sort-drop-down" data-control-name="sort" data-control-action="sort"> 
-          <ul>
-            <li><span data-path="default">Sort by</span></li>
-            <li><span data-path="h3" data-order="asc" data-type="text">Title A-Z</span></li>
-            <li><span data-path="h3" data-order="desc" data-type="text">Title Z-A</span></li>
-            <li><span data-path=".price-tag" data-order="asc" data-type="number">Price asc</span></li>
-            <li><span data-path=".price-tag" data-order="desc" data-type="number">Price desc</span></li>
-          </ul>
+          <!-- <div class="jplist-drop-down" data-control-type="items-per-page-drop-down" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true">
+            <ul>
+              <li><span data-number="4" data-default="true"> 4 per page </span></li>
+              <li><span data-number="5"> 5 per page </span></li>
+              <li><span data-number="6"> 6 per page </span></li>
+              <li><span data-number="7"> 7 per page </span></li>
+              <li><span data-number="8"> 8 per page </span></li>
+              <li><span data-number="all"> View All </span></li>
+            </ul>
+          </div> -->
         </div>
 
-
-        <label>Layout</label> 
-        <ul class="search__layout" data-module="SwitchTab">
-          <li><a href="javascript:void(0);" class="active" data-toggle="tooltip" data-placement="top" data-layout="mapview"  title="Map"><i class="fa fa-map"></i></a></li>
-          <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="grid" title="Grid"><i class="fa fa-th-large"></i></a></li>
-          <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="listview"  title="List"><i class="fa fa-bars"></i></a></li>
-          <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="project"  title="Project"><i class="fa fa-bank"></i></a></li>
-        </ul>
-
-        <div class="text-filter-box">
-          <input data-path="h3" type="text" value="" placeholder="Filter by Title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" />
-        </div>
-
-        <div class="jplist-drop-down" data-control-type="items-per-page-drop-down" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true">
-          <ul>
-            <li><span data-number="4" data-default="true"> 4 per page </span></li>
-            <li><span data-number="5"> 5 per page </span></li>
-            <li><span data-number="6"> 6 per page </span></li>
-            <li><span data-number="7"> 7 per page </span></li>
-            <li><span data-number="8"> 8 per page </span></li>
-            <li><span data-number="all"> View All </span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="jplist-panel">
-        <div class="jplist-pagination" data-control-animate-to-top="true" data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-storage="false"></div>
-      </div>
-
-      <div class=" tab-content active" id="search-list">
-        <div class="row list-box">
-
-          <div class="thumb-item col-md-6" data-date="03/03/2017" data-code="mh021" data-lng="106.67094305726" data-lat="10.750648587535" data-city="Ho Chi Minh">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">600</span>
-            </div>
-            <div class="thumb-info">
-              <h4><a href="javascript:void(0)" class="select-home">house code mh021</a></h4>
-
-              <h3>
-                <a href="#">a Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>            
-              </div>
-            </div>
-          </div>
-          <div class="thumb-item col-md-6" data-date="03/03/2017" data-code="mh021" data-lng="106.67094305726" data-lat="10.750648587535" data-city="Ho Chi Minh">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">600</span>
-            </div>
-            <div class="thumb-info">
-              <h4><a href="javascript:void(0)" class="select-home">house code mh021</a></h4>
-
-              <h3>
-                <a href="#">a Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>            
-              </div>
-            </div>
-          </div>
-          <div class="thumb-item col-md-6" data-date="03/03/2017" data-code="mh021" data-lng="106.67094305726" data-lat="10.750648587535" data-city="Ho Chi Minh">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">600</span>
-            </div>
-            <div class="thumb-info">
-              <h4><a href="javascript:void(0)" class="select-home">house code mh021</a></h4>
-
-              <h3>
-                <a href="#">a Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>            
-              </div>
-            </div>
-          </div>
-          <div class="thumb-item col-md-6" data-date="03/03/2017" data-code="mh021" data-lng="106.67094305726" data-lat="10.750648587535" data-city="Ho Chi Minh">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">600</span>
-            </div>
-            <div class="thumb-info">
-              <h4><a href="javascript:void(0)" class="select-home">house code mh021</a></h4>
-
-              <h3>
-                <a href="#">a Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>            
-              </div>
-            </div>
-          </div>
-          <div class="thumb-item col-md-6" data-date="03/03/2017" data-code="mh021" data-lng="106.67094305726" data-lat="10.750648587535" data-city="Ho Chi Minh">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">600</span>
-            </div>
-            <div class="thumb-info">
-              <h4><a href="javascript:void(0)" class="select-home">house code mh021</a></h4>
-
-              <h3>
-                <a href="#">a Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>            
-              </div>
-            </div>
-          </div>
-
-          <div class="thumb-item col-md-6" data-date="04/03/2017" data-code="mh022" data-lng="106.66009490812" data-lat="10.74030300056" data-city="Ho Chi Minh">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">700</span>
-            </div>
-            <div class="thumb-info">
-              <h4><a href="javascript:void(0)" class="select-home">house code mh022</a></h4>
-              <h3>
-                <a href="#"> b Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>            
-              </div>
-            </div>
-          </div>
-
-          <div class="thumb-item col-md-6" data-date="05/03/2017" data-code="mh023" data-lng="106.68009490812" data-lat="10.74030300056" data-city="Ho Chi Minh">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">800</span>
-            </div>
-            <div class="thumb-info">
-              <h4><a href="javascript:void(0)" class="select-home">house code mh023</a></h4>
-              <h3>
-                <a href="#"> c Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>            
-              </div>
-            </div>
-          </div>
-
-          <div class="thumb-item col-md-6" data-date="06/03/2017" data-code="mh024" data-lng="106.60009490812" data-lat="10.70030300056" data-city="Ho Chi Minh">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">700</span>
-            </div>
-            <div class="thumb-info">
-              <h4><a href="javascript:void(0)" class="select-home">house code mh024</a></h4>
-              <h3>
-                <a href="#">e Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>            
-              </div>
-            </div>
-          </div>
-
-          <div class="thumb-item col-md-6" data-date="07/03/2017" data-code="mh025" data-lng="106.62009490812" data-lat="10.780648587535" data-city="Ho Chi Minh">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">800</span>
-            </div>
-            <div class="thumb-info">
-              <h4><a href="javascript:void(0)" class="select-home">house code mh025</a></h4>
-              <h3>
-                <a href="#">f Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>            
-              </div>
-            </div>
-          </div>
-
-          <div class="thumb-item col-md-6" data-date="08/03/2017" data-code="mh026" data-lng="106.67009490812" data-lat="10.790648587535" data-city="Ho Chi Minh">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">800</span>
-            </div>
-            <div class="thumb-info">
-              <h4><a href="javascript:void(0)" class="select-home">house code mh026</a></h4>
-              <h3>
-                <a href="#">Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>            
-              </div>
-            </div>
-          </div>          
-
-        </div>
         <div class="jplist-panel">
           <div class="jplist-pagination" data-control-animate-to-top="true" data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-storage="false"></div>
         </div>
 
-        <div class="box jplist-no-results text-shadow align-center">
-          <p>No results found</p>
-        </div>
-        <div class="list-info">
-          <h3>Vinhomes Đồng Khởi</h3>
-          <p> Vinhomes Đồng Khởi được ví như Hòn Ngọc Viễn Đông giữa lòng Sài Gòn nằm trên những cung đường danh giá bậc nhất trung tâm thành phố, 3 mặt tiền đường Đồng Khởi – Lê Thánh Tôn và Lý Tự Trọng với tầm nhìn tuyệt đẹp bao quát toàn bộ trung tâm thành phố hướng ra sông Sài Gòn, Phố đi bộ Nguyễn Huệ, Nhà Thờ Đức Bà.</p>
-          <p>Hội tụ đầy đủ hệ thống dịch vụ tiêu chuẩn 5 sao và tiện ích đẳng cấp vượt trội, Vinhomes Đồng Khởi thiết lập một chuẩn mực khác biệt về phong cách sống, đồng thời cũng là khu căn hộ hiếm hoi đáp ứng được hoàn hảo các nhu cầu.</p>
+        <div class="jplist-pagination"><div class="jplist-pagingprev jplist-hidden" data-type="pagingprev"><button type="button" class="jplist-first" data-number="0" data-type="first" data-active="true">«</button><button type="button" class="jplist-prev" data-type="prev" data-number="0">‹</button></div><div class="jplist-pagingmid" data-type="pagingmid"><div class="jplist-pagesbox" data-type="pagesbox"><button type="button" data-type="page" class="jplist-current" data-active="true" data-number="0">1</button> <button type="button" data-type="page" data-number="1">2</button> <button type="button" data-type="page" data-number="2">3</button> </div></div><div class="jplist-pagingnext" data-type="pagingnext"><button type="button" class="jplist-next" data-type="next" data-number="1">›</button><button type="button" class="jplist-last" data-type="last" data-number="2">»</button></div></div>
+
+        <div class=" tab-content active" id="search-list">
+          <div class="row list-box">
+
+            <div class="thumb-item col-xs-6" data-date="03/03/2017" data-code="mh021" data-lng="106.67094305726" data-lat="10.750648587535" data-city="Ho Chi Minh">
+              <div class="thumb-gallery " data-module="ThumbSlide">
+                <ul class="thumb-list slider-wrapper">
+                  <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <span class="price-tag">600</span>
+              </div>
+              <div class="thumb-info">
+                <h4><a href="javascript:void(0)" class="select-home">house code mh021</a></h4>
+
+                <h3>
+                  <a href="#">a Pretty service appartment with bright bedroom</a>
+                </h3>
+                <div class="thumb-service">
+                  <span><i class="fa fa-map-marker"></i> District 7</span>
+                  <span><i class="fa fa-bed"></i> 1 bed </span>
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
+                </div>
+              </div>
+            </div>
+
+            <div class="thumb-item col-xs-6" data-date="04/03/2017" data-code="mh022" data-lng="106.66009490812" data-lat="10.74030300056" data-city="Ho Chi Minh">
+              <div class="thumb-gallery " data-module="ThumbSlide">
+                <ul class="thumb-list slider-wrapper">
+                  <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <span class="price-tag">700</span>
+              </div>
+              <div class="thumb-info">
+                <h4><a href="javascript:void(0)" class="select-home">house code mh022</a></h4>
+                <h3>
+                  <a href="#"> b Pretty service appartment with bright bedroom</a>
+                </h3>
+                <div class="thumb-service">
+                  <span><i class="fa fa-map-marker"></i> District 7</span>
+                  <span><i class="fa fa-bed"></i> 1 bed </span>
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
+                </div>
+              </div>
+            </div>
+
+            <div class="thumb-item col-xs-6" data-date="05/03/2017" data-code="mh023" data-lng="106.68009490812" data-lat="10.74030300056" data-city="Ho Chi Minh">
+              <div class="thumb-gallery " data-module="ThumbSlide">
+                <ul class="thumb-list slider-wrapper">
+                  <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <span class="price-tag">800</span>
+              </div>
+              <div class="thumb-info">
+                <h4><a href="javascript:void(0)" class="select-home">house code mh023</a></h4>
+                <h3>
+                  <a href="#"> c Pretty service appartment with bright bedroom</a>
+                </h3>
+                <div class="thumb-service">
+                  <span><i class="fa fa-map-marker"></i> District 7</span>
+                  <span><i class="fa fa-bed"></i> 1 bed </span>
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
+                </div>
+              </div>
+            </div>
+
+            <div class="thumb-item col-xs-6" data-date="06/03/2017" data-code="mh024" data-lng="106.60009490812" data-lat="10.70030300056" data-city="Ho Chi Minh">
+              <div class="thumb-gallery " data-module="ThumbSlide">
+                <ul class="thumb-list slider-wrapper">
+                  <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <span class="price-tag">700</span>
+              </div>
+              <div class="thumb-info">
+                <h4><a href="javascript:void(0)" class="select-home">house code mh024</a></h4>
+                <h3>
+                  <a href="#">e Pretty service appartment with bright bedroom</a>
+                </h3>
+                <div class="thumb-service">
+                  <span><i class="fa fa-map-marker"></i> District 7</span>
+                  <span><i class="fa fa-bed"></i> 1 bed </span>
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
+                </div>
+              </div>
+            </div>
+
+            <div class="thumb-item col-xs-6" data-date="07/03/2017" data-code="mh025" data-lng="106.62009490812" data-lat="10.780648587535" data-city="Ho Chi Minh">
+              <div class="thumb-gallery " data-module="ThumbSlide">
+                <ul class="thumb-list slider-wrapper">
+                  <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <span class="price-tag">800</span>
+              </div>
+              <div class="thumb-info">
+                <h4><a href="javascript:void(0)" class="select-home">house code mh025</a></h4>
+                <h3>
+                  <a href="#">f Pretty service appartment with bright bedroom</a>
+                </h3>
+                <div class="thumb-service">
+                  <span><i class="fa fa-map-marker"></i> District 7</span>
+                  <span><i class="fa fa-bed"></i> 1 bed </span>
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
+                </div>
+              </div>
+            </div>
+
+            <div class="thumb-item col-xs-6" data-date="08/03/2017" data-code="mh026" data-lng="106.67009490812" data-lat="10.790648587535" data-city="Ho Chi Minh">
+              <div class="thumb-gallery " data-module="ThumbSlide">
+                <ul class="thumb-list slider-wrapper">
+                  <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <span class="price-tag">800</span>
+              </div>
+              <div class="thumb-info">
+                <h4><a href="javascript:void(0)" class="select-home">house code mh026</a></h4>
+                <h3>
+                  <a href="#">Pretty service appartment with bright bedroom</a>
+                </h3>
+                <div class="thumb-service">
+                  <span><i class="fa fa-map-marker"></i> District 7</span>
+                  <span><i class="fa fa-bed"></i> 1 bed </span>
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
+                </div>
+              </div>
+            </div>          
+
+          </div>
+
+
+          <div class="jplist-pagination"><div class="jplist-pagingprev jplist-hidden" data-type="pagingprev"><button type="button" class="jplist-first" data-number="0" data-type="first" data-active="true">«</button><button type="button" class="jplist-prev" data-type="prev" data-number="0">‹</button></div><div class="jplist-pagingmid" data-type="pagingmid"><div class="jplist-pagesbox" data-type="pagesbox"><button type="button" data-type="page" class="jplist-current" data-active="true" data-number="0">1</button> <button type="button" data-type="page" data-number="1">2</button> <button type="button" data-type="page" data-number="2">3</button> </div></div><div class="jplist-pagingnext" data-type="pagingnext"><button type="button" class="jplist-next" data-type="next" data-number="1">›</button><button type="button" class="jplist-last" data-type="last" data-number="2">»</button></div></div>
+
+          <div class="jplist-panel">
+            <div class="jplist-pagination" data-control-animate-to-top="true" data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-storage="false"></div>
+          </div>
+
+          <!-- <div class="box jplist-no-results text-shadow align-center">
+            <p>No results found</p>
+          </div> -->
+          <div class="list-info">
+            <h3>Vinhomes Đồng Khởi</h3>
+            <p> Vinhomes Đồng Khởi được ví như Hòn Ngọc Viễn Đông giữa lòng Sài Gòn nằm trên những cung đường danh giá bậc nhất trung tâm thành phố, 3 mặt tiền đường Đồng Khởi – Lê Thánh Tôn và Lý Tự Trọng với tầm nhìn tuyệt đẹp bao quát toàn bộ trung tâm thành phố hướng ra sông Sài Gòn, Phố đi bộ Nguyễn Huệ, Nhà Thờ Đức Bà.</p>
+            <p>Hội tụ đầy đủ hệ thống dịch vụ tiêu chuẩn 5 sao và tiện ích đẳng cấp vượt trội, Vinhomes Đồng Khởi thiết lập một chuẩn mực khác biệt về phong cách sống, đồng thời cũng là khu căn hộ hiếm hoi đáp ứng được hoàn hảo các nhu cầu.</p>
+          </div>
+
+          <ul class="breadcrumb">
+            <li><a href="#"><i class="fa fa-home"></i></a>  </li>
+            <li> <a href="#">District 7</a></li>
+            <li>One Bedroom Service Apartment</li>
+          </ul>
+
         </div>
 
-        <ul class="breadcrumb">
-          <li><a href="#"><i class="fa fa-home"></i></a>  </li>
-          <li><i class="fa fa-angle-right"></i> <a href="#">District 7</a></li>
-          <li><i class="fa fa-angle-right"></i> One Bedroom Service Apartment</li>
-        </ul>
 
+        <div class="tab-content" id="search-project">
+          <h3 class="project-title">Starhill</h3>
+          <div class="row">
+            <div class="thumb-item col-md-15">
+              <div class="thumb-gallery " data-module="ThumbSlide">
+                <ul class="thumb-list slider-wrapper">
+                  <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <span class="price-tag">600</span>
+              </div>
+              <div class="thumb-info">
+                <h4>house code 456</h4>
+                <h3>
+                  <a href="#">Pretty service appartment with bright bedroom</a>
+                </h3>
+                <div class="thumb-service">
+                  <span><i class="fa fa-map-marker"></i> District 7</span>
+                  <span><i class="fa fa-bed"></i> 1 bed </span>
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>  
+
+                </div>
+              </div>
+            </div>
+
+            <div class="thumb-item col-md-15">
+              <div class="thumb-gallery " data-module="ThumbSlide">
+                <ul class="thumb-list slider-wrapper">
+                  <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <span class="price-tag">600</span>
+              </div>
+              <div class="thumb-info">
+                <h4>house code 456</h4>
+                <h3>
+                  <a href="#">Pretty service appartment with bright bedroom</a>
+                </h3>
+                <div class="thumb-service">
+                  <span><i class="fa fa-map-marker"></i> District 7</span>
+                  <span><i class="fa fa-bed"></i> 1 bed </span>
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
+                </div>
+              </div>
+            </div>
+
+            <div class="thumb-item col-md-15">
+              <div class="thumb-gallery " data-module="ThumbSlide">
+                <ul class="thumb-list slider-wrapper">
+                  <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <span class="price-tag">600</span>
+              </div>
+              <div class="thumb-info">
+                <h4>house code 456</h4>
+                <h3>
+                  <a href="#">Pretty service appartment with bright bedroom</a>
+                </h3>
+                <div class="thumb-service">
+                  <span><i class="fa fa-map-marker"></i> District 7</span>
+                  <span><i class="fa fa-bed"></i> 1 bed </span>
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
+                </div>
+              </div>
+            </div>
+
+            <div class="thumb-item col-md-15">
+              <div class="thumb-gallery " data-module="ThumbSlide">
+                <ul class="thumb-list slider-wrapper">
+                  <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <span class="price-tag">600</span>
+              </div>
+              <div class="thumb-info">
+                <h4>house code 456</h4>
+                <h3>
+                  <a href="#">Pretty service appartment with bright bedroom</a>
+                </h3>
+                <div class="thumb-service">
+                  <span><i class="fa fa-map-marker"></i> District 7</span>
+                  <span><i class="fa fa-bed"></i> 1 bed </span>
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
+                </div>
+              </div>
+            </div>
+
+            <div class="thumb-item col-md-15">
+              <div class="thumb-gallery">
+                <ul class="thumb-list">
+                  <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <a class="thumb-mask" href="#">
+                  View all<br /> Starhill Listings(20)
+                </a>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
       </div>
 
-      <div class="tab-content" id="search-project">
-        <h3 class="project-title">Starhill</h3>
-        <div class="row">
-          <div class="thumb-item col-md-15">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">600</span>
-            </div>
-            <div class="thumb-info">
-              <h4>house code 456</h4>
-              <h3>
-                <a href="#">Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>  
+      <div class="map-result show" data-module="MapResult">
+        <div id="map" style="height: 100vh"></div>
 
-              </div>
-            </div>
-          </div>
+        <ul id="style-selector-control" class="map-control">
 
-          <div class="thumb-item col-md-15">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">600</span>
-            </div>
-            <div class="thumb-info">
-              <h4>house code 456</h4>
-              <h3>
-                <a href="#">Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>            
-              </div>
-            </div>
-          </div>
+          <li class="radio-wrapper">
+            <input type="radio" id="all" name="abc" >
+            <label for="all">all</label>
+          </li>
 
-          <div class="thumb-item col-md-15">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">600</span>
-            </div>
-            <div class="thumb-info">
-              <h4>house code 456</h4>
-              <h3>
-                <a href="#">Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>            
-              </div>
-            </div>
-          </div>
+          <li class="radio-wrapper">
+            <input type="radio" id="transit" name="abc" >
+            <label for="transit">Transit</label>
+          </li>
 
-          <div class="thumb-item col-md-15">
-            <div class="thumb-gallery " data-module="ThumbSlide">
-              <ul class="thumb-list slider-wrapper">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-                <li class="carousel-item"><img src="assets/images/dummy/lexington-residence.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <span class="price-tag">600</span>
-            </div>
-            <div class="thumb-info">
-              <h4>house code 456</h4>
-              <h3>
-                <a href="#">Pretty service appartment with bright bedroom</a>
-              </h3>
-              <div class="thumb-service">
-                <span><i class="fa fa-map-marker"></i> District 7</span>
-                <span><i class="fa fa-bed"></i> 1 bed </span>
-                <span><i class="fa fa-bath"></i> 1 bath</span>
-                <div class="service-more">
-                  <span><i class="fa fa-map-marker"></i> District 7</span>
-                  <span><i class="fa fa-bed"></i> 1 bed </span>
-                  <span><i class="fa fa-bath"></i> 1 bath</span>
-                </div>            
-              </div>
-            </div>
-          </div>
-
-          <div class="thumb-item col-md-15">
-            <div class="thumb-gallery">
-              <ul class="thumb-list">
-                <li class="carousel-item active"><img src="assets/images/dummy/vinhomes-central-park.png"></li>
-              </ul>
-              <span class="love"><i class="fa fa-heart-o"></i></span>
-              <a class="thumb-mask" href="#">
-                View all<br /> Starhill Listings(20)
-              </a>
-            </div>
-          </div>
-
-
+          <li class="radio-wrapper">
+            <input type="radio" id="social-buiding" name="abc">
+            <label for="social-buiding">School, Park,..</label>
+          </li>
         </div>
-      </div>
+      </ul>
     </div>
-
-    <div class="map-result show" data-module="MapResult">
-      <div id="map" style="height: 100vh"></div>
-
-      <ul id="style-selector-control" class="map-control">
-
-        <li class="radio-wrapper">
-          <input type="radio" id="all" name="abc" >
-          <label for="all">all</label>
-        </li>
-
-        <li class="radio-wrapper">
-          <input type="radio" id="transit" name="abc" >
-          <label for="transit">Transit</label>
-        </li>
-
-        <li class="radio-wrapper">
-          <input type="radio" id="social-buiding" name="abc">
-          <label for="social-buiding">School, Park,..</label>
-        </li>
-      </div>
-    </ul>
-  </div>
-</section>
+  </section>
 
 
 
 
 
-<script>
-window.storeInfo = [
-{
-  "code": "mh021",
-  "name": "store name",
-  "city": "Ho Chi Minh",
-  "price": "$600",
-  "linkAp": "#",
-  "location": {
-    "lng": 106.67094305726,
-    "lat": 10.750648587535
+  <script>
+  window.storeInfo = [
+  {
+    "code": "mh021",
+    "name": "store name",
+    "city": "Ho Chi Minh",
+    "price": "$600",
+    "linkAp": "#",
+    "location": {
+      "lng": 106.67094305726,
+      "lat": 10.750648587535
+    },
+    "images": ["vinhomes-central-park.png","lexington-residence.png","vinhomes-central-park.png"]
+  },{
+    "code": "mh022",
+    "name": "store name 2",
+    "city": "Ho Chi Minh",
+    "price": "$700",
+    "linkAp": "#",
+    "location": {
+      "lng": 106.66009490812,
+      "lat": 10.74030300056
+    },
+    "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
   },
-  "images": ["vinhomes-central-park.png","lexington-residence.png","vinhomes-central-park.png"]
-},{
-  "code": "mh022",
-  "name": "store name 2",
-  "city": "Ho Chi Minh",
-  "price": "$700",
-  "linkAp": "#",
-  "location": {
-    "lng": 106.66009490812,
-    "lat": 10.74030300056
+  {
+    "code": "mh023",
+    "name": "store name 3",
+    "city": "Ho Chi Minh",
+    "price": "$800",
+    "linkAp": "#",
+    "location": {
+      "lng": 106.68009490812,
+      "lat": 10.74030300056
+    },
+    "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+  },{
+    "code": "mh024",
+    "name": "store name 4",
+    "city": "Ho Chi Minh",
+    "price": "$700",
+    "linkAp": "#",
+    "location": {
+      "lng": 106.60009490812,
+      "lat": 10.70030300056
+    },
+    "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
   },
-  "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
-},
-{
-  "code": "mh023",
-  "name": "store name 3",
-  "city": "Ho Chi Minh",
-  "price": "$800",
-  "linkAp": "#",
-  "location": {
-    "lng": 106.68009490812,
-    "lat": 10.74030300056
+  {
+    "code": "mh025",
+    "name": "store name 5",
+    "city": "Ho Chi Minh",
+    "price": "$800",
+    "linkAp": "#",
+    "location": {
+      "lng": 106.62009490812,
+      "lat": 10.78030300056
+    },
+    "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
   },
-  "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
-},{
-  "code": "mh024",
-  "name": "store name 4",
-  "city": "Ho Chi Minh",
-  "price": "$700",
-  "linkAp": "#",
-  "location": {
-    "lng": 106.60009490812,
-    "lat": 10.70030300056
-  },
-  "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
-},
-{
-  "code": "mh025",
-  "name": "store name 5",
-  "city": "Ho Chi Minh",
-  "price": "$800",
-  "linkAp": "#",
-  "location": {
-    "lng": 106.62009490812,
-    "lat": 10.78030300056
-  },
-  "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
-},
-{
-  "code": "mh026",
-  "name": "store name 6",
-  "city": "Ho Chi Minh",
-  "price": "$800",
-  "linkAp": "#",
-  "location": {
-    "lng": 106.67009490812,
-    "lat": 10.79030300056
-  },
-  "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
-}
-];
-</script>
-
+  {
+    "code": "mh026",
+    "name": "store name 6",
+    "city": "Ho Chi Minh",
+    "price": "$800",
+    "linkAp": "#",
+    "location": {
+      "lng": 106.67009490812,
+      "lat": 10.79030300056
+    },
+    "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+  }
+  ];
+  </script>
+</main>
 
 {% endblock %}

@@ -1,3 +1,4 @@
+
 import DOM from './DOM';
 
 export default class PopupDefined {

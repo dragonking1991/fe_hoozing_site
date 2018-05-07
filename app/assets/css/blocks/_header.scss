@@ -51,13 +51,16 @@ header {
 .logo {
   position: absolute;
   transform:none;
+  margin-left: 0;
+  line-height: 42px;
+  height: 42px;
+  top: 0;
+  @include center(top);
 
-  @include screen(medium, false){
-    margin-left: 0;
-    line-height: 42px;
-    height: 42px;
-    top: 0;
-    @include center(top);
+  @include screen(medium){
+    transform:none;
+    left: 0;
+    position: static;
   }
 
   img {
@@ -194,8 +197,8 @@ header {
 }
 .suggest__quick {
   a {
-    border:1px solid;
-    margin-right: 20px;
+    border:1px solid #c3c3c3;
+    margin-right: 15px;
     padding: 5px 10px;
     display: inline-block;
   }
@@ -226,8 +229,9 @@ header {
 }
 
 #searchHeader {
-  @include screen(medium, false){
-    display: none;
+  display: none;
+  @include screen(medium,){
+    display: block;
   }
 
   .collapse.show {
@@ -284,7 +288,10 @@ nav {
   overflow:hidden;
   height:0;
   opacity: 0;
+  display: none;
   padding: 0 10px;
+  padding: 20px 0; 
+  z-index: 1;
   @include screen(medium){
     opacity: 1;
     display: block;
@@ -308,7 +315,7 @@ nav {
     width: 100%;
     opacity: 1;
     width:100%;
-    height: auto;
+    height: 10000px;
     @include absolute(top 50px left);
 
     li {
@@ -326,17 +333,15 @@ nav {
   }
 
   li {
-    @include screen(medium,false){
-      // opacity: 0;
-      // transform: translateX(40px);
-      // transition: all 0.2s ease-out;
-
-      @for $i from 1 to 5 {
-        &:nth-child(#{$i}) {
-          transition-delay: ($i * 0.12s) + 0.1s;
-        }
-      }
-    }
+    background: #fff;
+    // @for $i from 1 to 5 {
+    //   &:nth-child(#{$i}) {
+    //     transition-delay: ($i * 0.12s) + 0.1s;
+    //     @include screen(medium){
+    //       transition-delay: 0;
+    //     }
+    //   }
+    // }
 
     @include screen(medium){
       height: auto;
@@ -354,8 +359,9 @@ nav {
 
     & + li {
 
-      @include screen(medium, false){
-        border-bottom:1px solid $blue;
+      border-bottom:1px solid $blue;
+      @include screen(medium){
+        border-bottom:none;
       }
     }
 
@@ -386,9 +392,10 @@ nav {
     letter-spacing: 1px;
     padding: 0 5px;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.85);
-    @include screen(medium,false){
-      br {
-        display: none;
+    br {
+      display: none;
+      @include screen(medium){
+        display: block;
       }
     }
     @include screen(medium){
@@ -538,14 +545,14 @@ nav {
 
   .btn-submit {
     color: #999;
-    @include absolute(top 12px right 8px);
+    @include absolute(top 8px right);
     background: none;
     border: none;
     outline: none;
-    @include screen(medium, false){
-      top: 8px;
-      right: 0px;
-      font-size: 16px; 
+    font-size: 16px; 
+    @include screen(medium){
+      top: 12px;
+      right: 8px;
     }
   }
   input {
@@ -554,12 +561,13 @@ nav {
   }
 }
 .box__search {
-  padding: 10px; 
+  padding: 30px 10px; 
   @include absolute(top 50px left);
   width: 100%;
+  height: 10000px;
   z-index: 5;
   background: #fff;
-  @include screen(medium, false){
+  @include screen(medium){
     display: none !important;
   }
 

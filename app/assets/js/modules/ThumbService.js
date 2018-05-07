@@ -1,8 +1,9 @@
+
 export default class ThumbService {
   constructor(el) {
-    var countHide = $(el).find(".hide-for-small").size();
+    // var countHide = $(el).find(".hide-for-small").size();
 
-    $(el).find(".view-more").find("span").html(countHide);
+    // $(el).find(".view-more").find("span").html(countHide);
 
     $(".view-more").on('click',function(){
       $(this).parents(".show-for-small").hide(); 

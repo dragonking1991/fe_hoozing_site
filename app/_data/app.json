@@ -1,16 +1,150 @@
 {
 	"assetPath": "assets",
-	"title": "Hoozing",
+	"title": "hoozing2",
 	"menu":[
 		{
 			"name": "Home",
-			"link": "index.html",
+			"link": "main.html",
 			"sub": null
 		},
 		{
-			"name": "Template",
-			"link": "_template.html",
+			"name": "Test",
+			"link": "test.html",
 			"sub": null
+		}
+	],
+	"equipments": [
+		{
+			"name": "Excavators",
+			"image": "assets/images/home/excavators.png",
+			"external": false
+		},
+		{
+			"name": "Wheel Loaders",
+			"image": "assets/images/home/wheel-loaders.png",
+			"external": false
+		},
+		{
+			"name": "Dump Trucks",
+			"image": "assets/images/home/dump-trucks.png",
+			"external": false
+		},
+		{
+			"name": "Dozers",
+			"image": "assets/images/home/dozers.png",
+			"external": false
+		},
+		{
+			"name": "Motor Graders",
+			"image": "assets/images/home/motor-graders.png",
+			"external": false
+		},
+		{
+			"name": "Backhoes",
+			"image": "assets/images/home/backhoes.png",
+			"external": false
+		},
+		{
+			"name": "Skidsteers",
+			"image": "assets/images/home/skidsteers.png",
+			"external": false
+		},
+		{
+			"name": "Blasthole Drills",
+			"image": "assets/images/home/blasthole-drills.png",
+			"external": true
+		},
+		{
+			"name": "Draglines",
+			"image": "assets/images/home/draglines.png",
+			"external": true
+		},
+		{
+			"name": "Electric Rope Shovels",
+			"image": "assets/images/home/electric-rope-shovels.png",
+			"external": true
+		},
+		{
+			"name": "HAC System & Related Equipment",
+			"image": "assets/images/home/hac-system-related-equipment.png",
+			"external": true
+		},
+		{
+			"name": "Hybrid Shovels",
+			"image": "assets/images/home/hybrid-shovels.png",
+			"external": true
+		},
+		{
+			"name": "Surface Crushing Conveying",
+			"image": "assets/images/home/surface-crushing-conveying.png",
+			"external": true
+		}
+	],
+	"equipmentsMenu": [
+		{
+			"name": "Excavators",
+			"image": "assets/images/menu/product-1.jpg",
+			"external": false
+		},
+		{
+			"name": "Wheel Loaders",
+			"image": "assets/images/menu/product-2.jpg",
+			"external": false
+		},
+		{
+			"name": "Dump Trucks",
+			"image": "assets/images/menu/product-3.jpg",
+			"external": false
+		},
+		{
+			"name": "Dozers",
+			"image": "assets/images/menu/product-4.jpg",
+			"external": false
+		},
+		{
+			"name": "Motor Graders",
+			"image": "assets/images/menu/product-5.jpg",
+			"external": false
+		},
+		{
+			"name": "Backhoes",
+			"image": "assets/images/menu/product-6.jpg",
+			"external": false
+		},
+		{
+			"name": "Skidsteers",
+			"image": "assets/images/menu/product-7.jpg",
+			"external": false
+		},
+		{
+			"name": "Blasthole Drills",
+			"image": "assets/images/menu/product-8.jpg",
+			"external": true
+		},
+		{
+			"name": "Draglines",
+			"image": "assets/images/menu/product-9.jpg",
+			"external": true
+		},
+		{
+			"name": "Electric Rope Shovels",
+			"image": "assets/images/menu/product-10.jpg",
+			"external": true
+		},
+		{
+			"name": "HAC System & Related Equipment",
+			"image": "assets/images/menu/product-11.jpg",
+			"external": true
+		},
+		{
+			"name": "Hybrid Shovels",
+			"image": "assets/images/menu/product-12.jpg",
+			"external": true
+		},
+		{
+			"name": "Surface Crushing & Conveying",
+			"image": "assets/images/menu/product-13.jpg",
+			"external": true
 		}
 	]
 }

@@ -1,3 +1,9 @@
+
+
+import $ from 'jquery';
+import slick from 'slick-carousel';
+import 'slick-carousel/slick/slick.css';
+
 export default class LinkSlide {
 	constructor(el) {
     var $el = $(el).find('.slider-wrapper');
@@ -17,7 +23,7 @@ export default class LinkSlide {
           slidesToScroll: 1
         }
       },{
-        breakpoint: 1024,
+        breakpoint: 1025,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1
