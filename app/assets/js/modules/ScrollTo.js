@@ -1,4 +1,3 @@
-
 export default class ScrollTo {
   constructor(el) {
     $(el).on('click', '.link-to', function(e){
@@ -16,7 +15,6 @@ export default class ScrollTo {
         setTimeout(function () {$('.solutions-slider').slick('slickGoTo', 1);},100);
       }
     });
-
 
     $(window).on('scroll', function() {
       if($(".bar-request").length){

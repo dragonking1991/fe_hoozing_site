@@ -1,6 +1,5 @@
 import googlemap from 'load-google-maps-api';
 
-
 export default class MapDetail {
   constructor(el) {
     let latPos = $(el).attr('data-lat');

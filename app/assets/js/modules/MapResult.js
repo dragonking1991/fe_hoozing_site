@@ -1,9 +1,12 @@
-
 import googlemap from 'load-google-maps-api';
 import DOM from './DOM';
 // import Search from './SearchRedemption';
 import axios from 'axios';
 import PopupDefined from './PopupDefined';
+
+import $ from 'jquery';
+import slick from 'slick-carousel';
+import 'slick-carousel/slick/slick.css';
 
 export default class MapResult {
   constructor() {
@@ -51,13 +54,13 @@ export default class MapResult {
     thisMap.controls[google.maps.ControlPosition.BOTTOM].push(styleControl);
 
     document.getElementById('all').addEventListener('click', function() {
-        thisMap.setOptions({styles: styles['default']});
+      thisMap.setOptions({styles: styles['default']});
     });
     document.getElementById('social-buiding').addEventListener('click', function() {
-        thisMap.setOptions({styles: styles['hideTransit']});
+      thisMap.setOptions({styles: styles['hideTransit']});
     });
     document.getElementById('transit').addEventListener('click', function() {
-        thisMap.setOptions({styles: styles['hideBuilding']});
+      thisMap.setOptions({styles: styles['hideBuilding']});
     });
 
     var styles = {
@@ -90,6 +93,7 @@ export default class MapResult {
       $('#'+ code).addClass('show');
       $('#'+ code).find('.popup__price').addClass('hide');
       $('#'+ code).find('.popup-wrapper').addClass('show-popup'); 
+      $('#'+ code).find('.thumb-list').slick('refresh');
     });
   }
 
@@ -114,9 +118,24 @@ export default class MapResult {
       $('.thumb-item').removeClass('selected');
       $('.thumb-item[data-code="'+ idContent + '"]').addClass('selected');
     });
+    ele.addMultiEvent(item.popupPrice, ['click', 'touchend'], (e) => {
+      $(item.thumbList).slick('refresh');
+    });
+
     ele.addMultiEvent(item.popupClose, ['click', 'touchend'], (e) => {
       e.stopPropagation();
       item.close();
+    });
+
+    $(item.thumbList).slick({
+      fade: false,
+      dots:true,
+      infinite: true,
+      arrows: true,
+      autoplay: false,
+      autoplaySpeed: 2000,
+      slidesToShow: 1,
+      slidesToScroll: 1
     });
   }
 

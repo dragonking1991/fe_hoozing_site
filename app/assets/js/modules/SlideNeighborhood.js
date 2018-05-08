@@ -1,6 +1,3 @@
-
-
-
 import $ from 'jquery';
 import slick from 'slick-carousel';
 import 'slick-carousel/slick/slick.css';

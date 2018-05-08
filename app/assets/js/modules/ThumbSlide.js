@@ -17,8 +17,13 @@ export default class ThumbSlide {
       slidesToScroll: 1
     });
 
-    $(document).on('click','.love', function() {
-      $(this).addClass('loved').find(".fa-heart-o").removeClass('fa-heart-o').addClass('fa-heart');
+    $(document).off('click').on('click','.love', function() {
+      if ( !$(this).hasClass('loved')) {
+        $(this).addClass('loved').find(".fa-heart-o").removeClass('fa-heart-o').addClass('fa-heart');
+      }
+      else {
+        $(this).removeClass('loved').find(".fa-heart").removeClass('fa-heart').addClass('fa-heart-o');
+      }
     });
   }
 }

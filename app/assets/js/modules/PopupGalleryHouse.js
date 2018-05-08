@@ -1,10 +1,8 @@
-
-
 import $ from 'jquery';
 import slick from 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 
-export default class GalleryHouse {
+export default class PopupGalleryHouse {
   constructor(el) {
     $('.gallery-house a').each(function (index, value) {
       let html = $(this).html();

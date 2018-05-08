@@ -1,10 +1,8 @@
-
-
 import $ from 'jquery';
 import slick from 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 
-export default class LinkSlide {
+export default class SlideLink {
 	constructor(el) {
     var $el = $(el).find('.slider-wrapper');
     $el.slick({

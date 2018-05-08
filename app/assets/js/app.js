@@ -1,9 +1,7 @@
 import 'babel-polyfill';
 import 'normalize-css';
-// import 'modernizr';
 import $ from 'jquery';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap-table/dist/bootstrap-table.min.css';
 import '../css/app.scss';
 
 import 'bootstrap/dist/js/bootstrap.min.js';

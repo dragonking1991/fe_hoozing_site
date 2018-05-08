@@ -1,0 +1,36 @@
+.summary {
+  .container {
+    overflow:  visible;
+  }
+
+  .summary__wrapper { 
+    font-size: 0;
+  }
+
+  .item {
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid $red;
+    text-align: center;
+    width: 46%;
+    margin:0 2%;
+  }
+  .item__icon {
+    margin: -30px 0 20px;
+    font-size: 28px;
+    background: $red;
+    padding: 20px;
+    border-radius: 50%;
+
+    i {
+      color: #fff;
+    } 
+  }
+  h3 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+  }
+
+}
