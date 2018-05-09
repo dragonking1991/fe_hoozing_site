@@ -170,6 +170,17 @@
 	}
 }
 
+
+.banner--china-town {
+	background:url("../images/dummy/chinatown_featured.jpg") no-repeat center;
+	background-size:cover;
+	height:0;
+	padding-bottom: 100%;
+	@include screen(medium){
+		@include responsive-bg-image(1440,618);
+	}
+}
+
 .score {
 	display: inline-block;
 	text-align: center;

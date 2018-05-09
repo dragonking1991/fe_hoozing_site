@@ -256,9 +256,6 @@
   border-top: 8px solid #fff;
 }
 
-
-/* The popup bubble itself. */
-
 .popup-bubble-content {
   cursor: pointer;
   position: absolute;
@@ -352,132 +349,6 @@
   }
 }
 
-
-.calendar-outer {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(#000, 0.8);
-  display: none;
-  z-index: 99;
-  &.show {
-    display: block;
-  }
-  .calendar {
-    position: absolute;
-    padding: 20px;
-    padding-top: 40px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    background-color: #fff;
-    border-radius: 10px;
-    z-index: 100;
-    display: block;
-      max-width: 90%;
-    @include screen(small) {
-      max-width: 100%;
-    }
-    .calendar-close {
-      cursor: pointer;
-      display: block;
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      width: 40px;
-      height: 40px;
-      background: transparent;
-      &:before,
-      &:after {
-        cursor: pointer;
-        content: '';
-        display: block;
-        position: absolute;
-        width: 60%;
-        height: 5px;
-        background: #222;
-        top: 50%;
-        left: 50%;
-        border-radius: 3px;
-      }
-      &:before {
-        transform: translate(-50%, -50%) rotate(45deg);
-      }
-      &:after {
-        transform: translate(-50%, -50%) rotate(-45deg);
-      }
-    }
-    .calendar-btn {
-      position: relative;
-      text-align: center;
-      padding: 20px;
-      height: 70px;
-      .btn-transition {
-        cursor: pointer;
-        user-select: none;
-        position: absolute;
-        top: 50%;
-        font-size: 0;
-        display: block;
-        width: 30px;
-        height: 30px;
-        border-top: 10px solid #000;
-        border-right: 10px solid #000;
-        background-color: transparent;
-        &.prev {
-          left: 10px;
-          transform: translateY(-50%) rotate(-135deg);
-        }
-        &.next {
-          right: 10px;
-          transform: translateY(-50%) rotate(45deg);
-        }
-      }
-    }
-    .calendar-table {
-      width: 100%;
-      border: 1px solid black;
-      text-align: center;
-      .date-of-week {
-        font-weight: bold;
-      }
-      .date {
-        cursor: pointer;
-        float: left;
-        width: percentage(1/7);
-          padding: 5px;
-        @include screen(small) {
-        padding: 20px;
-        }
-        &.cur-date {
-          background-color: #222;
-          color: white;
-        }
-        &.disable {
-          background-color: #eee;
-          pointer-events: none;
-          user-select: none;
-        }
-      }
-      .date-label:not(:last-child) {
-        border-right: 1px solid white;
-      }
-      .date-number {
-        transition: all .3s ease;
-        &.active {
-          background-color: #008cff;
-          color: #fff;
-        }
-        &.hide {
-          display: none;
-        }
-      }
-    }
-  }
-}
 
 .search-wrapper {
   position: absolute;
@@ -581,16 +452,6 @@
   padding: 10px;
 }
 
-@media only screen and (max-width: 600px) {
-  .jplist-panel {
-    display: block;
-  }
-}
-.jplist-last, .jplist-first {
-  display: none;
-}
-
-
 .map-control {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -607,6 +468,7 @@
   }
 
 }
+
 #map .map-control { display: block; }
 
 .selector-control {
