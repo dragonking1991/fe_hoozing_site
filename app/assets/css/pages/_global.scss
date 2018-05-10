@@ -65,9 +65,16 @@ a {
 	text-decoration: none;
 	outline: none;
 	color: #424242;
-	&:focus {
-		outline: none;
+	&:hover, &:focus {
+		@include screen(medium) {
+			text-decoration: none;
+			outline: none;
+		}
 	}
+}
+
+label {
+	font-weight: normal;
 }
 
 h1,h2,h3,h4 {
@@ -553,9 +560,16 @@ section {
 	}
 }
 
+.slide-project {
+	.slick-prev {
+		left: 0;
+	}
+
+	.slick-slider {
+		margin: 0 -10px;
+	}
+}
 .slick-prev {
-	left: 0;
-	z-index: 1;
 	&:after {
 		left: 50%;
 		content: "\f104";
