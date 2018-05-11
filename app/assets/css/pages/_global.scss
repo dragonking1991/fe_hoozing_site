@@ -536,6 +536,7 @@ section {
 	width: 40px;
 	height: 40px;
 	background: none;
+	z-index: 1;
 	border: none;
 	transform: translateY(-50%);
 	outline: none;
@@ -558,12 +559,12 @@ section {
 			}
 		}
 	}
+	&.slick-prev {
+		left: 0;
+	}
 }
 
 .slide-project {
-	.slick-prev {
-		left: 0;
-	}
 
 	.slick-slider {
 		margin: 0 -10px;

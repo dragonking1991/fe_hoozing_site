@@ -133,12 +133,6 @@
 	padding-right: 30px;
 	border:1px solid $color-light;
 
-	input {
-		border:none;
-		height: 35px;
-		min-width: 250px;
-		max-width: 100%;
-	}
 
 	&:after {
 		content:'\f041';
@@ -172,21 +166,31 @@
 			background: $blue; 
 		}
 	}
+	.slick-slide{
+		position: relative;
+		& + .slick-slide {
+			&:after {
+				content: "\F105";
+				font: normal normal normal 18px/1 FontAwesome;
+				color: $color-light;
+				@include absolute(top 30% left -3%);
+				transform:translateY(-50%);
+				font-size: 42px;
+				display: none;
+				@include screen(medium){
+					display: block;
+				}
+			}
+		}
+	}
 }
 .step {
 	display: inline-block;
 	vertical-align: top;
 	position: relative; 
 	padding: 0 5px;
+
 	.fa-angle-right {
-		color: $color-light;
-		@include absolute(top 30% right -3%);
-		transform:translateY(-50%);
-		font-size: 42px;
-		display: none;
-		@include screen(medium){
-			display: block;
-		}
 	}
 
 	&:not(:last-child) {
@@ -621,12 +625,7 @@
 			color: #333;
 		}
 	}
-	.slick-prev {
-		left: -12px;
-	}
-	.slick-next {
-		right: -12px;
-	}
+	
 	&:hover {
 		.slick-arrow {
 			@include screen(medium){

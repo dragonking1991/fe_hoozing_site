@@ -1,150 +1,137 @@
 {
 	"assetPath": "assets",
-	"title": "hoozing2",
+	"title": "hoozing",
 	"menu":[
 		{
 			"name": "Home",
 			"link": "main.html",
 			"sub": null
-		},
-		{
-			"name": "Test",
-			"link": "test.html",
-			"sub": null
 		}
 	],
-	"equipments": [
+	"steps":[
 		{
-			"name": "Excavators",
-			"image": "assets/images/home/excavators.png",
-			"external": false
+			"icon": "fa-search",
+			"name": "search",
+			"desc": "Find a long-term rental place that fits your preferences"
+		}, 
+		{
+			"icon": "fa-map-o",
+			"name": "Visit",
+			"desc": "Finalise a date and time to visit the homes you like"
+		}, 
+		{
+			"icon": "fa-lock",
+			"name": "Contact",
+			"desc": "Pay deposit to lock your favorite place and sign contract"
+		}, 
+		{
+			"icon": "fa-home",
+			"name": "Move-In",
+			"desc": "Move in and seek our support until you feel comfortable"
+		} 
+	],
+	"neighborhood": [
+		{
+			"img": "assets/images/dummy/china-town.png",
+			"name": "china-town",
+			"title": "China Town"
 		},
 		{
-			"name": "Wheel Loaders",
-			"image": "assets/images/home/wheel-loaders.png",
-			"external": false
+			"img": "assets/images/dummy/korea-town.png",
+			"name": "korea-town",
+			"title": "Korea Town"
 		},
 		{
-			"name": "Dump Trucks",
-			"image": "assets/images/home/dump-trucks.png",
-			"external": false
+			"img": "assets/images/dummy/little-japan.png",
+			"name": "little-japan",
+			"title": "little japan"
 		},
 		{
-			"name": "Dozers",
-			"image": "assets/images/home/dozers.png",
-			"external": false
+			"img": "assets/images/dummy/thao-dien.png",
+			"name": "thao-dien",
+			"title": "Thao Dien "
 		},
 		{
-			"name": "Motor Graders",
-			"image": "assets/images/home/motor-graders.png",
-			"external": false
+			"img": "assets/images/dummy/phu-my-hung.png",
+			"name": "phu-my-hung",
+			"title": "phu my hung"
 		},
 		{
-			"name": "Backhoes",
-			"image": "assets/images/home/backhoes.png",
-			"external": false
-		},
-		{
-			"name": "Skidsteers",
-			"image": "assets/images/home/skidsteers.png",
-			"external": false
-		},
-		{
-			"name": "Blasthole Drills",
-			"image": "assets/images/home/blasthole-drills.png",
-			"external": true
-		},
-		{
-			"name": "Draglines",
-			"image": "assets/images/home/draglines.png",
-			"external": true
-		},
-		{
-			"name": "Electric Rope Shovels",
-			"image": "assets/images/home/electric-rope-shovels.png",
-			"external": true
-		},
-		{
-			"name": "HAC System & Related Equipment",
-			"image": "assets/images/home/hac-system-related-equipment.png",
-			"external": true
-		},
-		{
-			"name": "Hybrid Shovels",
-			"image": "assets/images/home/hybrid-shovels.png",
-			"external": true
-		},
-		{
-			"name": "Surface Crushing Conveying",
-			"image": "assets/images/home/surface-crushing-conveying.png",
-			"external": true
+			"img": "assets/images/dummy/phan-xich-long.png",
+			"name": "phan-xich-long",
+			"title": "Phan Xich Long"
 		}
 	],
-	"equipmentsMenu": [
-		{
-			"name": "Excavators",
-			"image": "assets/images/menu/product-1.jpg",
-			"external": false
-		},
-		{
-			"name": "Wheel Loaders",
-			"image": "assets/images/menu/product-2.jpg",
-			"external": false
-		},
-		{
-			"name": "Dump Trucks",
-			"image": "assets/images/menu/product-3.jpg",
-			"external": false
-		},
-		{
-			"name": "Dozers",
-			"image": "assets/images/menu/product-4.jpg",
-			"external": false
-		},
-		{
-			"name": "Motor Graders",
-			"image": "assets/images/menu/product-5.jpg",
-			"external": false
-		},
-		{
-			"name": "Backhoes",
-			"image": "assets/images/menu/product-6.jpg",
-			"external": false
-		},
-		{
-			"name": "Skidsteers",
-			"image": "assets/images/menu/product-7.jpg",
-			"external": false
-		},
-		{
-			"name": "Blasthole Drills",
-			"image": "assets/images/menu/product-8.jpg",
-			"external": true
-		},
-		{
-			"name": "Draglines",
-			"image": "assets/images/menu/product-9.jpg",
-			"external": true
-		},
-		{
-			"name": "Electric Rope Shovels",
-			"image": "assets/images/menu/product-10.jpg",
-			"external": true
-		},
-		{
-			"name": "HAC System & Related Equipment",
-			"image": "assets/images/menu/product-11.jpg",
-			"external": true
-		},
-		{
-			"name": "Hybrid Shovels",
-			"image": "assets/images/menu/product-12.jpg",
-			"external": true
-		},
-		{
-			"name": "Surface Crushing & Conveying",
-			"image": "assets/images/menu/product-13.jpg",
-			"external": true
-		}
-	]
+	"storeInfo" : [
+    {
+      "code": "mh021",
+      "name": "store name",
+      "city": "Ho Chi Minh",
+      "price": "$600",
+      "linkAp": "#",
+      "location": {
+        "lng": 106.67094305726,
+        "lat": 10.750648587535
+      },
+      "images": ["vinhomes-central-park.png","lexington-residence.png","vinhomes-central-park.png"]
+    },{
+      "code": "mh022",
+      "name": "store name 2",
+      "city": "Ho Chi Minh",
+      "price": "$700",
+      "linkAp": "#",
+      "location": {
+        "lng": 106.66009490812,
+        "lat": 10.74030300056
+      },
+      "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+    },
+    {
+      "code": "mh023",
+      "name": "store name 3",
+      "city": "Ho Chi Minh",
+      "price": "$800",
+      "linkAp": "#",
+      "location": {
+        "lng": 106.68009490812,
+        "lat": 10.74030300056
+      },
+      "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+    },{
+      "code": "mh024",
+      "name": "store name 4",
+      "city": "Ho Chi Minh",
+      "price": "$700",
+      "linkAp": "#",
+      "location": {
+        "lng": 106.60009490812,
+        "lat": 10.70030300056
+      },
+      "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+    },
+    {
+      "code": "mh025",
+      "name": "store name 5",
+      "city": "Ho Chi Minh",
+      "price": "$800",
+      "linkAp": "#",
+      "location": {
+        "lng": 106.62009490812,
+        "lat": 10.78030300056
+      },
+      "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+    },
+    {
+      "code": "mh026",
+      "name": "store name 6",
+      "city": "Ho Chi Minh",
+      "price": "$800",
+      "linkAp": "#",
+      "location": {
+        "lng": 106.67009490812,
+        "lat": 10.79030300056
+      },
+      "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+    }
+    ]
 }
