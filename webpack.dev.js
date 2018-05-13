@@ -39,7 +39,7 @@ module.exports = {
                 sourceMap: true,
                 importLoaders: false,
                 modules: false,
-                minimize: false,
+                minimize: true,
                 url: false
               }
             },

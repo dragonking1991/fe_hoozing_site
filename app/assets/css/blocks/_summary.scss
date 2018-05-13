@@ -1,0 +1,40 @@
+.summary__wrapper {
+  font-size: 0;
+  @include screen(medium){
+    margin:  0 -20px;
+    
+  }
+  .item {
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid $red;
+    text-align: center;
+    width: 46%;
+    margin:10px 0;
+    @include screen(medium){
+      margin:20px;
+    }
+  }
+  .item__icon {
+    margin: -30px 0 20px;
+    font-size: 34px;
+    background: $red;
+    width: 70px;
+    display: inline-block;
+    line-height: 65px;
+    height: 70px;
+    border-radius: 50%;
+
+    i {
+      color: #fff;
+      margin: 0;
+    } 
+  }
+  h3 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+  }
+
+}

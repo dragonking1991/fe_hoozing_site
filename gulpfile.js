@@ -24,7 +24,7 @@ gulp.task('js', () => {
 
 gulp.task('build:js', () => {
   return gulp.src(`${config.src.js}/app.js`)
-    .pipe(webpackStream(require('./webpack.prod.js'), webpack))
+    .pipe(webpackStream(require('./webpack.dev.js'), webpack))
     .pipe(gulp.dest(config.dist));
 });
 
