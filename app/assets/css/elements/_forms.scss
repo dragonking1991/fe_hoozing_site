@@ -345,7 +345,7 @@ input {
   ul {
     background: #fff;
     @include absolute(top 100% left -1px)
-    width: 101%;
+    width: calc( 100% + 1px);
     display: none;
     text-align: left;
     max-height: 180px;
