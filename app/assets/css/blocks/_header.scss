@@ -160,7 +160,24 @@ header {
     opacity: 1;
   }
 }
-.suggest-list {
+.suggest__tag {
+  font-size: 0;
+  margin: 0 -5px;
+  li {
+    vertical-align:top;
+    display: inline-block;
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  a {
+    border:1px solid #c3c3c3;
+    padding: 5px 10px;
+    display: block;
+  }
+}
+
+.suggest__list {
   li {
     position: relative;
     padding-left: 25px;
@@ -194,15 +211,6 @@ header {
 
     }
   }
-}
-.suggest__quick {
-  a {
-    border:1px solid #c3c3c3;
-    margin-right: 15px;
-    padding: 5px 10px;
-    display: inline-block;
-  }
-
 }
 
 .form-wrapper {

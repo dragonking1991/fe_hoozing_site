@@ -1,0 +1,41 @@
+.form-property {
+
+	.form-wrapper {
+		max-width: 600px;
+		margin: 30px auto;
+	}
+	h2 {
+		color: $color-default;
+		text-transform: none;
+		font-size: 32px;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	h3 {
+		margin: 30px 0 20px;
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+
+	.input-wrapper {
+		@include placeholder {
+			color: #333;
+		}
+		input {
+			height: 50px;
+		}
+		textarea {
+		}
+	}
+	.select-wrapper {
+		height: 50px;
+		span {
+			line-height: 50px;
+		}
+		&:after {
+			top: 15px;
+		}
+	}
+
+
+}

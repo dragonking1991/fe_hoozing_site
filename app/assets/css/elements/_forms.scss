@@ -174,14 +174,18 @@ input {
 input {
   height: 45px;
 }
-
+.note {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
 /* Input */
 .input-wrapper{
   margin-bottom: 10px;
-  height: 44px;
   width: 100%;
   position: relative;
   border: 1px solid #c6c6c6;
+  border-radius: 3px;
 
   input {
     padding: 0 15px;
@@ -192,9 +196,6 @@ input {
     height: 44px;
     font-size: 14px;
     line-height: 18px;
-    position: absolute;
-    top: 0;
-    left: 0;
     &::-ms-clear {
       display: none;
     }
@@ -338,7 +339,7 @@ input {
   span {
     text-align: left;
     line-height: 45px;
-    margin-left: 5px;
+    margin-left: 15px;
     text-transform: capitalize;
   }
 

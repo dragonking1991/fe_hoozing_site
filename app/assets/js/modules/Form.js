@@ -1,21 +1,6 @@
 export default class Form {
   constructor(el) {
-
-    // $('[data-toggle="tooltip"]').tooltip();
-
-    $(document).on( 'change','input', function(){
-      var wrap_input = $(this).parents('.input-wrapper');
-      if( !wrap_input.hasClass('focus') ){
-        wrap_input.addClass('focus');
-      }
-    });
-    $('input, textarea').on('blur',function(){
-      var wrap_input = $(this).parents('.input-wrapper');
-      if( wrap_input.hasClass('focus') && $(this).val() == '' ){
-        wrap_input.removeClass('focus');
-      }
-    });
-
+    
     $('[data-show]').on('click',function(e){
       var blockToggle = $(this).attr('data-show');
       $(this).toggleClass('active');
@@ -67,11 +52,5 @@ export default class Form {
       $(this).addClass('active').parents(".select-wrapper").removeClass('show').find('span').html($(this).html());
     });
 
-    $('input, textarea').each(function(){
-      if ( $(this).val() != '') {
-        var wrap_input = $(this).parents('.input-wrapper');
-        wrap_input.addClass('focus');
-      }
-    });
   }
 }

@@ -20,6 +20,12 @@ body {
 	width: auto;
 }
 
+input,textarea {
+	border:none;
+	width: 100%;
+	padding: 5px 10px;
+}
+
 ul, ol {
 	margin: 0;
 	padding: 0; 
@@ -532,7 +538,7 @@ section {
 
 .slick-arrow {
 	font-size: 0;
-	@include absolute(top 50% right);
+	@include absolute(top 55% right);
 	width: 40px;
 	height: 40px;
 	background: none;
@@ -572,7 +578,7 @@ section {
 }
 .slick-prev {
 	&:after {
-		left: 50%;
+		left: 45%;
 		content: "\f104";
 	}
 }
