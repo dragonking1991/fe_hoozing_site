@@ -582,3 +582,37 @@ section {
 		content: "\f104";
 	}
 }
+
+.page {
+
+	a {
+		background: none;
+		width: 40px;
+		height: 40px;
+		border:none;
+		border-radius: 50%;
+		color: $blue;
+		font-size: 16px;
+		display: block;
+		font-weight: bold;
+		transition:0.3s ease-out;
+		text-shadow:none;
+		&:hover {
+			background: #fff;
+			opacity:0.8;
+		}
+	}
+	li {
+		display: inline-block;
+	}
+
+	.active a{
+		background: $blue;
+		color: #fff;
+		&:hover {
+			color: #fff;
+			background: $blue;
+		}
+
+	}
+}
