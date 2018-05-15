@@ -584,6 +584,8 @@ section {
 }
 
 .page {
+	margin: 20px 0;
+	text-align: center;
 
 	a {
 		background: none;
@@ -591,6 +593,7 @@ section {
 		height: 40px;
 		border:none;
 		border-radius: 50%;
+		line-height: 38px;
 		color: $blue;
 		font-size: 16px;
 		display: block;
@@ -604,6 +607,8 @@ section {
 	}
 	li {
 		display: inline-block;
+		vertical-align: top;
+		margin: 0 5px;
 	}
 
 	.active a{
@@ -614,5 +619,40 @@ section {
 			background: $blue;
 		}
 
+	}
+}
+
+.page__prev,.page__next {
+
+	a {
+		position: relative;
+		background: none;
+		width: 40px;
+		height: 40px;
+		font-size: 0;
+		border:2px solid $blue;
+		border-radius: 50%;
+		color: $blue;
+		&:before {
+			@include absolute(top 50% left 50%);
+			transform: translate(-50%,-50%);
+			color: $blue;
+			display: block;
+			font: normal normal normal 28px/1 FontAwesome;
+		}
+	}
+}
+
+
+.page__prev a{
+	&:before {
+		content:'\f104';
+		left: 45%;
+	}
+}
+.page__next a{
+	&:before {
+		content:'\f105';
+		left: 55%;
 	}
 }
