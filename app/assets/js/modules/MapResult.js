@@ -105,6 +105,7 @@ export default class MapResult {
       popup.setContent(item.code, item.name, item.price, item.linkAp, item.images) ;
       // console.log(item.code + " " + item.name + " " + item.price + " " + item.linkAp +" " + item.images[1]);
       popup.setMap(this.map);
+      popup.onRemove();
       this.popupList.push(popup);
     });
   }
