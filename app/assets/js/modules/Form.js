@@ -1,6 +1,6 @@
 export default class Form {
   constructor(el) {
-    
+
     $('[data-show]').on('click',function(e){
       var blockToggle = $(this).attr('data-show');
       $(this).toggleClass('active');
@@ -34,6 +34,111 @@ export default class Form {
 
     $('.form_suggest-search').find('input').on('blur', function(){
       $('.form_suggest-search').find('.box-suggest').removeClass('active');
+    });
+
+    $(".input-file").change(function () {
+      var file    = this.files[0];
+      console.log(file);
+
+      var reader  = new FileReader();
+      var total_file= document.getElementById("input-file").files.length;
+      console.log(total_file);
+      for(var i=0;i<total_file;i++){
+        console.log(event.target.files[i]);
+        console.log(URL.createObjectURL(event.target.files[i]));
+        $('.input-photo').append("<div class='col-md-3'><img class='img-responsive' src='"+URL.createObjectURL(event.target.files[i])+"'></div>");
+      }
+
+
+      reader.onloadend = function (readerEvent) {
+        var image = new Image();
+        image.onload = function (imageEvent) {
+
+          var imgSize = $(".input-photo").data('size');
+          var imgQuality = $(".input-photo").data('quality');
+          var canvas = document.createElement('canvas'),
+          max_size = imgSize,
+          width = image.width,
+          height = image.height;
+
+
+          if (width > height) {
+            if (width > max_size) {
+              height *= max_size / width;
+              width = max_size;
+            }
+          } else {
+            if (height > max_size) {
+              width *= max_size / height;
+              height = max_size;
+            }
+          }
+          canvas.width = width;
+          canvas.height = height;
+          var ctx = canvas.getContext('2d');
+
+          var x = -(width - max_size)/2;
+          var y = -(height - max_size)/2;
+
+          // var orientation;
+          // EXIF.getData(image, function() {
+          //   orientation = EXIF.getTag(this, 'Orientation');
+          // });
+
+          // if (orientation && orientation <= 8 && orientation >= 2) {
+          //   switch (orientation) {
+          //     case 2:
+          //     ctx.translate(width, 0);
+          //     ctx.scale(-1, 1);
+          //     break;
+          //     case 3:
+          //     ctx.translate(width, height);
+          //     ctx.rotate(Math.PI);
+          //     break;
+          //     case 4:
+          //     ctx.translate(0, height);
+          //     ctx.scale(1, -1);
+          //     break;
+          //     case 5:
+          //     ctx.rotate(0.5 * Math.PI);
+          //     ctx.scale(1, -1);
+          //     x = -(width - max_size)/2;
+          //     y = (height - max_size)/2;
+          //     break;
+          //     case 6:
+          //     ctx.rotate(0.5 * Math.PI);
+          //     ctx.translate(0, -(height));
+          //     x = -(width - max_size)/2;
+          //     y = (height - max_size)/2;
+          //     break;
+          //     case 7:
+          //     ctx.rotate(0.5 * Math.PI);
+          //     ctx.translate(width, -(height - 50));
+          //     ctx.scale(-1, 1);
+          //     x = -(width - max_size)/2;
+          //     y = (height - max_size)/2;
+          //     break;
+          //     case 8:
+          //     ctx.rotate(-0.5 * Math.PI);
+          //     ctx.translate(-width, 0);
+          //     x = -(width - max_size)/2;
+          //     y = (height - max_size)/2;
+          //     break;
+          //   }
+          //   ctx.drawImage(image, x, y, width, height);
+          // }
+          // else{
+          // }
+          ctx.drawImage(image, 0, 0, width, height);
+
+          var dataUrl = canvas.toDataURL('image/png', imgQuality);
+          // $(".step__get-img").addClass("active").find("img").attr("src", dataUrl);
+          // $("#get-img").attr("value", dataUrl);
+
+        }
+        image.src = readerEvent.target.result;
+      }
+      reader.readAsDataURL(file);
     });
 
 

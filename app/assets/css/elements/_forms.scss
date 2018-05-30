@@ -11,6 +11,8 @@ input {
     height: 45px;
   }
 }
+
+
 /* Checkbox */
 .checkbox-wrapper {
   margin-bottom: 10px;
@@ -223,17 +225,17 @@ input {
     }
   }
 
-  label {
-    padding: 0 15px;
-    top:9px;
-    line-height: 20px;
-    font-size:14px;
+  // label {
+  //   padding: 0 15px;
+  //   top:9px;
+  //   line-height: 20px;
+  //   font-size:14px;
 
-    position: absolute;
-    left: 0;
+  //   position: absolute;
+  //   left: 0;
 
-    transition: top 0.2s ease;
-  }
+  //   transition: top 0.2s ease;
+  // }
 
   &.focus {
     input {
@@ -252,6 +254,27 @@ input {
   }
 }
 
+.input-photo {
+  margin-bottom: 20px;
+  label {
+    display: block;
+    height: 50px;   
+    line-height: 50px; 
+    padding: 0 10px;
+    color: #333;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  input {
+    position: absolute;
+    left: -99em;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    z-index: -1;
+  }
+}
 .checkbox-list {
   border: 1px solid #ddd;
   padding: 0 10px;
@@ -437,7 +460,7 @@ input {
 
 .select-bath {
   padding-left: 30px;
- 
+
   &:before {
     content:"\f2cd";
     display: block;
@@ -449,7 +472,7 @@ input {
 .select-bed {
   padding-left: 30px;
   
- 
+
   &:before {
     content:"\f236";
     display: block;
