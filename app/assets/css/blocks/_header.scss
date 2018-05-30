@@ -276,7 +276,9 @@ header {
 
 .form-wrapper {
   position: relative;
-  padding: 5px 35px;
+  @include screen(medium){
+    padding: 5px 35px;
+  }
 
   > .bootstrap-tagsinput {
     padding: 3px 5px;
