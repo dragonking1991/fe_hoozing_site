@@ -33,12 +33,12 @@ export default class PopupGalleryHouse {
       slidesToScroll: 1,
       arrows: false,
       fade: true,
+      adaptiveHeight:true,
       asNavFor: '.gallery__nav'
     }
 
     $(el).find('.gallery__nav').slick(navSlide).on('afterChange', function(event, slick, currentSlide){
       $(".gallery__slide").find('.counter-slide').html((currentSlide+1) + '/' + slick.slideCount);
-      console.log(currentSlide)
     });
     $(el).find('.gallery__for').slick(forSlide);
 

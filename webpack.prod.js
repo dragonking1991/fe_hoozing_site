@@ -93,7 +93,6 @@ module.exports = {
   },
   plugins:[
     FailPlugin,
-    new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: (module, count) => {
         let context = module.context;
         return context && context.indexOf('node_modules') >= 0;

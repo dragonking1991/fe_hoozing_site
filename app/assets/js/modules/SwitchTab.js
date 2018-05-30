@@ -17,9 +17,7 @@ export default class SwitchTab {
 			if ( layout == "project") {
 				$('.search-content').addClass('project');
 				$("#search-" + layout).addClass("active");
-				$("#search-" + layout).find(".slider-wrapper").each(function(){
-					$(this).slick('refresh');
-				});
+				$(".slider-wrapper").slick('refresh');
 			}
 			else {
 				
