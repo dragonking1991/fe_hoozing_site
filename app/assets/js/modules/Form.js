@@ -46,7 +46,7 @@ export default class Form {
       for(var i=0;i<total_file;i++){
         console.log(event.target.files[i]);
         console.log(URL.createObjectURL(event.target.files[i]));
-        $('.input-photo').append("<div class='col-md-3'><img class='img-responsive' src='"+URL.createObjectURL(event.target.files[i])+"'></div>");
+        $('.input-photo').append("<figure><img class='img-responsive' src='"+URL.createObjectURL(event.target.files[i])+"'></figure>");
       }
 
 

@@ -106,7 +106,7 @@ module.exports = {
     new ExtractTextPlugin('assets/css/[name].css'),
     new BrowserSyncPlugin({
       notify: false,
-      port: 9000,
+      port: 9100,
       reloadDelay: 100,
       logLevel: 'info',
       online: true,

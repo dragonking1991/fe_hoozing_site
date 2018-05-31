@@ -64,7 +64,7 @@
   }
 },
 "dependencies": {
-    "jquery": "^3.2.1",
+    "jquery": "^3.3.1",
     "jquery-ui": "*", 
     "load-google-maps-api": "^1.0.1",
     "babel-polyfill": "^6.26.0",
@@ -74,7 +74,6 @@
     "slick-carousel": "^1.8.1",
     "bootstrap": "^3.3.7",
     "bootstrap-table": "^1.11.1",
-    "bootstrap-tagsinput": "^0.8.0",
     "tingle.js": "^0.12.0",
     "malihu-custom-scrollbar-plugin": "^3.1.5"
 },

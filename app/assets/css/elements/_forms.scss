@@ -210,7 +210,7 @@ input {
     width: 100%;
 
     textarea {
-      padding: 0 15px;
+      padding: 10px 15px;
       outline: none;
       border: none;
       background: none;
@@ -220,7 +220,6 @@ input {
       line-height: 18px;
       position: absolute;
       top: 15px;
-
       left: 0;
     }
   }
@@ -256,14 +255,28 @@ input {
 
 .input-photo {
   margin-bottom: 20px;
+
+  .icon {
+    @include absolute(top 15px right 10px);
+  }
+
+
   label {
     display: block;
+    cursor: pointer;
     height: 50px;   
     line-height: 50px; 
     padding: 0 10px;
-    color: #333;
-    text-transform: uppercase;
+    color: #666;
     margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+  figure {
+    max-width: 20%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 10px 10px;
   }
 
   input {
