@@ -1,23 +1,29 @@
 .summary__wrapper {
   font-size: 0;
-  @include screen(medium){
-    margin:  0 -20px;
-    
+  margin:  20px 0;
+  @include screen(small){
+    margin:  50px -2%;
   }
   .item {
     display: inline-block;
     vertical-align: top;
     border: 1px solid $red;
+    border-radius: 10px;
     text-align: center;
-    width: 46%;
-    margin:10px 0;
+    margin:30px 0;
+    padding: 0 10px 10px;
+    @include screen(small){
+      margin:20px 2%;
+      width: 46%;
+    }
     @include screen(medium){
-      margin:20px;
+      padding: 0 20px 20px;
+      margin:30px 2%;
     }
   }
   .item__icon {
-    margin: -30px 0 20px;
-    font-size: 34px;
+    margin: -35px 0 20px;
+    font-size: 32px;
     background: $red;
     width: 70px;
     display: inline-block;
@@ -31,10 +37,35 @@
     } 
   }
   h3 {
-    font-size: 24px;
+    font-size: 18px;
+    margin: 0 0 20px;
   }
   p {
     font-size: 16px;
   }
 
 }
+
+// .summary__wrapper {
+//   font-size: 0;
+//   margin: 20px 0;
+//   @include screen(medium){
+//     margin:  50px -2%;
+
+//   }
+//   .item {
+//     display: inline-block;
+//     vertical-align: top;
+//     border: 2px solid #ddd;
+//     text-align: center;
+//     width: 46%;
+//     margin:10px 0;
+//     padding: 0 20px 10px;
+//     border-radius: 5px;
+//     @include screen(medium){
+//       margin:30px 2%;
+//       padding: 0 60px 30px;
+//     }
+//   }
+
+// }
