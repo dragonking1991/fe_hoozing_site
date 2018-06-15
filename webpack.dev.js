@@ -94,6 +94,9 @@ module.exports = {
       modernizr$: path.resolve(__dirname, "./.modernizrrc.js")
     }
   },
+  externals: {
+    jquery: 'jQuery'
+  },
   plugins: [
     FailPlugin,
     new TwigDataPlugin('./app/_data/app.json'),

@@ -91,6 +91,9 @@ module.exports = {
       modernizr$: path.resolve(__dirname, "./.modernizrrc.js")
     }
   },
+  externals: {
+    jquery: 'jQuery'
+  },
   plugins:[
     FailPlugin,
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: (module, count) => {

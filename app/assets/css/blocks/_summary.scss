@@ -2,7 +2,7 @@
   font-size: 0;
   margin:  20px 0;
   @include screen(small){
-    margin:  50px -2%;
+    margin:  50px -2% 0;
   }
   .item {
     display: inline-block;
@@ -17,7 +17,7 @@
       width: 46%;
     }
     @include screen(medium){
-      padding: 0 20px 20px;
+      padding: 0 40px 40px;
       margin:30px 2%;
     }
   }

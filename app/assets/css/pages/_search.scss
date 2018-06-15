@@ -7,6 +7,7 @@
   @include screen(medium){
     padding: 30px;
   }
+  @extend %clearfix;
 
   .wrap-tag {
     margin: 10px 0; 

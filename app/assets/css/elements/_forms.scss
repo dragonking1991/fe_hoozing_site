@@ -149,19 +149,6 @@ input {
 }
 
 
-// .row [class^='col-'] {
-//   // padding-left: 9px;
-//   &:first-child {
-//     padding-left: 0;
-//     padding-right: 9px;
-//   }
-// }
-// [class='col-4']:first-child {
-// 	padding-right: 0;
-// }
-// [class='col-4'] {
-// 	padding-left: 18px;
-// }
 .wrap-form{
 	max-width: 540px;
 	margin: 0 auto;
@@ -201,28 +188,19 @@ input {
     &::-ms-clear {
       display: none;
     }
+
+  }
+  textarea {
+    padding: 10px 15px;
   }
 
   /* Textarea */
-  &.textarea-wrapper{
-    height: 150px;
-    overflow: hidden;
-    width: 100%;
+  // &.textarea-wrapper{
+  //   height: 150px;
+  //   overflow: hidden;
+  //   width: 100%;
 
-    textarea {
-      padding: 10px 15px;
-      outline: none;
-      border: none;
-      background: none;
-      width: 100%;
-      height: 130px;
-      font-size: 14px;
-      line-height: 18px;
-      position: absolute;
-      top: 15px;
-      left: 0;
-    }
-  }
+  // }
 
   // label {
   //   padding: 0 15px;
@@ -257,12 +235,30 @@ input {
   margin-bottom: 20px;
 
   .icon {
-    @include absolute(top 15px right 10px);
+    @include absolute(top 15px left 50%);
+    transform:translateX(-50%);
+    text-align: center;
+    i {
+      display: block;
+
+      &:before {
+        @media (max-width: 768px){
+          content: "\f093";
+        }
+      }
+      @include screen(small){
+        display: inline-block;
+      }
+    }
+    @include screen(small){
+      transform:none;
+      right: 10px;
+      left: auto;
+    }
   }
 
 
   label {
-    display: block;
     cursor: pointer;
     height: 50px;   
     line-height: 50px; 
@@ -271,12 +267,20 @@ input {
     margin: 0;
     position: relative;
     z-index: 1;
+    display: block;
+    font-size: 0;
+    @include screen(small){
+      font-size: 14px;
+    }
   }
   figure {
-    max-width: 22%;
+    max-width: 20%;
     display: inline-block;
     vertical-align: top;
     margin: 0 0 10px 10px;
+    @include screen(small){
+      max-width: 22%;
+    }
   }
 
   input {
@@ -334,6 +338,30 @@ input {
       color: $red;
     }
   }
+  .checkbox-wrapper {
+    display: block;
+    padding: 0px 10px;
+    height: auto;
+    position: relative;
+  }
+  label {
+    margin: 0;
+    display: block;
+    padding: 10px 25px;
+    &:after, &:before  {
+      top: 10px;
+    }
+  }
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked ~ label {
+      &:after {
+        top: 10px;
+      }
+    }
+  }
+
 
   ul {
     display: none;
