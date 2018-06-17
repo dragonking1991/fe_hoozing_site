@@ -71,7 +71,7 @@
 		@include absolute( top 40% left 50%);
 		transform:translate(-50%, -50%);
 	}
-	@include screen(large) {
+	@include screen(normalLaptop) {
 		top: 50%;
 	}
 

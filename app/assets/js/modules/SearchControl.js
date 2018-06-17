@@ -6,6 +6,10 @@ export default class SearchControl {
 
 		$('[data-toggle="tooltip"]').tooltip();
 
+		$('[data-show="#collapseFilter"]').on('click', function(){
+			$('.tab--reduce').animate({scrollTop: 0}, 500);
+		});
+
 		$(".filter-wrapper input[type='checkbox']").change(function() {
 			var countCheck = $(".filter-wrapper input[type='checkbox']:checked").length;
 			$(el).find(".notificate").html(countCheck);

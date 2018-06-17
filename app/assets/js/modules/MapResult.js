@@ -41,7 +41,7 @@ export default class MapResult {
       center: this.storeArr[0].location,
       zoom: 15,
       animation: google.maps.Animation.DROP,
-      gestureHandling: 'greedy'
+      gestureHandling: 'cooperative'
     });
     this.initPopupList();
     this.popupList.forEach((item, i) => {
@@ -116,6 +116,19 @@ export default class MapResult {
       e.stopPropagation();
       this.eventPopup(item);
       let idContent = item.content.id;
+      let lat = $('.thumb-item[data-code="'+ idContent + '"]').data('lat');
+      let lng = $('.thumb-item[data-code="'+ idContent + '"]').data('lng');
+
+      let zoom = this.map.getZoom();
+      let meters_per_pixel = 156543.03392 * Math.cos(parseFloat(lat)* Math.PI / 180) / Math.pow(2, zoom);
+      let downCenter =  meters_per_pixel / 1000 * 2;
+      let latLng = new google.maps.LatLng(parseFloat(lat) + downCenter , parseFloat(lng)); 
+      this.map.panTo(latLng);
+
+      let heightControl = $('.search__list').outerHeight() +$('.page').outerHeight();
+      let posItem = $('.thumb-item[data-code="'+ idContent + '"]').position().top - heightControl - 30;
+      $('.tab--reduce').animate({scrollTop: $('.tab--reduce').scrollTop() + posItem}, 500);  
+
       $('.thumb-item').removeClass('selected');
       $('.thumb-item[data-code="'+ idContent + '"]').addClass('selected');
     });

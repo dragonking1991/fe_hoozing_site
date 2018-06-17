@@ -3,11 +3,11 @@ header {
   min-height: 50px;
   position: relative;
   z-index: 101;
-  padding: 10px 30px;
+  padding: 5px 30px;
   box-shadow: 0 0 20px #aaa;
   @extend .clearfix;
   @include screen(medium){
-    min-height: 73px;
+    min-height: 65px;
     background: #fff;
     width: 100%;
   }
@@ -347,6 +347,10 @@ nav {
     margin: 0 auto;
     height: 100%;
     float: right;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1140px) {
+    max-width: 58%;
   }
 
   .btn-burger {

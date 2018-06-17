@@ -357,8 +357,9 @@
 	}
 	i {
 		font-size: 11px;
+		text-align: center;
 		@include screen(medium){
-			font-size: 20px;
+			font-size: 14px;
 		}
 	}
 	.info-fa {

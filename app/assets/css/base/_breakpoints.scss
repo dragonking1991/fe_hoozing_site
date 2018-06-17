@@ -4,7 +4,9 @@ $breakpoints: (
 	xs: 640px,
 	small: 768px,
 	medium: 1025px,
-	large: 1280px
+  large: 1280px,
+  normalLaptop: 1368px,
+	menuBreak: 1140px,
 );
 
 @mixin screen($breakpoint, $mobileFirst: true) {
