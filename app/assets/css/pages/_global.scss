@@ -158,10 +158,6 @@ h1,h2,h3,h4 {
 	}
 }
 
-i {
-	margin-right: 5px;
-}
-
 .error {
 	color: #ff0000;
 }
@@ -305,6 +301,11 @@ hr {
 .bg--blue {
 	color: #fff !important;
 	background: $blue !important;
+}
+
+.bg--gray {
+	color: #fff !important;
+	background: $gray-dark !important;
 }
 
 .tag {

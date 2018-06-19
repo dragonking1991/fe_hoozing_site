@@ -66,6 +66,15 @@
 	}
 }
 
+.apartment-rented {
+	font-size: 28px;
+	color: $red;
+}
+
+.apartment-price {
+	font-size: 22px;
+}
+
 .block-signup {
 	padding: 0px 20px 30px;
 	border: 1px solid $color-light;
@@ -74,7 +83,7 @@
 		width: 100%;
 	}
 	b {
-		font-size: 18px;
+		font-size: 22px;
 	}
 	form {
 		margin-top: 20px;
@@ -298,6 +307,7 @@
 }
 
 .gallery-house {
+	padding: 0 15px;
 	li {
 		overflow: hidden;
 		height: 75px;

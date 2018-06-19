@@ -26,8 +26,11 @@
 .map-result{
   width: 60%;
   float: right;
-  min-height: 100vh;
   display: none;
+  @include screen(medium){
+    max-height: calc(100vh - 172px);
+    overflow: hidden;
+  }
   &.show {
     display: none !important;
     @include screen(medium){
@@ -131,7 +134,7 @@
   @include screen(medium){
     display: inline-block;
     width: 40%;
-    max-height: 100vh;
+    max-height: calc(100vh - 172px);
     overflow: hidden;
     overflow-y:auto;
   }
@@ -355,10 +358,10 @@
 
 .search-wrapper {
   position: absolute;
-    left: 50%;
-    top: 50px;
-    width: 90%;
-    transform: translateX(-50%);
+  left: 50%;
+  top: 50px;
+  width: 90%;
+  transform: translateX(-50%);
   @include screen(small) {
     left: 150px;
     top: 10px;

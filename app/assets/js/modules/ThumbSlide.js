@@ -11,7 +11,7 @@ export default class ThumbSlide {
       dots:true,
       infinite: true,
       arrows: true,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 3000,
       slidesToShow: 1,
       slidesToScroll: 1

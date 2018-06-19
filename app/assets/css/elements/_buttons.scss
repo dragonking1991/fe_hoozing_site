@@ -102,6 +102,11 @@
       box-shadow: none;
     }
   }
+  &:focus {
+    @include screen(medium){
+      color: #fff;
+    }
+  }
 }
 
 

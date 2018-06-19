@@ -5,6 +5,7 @@ export default class SwitchTab {
 	constructor(el) {
 		$("a[data-layout]").on('click', function(){
 			let layout = $(this).attr('data-layout');
+			$('.thumb-item').removeClass('selected');
 			$("a[data-layout]").removeClass('active');
 			$(this).addClass('active');
 			$(".tab-content").removeClass("active");

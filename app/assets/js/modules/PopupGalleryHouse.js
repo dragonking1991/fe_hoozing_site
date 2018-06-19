@@ -44,11 +44,15 @@ export default class PopupGalleryHouse {
 
 
     $(".gallery-house li").on('click', function(){
-      $(el).find('.gallery__for').slick('slickGoTo', $(this).index() );
+      setTimeout(function(){
+        $(el).find('.gallery__for').slick('slickGoTo', $(this).index() );
+      },150);
     });
 
     $('.btn__photo').on('click', function(){
-      $(el).find('.gallery__for').slick('slickGoTo', 1 );
+      setTimeout(function(){
+        $(el).find('.gallery__for').slick('slickGoTo', 1 );
+      },150);
     });
 
     $('#galleryDetail').on('show.bs.modal', function (e) {

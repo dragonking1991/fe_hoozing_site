@@ -1,6 +1,15 @@
 export default class Form {
   constructor(el) {
 
+    $('[data-toggle="modal"]').on('click',function(e){
+      let target = $(this).attr('href');
+      $(target).modal();
+    });
+    $('.close-modal').on('click',function(e){
+      let target = $(this).attr('href');
+      $(target).modal('hide');
+    });
+
     $('[data-show]').on('click',function(e){
       var blockToggle = $(this).attr('data-show');
       $(this).toggleClass('active');

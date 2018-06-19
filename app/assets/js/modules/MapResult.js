@@ -78,22 +78,26 @@ export default class MapResult {
 
 
     $(document).on('click', '.select-home', function() {
-      $('.thumb-item').removeClass('selected');
-      $(this).parents('.thumb-item').addClass('selected');
-      let lat = $(this).parents('.thumb-item').attr('data-lat');
-      let lng = $(this).parents('.thumb-item').attr('data-lng');
-      let code = $(this).parents('.thumb-item').attr('data-code');
-      let latLng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng)); 
-      thisMap.panTo(latLng);
+      if ( $('[data-layout="mapview"]').hasClass('active')) {
+        $('.thumb-item').removeClass('selected');
+        $(this).parents('.thumb-item').addClass('selected');
+        let lat = $(this).parents('.thumb-item').attr('data-lat');
+        let lng = $(this).parents('.thumb-item').attr('data-lng');
+        let code = $(this).parents('.thumb-item').attr('data-code');
+        let latLng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng)); 
+        thisMap.panTo(latLng);
 
-      $('.popup-bubble-content').removeClass('show');
-      $('.popup-bubble-content').find('.popup__price').removeClass('hide');
-      $('.popup-bubble-content').find('.popup-wrapper').removeClass('show-popup'); 
+        $('.popup-bubble-content').removeClass('show');
+        $('.popup-bubble-content').find('.popup__price').removeClass('hide');
+        $('.popup-bubble-content').find('.popup-wrapper').removeClass('show-popup'); 
 
-      $('#'+ code).addClass('show');
-      $('#'+ code).find('.popup__price').addClass('hide');
-      $('#'+ code).find('.popup-wrapper').addClass('show-popup'); 
-      $('#'+ code).find('.thumb-list').slick('refresh');
+        $('#'+ code).addClass('show');
+        $('#'+ code).find('.popup__price').addClass('hide');
+        $('#'+ code).find('.popup-wrapper').addClass('show-popup'); 
+        setTimeout(function(){
+          $('#'+ code).find('.thumb-list').slick('refresh');
+        },200);
+      }
     });
   }
 
@@ -126,14 +130,17 @@ export default class MapResult {
       this.map.panTo(latLng);
 
       let heightControl = $('.search__list').outerHeight() +$('.page').outerHeight();
-      let posItem = $('.thumb-item[data-code="'+ idContent + '"]').position().top - heightControl - 30;
+
+      let posItem = $('.thumb-item[data-code="'+ idContent + '"]').position().top - heightControl - 50;
       $('.tab--reduce').animate({scrollTop: $('.tab--reduce').scrollTop() + posItem}, 500);  
 
       $('.thumb-item').removeClass('selected');
       $('.thumb-item[data-code="'+ idContent + '"]').addClass('selected');
     });
     ele.addMultiEvent(item.popupPrice, ['click', 'touchend'], (e) => {
-      $(item.thumbList).slick('refresh');
+      setTimeout(function(){
+        $(item.thumbList).slick('refresh');
+      },200);
     });
 
     ele.addMultiEvent(item.popupClose, ['click', 'touchend'], (e) => {

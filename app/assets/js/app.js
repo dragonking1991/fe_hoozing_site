@@ -1,11 +1,10 @@
 import 'babel-polyfill';
 import 'normalize-css';
-import $ from 'jquery';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/app.scss';
 
-import 'bootstrap/dist/js/bootstrap.min.js';
 import '../../_data/app.json';
+import 'bootstrap/dist/js/bootstrap.min.js';
 const FastClick = require('fastclick');
 const moduleElements = document.querySelectorAll('[data-module]');
 
