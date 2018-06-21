@@ -42,7 +42,9 @@ export default class Form {
     });
 
     $('.form_suggest-search').find('input').on('blur', function(){
-      $('.form_suggest-search').find('.box-suggest').removeClass('active');
+      setTimeout(function(){
+        $('.form_suggest-search').find('.box-suggest').removeClass('active');
+      },200);
     });
 
     $(".input-file").change(function () {

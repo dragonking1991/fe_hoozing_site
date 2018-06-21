@@ -30,6 +30,7 @@ export default class MapResult {
       let google = {
         maps: result
       };
+      // console.log(this.drawPopupOnMap())
       this.drawPopupOnMap();
     }).catch(err => {
       console.log(err);
