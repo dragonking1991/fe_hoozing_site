@@ -465,17 +465,17 @@
   font-family: 'Roboto','sans-serif';
   margin: 10px;
   padding: 10px;
-  display: none;
   li {
     margin-bottom: 0;
     & + li{
       margin-top: 5px;
     }
   }
-
 }
 
-#map .map-control { display: block; }
+#map {
+  max-height: calc(100vh - 172px);
+}
 
 .selector-control {
   font-size: 14px;

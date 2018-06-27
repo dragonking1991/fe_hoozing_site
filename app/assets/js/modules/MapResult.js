@@ -21,6 +21,18 @@ export default class MapResult {
     }));
     this.storeArr = storeInfo;
     this.init();
+
+    var _this = this;
+
+    $('.page li').on('click', function(){
+      _this.refreshPopupList();
+      _this.initPopupList();
+      setTimeout(function(){
+        _this.popupList.forEach((item, i) => {
+          _this.registerEventPopup(item);
+        });
+      },500);
+    });
   }
   
   init() {
@@ -44,6 +56,7 @@ export default class MapResult {
       animation: google.maps.Animation.DROP,
       gestureHandling: 'cooperative'
     });
+
     this.initPopupList();
     this.popupList.forEach((item, i) => {
       this.registerEventPopup(item);
@@ -86,6 +99,7 @@ export default class MapResult {
         let lng = $(this).parents('.thumb-item').attr('data-lng');
         let code = $(this).parents('.thumb-item').attr('data-code');
         let latLng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng)); 
+        console.log(thisMap)
         thisMap.panTo(latLng);
 
         $('.popup-bubble-content').removeClass('show');
@@ -95,13 +109,16 @@ export default class MapResult {
         $('#'+ code).addClass('show');
         $('#'+ code).find('.popup__price').addClass('hide');
         $('#'+ code).find('.popup-wrapper').addClass('show-popup'); 
-        setTimeout(function(){
-          $('#'+ code).find('.thumb-list').slick('refresh');
-        },200);
+        $('#'+ code).find('.thumb-list').slick('refresh');
       }
     });
   }
 
+  refreshPopupList() {
+    this.popupList.forEach((item, i) => {
+      item.onRemove();
+    });
+  }
 
   initPopupList() {
     let Popup = new PopupDefined(google.maps.OverlayView.prototype, this.map)._popup;
@@ -118,7 +135,7 @@ export default class MapResult {
   registerEventPopup(item) {
     let ele = new DOM();
     ele.addMultiEvent(item.content, ['click', 'touchend'], (e) => {
-      e.stopPropagation();
+      // e.stopPropagation();
       this.eventPopup(item);
       let idContent = item.content.id;
       let lat = $('.thumb-item[data-code="'+ idContent + '"]').data('lat');
@@ -139,8 +156,8 @@ export default class MapResult {
       $('.thumb-item[data-code="'+ idContent + '"]').addClass('selected');
     });
     ele.addMultiEvent(item.popupPrice, ['click', 'touchend'], (e) => {
+      $(item.thumbList).slick('refresh');
       setTimeout(function(){
-        $(item.thumbList).slick('refresh');
       },200);
     });
 
@@ -149,16 +166,16 @@ export default class MapResult {
       item.close();
     });
 
-    $(item.thumbList).slick({
-      fade: false,
-      dots:true,
-      infinite: true,
-      arrows: true,
-      autoplay: false,
-      autoplaySpeed: 2000,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    });
+    // $(item.thumbList).slick({
+    //   fade: false,
+    //   dots:true,
+    //   infinite: true,
+    //   arrows: true,
+    //   autoplay: false,
+    //   autoplaySpeed: 2000,
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1
+    // });
   }
 
   eventPopup(popup) {

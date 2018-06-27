@@ -411,12 +411,20 @@
 .thumb--2 {
 	li {
 		width: 50%;
+		min-width: 130px;
+		float: left;
+		white-space: nowrap;
+		width: 50%;
 		float: left;
 	}
 }
 
 .thumb--4 {
 	li {
+		width: 50%;
+		min-width: 130px;
+		float: left;
+		white-space: nowrap;
 		width: 50%;
 		float: left;
 		@include screen(medium) {
