@@ -1,6 +1,16 @@
 export default class Form {
   constructor(el) {
 
+    $('[data-toggle="dropdown"]').on('click',function(e){
+      let dropdown = $(this).parents('.dropdown');
+      if (!dropdown.hasClass('open')) {
+        dropdown.addClass('open');
+      }
+      else {
+        dropdown.removeClass('open');
+      }
+    });
+    
     $('[data-toggle="modal"]').on('click',function(e){
       let target = $(this).attr('href');
       $(target).modal();
