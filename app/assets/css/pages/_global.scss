@@ -542,13 +542,12 @@ section {
 
 .slick-arrow {
 	font-size: 0;
-	@include absolute(top 55% right);
+	@include absolute(top right);
 	width: 40px;
-	height: 40px;
+	height: 100%;
 	background: none;
 	z-index: 1;
 	border: none;
-	transform: translateY(-50%);
 	outline: none;
 	
 	&:after {
@@ -558,7 +557,7 @@ section {
 		color: #fff;
 		font: normal normal normal 45px/1 FontAwesome;
 		color: darken(#fff, 20%);
-		@include absolute(top 46% left 52%);
+		@include absolute(top 50% left 52%);
 		transform: translate(-50%,-50%);
 	}
 	@include screen(medium){

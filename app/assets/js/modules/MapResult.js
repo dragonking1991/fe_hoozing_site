@@ -24,15 +24,9 @@ export default class MapResult {
 
     var _this = this;
 
-    $('.page li').on('click', function(){
-      _this.refreshPopupList();
-      _this.initPopupList();
-      setTimeout(function(){
-        _this.popupList.forEach((item, i) => {
-          _this.registerEventPopup(item);
-        });
-      },500);
-    });
+    // $('.page li').on('click', function(){
+    //   _this.refreshPopupList();
+    // });
   }
   
   init() {
@@ -118,6 +112,10 @@ export default class MapResult {
     this.popupList.forEach((item, i) => {
       item.onRemove();
     });
+    this.initPopupList();
+    this.popupList.forEach((item, i) => {
+      this.registerEventPopup(item);
+    });
   }
 
   initPopupList() {
@@ -166,16 +164,16 @@ export default class MapResult {
       item.close();
     });
 
-    // $(item.thumbList).slick({
-    //   fade: false,
-    //   dots:true,
-    //   infinite: true,
-    //   arrows: true,
-    //   autoplay: false,
-    //   autoplaySpeed: 2000,
-    //   slidesToShow: 1,
-    //   slidesToScroll: 1
-    // });
+    $(item.thumbList).not('.slick-initialized').slick({
+      fade: false,
+      dots:true,
+      infinite: true,
+      arrows: true,
+      autoplay: false,
+      autoplaySpeed: 2000,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    });
   }
 
   eventPopup(popup) {

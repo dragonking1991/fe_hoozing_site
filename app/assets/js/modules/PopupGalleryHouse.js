@@ -18,7 +18,7 @@ export default class PopupGalleryHouse {
     $('#galleryDetail').find('.thumb-service').html(service);
 
     var navSlide = {
-      arrows: true,
+      arrows: false,
       slidesToShow: 5,
       slidesToScroll: 1,
       asNavFor: '.gallery__for',
@@ -31,7 +31,7 @@ export default class PopupGalleryHouse {
     var forSlide = {
       slidesToShow: 1,
       slidesToScroll: 1,
-      arrows: false,
+      arrows: true,
       fade: true,
       adaptiveHeight:true,
       asNavFor: '.gallery__nav'
@@ -44,8 +44,9 @@ export default class PopupGalleryHouse {
 
 
     $(".gallery-house li").on('click', function(){
+      let _this = this;
       setTimeout(function(){
-        $(el).find('.gallery__for').slick('slickGoTo', $(this).index() );
+        $(el).find('.gallery__for').slick('slickGoTo', $(_this).index() );
       },150);
     });
 

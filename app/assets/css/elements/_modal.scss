@@ -38,15 +38,13 @@
   .slick-arrow {
     font-size: 0;
     position: absolute;
-    top: 50%;
+    top: 0;
+    height: 100%;
+    width: 50px;
     z-index: 10;
     right: 0;
-    @include screen(medium){
-      top: -225%;
-    }
-    @include screen(normalLaptop){
-      top: -350%;
-    }
+    transform:none;
+    background: none;
   }
   .slick-prev {
     left: 0;
@@ -99,6 +97,7 @@
 }
 .gallery__for {
   margin-bottom: 20px;
+  font-size: 0;
   li{
     max-height: 500px;
   }
