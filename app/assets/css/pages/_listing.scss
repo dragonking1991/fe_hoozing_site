@@ -274,8 +274,11 @@
 		text-align: center;
 		margin-top: 5px;
 		height: 30px;
+		z-index: 11;
+		position: relative;
 		@include screen(medium){
-
+			margin-top: 15px;
+			font-size: 14px;
 		}
 	}
 
@@ -299,10 +302,6 @@
 		font-weight: normal;
 		text-transform: none;
 		margin: 5px;
-	}
-	.btn {
-		z-index: 11;
-		position: relative;
 	}
 }
 

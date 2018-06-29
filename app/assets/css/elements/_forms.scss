@@ -566,3 +566,55 @@ input {
 .jplist-drop-down .jplist-dd-panel:after {
   z-index:1;
 }
+
+.radio-icon {
+  height: 30px;
+  margin-top: 5px;
+
+  input[type="radio"] {
+    display: none;
+
+    &:checked ~ label {
+      &:before {
+        color: $red;
+      }
+    }
+  }
+
+  label {
+    font-size: 0;
+    &:before {
+      font-size: 20px;
+      padding-top: 5px;
+      z-index: 2;
+      color: #810e15;
+      text-align: center;
+      @include absolute(top left);
+      width: 30px;
+    }
+    &:after {
+      content: '' !important;
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      display: block;
+      background: #fff;
+      @include absolute(top left);
+    }
+  }
+}
+.radio-icon--star {
+  label:before {
+    content: "\F005";
+  }
+}
+.radio-icon--bus {
+  label:before {
+    content: "\F207";
+  }
+}
+.radio-icon--building {
+  label:before {
+    content: "\F0F7";
+  }
+}

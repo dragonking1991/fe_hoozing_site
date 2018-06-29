@@ -21,6 +21,7 @@ export default class MapResult {
     }));
     this.storeArr = storeInfo;
     this.init();
+    window.mapResult = this;
 
     var _this = this;
 
@@ -36,7 +37,6 @@ export default class MapResult {
       let google = {
         maps: result
       };
-      // console.log(this.drawPopupOnMap())
       this.drawPopupOnMap();
     }).catch(err => {
       console.log(err);
@@ -93,7 +93,6 @@ export default class MapResult {
         let lng = $(this).parents('.thumb-item').attr('data-lng');
         let code = $(this).parents('.thumb-item').attr('data-code');
         let latLng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng)); 
-        console.log(thisMap)
         thisMap.panTo(latLng);
 
         $('.popup-bubble-content').removeClass('show');
@@ -145,10 +144,11 @@ export default class MapResult {
       let latLng = new google.maps.LatLng(parseFloat(lat) + downCenter , parseFloat(lng)); 
       this.map.panTo(latLng);
 
-      let heightControl = $('.search__list').outerHeight() +$('.page').outerHeight();
+      // let heightControl = $('.search__list').outerHeight() +$('.page').outerHeight();
+      let heightControl = $('.search__list').outerHeight();
 
       let posItem = $('.thumb-item[data-code="'+ idContent + '"]').position().top - heightControl - 50;
-      $('.tab--reduce').animate({scrollTop: $('.tab--reduce').scrollTop() + posItem}, 500);  
+      $('.tab--reduce').animate({scrollTop: $('.tab--reduce').scrollTop() + posItem}, 500); 
 
       $('.thumb-item').removeClass('selected');
       $('.thumb-item[data-code="'+ idContent + '"]').addClass('selected');

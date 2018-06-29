@@ -46,8 +46,8 @@ export default class PopupGalleryHouse {
     $(".gallery-house li").on('click', function(){
       let _this = this;
       setTimeout(function(){
-        $(el).find('.gallery__for').slick('slickGoTo', $(_this).index() );
-      },150);
+        $(el).find('.gallery__for').slick('refresh').slick('slickGoTo', $(_this).index() );
+      },200);
     });
 
     $('.btn__photo').on('click', function(){

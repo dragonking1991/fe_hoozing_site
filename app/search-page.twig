@@ -1,614 +1,1402 @@
 {% extends "./_templates/layout.twig" %}
 
 {% block page %}
-  <script>
-  window.isIE = false;
-  if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) {
-    window.isIE = true;
-  }
-  window.accessToken = "ce088026e1e29bbe6d48d3bfc719ec89";
-  window.errorNotify = '';
-  window.errorBrowse = '';
+<script>
+window.isIE = false;
+if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) {
+  window.isIE = true;
+}
+window.accessToken = "ce088026e1e29bbe6d48d3bfc719ec89";
+window.errorNotify = '';
+window.errorBrowse = '';
 
-  </script>
-  <main class="site-main">
-    <section class="search-content" data-module="SearchControl">
+</script>
+<main class="site-main">
+  <section class="search-content" data-module="SearchControl">
 
-      <div class="search-control hide-for-medium">
-        <div class="checkbox-list select--big">
-          <span>Service Apartment</span> 
-          <ul>
-            <li class="checkbox-wrapper">
-              <input type="checkbox" id="service" name="service" checked="checked">
-              <label for="service">Apartment</label>
-            </li>
-            <li class="checkbox-wrapper">
-              <input type="checkbox" id="service1" name="service1" checked="checked">
-              <label for="service1">Service Apartment</label>
-            </li>
-            <li class="checkbox-wrapper">
-              <input type="checkbox" id="service3" name="service3" checked="checked">
-              <label for="service3">Town house</label>
-            </li>
-            <li class="checkbox-wrapper">
-              <input type="checkbox" id="service4" name="service4" checked="checked">
-              <label for="service4">Other</label>
-            </li>
-          </ul>
-        </div>
-        <div class="checkbox-list select--big">
-          <span>Require amenities</span> 
-          <ul>
-            <li class="checkbox-wrapper">
-              <input type="checkbox" id="require" name="require" checked="checked">
-              <label for="require">Apartment</label>
-            </li>
-            <li class="checkbox-wrapper">
-              <input type="checkbox" id="require1" name="require1" checked="checked">
-              <label for="require1">Service Apartment</label>
-            </li>
-            <li class="checkbox-wrapper">
-              <input type="checkbox" id="require3" name="require3" checked="checked">
-              <label for="require3">Town house</label>
-            </li>
-            <li class="checkbox-wrapper">
-              <input type="checkbox" id="require4" name="require4" checked="checked">
-              <label for="require4">Other</label>
-            </li>
-          </ul>
-        </div>
-
-        <div class="select-wrapper select-bed select--small">
-          <span>Any bed</span>
-          <ul>
-            <li class="active">Any bed</li>
-            <li>1+</li>
-            <li>2+</li>
-            <li>3+</li>
-            <li>4+</li>
-            <li>5+</li>
-            <li>6+</li>
-            <li>1+</li>
-            <li>2+</li>
-            <li>3+</li>
-            <li>4+</li>
-            <li>5+</li>
-            <li>6+</li>
-          </ul>
-        </div>
-        <div class="select-wrapper select-bath select--small">
-          <span>Any bath</span>
-          <ul>
-            <li class="active">Any bath</li>
-            <li>1+</li>
-            <li>2+</li>
-            <li>3+</li>
-            <li>4+</li>
-            <li>5+</li>
-            <li>6+</li>
-            <li>1+</li>
-            <li>2+</li>
-            <li>3+</li>
-            <li>4+</li>
-            <li>5+</li>
-            <li>6+</li>
-          </ul>
-        </div>
-
-        <div class="select-wrapper select-range select--small">
-          <label>Min <span>0</span></label>
-          <ul>
-            <li class="active">0</li>
-            <li>$10000</li>
-            <li>$20000</li>
-            <li>$30000</li>
-            <li>$40000</li>
-            <li>$50000</li>
-            <li>$60000</li>
-            <li>$10000</li>
-            <li>$20000</li>
-            <li>$30000</li>
-            <li>$40000</li>
-            <li>$50000</li>
-            <li>$60000</li>
-          </ul>
-        </div>
-
-        <div class="select-wrapper select-range select--small">
-          <label>Max <span>0</span></label>
-          <ul>
-            <li class="active">0</li>
-            <li>$10000</li>
-            <li>$20000</li>
-            <li>$30000</li>
-            <li>$40000</li>
-            <li>$50000</li>
-            <li>$60000</li>
-            <li>$10000</li>
-            <li>$20000</li>
-            <li>$30000</li>
-            <li>$40000</li>
-            <li>$50000</li>
-            <li>$60000</li>
-          </ul>
-        </div>
-
-        <a href="javascript:void(0)" data-show="#collapseFilter" class="btn f-right"><span class="notificate bg--red">0</span> More filter <i class="fa fa-angle-down"></i></a>
-
+    <div class="search-control hide-for-medium">
+      <div class="checkbox-list select--big">
+        <span>Service Apartment</span> 
+        <ul>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="service" name="service" checked="checked">
+            <label for="service">Apartment</label>
+          </li>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="service1" name="service1" checked="checked">
+            <label for="service1">Service Apartment</label>
+          </li>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="service3" name="service3" checked="checked">
+            <label for="service3">Town house</label>
+          </li>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="service4" name="service4" checked="checked">
+            <label for="service4">Other</label>
+          </li>
+        </ul>
       </div>
-      <div class="search-control show-for-medium">
-        <div class="search-form">
-          <input type="text" value="" id="search-header" autocomplete="off" />
-          <button class="btn-submit"><i class="fa fa-map-marker"></i></button>
-        </div>
-        <div class="wrap-tag">
-          <a class="tags bg--blue" href="#">Service apartment</a>
-          <a class="tags bg--blue" href="#">5+ Amenities</a>
-          <a class="tags bg--blue" href="#">1+ bed</a>
-          <a class="tags bg--blue" href="#">1+ bath</a>
-          <a class="tags bg--blue" href="#">Max: $700</a>
-        </div>
-        <p>Great! We’ve found <strong>523 listings</strong> that match well your search criteria.</p>
+      <div class="checkbox-list select--big">
+        <span>Require amenities</span> 
+        <ul>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="require" name="require" checked="checked">
+            <label for="require">Apartment</label>
+          </li>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="require1" name="require1" checked="checked">
+            <label for="require1">Service Apartment</label>
+          </li>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="require3" name="require3" checked="checked">
+            <label for="require3">Town house</label>
+          </li>
+          <li class="checkbox-wrapper">
+            <input type="checkbox" id="require4" name="require4" checked="checked">
+            <label for="require4">Other</label>
+          </li>
+        </ul>
       </div>
 
-      <div class="search-detail">
-        <div class="wrap-tab tab--reduce">
+      <div class="select-wrapper select-bed select--small">
+        <span>Any bed</span>
+        <ul>
+          <li class="active">Any bed</li>
+          <li>1+</li>
+          <li>2+</li>
+          <li>3+</li>
+          <li>4+</li>
+          <li>5+</li>
+          <li>6+</li>
+          <li>1+</li>
+          <li>2+</li>
+          <li>3+</li>
+          <li>4+</li>
+          <li>5+</li>
+          <li>6+</li>
+        </ul>
+      </div>
+      <div class="select-wrapper select-bath select--small">
+        <span>Any bath</span>
+        <ul>
+          <li class="active">Any bath</li>
+          <li>1+</li>
+          <li>2+</li>
+          <li>3+</li>
+          <li>4+</li>
+          <li>5+</li>
+          <li>6+</li>
+          <li>1+</li>
+          <li>2+</li>
+          <li>3+</li>
+          <li>4+</li>
+          <li>5+</li>
+          <li>6+</li>
+        </ul>
+      </div>
 
-          <div class="filter-wrapper collapse" id="collapseFilter">
-            <a href="javascript:void(0)" data-close="#collapseFilter" class="close-modal"><i class="fa fa-close"></i></a>
-            <div class="container">
-              <h3 class="block-title">Basic fetures</h3>
-              <div class="row">
-                <div class="col-xs-6 col-lg-3">
-                  <div class="input-group date" data-provide="datepicker-inline">
-                    <input type="text" class="form-control" >
-                    <div class="input-group-addon">
-                      <span class="glyphicon glyphicon-th"></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-lg-3">
-                  <div class="select-wrapper">
-                    <select name="type" id="type">
-                      <option  disabled="disabled" selected="selected" value="">Acomodates</option>
-                      <option value="Male">2000</option>
-                      <option value="Female">2001</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-lg-3">
-                  <div class="select-wrapper">
-                    <select name="type" id="type">
-                      <option  disabled="disabled" selected="selected" value="">Furnishment</option>
-                      <option value="Male">2000</option>
-                      <option value="Female">2001</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-lg-3">
-                  <div class="select-wrapper">
-                    <select name="type" id="type">
-                      <option  disabled="disabled" selected="selected" value="">Floor Area</option>
-                      <option value="Male">2000</option>
-                      <option value="Female">2001</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
+      <div class="select-wrapper select-range select--small">
+        <label>Min <span>0</span></label>
+        <ul>
+          <li class="active">0</li>
+          <li>$10000</li>
+          <li>$20000</li>
+          <li>$30000</li>
+          <li>$40000</li>
+          <li>$50000</li>
+          <li>$60000</li>
+          <li>$10000</li>
+          <li>$20000</li>
+          <li>$30000</li>
+          <li>$40000</li>
+          <li>$50000</li>
+          <li>$60000</li>
+        </ul>
+      </div>
 
-              <h3 class="block-title">Required Amenities</h3>
-              <ul class="list-check">
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="f_tv" name="f_tv">
-                    <label for="f_tv">TV</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="f_microwave" name="f_microwave">
-                    <label for="f_microwave">Microwave</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="f_aircondition" name="f_aircondition">
-                    <label for="f_aircondition">Air contitioner</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="f_chimney" name="f_chimney">
-                    <label for="f_chimney">Electric chimney</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="f_smock-detector" name="f_smock-detector">
-                    <label for="f_smock-detector">Smoke detector</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="f_fire-extinguisher" name="f_fire-extinguisher">
-                    <label for="f_fire-extinguisher">Fire extinguisher</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="f_balcony" name="f_balcony">
-                    <label for="f_balcony">Balcony</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="f_first-aid-kit" name="f_first-aid-kit">
-                    <label for="f_first-aid-kit">First Aid Kit</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="f_bathtub" name="f_bathtub">
-                    <label for="f_bathtub">Bathtub</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="f_geyser" name="f_geyser">
-                    <label for="f_geyser">Geyser</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="f_essentails" name="f_essentails">
-                    <label for="f_essentails">Essentails</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="f_dish-washer" name="f_dish-washer">
-                    <label for="f_dish-washer">Dish washer</label>
-                  </div>
-                </li>
-              </ul>
-              <a href="#" class="more"> More amenties</a>
-              <br />
-              <h3 class="block-title">Required Facilities</h3>
-              <ul class="list-check">
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="e-backup" name="e-backup">
-                    <label for="e-backup">24Hr Electricity Backup</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="parking" name="parking">
-                    <label for="parking">Parking</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="community-hall" name="community-hall">
-                    <label for="community-hall">Community Hall</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="club" name="club">
-                    <label for="club">Club House</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="restaurant" name="restaurant">
-                    <label for="restaurant">Restaurant</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="coffee-shop" name="coffee-shop">
-                    <label for="coffee-shop">Coffee-shop</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="banking-atm" name="banking-atm">
-                    <label for="banking-atm">Banking/ ATM</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="phamacy" name="phamacy">
-                    <label for="phamacy">Phamacy</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="shopping-mall" name="shopping-mall">
-                    <label for="shopping-mall">Shopping mall</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="supermarket" name="supermarket">
-                    <label for="supermarket">Supermarket</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="swimming-pool" name="swimming-pool">
-                    <label for="swimming-pool">Swimming Pool</label>
-                  </div>
-                </li>
-                <li>
-                  <div class="checkbox-wrapper check-switch">
-                    <input type="checkbox" id="gymnasiums" name="gymnasiums">
-                    <label for="gymnasiums">Gymnasiums</label>
-                  </div>
-                </li>
-              </ul>
-              <a href="#" class="more"> More amenties</a>
+      <div class="select-wrapper select-range select--small">
+        <label>Max <span>0</span></label>
+        <ul>
+          <li class="active">0</li>
+          <li>$10000</li>
+          <li>$20000</li>
+          <li>$30000</li>
+          <li>$40000</li>
+          <li>$50000</li>
+          <li>$60000</li>
+          <li>$10000</li>
+          <li>$20000</li>
+          <li>$30000</li>
+          <li>$40000</li>
+          <li>$50000</li>
+          <li>$60000</li>
+        </ul>
+      </div>
 
-              <div class="btn-wrapper text-left">
-                <a href="#" class="btn btn--blue"> Apply</a>
-                <a href="#" class="link clear-filter"> Clear Filters</a>
-              </div>
-            </div>
-          </div>
+      <a href="javascript:void(0)" data-show="#collapseFilter" class="btn f-right"><span class="notificate bg--red">0</span> More filter <i class="fa fa-angle-down"></i></a>
 
-          <div class="search__list hide-for-small">
+    </div>
+    <div class="search-control show-for-medium">
+      <div class="search-form">
+        <input type="text" value="" id="search-header" autocomplete="off" />
+        <button class="btn-submit"><i class="fa fa-map-marker"></i></button>
+      </div>
+      <div class="wrap-tag">
+        <a class="tags bg--blue" href="#">Service apartment</a>
+        <a class="tags bg--blue" href="#">5+ Amenities</a>
+        <a class="tags bg--blue" href="#">1+ bed</a>
+        <a class="tags bg--blue" href="#">1+ bath</a>
+        <a class="tags bg--blue" href="#">Max: $700</a>
+      </div>
+      <p>Great! We’ve found <strong>523 listings</strong> that match well your search criteria.</p>
+    </div>
 
-            <span data-type="<b class='list-count'>{all} Listing </b>" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging"><b class='list-count'>625 Listing </b></span>
+    <div class="search-detail">
+      <div class="wrap-tab tab--reduce">
 
-            <div class="search__sort">
-              <label for="sortlist">Sort by</label>
-
-              <div class="select-wrapper">
-                <select name="sortlist" id="sortlist">
-                  <option selected="selected" value=""> Day (newest)</option>
-                  <option value="Male">2000</option>
-                  <option value="Female">2001</option>
-                </select>
-              </div>
-            </div>
-
-            <label>Layout</label> 
-            <ul class="search__layout" data-module="SwitchTab">
-              <li><a href="javascript:void(0);" class="active" data-toggle="tooltip" data-placement="top" data-layout="mapview"  title="Map"><i class="fa fa-map"></i></a></li>
-              <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="grid" title="Grid"><i class="fa fa-th-large"></i></a></li>
-              <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="listview"  title="List"><i class="fa fa-bars"></i></a></li>
-              <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="project"  title="Project"><i class="fa fa-bank"></i></a></li>
-            </ul>
-
-          </div>
-          
-          <ul class="page">
-            <li class="page__prev"><a href="#">Prev</a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li class="page__next"><a href="#">Next</a></li>
-          </ul>
-
-          <div class=" tab-content active" id="search-list">
-            <div class="row list-box">
-              {% for item in data.storeInfo %}
-
-                <div class="thumb-item col-xs-6" data-code="{{ item.code }}" data-lng="{{ item.location.lng }}" data-lat="{{ item.location.lat }}" data-city="{{ item.city }}">
-                  <div class="thumb-gallery " data-module="ThumbSlide">
-                    <ul class="thumb-list slider-wrapper">
-                      <li class="carousel-item active"><img src="assets/images/dummy/{{ item.images[0] }}"></li>
-                      <li class="carousel-item"><img src="assets/images/dummy/{{ item.images[1] }}"></li>
-                      <li class="carousel-item"><img src="assets/images/dummy/{{ item.images[2] }}"></li>
-                    </ul>
-                    <span class="love"><i class="fa fa-heart-o"></i></span>
-                    <span class="price-tag">{{ item.price }}</span>
-                  </div>
-                  <div class="thumb-info">
-                    <h4><a href="javascript:void(0)" class="select-home">house code {{ item.code }}</a></h4>
-                    <h3>
-                      <a href="{{ item.linkAp }}">a Pretty service appartment with bright bedroom</a>
-                    </h3>
-                    <div class="thumb-service">
-                      <span><i class="fa fa-map-marker"></i> District 7</span>
-                      <span><i class="fa fa-bed"></i> 1 bed </span>
-                      <span><i class="fa fa-bath"></i> 1 bath</span>
-                      <div class="service-more">
-                        <span><i class="fa fa-map-marker"></i> District 7</span>
-                        <span><i class="fa fa-bed"></i> 1 bed </span>
-                        <span><i class="fa fa-bath"></i> 1 bath</span>
-                      </div>            
-                    </div>
-                  </div>
-                </div>
-              {% endfor %}          
-
-            </div>
-
-            <div class="list-info">
-              <h3>Vinhomes Đồng Khởi</h3>
-              <p> Vinhomes Đồng Khởi được ví như Hòn Ngọc Viễn Đông giữa lòng Sài Gòn nằm trên những cung đường danh giá bậc nhất trung tâm thành phố, 3 mặt tiền đường Đồng Khởi – Lê Thánh Tôn và Lý Tự Trọng với tầm nhìn tuyệt đẹp bao quát toàn bộ trung tâm thành phố hướng ra sông Sài Gòn, Phố đi bộ Nguyễn Huệ, Nhà Thờ Đức Bà.</p>
-              <p>Hội tụ đầy đủ hệ thống dịch vụ tiêu chuẩn 5 sao và tiện ích đẳng cấp vượt trội, Vinhomes Đồng Khởi thiết lập một chuẩn mực khác biệt về phong cách sống, đồng thời cũng là khu căn hộ hiếm hoi đáp ứng được hoàn hảo các nhu cầu.</p>
-            </div>
-
-            <ul class="breadcrumb">
-              <li><a href="#"><i class="fa fa-home"></i></a>  </li>
-              <li> <a href="#">District 7</a></li>
-              <li>One Bedroom Service Apartment</li>
-            </ul>
-          </div>
-
-          <div class="tab-content" id="search-project">
-            <h3 class="project-title">Starhill</h3>
+        <div class="filter-wrapper collapse" id="collapseFilter">
+          <a href="javascript:void(0)" data-close="#collapseFilter" class="close-modal"><i class="fa fa-close"></i></a>
+          <div class="container">
+            <h3 class="block-title">Basic fetures</h3>
             <div class="row">
-              {% for item in data.storeInfo %}
+              <div class="col-xs-6 col-lg-3">
+                <div class="input-group date" data-provide="datepicker-inline">
+                  <input type="text" class="form-control" >
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-lg-3">
+                <div class="select-wrapper">
+                  <select name="type" id="type">
+                    <option  disabled="disabled" selected="selected" value="">Acomodates</option>
+                    <option value="Male">2000</option>
+                    <option value="Female">2001</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-xs-6 col-lg-3">
+                <div class="select-wrapper">
+                  <select name="type" id="type">
+                    <option  disabled="disabled" selected="selected" value="">Furnishment</option>
+                    <option value="Male">2000</option>
+                    <option value="Female">2001</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-xs-6 col-lg-3">
+                <div class="select-wrapper">
+                  <select name="type" id="type">
+                    <option  disabled="disabled" selected="selected" value="">Floor Area</option>
+                    <option value="Male">2000</option>
+                    <option value="Female">2001</option>
+                  </select>
+                </div>
+              </div>
+            </div>
 
-                <div class="thumb-item col-xs-6" data-code="{{ item.code }}" data-lng="{{ item.location.lng }}" data-lat="{{ item.location.lat }}" data-city="{{ item.city }}">
-                  <div class="thumb-gallery " data-module="ThumbSlide">
-                    <ul class="thumb-list slider-wrapper">
-                      <li class="carousel-item active"><img src="assets/images/dummy/{{ item.images[0] }}"></li>
-                      <li class="carousel-item"><img src="assets/images/dummy/{{ item.images[1] }}"></li>
-                      <li class="carousel-item"><img src="assets/images/dummy/{{ item.images[2] }}"></li>
-                    </ul>
-                    <span class="love"><i class="fa fa-heart-o"></i></span>
-                    <span class="price-tag">{{ item.price }}</span>
-                  </div>
-                  <div class="thumb-info">
-                    <h4><a href="javascript:void(0)" class="select-home">house code {{ item.code }}</a></h4>
-                    <h3>
-                      <a href="{{ item.linkAp }}">a Pretty service appartment with bright bedroom</a>
-                    </h3>
-                    <div class="thumb-service">
-                      <span><i class="fa fa-map-marker"></i> District 7</span>
-                      <span><i class="fa fa-bed"></i> 1 bed </span>
-                      <span><i class="fa fa-bath"></i> 1 bath</span>
-                      <div class="service-more">
-                        <span><i class="fa fa-map-marker"></i> District 7</span>
-                        <span><i class="fa fa-bed"></i> 1 bed </span>
-                        <span><i class="fa fa-bath"></i> 1 bath</span>
-                      </div>            
-                    </div>
-                  </div>
+            <h3 class="block-title">Required Amenities</h3>
+            <ul class="list-check">
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_tv" name="f_tv">
+                  <label for="f_tv">TV</label>
                 </div>
-              {% endfor %} 
-              <div class="thumb-item col-md-15">
-                <div class="thumb-gallery " data-module="ThumbSlide">
-                  <ul class="thumb-list slider-wrapper">
-                    <li class="carousel-item active"><img src="assets/images/dummy/{{ item.images[0] }}"></li>
-                    <li class="carousel-item"><img src="assets/images/dummy/{{ item.images[1] }}"></li>
-                    <li class="carousel-item"><img src="assets/images/dummy/{{ item.images[2] }}"></li>
-                  </ul>
-                  <span class="love"><i class="fa fa-heart-o"></i></span>
-                  <span class="price-tag">{{ item.price }}</span>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_microwave" name="f_microwave">
+                  <label for="f_microwave">Microwave</label>
                 </div>
-                <div class="thumb-info">
-                  <h4>house code {{ item.code }}</h4>
-                  <h3>
-                    <a href="{{ item.linkAp }}">Pretty service appartment with bright bedroom</a>
-                  </h3>
-                  <div class="thumb-service">
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_aircondition" name="f_aircondition">
+                  <label for="f_aircondition">Air contitioner</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_chimney" name="f_chimney">
+                  <label for="f_chimney">Electric chimney</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_smock-detector" name="f_smock-detector">
+                  <label for="f_smock-detector">Smoke detector</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_fire-extinguisher" name="f_fire-extinguisher">
+                  <label for="f_fire-extinguisher">Fire extinguisher</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_balcony" name="f_balcony">
+                  <label for="f_balcony">Balcony</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_first-aid-kit" name="f_first-aid-kit">
+                  <label for="f_first-aid-kit">First Aid Kit</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_bathtub" name="f_bathtub">
+                  <label for="f_bathtub">Bathtub</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_geyser" name="f_geyser">
+                  <label for="f_geyser">Geyser</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_essentails" name="f_essentails">
+                  <label for="f_essentails">Essentails</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="f_dish-washer" name="f_dish-washer">
+                  <label for="f_dish-washer">Dish washer</label>
+                </div>
+              </li>
+            </ul>
+            <a href="#" class="more"> More amenties</a>
+            <br />
+            <h3 class="block-title">Required Facilities</h3>
+            <ul class="list-check">
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="e-backup" name="e-backup">
+                  <label for="e-backup">24Hr Electricity Backup</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="parking" name="parking">
+                  <label for="parking">Parking</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="community-hall" name="community-hall">
+                  <label for="community-hall">Community Hall</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="club" name="club">
+                  <label for="club">Club House</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="restaurant" name="restaurant">
+                  <label for="restaurant">Restaurant</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="coffee-shop" name="coffee-shop">
+                  <label for="coffee-shop">Coffee-shop</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="banking-atm" name="banking-atm">
+                  <label for="banking-atm">Banking/ ATM</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="phamacy" name="phamacy">
+                  <label for="phamacy">Phamacy</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="shopping-mall" name="shopping-mall">
+                  <label for="shopping-mall">Shopping mall</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="supermarket" name="supermarket">
+                  <label for="supermarket">Supermarket</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="swimming-pool" name="swimming-pool">
+                  <label for="swimming-pool">Swimming Pool</label>
+                </div>
+              </li>
+              <li>
+                <div class="checkbox-wrapper check-switch">
+                  <input type="checkbox" id="gymnasiums" name="gymnasiums">
+                  <label for="gymnasiums">Gymnasiums</label>
+                </div>
+              </li>
+            </ul>
+            <a href="#" class="more"> More amenties</a>
+
+            <div class="btn-wrapper text-left">
+              <a href="#" class="btn btn--blue"> Apply</a>
+              <a href="#" class="link clear-filter"> Clear Filters</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="search__list hide-for-small">
+
+          <span data-type="<b class='list-count'>{all} Listing </b>" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging"><b class='list-count'>625 Listing </b></span>
+
+          <div class="search__sort">
+            <label for="sortlist">Sort by</label>
+
+            <div class="select-wrapper">
+              <select name="sortlist" id="sortlist">
+                <option selected="selected" value=""> Day (newest)</option>
+                <option value="Male">2000</option>
+                <option value="Female">2001</option>
+              </select>
+            </div>
+          </div>
+
+          <label>Layout</label> 
+          <ul class="search__layout" data-module="SwitchTab">
+            <li><a href="javascript:void(0);" class="active" data-toggle="tooltip" data-placement="top" data-layout="mapview"  title="Map"><i class="fa fa-map"></i></a></li>
+            <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="grid" title="Grid"><i class="fa fa-th-large"></i></a></li>
+            <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="listview"  title="List"><i class="fa fa-bars"></i></a></li>
+            <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-layout="project"  title="Project"><i class="fa fa-bank"></i></a></li>
+          </ul>
+
+        </div>
+
+        <ul class="page">
+          <li class="page__prev"><a href="#">Prev</a></li>
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li class="page__next"><a href="#">Next</a></li>
+        </ul>
+
+        <div class=" tab-content active" id="search-list">
+          <div class="row list-box">
+            {% for item in data.storeInfo %}
+
+            <div class="thumb-item col-xs-6" data-code="{{ item.code }}" data-lng="{{ item.location.lng }}" data-lat="{{ item.location.lat }}" data-city="{{ item.city }}">
+              <div class="thumb-gallery " data-module="ThumbSlide">
+                <ul class="thumb-list slider-wrapper">
+                  <li class="carousel-item active"><img src="assets/images/dummy/{{ item.images[0] }}"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/{{ item.images[1] }}"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/{{ item.images[2] }}"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <span class="price-tag">{{ item.price }}</span>
+              </div>
+              <div class="thumb-info">
+                <h4><a href="javascript:void(0)" class="select-home">house code {{ item.code }}</a></h4>
+                <h3>
+                  <a href="{{ item.linkAp }}">a Pretty service appartment with bright bedroom</a>
+                </h3>
+                <div class="thumb-service">
+                  <span><i class="fa fa-map-marker"></i> District 7</span>
+                  <span><i class="fa fa-bed"></i> 1 bed </span>
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
                     <span><i class="fa fa-map-marker"></i> District 7</span>
                     <span><i class="fa fa-bed"></i> 1 bed </span>
                     <span><i class="fa fa-bath"></i> 1 bath</span>
-                    <div class="service-more">
-                      <span><i class="fa fa-map-marker"></i> District 7</span>
-                      <span><i class="fa fa-bed"></i> 1 bed </span>
-                      <span><i class="fa fa-bath"></i> 1 bath</span>
-                    </div>  
-
-                  </div>
+                  </div>            
                 </div>
               </div>
-
             </div>
-          </div>
-          
-          <ul class="page">
-            <li class="page__prev"><a href="#">Prev</a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li class="page__next"><a href="#">Next</a></li>
-          </ul>
+            {% endfor %}          
 
+          </div>
+
+          <div class="list-info">
+            <h3>Vinhomes Đồng Khởi</h3>
+            <p> Vinhomes Đồng Khởi được ví như Hòn Ngọc Viễn Đông giữa lòng Sài Gòn nằm trên những cung đường danh giá bậc nhất trung tâm thành phố, 3 mặt tiền đường Đồng Khởi – Lê Thánh Tôn và Lý Tự Trọng với tầm nhìn tuyệt đẹp bao quát toàn bộ trung tâm thành phố hướng ra sông Sài Gòn, Phố đi bộ Nguyễn Huệ, Nhà Thờ Đức Bà.</p>
+            <p>Hội tụ đầy đủ hệ thống dịch vụ tiêu chuẩn 5 sao và tiện ích đẳng cấp vượt trội, Vinhomes Đồng Khởi thiết lập một chuẩn mực khác biệt về phong cách sống, đồng thời cũng là khu căn hộ hiếm hoi đáp ứng được hoàn hảo các nhu cầu.</p>
+          </div>
+
+          <ul class="breadcrumb">
+            <li><a href="#"><i class="fa fa-home"></i></a>  </li>
+            <li> <a href="#">District 7</a></li>
+            <li>One Bedroom Service Apartment</li>
+          </ul>
         </div>
 
-        <div class="map-result show" data-module="MapResult">
-          <div id="map" style="height: 100vh"></div>
+        <div class="tab-content" id="search-project">
+          <h3 class="project-title">Starhill</h3>
+          <div class="row">
+            {% for item in data.storeInfo %}
 
-          <ul id="style-selector-control" class="map-control">
-            <li class="radio-wrapper">
-              <input type="radio" id="all" name="abc" >
-              <label for="all">all</label>
-            </li>
-            <li class="radio-wrapper">
-              <input type="radio" id="transit" name="abc" >
-              <label for="transit">Transit</label>
-            </li>
-            <li class="radio-wrapper">
-              <input type="radio" id="social-buiding" name="abc">
-              <label for="social-buiding">School, Park,..</label>
-            </li>
+            <div class="thumb-item col-xs-6" data-code="{{ item.code }}" data-lng="{{ item.location.lng }}" data-lat="{{ item.location.lat }}" data-city="{{ item.city }}">
+              <div class="thumb-gallery " data-module="ThumbSlide">
+                <ul class="thumb-list slider-wrapper">
+                  <li class="carousel-item active"><img src="assets/images/dummy/{{ item.images[0] }}"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/{{ item.images[1] }}"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/{{ item.images[2] }}"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <span class="price-tag">{{ item.price }}</span>
+              </div>
+              <div class="thumb-info">
+                <h4><a href="javascript:void(0)" class="select-home">house code {{ item.code }}</a></h4>
+                <h3>
+                  <a href="{{ item.linkAp }}">a Pretty service appartment with bright bedroom</a>
+                </h3>
+                <div class="thumb-service">
+                  <span><i class="fa fa-map-marker"></i> District 7</span>
+                  <span><i class="fa fa-bed"></i> 1 bed </span>
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>            
+                </div>
+              </div>
+            </div>
+            {% endfor %} 
+            <div class="thumb-item col-md-15">
+              <div class="thumb-gallery " data-module="ThumbSlide">
+                <ul class="thumb-list slider-wrapper">
+                  <li class="carousel-item active"><img src="assets/images/dummy/{{ item.images[0] }}"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/{{ item.images[1] }}"></li>
+                  <li class="carousel-item"><img src="assets/images/dummy/{{ item.images[2] }}"></li>
+                </ul>
+                <span class="love"><i class="fa fa-heart-o"></i></span>
+                <span class="price-tag">{{ item.price }}</span>
+              </div>
+              <div class="thumb-info">
+                <h4>house code {{ item.code }}</h4>
+                <h3>
+                  <a href="{{ item.linkAp }}">Pretty service appartment with bright bedroom</a>
+                </h3>
+                <div class="thumb-service">
+                  <span><i class="fa fa-map-marker"></i> District 7</span>
+                  <span><i class="fa fa-bed"></i> 1 bed </span>
+                  <span><i class="fa fa-bath"></i> 1 bath</span>
+                  <div class="service-more">
+                    <span><i class="fa fa-map-marker"></i> District 7</span>
+                    <span><i class="fa fa-bed"></i> 1 bed </span>
+                    <span><i class="fa fa-bath"></i> 1 bath</span>
+                  </div>  
+
+                </div>
+              </div>
+            </div>
+
           </div>
-        </ul>
-      </div>
-    </section>
+        </div>
 
-    <script>
-    window.storeInfo = [
-    {
-      "code": "mh021",
-      "name": "store name",
-      "city": "Ho Chi Minh",
-      "price": "$600",
-      "linkAp": "#",
-      "location": {
-        "lng": 106.67094305726,
-        "lat": 10.750648587535
-      },
-      "images": ["vinhomes-central-park.png","lexington-residence.png","vinhomes-central-park.png"]
-    },{
-      "code": "mh022",
-      "name": "store name 2",
-      "city": "Ho Chi Minh",
-      "price": "$700",
-      "linkAp": "#",
-      "location": {
-        "lng": 106.66009490812,
-        "lat": 10.74030300056
-      },
-      "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+        <ul class="page">
+          <li class="page__prev"><a href="#">Prev</a></li>
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li class="page__next"><a href="#">Next</a></li>
+        </ul>
+
+      </div>
+
+      <div class="map-result show" data-module="MapResult">
+        <div id="map" style="height: 100vh"></div>
+
+        <ul id="style-selector-control" class="map-control">
+          <li class="radio-wrapper radio-icon radio-icon--star">
+            <input type="radio" id="all" name="abc" checked="true" >
+            <label for="all">all</label>
+          </li>
+          <li class="radio-wrapper radio-icon radio-icon--bus">
+            <input type="radio" id="transit" name="abc" >
+            <label for="transit">Transit</label>
+          </li>
+          <li class="radio-wrapper radio-icon radio-icon--building">
+            <input type="radio" id="social-buiding" name="abc">
+            <label for="social-buiding">School, Park,..</label>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+  window.storeInfo = [
+  {
+    "code": "mh021",
+    "name": "store name",
+    "city": "Ho Chi Minh",
+    "price": "$600",
+    "linkAp": "#",
+    "location": {
+      "lng": 106.67094305726,
+      "lat": 10.750648587535
     },
-    {
-      "code": "mh023",
-      "name": "store name 3",
-      "city": "Ho Chi Minh",
-      "price": "$800",
-      "linkAp": "#",
-      "location": {
-        "lng": 106.68009490812,
-        "lat": 10.74030300056
-      },
-      "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
-    },{
-      "code": "mh024",
-      "name": "store name 4",
-      "city": "Ho Chi Minh",
-      "price": "$700",
-      "linkAp": "#",
-      "location": {
-        "lng": 106.60009490812,
-        "lat": 10.70030300056
-      },
-      "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+    "images": ["vinhomes-central-park.png","lexington-residence.png","vinhomes-central-park.png"]
+  },{
+    "code": "mh022",
+    "name": "store name 2",
+    "city": "Ho Chi Minh",
+    "price": "$700",
+    "linkAp": "#",
+    "location": {
+      "lng": 106.66009490812,
+      "lat": 10.74030300056
     },
-    {
-      "code": "mh025",
-      "name": "store name 5",
-      "city": "Ho Chi Minh",
-      "price": "$800",
-      "linkAp": "#",
-      "location": {
-        "lng": 106.62009490812,
-        "lat": 10.78030300056
-      },
-      "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+    "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+  },
+  {
+    "code": "mh023",
+    "name": "store name 3",
+    "city": "Ho Chi Minh",
+    "price": "$800",
+    "linkAp": "#",
+    "location": {
+      "lng": 106.68009490812,
+      "lat": 10.74030300056
     },
-    {
-      "code": "mh026",
-      "name": "store name 6",
-      "city": "Ho Chi Minh",
-      "price": "$800",
-      "linkAp": "#",
-      "location": {
-        "lng": 106.67009490812,
-        "lat": 10.79030300056
-      },
-      "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
-    }
-    ];
-    </script>
-  </main>
+    "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+  },{
+    "code": "mh024",
+    "name": "store name 4",
+    "city": "Ho Chi Minh",
+    "price": "$700",
+    "linkAp": "#",
+    "location": {
+      "lng": 106.60009490812,
+      "lat": 10.70030300056
+    },
+    "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+  },
+  {
+    "code": "mh025",
+    "name": "store name 5",
+    "city": "Ho Chi Minh",
+    "price": "$800",
+    "linkAp": "#",
+    "location": {
+      "lng": 106.62009490812,
+      "lat": 10.78030300056
+    },
+    "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+  },
+  {
+    "code": "mh026",
+    "name": "store name 6",
+    "city": "Ho Chi Minh",
+    "price": "$800",
+    "linkAp": "#",
+    "location": {
+      "lng": 106.67009490812,
+      "lat": 10.79030300056
+    },
+    "images": ["lexington-residence.png","vinhomes-central-park.png","lexington-residence.png"]
+  }
+  ];
+  </script>
+</main>
+<div class="hidden">
+  <div class="fa fa-glass "></div> 
+  <div class="fa fa-music "></div> 
+  <div class="fa fa-search"></div> 
+  <div class="fa fa-envelope-o"></div> 
+  <div class="fa fa-heart "></div> 
+  <div class="fa fa-star"></div> 
+  <div class="fa fa-star-o"></div> 
+  <div class="fa fa-user"></div> 
+  <div class="fa fa-film"></div> 
+  <div class="fa fa-th-large"></div> 
+  <div class="fa fa-th"></div> 
+  <div class="fa fa-th-list "></div> 
+  <div class="fa fa-check "></div> 
+  <div class="fa fa-remove"></div> 
+  <div class="fa fa-close "></div> 
+  <div class="fa fa-times "></div> 
+  <div class="fa fa-search-plus "></div> 
+  <div class="fa fa-search-minus"></div> 
+  <div class="fa fa-power-off "></div> 
+  <div class="fa fa-signal"></div> 
+  <div class="fa fa-gear"></div> 
+  <div class="fa fa-cog "></div> 
+  <div class="fa fa-trash-o "></div> 
+  <div class="fa fa-home"></div> 
+  <div class="fa fa-file-o"></div> 
+  <div class="fa fa-clock-o "></div> 
+  <div class="fa fa-road"></div> 
+  <div class="fa fa-download"></div> 
+  <div class="fa fa-arrow-circle-o-down "></div> 
+  <div class="fa fa-arrow-circle-o-up "></div> 
+  <div class="fa fa-inbox "></div> 
+  <div class="fa fa-play-circle-o "></div> 
+  <div class="fa fa-rotate-right"></div> 
+  <div class="fa fa-repeat"></div> 
+  <div class="fa fa-refresh "></div> 
+  <div class="fa fa-list-alt"></div> 
+  <div class="fa fa-lock"></div> 
+  <div class="fa fa-flag"></div> 
+  <div class="fa fa-headphones"></div> 
+  <div class="fa fa-volume-off"></div> 
+  <div class="fa fa-volume-down "></div> 
+  <div class="fa fa-volume-up "></div> 
+  <div class="fa fa-qrcode"></div> 
+  <div class="fa fa-barcode "></div> 
+  <div class="fa fa-tag "></div> 
+  <div class="fa fa-tags"></div> 
+  <div class="fa fa-book"></div> 
+  <div class="fa fa-bookmark"></div> 
+  <div class="fa fa-print "></div> 
+  <div class="fa fa-camera"></div> 
+  <div class="fa fa-font"></div> 
+  <div class="fa fa-bold"></div> 
+  <div class="fa fa-italic"></div> 
+  <div class="fa fa-text-height "></div> 
+  <div class="fa fa-text-width"></div> 
+  <div class="fa fa-align-left"></div> 
+  <div class="fa fa-align-center"></div> 
+  <div class="fa fa-align-right "></div> 
+  <div class="fa fa-align-justify "></div> 
+  <div class="fa fa-list"></div> 
+  <div class="fa fa-dedent"></div> 
+  <div class="fa fa-outdent "></div> 
+  <div class="fa fa-indent"></div> 
+  <div class="fa fa-video-camera"></div> 
+  <div class="fa fa-photo "></div> 
+  <div class="fa fa-image "></div> 
+  <div class="fa fa-picture-o "></div> 
+  <div class="fa fa-pencil"></div> 
+  <div class="fa fa-map-marker"></div> 
+  <div class="fa fa-adjust"></div> 
+  <div class="fa fa-tint"></div> 
+  <div class="fa fa-edit"></div> 
+  <div class="fa fa-pencil-square-o "></div> 
+  <div class="fa fa-share-square-o"></div> 
+  <div class="fa fa-check-square-o"></div> 
+  <div class="fa fa-arrows"></div> 
+  <div class="fa fa-step-backward "></div> 
+  <div class="fa fa-fast-backward "></div> 
+  <div class="fa fa-backward"></div> 
+  <div class="fa fa-play"></div> 
+  <div class="fa fa-pause "></div> 
+  <div class="fa fa-stop"></div> 
+  <div class="fa fa-forward "></div> 
+  <div class="fa fa-fast-forward"></div> 
+  <div class="fa fa-step-forward"></div> 
+  <div class="fa fa-eject "></div> 
+  <div class="fa fa-chevron-left"></div> 
+  <div class="fa fa-chevron-right "></div> 
+  <div class="fa fa-plus-circle "></div> 
+  <div class="fa fa-minus-circle"></div> 
+  <div class="fa fa-times-circle"></div> 
+  <div class="fa fa-check-circle"></div> 
+  <div class="fa fa-question-circle "></div> 
+  <div class="fa fa-info-circle "></div> 
+  <div class="fa fa-crosshairs"></div> 
+  <div class="fa fa-times-circle-o"></div> 
+  <div class="fa fa-check-circle-o"></div> 
+  <div class="fa fa-ban "></div> 
+  <div class="fa fa-arrow-left"></div> 
+  <div class="fa fa-arrow-right "></div> 
+  <div class="fa fa-arrow-up"></div> 
+  <div class="fa fa-arrow-down"></div> 
+  <div class="fa fa-mail-forward"></div> 
+  <div class="fa fa-share "></div> 
+  <div class="fa fa-expand"></div> 
+  <div class="fa fa-compress"></div> 
+  <div class="fa fa-plus"></div> 
+  <div class="fa fa-minus "></div> 
+  <div class="fa fa-asterisk"></div> 
+  <div class="fa fa-exclamation-circle"></div> 
+  <div class="fa fa-gift"></div> 
+  <div class="fa fa-leaf"></div> 
+  <div class="fa fa-fire"></div> 
+  <div class="fa fa-eye "></div> 
+  <div class="fa fa-eye-slash "></div> 
+  <div class="fa fa-warning "></div> 
+  <div class="fa fa-exclamation-triangle"></div> 
+  <div class="fa fa-plane "></div> 
+  <div class="fa fa-calendar"></div> 
+  <div class="fa fa-random"></div> 
+  <div class="fa fa-comment "></div> 
+  <div class="fa fa-magnet"></div> 
+  <div class="fa fa-chevron-up"></div> 
+  <div class="fa fa-chevron-down"></div> 
+  <div class="fa fa-retweet "></div> 
+  <div class="fa fa-shopping-cart "></div> 
+  <div class="fa fa-folder"></div> 
+  <div class="fa fa-folder-open "></div> 
+  <div class="fa fa-arrows-v"></div> 
+  <div class="fa fa-arrows-h"></div> 
+  <div class="fa fa-bar-chart-o "></div> 
+  <div class="fa fa-bar-chart "></div> 
+  <div class="fa fa-twitter-square"></div> 
+  <div class="fa fa-facebook-square "></div> 
+  <div class="fa fa-camera-retro"></div> 
+  <div class="fa fa-key "></div> 
+  <div class="fa fa-gears "></div> 
+  <div class="fa fa-cogs"></div> 
+  <div class="fa fa-comments"></div> 
+  <div class="fa fa-thumbs-o-up "></div> 
+  <div class="fa fa-thumbs-o-down "></div> 
+  <div class="fa fa-star-half "></div> 
+  <div class="fa fa-heart-o "></div> 
+  <div class="fa fa-sign-out"></div> 
+  <div class="fa fa-linkedin-square "></div> 
+  <div class="fa fa-thumb-tack"></div> 
+  <div class="fa fa-external-link "></div> 
+  <div class="fa fa-sign-in "></div> 
+  <div class="fa fa-trophy"></div> 
+  <div class="fa fa-github-square "></div> 
+  <div class="fa fa-upload"></div> 
+  <div class="fa fa-lemon-o "></div> 
+  <div class="fa fa-phone "></div> 
+  <div class="fa fa-square-o"></div> 
+  <div class="fa fa-bookmark-o"></div> 
+  <div class="fa fa-phone-square"></div> 
+  <div class="fa fa-twitter "></div> 
+  <div class="fa fa-facebook-f"></div> 
+  <div class="fa fa-facebook"></div> 
+  <div class="fa fa-github"></div> 
+  <div class="fa fa-unlock"></div> 
+  <div class="fa fa-credit-card "></div> 
+  <div class="fa fa-feed"></div> 
+  <div class="fa fa-rss "></div> 
+  <div class="fa fa-hdd-o "></div> 
+  <div class="fa fa-bullhorn"></div> 
+  <div class="fa fa-bell"></div> 
+  <div class="fa fa-certificate "></div> 
+  <div class="fa fa-hand-o-right"></div> 
+  <div class="fa fa-hand-o-left "></div> 
+  <div class="fa fa-hand-o-up "></div> 
+  <div class="fa fa-hand-o-down "></div> 
+  <div class="fa fa-arrow-circle-left "></div> 
+  <div class="fa fa-arrow-circle-right"></div> 
+  <div class="fa fa-arrow-circle-up "></div> 
+  <div class="fa fa-arrow-circle-down "></div> 
+  <div class="fa fa-globe "></div> 
+  <div class="fa fa-wrench"></div> 
+  <div class="fa fa-tasks "></div> 
+  <div class="fa fa-filter"></div> 
+  <div class="fa fa-briefcase "></div> 
+  <div class="fa fa-arrows-alt"></div> 
+  <div class="fa fa-group "></div> 
+  <div class="fa fa-users "></div> 
+  <div class="fa fa-chain "></div> 
+  <div class="fa fa-link"></div> 
+  <div class="fa fa-cloud "></div> 
+  <div class="fa fa-flask "></div> 
+  <div class="fa fa-cut "></div> 
+  <div class="fa fa-scissors"></div> 
+  <div class="fa fa-copy"></div> 
+  <div class="fa fa-files-o "></div> 
+  <div class="fa fa-paperclip "></div> 
+  <div class="fa fa-save"></div> 
+  <div class="fa fa-floppy-o"></div> 
+  <div class="fa fa-square"></div> 
+  <div class="fa fa-navicon "></div> 
+  <div class="fa fa-reorder "></div> 
+  <div class="fa fa-bars"></div> 
+  <div class="fa fa-list-ul "></div> 
+  <div class="fa fa-list-ol "></div> 
+  <div class="fa fa-strikethrough "></div> 
+  <div class="fa fa-underline "></div> 
+  <div class="fa fa-table "></div> 
+  <div class="fa fa-magic "></div> 
+  <div class="fa fa-truck "></div> 
+  <div class="fa fa-pinterest "></div> 
+  <div class="fa fa-pinterest-square"></div> 
+  <div class="fa fa-google-plus-square"></div> 
+  <div class="fa fa-google-plus "></div> 
+  <div class="fa fa-money "></div> 
+  <div class="fa fa-caret-down"></div> 
+  <div class="fa fa-caret-up"></div> 
+  <div class="fa fa-caret-left"></div> 
+  <div class="fa fa-caret-right "></div> 
+  <div class="fa fa-columns "></div> 
+  <div class="fa fa-unsorted"></div> 
+  <div class="fa fa-sort"></div> 
+  <div class="fa fa-sort-down "></div> 
+  <div class="fa fa-sort-desc "></div> 
+  <div class="fa fa-sort-up "></div> 
+  <div class="fa fa-sort-asc"></div> 
+  <div class="fa fa-envelope"></div> 
+  <div class="fa fa-linkedin"></div> 
+  <div class="fa fa-rotate-left "></div> 
+  <div class="fa fa-undo"></div> 
+  <div class="fa fa-legal "></div> 
+  <div class="fa fa-gavel "></div> 
+  <div class="fa fa-dashboard "></div> 
+  <div class="fa fa-tachometer"></div> 
+  <div class="fa fa-comment-o "></div> 
+  <div class="fa fa-comments-o"></div> 
+  <div class="fa fa-flash "></div> 
+  <div class="fa fa-bolt"></div> 
+  <div class="fa fa-sitemap "></div> 
+  <div class="fa fa-umbrella"></div> 
+  <div class="fa fa-paste "></div> 
+  <div class="fa fa-clipboard "></div> 
+  <div class="fa fa-lightbulb-o "></div> 
+  <div class="fa fa-exchange"></div> 
+  <div class="fa fa-cloud-download"></div> 
+  <div class="fa fa-cloud-upload"></div> 
+  <div class="fa fa-user-md "></div> 
+  <div class="fa fa-stethoscope "></div> 
+  <div class="fa fa-suitcase"></div> 
+  <div class="fa fa-bell-o"></div> 
+  <div class="fa fa-coffee"></div> 
+  <div class="fa fa-cutlery "></div> 
+  <div class="fa fa-file-text-o "></div> 
+  <div class="fa fa-building-o"></div> 
+  <div class="fa fa-hospital-o"></div> 
+  <div class="fa fa-ambulance "></div> 
+  <div class="fa fa-medkit"></div> 
+  <div class="fa fa-fighter-jet "></div> 
+  <div class="fa fa-beer"></div> 
+  <div class="fa fa-h-square"></div> 
+  <div class="fa fa-plus-square "></div> 
+  <div class="fa fa-angle-double-left "></div> 
+  <div class="fa fa-angle-double-right"></div> 
+  <div class="fa fa-angle-double-up "></div> 
+  <div class="fa fa-angle-double-down "></div> 
+  <div class="fa fa-angle-left"></div> 
+  <div class="fa fa-angle-right "></div> 
+  <div class="fa fa-angle-up"></div> 
+  <div class="fa fa-angle-down"></div> 
+  <div class="fa fa-desktop "></div> 
+  <div class="fa fa-laptop"></div> 
+  <div class="fa fa-tablet"></div> 
+  <div class="fa fa-mobile-phone"></div> 
+  <div class="fa fa-mobile"></div> 
+  <div class="fa fa-circle-o"></div> 
+  <div class="fa fa-quote-left"></div> 
+  <div class="fa fa-quote-right "></div> 
+  <div class="fa fa-spinner "></div> 
+  <div class="fa fa-circle"></div> 
+  <div class="fa fa-mail-reply"></div> 
+  <div class="fa fa-reply "></div> 
+  <div class="fa fa-github-alt"></div> 
+  <div class="fa fa-folder-o"></div> 
+  <div class="fa fa-folder-open-o "></div> 
+  <div class="fa fa-smile-o "></div> 
+  <div class="fa fa-frown-o "></div> 
+  <div class="fa fa-meh-o "></div> 
+  <div class="fa fa-gamepad "></div> 
+  <div class="fa fa-keyboard-o"></div> 
+  <div class="fa fa-flag-o"></div> 
+  <div class="fa fa-flag-checkered"></div> 
+  <div class="fa fa-terminal"></div> 
+  <div class="fa fa-code"></div> 
+  <div class="fa fa-mail-reply-all"></div> 
+  <div class="fa fa-reply-all "></div> 
+  <div class="fa fa-star-half-empty "></div> 
+  <div class="fa fa-star-half-full"></div> 
+  <div class="fa fa-star-half-o "></div> 
+  <div class="fa fa-location-arrow"></div> 
+  <div class="fa fa-crop"></div> 
+  <div class="fa fa-code-fork "></div> 
+  <div class="fa fa-unlink"></div> 
+  <div class="fa fa-chain-broken"></div> 
+  <div class="fa fa-question"></div> 
+  <div class="fa fa-info"></div> 
+  <div class="fa fa-exclamation "></div> 
+  <div class="fa fa-superscript "></div> 
+  <div class="fa fa-subscript "></div> 
+  <div class="fa fa-eraser"></div> 
+  <div class="fa fa-puzzle-piece"></div> 
+  <div class="fa fa-microphone"></div> 
+  <div class="fa fa-microphone-slash"></div> 
+  <div class="fa fa-shield"></div> 
+  <div class="fa fa-calendar-o"></div> 
+  <div class="fa fa-fire-extinguisher "></div> 
+  <div class="fa fa-rocket"></div> 
+  <div class="fa fa-maxcdn"></div> 
+  <div class="fa fa-chevron-circle-left "></div> 
+  <div class="fa fa-chevron-circle-right"></div> 
+  <div class="fa fa-chevron-circle-up "></div> 
+  <div class="fa fa-chevron-circle-down "></div> 
+  <div class="fa fa-html5 "></div> 
+  <div class="fa fa-css3"></div> 
+  <div class="fa fa-anchor"></div> 
+  <div class="fa fa-unlock-alt"></div> 
+  <div class="fa fa-bullseye"></div> 
+  <div class="fa fa-ellipsis-h"></div> 
+  <div class="fa fa-ellipsis-v"></div> 
+  <div class="fa fa-rss-square"></div> 
+  <div class="fa fa-play-circle "></div> 
+  <div class="fa fa-ticket"></div> 
+  <div class="fa fa-minus-square"></div> 
+  <div class="fa fa-minus-square-o"></div> 
+  <div class="fa fa-level-up"></div> 
+  <div class="fa fa-level-down"></div> 
+  <div class="fa fa-check-square"></div> 
+  <div class="fa fa-pencil-square "></div> 
+  <div class="fa fa-external-link-square"></div> 
+  <div class="fa fa-share-square"></div> 
+  <div class="fa fa-compass "></div> 
+  <div class="fa fa-toggle-down "></div> 
+  <div class="fa fa-caret-square-o-down "></div> 
+  <div class="fa fa-toggle-up "></div> 
+  <div class="fa fa-caret-square-o-up "></div> 
+  <div class="fa fa-toggle-right"></div> 
+  <div class="fa fa-caret-square-o-right"></div> 
+  <div class="fa fa-euro"></div> 
+  <div class="fa fa-eur "></div> 
+  <div class="fa fa-gbp "></div> 
+  <div class="fa fa-dollar"></div> 
+  <div class="fa fa-usd "></div> 
+  <div class="fa fa-rupee "></div> 
+  <div class="fa fa-inr "></div> 
+  <div class="fa fa-cny "></div> 
+  <div class="fa fa-rmb "></div> 
+  <div class="fa fa-yen "></div> 
+  <div class="fa fa-jpy "></div> 
+  <div class="fa fa-ruble "></div> 
+  <div class="fa fa-rouble"></div> 
+  <div class="fa fa-rub "></div> 
+  <div class="fa fa-won "></div> 
+  <div class="fa fa-krw "></div> 
+  <div class="fa fa-bitcoin "></div> 
+  <div class="fa fa-btc "></div> 
+  <div class="fa fa-file"></div> 
+  <div class="fa fa-file-text "></div> 
+  <div class="fa fa-sort-alpha-asc"></div> 
+  <div class="fa fa-sort-alpha-desc "></div> 
+  <div class="fa fa-sort-amount-asc "></div> 
+  <div class="fa fa-sort-amount-desc"></div> 
+  <div class="fa fa-sort-numeric-asc"></div> 
+  <div class="fa fa-sort-numeric-desc "></div> 
+  <div class="fa fa-thumbs-up "></div> 
+  <div class="fa fa-thumbs-down "></div> 
+  <div class="fa fa-youtube-square"></div> 
+  <div class="fa fa-youtube "></div> 
+  <div class="fa fa-xing"></div> 
+  <div class="fa fa-xing-square "></div> 
+  <div class="fa fa-youtube-play"></div> 
+  <div class="fa fa-dropbox "></div> 
+  <div class="fa fa-stack-overflow"></div> 
+  <div class="fa fa-instagram "></div> 
+  <div class="fa fa-flickr"></div> 
+  <div class="fa fa-adn "></div> 
+  <div class="fa fa-bitbucket "></div> 
+  <div class="fa fa-bitbucket-square"></div> 
+  <div class="fa fa-tumblr"></div> 
+  <div class="fa fa-tumblr-square "></div> 
+  <div class="fa fa-long-arrow-down "></div> 
+  <div class="fa fa-long-arrow-up "></div> 
+  <div class="fa fa-long-arrow-left "></div> 
+  <div class="fa fa-long-arrow-right"></div> 
+  <div class="fa fa-apple "></div> 
+  <div class="fa fa-windows "></div> 
+  <div class="fa fa-android "></div> 
+  <div class="fa fa-linux "></div> 
+  <div class="fa fa-dribbble"></div> 
+  <div class="fa fa-skype "></div> 
+  <div class="fa fa-foursquare"></div> 
+  <div class="fa fa-trello"></div> 
+  <div class="fa fa-female"></div> 
+  <div class="fa fa-male"></div> 
+  <div class="fa fa-gittip"></div> 
+  <div class="fa fa-gratipay"></div> 
+  <div class="fa fa-sun-o "></div> 
+  <div class="fa fa-moon-o"></div> 
+  <div class="fa fa-archive "></div> 
+  <div class="fa fa-bug "></div> 
+  <div class="fa fa-vk"></div> 
+  <div class="fa fa-weibo "></div> 
+  <div class="fa fa-renren"></div> 
+  <div class="fa fa-pagelines "></div> 
+  <div class="fa fa-stack-exchange"></div> 
+  <div class="fa fa-arrow-circle-o-right"></div> 
+  <div class="fa fa-arrow-circle-o-left "></div> 
+  <div class="fa fa-toggle-left "></div> 
+  <div class="fa fa-caret-square-o-left "></div> 
+  <div class="fa fa-dot-circle-o"></div> 
+  <div class="fa fa-wheelchair"></div> 
+  <div class="fa fa-vimeo-square"></div> 
+  <div class="fa fa-turkish-lira"></div> 
+  <div class="fa fa-try "></div> 
+  <div class="fa fa-plus-square-o "></div> 
+  <div class="fa fa-space-shuttle "></div> 
+  <div class="fa fa-slack "></div> 
+  <div class="fa fa-envelope-square "></div> 
+  <div class="fa fa-wordpress "></div> 
+  <div class="fa fa-openid"></div> 
+  <div class="fa fa-institution "></div> 
+  <div class="fa fa-bank"></div> 
+  <div class="fa fa-university"></div> 
+  <div class="fa fa-mortar-board"></div> 
+  <div class="fa fa-graduation-cap"></div> 
+  <div class="fa fa-yahoo "></div> 
+  <div class="fa fa-google"></div> 
+  <div class="fa fa-reddit"></div> 
+  <div class="fa fa-reddit-square "></div> 
+  <div class="fa fa-stumbleupon-circle"></div> 
+  <div class="fa fa-stumbleupon "></div> 
+  <div class="fa fa-delicious "></div> 
+  <div class="fa fa-digg"></div> 
+  <div class="fa fa-pied-piper-pp "></div> 
+  <div class="fa fa-pied-piper-alt"></div> 
+  <div class="fa fa-drupal"></div> 
+  <div class="fa fa-joomla"></div> 
+  <div class="fa fa-language"></div> 
+  <div class="fa fa-fax "></div> 
+  <div class="fa fa-building"></div> 
+  <div class="fa fa-child "></div> 
+  <div class="fa fa-paw "></div> 
+  <div class="fa fa-spoon "></div> 
+  <div class="fa fa-cube"></div> 
+  <div class="fa fa-cubes "></div> 
+  <div class="fa fa-behance "></div> 
+  <div class="fa fa-behance-square"></div> 
+  <div class="fa fa-steam "></div> 
+  <div class="fa fa-steam-square"></div> 
+  <div class="fa fa-recycle "></div> 
+  <div class="fa fa-automobile"></div> 
+  <div class="fa fa-car "></div> 
+  <div class="fa fa-cab "></div> 
+  <div class="fa fa-taxi"></div> 
+  <div class="fa fa-tree"></div> 
+  <div class="fa fa-spotify "></div> 
+  <div class="fa fa-deviantart"></div> 
+  <div class="fa fa-soundcloud"></div> 
+  <div class="fa fa-database"></div> 
+  <div class="fa fa-file-pdf-o"></div> 
+  <div class="fa fa-file-word-o "></div> 
+  <div class="fa fa-file-excel-o"></div> 
+  <div class="fa fa-file-powerpoint-o "></div> 
+  <div class="fa fa-file-photo-o"></div> 
+  <div class="fa fa-file-picture-o"></div> 
+  <div class="fa fa-file-image-o"></div> 
+  <div class="fa fa-file-zip-o"></div> 
+  <div class="fa fa-file-archive-o"></div> 
+  <div class="fa fa-file-sound-o"></div> 
+  <div class="fa fa-file-audio-o"></div> 
+  <div class="fa fa-file-movie-o"></div> 
+  <div class="fa fa-file-video-o"></div> 
+  <div class="fa fa-file-code-o "></div> 
+  <div class="fa fa-vine"></div> 
+  <div class="fa fa-codepen "></div> 
+  <div class="fa fa-jsfiddle"></div> 
+  <div class="fa fa-life-bouy "></div> 
+  <div class="fa fa-life-buoy "></div> 
+  <div class="fa fa-life-saver"></div> 
+  <div class="fa fa-support "></div> 
+  <div class="fa fa-life-ring "></div> 
+  <div class="fa fa-circle-o-notch"></div> 
+  <div class="fa fa-ra"></div> 
+  <div class="fa fa-resistance"></div> 
+  <div class="fa fa-rebel "></div> 
+  <div class="fa fa-ge"></div> 
+  <div class="fa fa-empire"></div> 
+  <div class="fa fa-git-square"></div> 
+  <div class="fa fa-git "></div> 
+  <div class="fa fa-y-combinator-square "></div> 
+  <div class="fa fa-yc-square "></div> 
+  <div class="fa fa-hacker-news "></div> 
+  <div class="fa fa-tencent-weibo "></div> 
+  <div class="fa fa-qq"></div> 
+  <div class="fa fa-wechat"></div> 
+  <div class="fa fa-weixin"></div> 
+  <div class="fa fa-send"></div> 
+  <div class="fa fa-paper-plane "></div> 
+  <div class="fa fa-send-o"></div> 
+  <div class="fa fa-paper-plane-o "></div> 
+  <div class="fa fa-history "></div> 
+  <div class="fa fa-circle-thin "></div> 
+  <div class="fa fa-header"></div> 
+  <div class="fa fa-paragraph "></div> 
+  <div class="fa fa-sliders "></div> 
+  <div class="fa fa-share-alt "></div> 
+  <div class="fa fa-share-alt-square"></div> 
+  <div class="fa fa-bomb"></div> 
+  <div class="fa fa-soccer-ball-o "></div> 
+  <div class="fa fa-futbol-o"></div> 
+  <div class="fa fa-tty "></div> 
+  <div class="fa fa-binoculars"></div> 
+  <div class="fa fa-plug"></div> 
+  <div class="fa fa-slideshare"></div> 
+  <div class="fa fa-twitch"></div> 
+  <div class="fa fa-yelp"></div> 
+  <div class="fa fa-newspaper-o "></div> 
+  <div class="fa fa-wifi"></div> 
+  <div class="fa fa-calculator"></div> 
+  <div class="fa fa-paypal"></div> 
+  <div class="fa fa-google-wallet "></div> 
+  <div class="fa fa-cc-visa "></div> 
+  <div class="fa fa-cc-mastercard "></div> 
+  <div class="fa fa-cc-discover "></div> 
+  <div class="fa fa-cc-amex "></div> 
+  <div class="fa fa-cc-paypal "></div> 
+  <div class="fa fa-cc-stripe "></div> 
+  <div class="fa fa-bell-slash"></div> 
+  <div class="fa fa-bell-slash-o"></div> 
+  <div class="fa fa-trash "></div> 
+  <div class="fa fa-copyright "></div> 
+  <div class="fa fa-at"></div> 
+  <div class="fa fa-eyedropper"></div> 
+  <div class="fa fa-paint-brush "></div> 
+  <div class="fa fa-birthday-cake "></div> 
+  <div class="fa fa-area-chart"></div> 
+  <div class="fa fa-pie-chart "></div> 
+  <div class="fa fa-line-chart"></div> 
+  <div class="fa fa-lastfm"></div> 
+  <div class="fa fa-lastfm-square "></div> 
+  <div class="fa fa-toggle-off"></div> 
+  <div class="fa fa-toggle-on "></div> 
+  <div class="fa fa-bicycle "></div> 
+  <div class="fa fa-bus "></div> 
+  <div class="fa fa-ioxhost "></div> 
+  <div class="fa fa-angellist "></div> 
+  <div class="fa fa-cc"></div> 
+  <div class="fa fa-shekel"></div> 
+  <div class="fa fa-sheqel"></div> 
+  <div class="fa fa-ils "></div> 
+  <div class="fa fa-meanpath"></div> 
+  <div class="fa fa-buysellads"></div> 
+  <div class="fa fa-connectdevelop"></div> 
+  <div class="fa fa-dashcube"></div> 
+  <div class="fa fa-forumbee"></div> 
+  <div class="fa fa-leanpub "></div> 
+  <div class="fa fa-sellsy"></div> 
+  <div class="fa fa-shirtsinbulk"></div> 
+  <div class="fa fa-simplybuilt "></div> 
+  <div class="fa fa-skyatlas"></div> 
+  <div class="fa fa-cart-plus "></div> 
+  <div class="fa fa-cart-arrow-down "></div> 
+  <div class="fa fa-diamond "></div> 
+  <div class="fa fa-ship"></div> 
+  <div class="fa fa-user-secret "></div> 
+  <div class="fa fa-motorcycle"></div> 
+  <div class="fa fa-street-view "></div> 
+  <div class="fa fa-heartbeat "></div> 
+  <div class="fa fa-venus "></div> 
+  <div class="fa fa-mars"></div> 
+  <div class="fa fa-mercury "></div> 
+  <div class="fa fa-intersex"></div> 
+  <div class="fa fa-transgender "></div> 
+  <div class="fa fa-transgender-alt "></div> 
+  <div class="fa fa-venus-double"></div> 
+  <div class="fa fa-mars-double "></div> 
+  <div class="fa fa-venus-mars"></div> 
+  <div class="fa fa-mars-stroke "></div> 
+  <div class="fa fa-mars-stroke-v "></div> 
+  <div class="fa fa-mars-stroke-h "></div> 
+  <div class="fa fa-neuter"></div> 
+  <div class="fa fa-genderless"></div> 
+  <div class="fa fa-facebook-official "></div> 
+  <div class="fa fa-pinterest-p "></div> 
+  <div class="fa fa-whatsapp"></div> 
+  <div class="fa fa-server"></div> 
+  <div class="fa fa-user-plus "></div> 
+  <div class="fa fa-user-times"></div> 
+  <div class="fa fa-hotel "></div> 
+  <div class="fa fa-bed "></div> 
+  <div class="fa fa-viacoin "></div> 
+  <div class="fa fa-train "></div> 
+  <div class="fa fa-subway"></div> 
+  <div class="fa fa-medium"></div> 
+  <div class="fa fa-yc"></div> 
+  <div class="fa fa-y-combinator"></div> 
+  <div class="fa fa-optin-monster "></div> 
+  <div class="fa fa-opencart"></div> 
+  <div class="fa fa-expeditedssl"></div> 
+  <div class="fa fa-battery-4 "></div> 
+  <div class="fa fa-battery "></div> 
+  <div class="fa fa-battery-full"></div> 
+  <div class="fa fa-battery-3 "></div> 
+  <div class="fa fa-battery-three-quarters"></div> 
+  <div class="fa fa-battery-2 "></div> 
+  <div class="fa fa-battery-half"></div> 
+  <div class="fa fa-battery-1 "></div> 
+  <div class="fa fa-battery-quarter "></div> 
+  <div class="fa fa-battery-0 "></div> 
+  <div class="fa fa-battery-empty "></div> 
+  <div class="fa fa-mouse-pointer "></div> 
+  <div class="fa fa-i-cursor"></div> 
+  <div class="fa fa-object-group"></div> 
+  <div class="fa fa-object-ungroup"></div> 
+  <div class="fa fa-sticky-note "></div> 
+  <div class="fa fa-sticky-note-o "></div> 
+  <div class="fa fa-cc-jcb"></div> 
+  <div class="fa fa-cc-diners-club"></div> 
+  <div class="fa fa-clone "></div> 
+  <div class="fa fa-balance-scale "></div> 
+  <div class="fa fa-hourglass-o "></div> 
+  <div class="fa fa-hourglass-1 "></div> 
+  <div class="fa fa-hourglass-start "></div> 
+  <div class="fa fa-hourglass-2 "></div> 
+  <div class="fa fa-hourglass-half"></div> 
+  <div class="fa fa-hourglass-3 "></div> 
+  <div class="fa fa-hourglass-end "></div> 
+  <div class="fa fa-hourglass "></div> 
+  <div class="fa fa-hand-grab-o "></div> 
+  <div class="fa fa-hand-rock-o "></div> 
+  <div class="fa fa-hand-stop-o "></div> 
+  <div class="fa fa-hand-paper-o"></div> 
+  <div class="fa fa-hand-scissors-o "></div> 
+  <div class="fa fa-hand-lizard-o "></div> 
+  <div class="fa fa-hand-spock-o"></div> 
+  <div class="fa fa-hand-pointer-o"></div> 
+  <div class="fa fa-hand-peace-o"></div> 
+  <div class="fa fa-trademark "></div> 
+  <div class="fa fa-registered"></div> 
+  <div class="fa fa-creative-commons"></div> 
+  <div class="fa fa-gg"></div> 
+  <div class="fa fa-gg-circle "></div> 
+  <div class="fa fa-tripadvisor "></div> 
+  <div class="fa fa-odnoklassniki "></div> 
+  <div class="fa fa-odnoklassniki-square"></div> 
+  <div class="fa fa-get-pocket"></div> 
+  <div class="fa fa-wikipedia-w "></div> 
+  <div class="fa fa-safari"></div> 
+  <div class="fa fa-chrome"></div> 
+  <div class="fa fa-firefox "></div> 
+  <div class="fa fa-opera "></div> 
+  <div class="fa fa-internet-explorer "></div> 
+  <div class="fa fa-tv"></div> 
+  <div class="fa fa-television"></div> 
+  <div class="fa fa-contao"></div> 
+  <div class="fa fa-500px "></div> 
+  <div class="fa fa-amazon"></div> 
+  <div class="fa fa-calendar-plus-o "></div> 
+  <div class="fa fa-calendar-minus-o"></div> 
+  <div class="fa fa-calendar-times-o"></div> 
+  <div class="fa fa-calendar-check-o"></div> 
+  <div class="fa fa-industry"></div> 
+  <div class="fa fa-map-pin "></div> 
+  <div class="fa fa-map-signs "></div> 
+  <div class="fa fa-map-o "></div> 
+  <div class="fa fa-map "></div> 
+  <div class="fa fa-commenting"></div> 
+  <div class="fa fa-commenting-o"></div> 
+  <div class="fa fa-houzz "></div> 
+  <div class="fa fa-vimeo "></div> 
+  <div class="fa fa-black-tie "></div> 
+  <div class="fa fa-fonticons "></div> 
+  <div class="fa fa-reddit-alien"></div> 
+  <div class="fa fa-edge"></div> 
+  <div class="fa fa-credit-card-alt "></div> 
+  <div class="fa fa-codiepie"></div> 
+  <div class="fa fa-modx"></div> 
+  <div class="fa fa-fort-awesome"></div> 
+  <div class="fa fa-usb "></div> 
+  <div class="fa fa-product-hunt"></div> 
+  <div class="fa fa-mixcloud"></div> 
+  <div class="fa fa-scribd"></div> 
+  <div class="fa fa-pause-circle"></div> 
+  <div class="fa fa-pause-circle-o"></div> 
+  <div class="fa fa-stop-circle "></div> 
+  <div class="fa fa-stop-circle-o "></div> 
+  <div class="fa fa-shopping-bag"></div> 
+  <div class="fa fa-shopping-basket "></div> 
+  <div class="fa fa-hashtag "></div> 
+  <div class="fa fa-bluetooth "></div> 
+  <div class="fa fa-bluetooth-b "></div> 
+  <div class="fa fa-percent "></div> 
+  <div class="fa fa-gitlab"></div> 
+  <div class="fa fa-wpbeginner"></div> 
+  <div class="fa fa-wpforms "></div> 
+  <div class="fa fa-envira"></div> 
+  <div class="fa fa-universal-access"></div> 
+  <div class="fa fa-wheelchair-alt"></div> 
+  <div class="fa fa-question-circle-o "></div> 
+  <div class="fa fa-blind "></div> 
+  <div class="fa fa-audio-description "></div> 
+  <div class="fa fa-volume-control-phone"></div> 
+  <div class="fa fa-braille "></div> 
+  <div class="fa fa-assistive-listening-systems "></div> 
+  <div class="fa fa-asl-interpreting"></div> 
+  <div class="fa fa-american-sign-language-interpreting "></div> 
+  <div class="fa fa-deafness"></div> 
+  <div class="fa fa-hard-of-hearing "></div> 
+  <div class="fa fa-deaf"></div> 
+  <div class="fa fa-glide "></div> 
+  <div class="fa fa-glide-g "></div> 
+  <div class="fa fa-signing "></div> 
+  <div class="fa fa-sign-language "></div> 
+  <div class="fa fa-low-vision"></div> 
+  <div class="fa fa-viadeo"></div> 
+  <div class="fa fa-viadeo-square "></div> 
+  <div class="fa fa-snapchat"></div> 
+  <div class="fa fa-snapchat-ghost"></div> 
+  <div class="fa fa-snapchat-square "></div> 
+  <div class="fa fa-pied-piper"></div> 
+  <div class="fa fa-first-order "></div> 
+  <div class="fa fa-yoast "></div> 
+  <div class="fa fa-themeisle "></div> 
+  <div class="fa fa-google-plus-circle"></div> 
+  <div class="fa fa-google-plus-official"></div> 
+  <div class="fa fa-fa"></div> 
+  <div class="fa fa-font-awesome"></div> 
+  <div class="fa fa-handshake-o "></div> 
+  <div class="fa fa-envelope-open "></div> 
+  <div class="fa fa-envelope-open-o "></div> 
+  <div class="fa fa-linode"></div> 
+  <div class="fa fa-address-book"></div> 
+  <div class="fa fa-address-book-o"></div> 
+  <div class="fa fa-vcard "></div> 
+  <div class="fa fa-address-card"></div> 
+  <div class="fa fa-vcard-o "></div> 
+  <div class="fa fa-address-card-o"></div> 
+  <div class="fa fa-user-circle "></div> 
+  <div class="fa fa-user-circle-o "></div> 
+  <div class="fa fa-user-o"></div> 
+  <div class="fa fa-id-badge"></div> 
+  <div class="fa fa-drivers-license "></div> 
+  <div class="fa fa-id-card "></div> 
+  <div class="fa fa-drivers-license-o "></div> 
+  <div class="fa fa-id-card-o "></div> 
+  <div class="fa fa-quora "></div> 
+  <div class="fa fa-free-code-camp"></div> 
+  <div class="fa fa-telegram"></div> 
+  <div class="fa fa-thermometer-4 "></div> 
+  <div class="fa fa-thermometer "></div> 
+  <div class="fa fa-thermometer-full"></div> 
+  <div class="fa fa-thermometer-3 "></div> 
+  <div class="fa fa-thermometer-three-quarters"></div> 
+  <div class="fa fa-thermometer-2 "></div> 
+  <div class="fa fa-thermometer-half"></div> 
+  <div class="fa fa-thermometer-1 "></div> 
+  <div class="fa fa-thermometer-quarter "></div> 
+  <div class="fa fa-thermometer-0 "></div> 
+  <div class="fa fa-thermometer-empty "></div> 
+  <div class="fa fa-shower"></div> 
+  <div class="fa fa-bathtub "></div> 
+  <div class="fa fa-s15 "></div> 
+  <div class="fa fa-bath"></div> 
+  <div class="fa fa-podcast "></div> 
+  <div class="fa fa-window-maximize "></div> 
+  <div class="fa fa-window-minimize "></div> 
+  <div class="fa fa-window-restore"></div> 
+  <div class="fa fa-times-rectangle "></div> 
+  <div class="fa fa-window-close"></div> 
+  <div class="fa fa-times-rectangle-o "></div> 
+  <div class="fa fa-window-close-o"></div> 
+  <div class="fa fa-bandcamp"></div> 
+  <div class="fa fa-grav"></div> 
+  <div class="fa fa-etsy"></div> 
+  <div class="fa fa-imdb"></div> 
+  <div class="fa fa-ravelry "></div> 
+  <div class="fa fa-eercast "></div> 
+  <div class="fa fa-microchip "></div> 
+  <div class="fa fa-snowflake-o "></div> 
+  <div class="fa fa-superpowers "></div> 
+  <div class="fa fa-wpexplorer"></div> 
+  <div class="fa fa-meetup"></div> 
+</div>
 
 {% endblock %}
