@@ -1,15 +1,23 @@
 import $ from 'jquery';
 import slick from 'slick-carousel';
+import magnificPopup from 'magnific-popup';
 import 'slick-carousel/slick/slick.css';
+import 'magnific-popup/dist/magnific-popup.css';
 
 export default class PopupGalleryHouse {
   constructor(el) {
+    let popup = this; 
     $('.gallery-house a').each(function (index, value) {
       let html = $(this).html();
       let warpperImg;
       warpperImg = document.createElement('li');
       warpperImg.innerHTML = html;
       $(".gallery__for, .gallery__nav").append(warpperImg);
+    });
+
+    $('[data-popup]').on('click',function(e){
+      let data = $(this).data('popup');
+      popup.showPopup(data);
     });
 
     let title = $('.list-content').find('h2').html();
@@ -41,6 +49,14 @@ export default class PopupGalleryHouse {
       $(".gallery__slide").find('.counter-slide').html((currentSlide+1) + '/' + slick.slideCount);
     });
     $(el).find('.gallery__for').slick(forSlide);
+    $('.show-gallery').on('click',  function(e){
+      e.preventDefault();
+      popup.showGallery();
+    });
+
+    $('.close-popup, .mfp-close').on('click', function(e) {
+      $.magnificPopup.close();
+    });
 
 
     $(".gallery-house li").on('click', function(){
@@ -59,5 +75,53 @@ export default class PopupGalleryHouse {
     $('#galleryDetail').on('show.bs.modal', function (e) {
     });
   }
+
+  showPopup(popup) {
+    $.magnificPopup.open({
+      items: {
+        src: popup,
+        type: 'inline'
+      }
+    });
+  };
+  showGallery() {
+    $.magnificPopup.open({
+      items: {
+        src: "#galleryDetail",
+        type: 'inline'
+      },
+      callbacks: {
+        open: function() {
+          $(window).keydown(function(e){ 
+            if (e.keyCode == 37 ) {
+              $('.slick-prev').trigger('click');
+            }
+            if (e.keyCode == 39 ) {
+              $('.slick-next').trigger('click');
+            }
+
+          });
+        },
+        close: function() {
+        }
+      }
+    });
+  };
+
+  showAlert(title, content) {
+
+    $.magnificPopup.open({
+      items: {
+        src: "#popup-alert",
+        type: 'inline'
+      },
+      callbacks: {
+        open: function() {
+          $('.modal-title').html(title);
+          $('.modal-description').html(content);
+        }
+      }
+    });
+  };
 
 }

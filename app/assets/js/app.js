@@ -5,6 +5,7 @@ import '../css/app.scss';
 
 import '../../_data/app.json';
 import 'bootstrap/dist/js/bootstrap.min.js';
+
 const FastClick = require('fastclick');
 const moduleElements = document.querySelectorAll('[data-module]');
 

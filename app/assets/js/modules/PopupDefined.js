@@ -93,7 +93,13 @@ export default class PopupDefined {
           this.carouselItem  = ele.addEle('li', 'carousel-item');
         }
         this.imageThumb = ele.addEle('img', 'popup__image');
-        this.imageThumb.src = pathUrl + images[i];
+        if(images[i].indexOf('http') != -1){
+          this.imageThumb.src = images[i];
+        }
+        else {
+          this.imageThumb.src = pathUrl + images[i];
+        }
+
         this.imageThumb.alt = 'images';
         this.carouselItem.appendChild(this.imageThumb);
         this.thumbList.appendChild(this.carouselItem);

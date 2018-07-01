@@ -1,7 +1,7 @@
 export default class Form {
   constructor(el) {
 
-    $('[data-toggle="dropdown"]').on('click',function(e){
+    $('.dropdown--menu').on('click',function(e){
       let dropdown = $(this).parents('.dropdown');
       if (!dropdown.hasClass('open')) {
         dropdown.addClass('open');

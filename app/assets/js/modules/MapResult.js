@@ -92,7 +92,11 @@ export default class MapResult {
         let lat = $(this).parents('.thumb-item').attr('data-lat');
         let lng = $(this).parents('.thumb-item').attr('data-lng');
         let code = $(this).parents('.thumb-item').attr('data-code');
-        let latLng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng)); 
+
+        let zoom = thisMap.getZoom();
+        let meters_per_pixel = 156543.03392 * Math.cos(parseFloat(lat)* Math.PI / 180) / Math.pow(2, zoom);
+        let downCenter =  meters_per_pixel / 1000 * 2;
+        let latLng = new google.maps.LatLng(parseFloat(lat) + downCenter , parseFloat(lng)); 
         thisMap.panTo(latLng);
 
         $('.popup-bubble-content').removeClass('show');

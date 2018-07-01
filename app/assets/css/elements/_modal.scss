@@ -18,10 +18,16 @@
 }
 
 .modal-dialog {
-  margin: 15% auto 0;
   width: auto;
-  @include screen(medium){
-    margin: 6% auto 0;
+}
+.mfp-close-btn-in .mfp-close {
+  color: #fff;
+  display: block;
+  z-index:9;
+}
+
+.mfp-wrap {
+  .modal {
   }
 }
 
@@ -179,7 +185,7 @@
 }
 
 .modal-inspectation {
-  .close-modal {
-    top: -40px;
+  .mfp-close {
+    top: -50px;
   }
 }
