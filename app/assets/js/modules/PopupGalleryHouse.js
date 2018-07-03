@@ -6,6 +6,7 @@ import 'magnific-popup/dist/magnific-popup.css';
 
 export default class PopupGalleryHouse {
   constructor(el) {
+    window.popup = this;
     let popup = this; 
     $('.gallery-house a').each(function (index, value) {
       let html = $(this).html();
@@ -66,6 +67,12 @@ export default class PopupGalleryHouse {
       },200);
     });
 
+    $('.request--late').on('click', function(e){
+      e.preventDefault();
+      setTimeout(function(){
+        popup.showPopup('#inspectionForm');
+      },500);
+    });
     $('.btn__photo').on('click', function(){
       setTimeout(function(){
         $(el).find('.gallery__for').slick('slickGoTo', 1 );
