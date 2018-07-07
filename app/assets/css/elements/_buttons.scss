@@ -158,7 +158,6 @@
   font-size: 12px;
   min-width: 110px;
   @include screen(medium){
-    min-width: 135px;
     font-size: 14px;
     padding: 0px 15px;
   }
