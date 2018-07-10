@@ -7,6 +7,7 @@ import PopupDefined from './PopupDefined';
 import $ from 'jquery';
 import slick from 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
+import MarkerClusterer  from '../libs/markerclusterer.js';
 
 export default class MapResult {
   constructor() {
@@ -44,6 +45,7 @@ export default class MapResult {
   }
 
   drawPopupOnMap() {
+    let that = this;
     this.map = new google.maps.Map(document.getElementById('map'), {
       center: this.storeArr[0].location,
       zoom: 15,
@@ -55,6 +57,19 @@ export default class MapResult {
     this.popupList.forEach((item, i) => {
       this.registerEventPopup(item);
     });
+
+    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    var markers = this.storeArr.map((location, i) => {
+      return new google.maps.Marker({
+        position: this.storeArr,
+        label: labels[i % labels.length]
+      });
+    });
+
+    var markerCluster = new MarkerClusterer(this.map, markers,
+      {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
 
     const thisMap = this.map;
 

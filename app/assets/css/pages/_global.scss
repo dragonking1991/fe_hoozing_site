@@ -568,9 +568,9 @@ section {
 		outline: none;
 		display: block;
 		color: #fff;
-		font: normal normal normal 45px/1 FontAwesome;
+		font: normal normal normal 38px/1 FontAwesome;
 		color: darken(#fff, 20%);
-		@include absolute(top 50% left 52%);
+		@include absolute(top 48% left 55%);
 		transform: translate(-50%,-50%);
 	}
 	@include screen(medium){
