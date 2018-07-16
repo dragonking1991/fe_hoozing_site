@@ -7,7 +7,7 @@ import PopupDefined from './PopupDefined';
 import $ from 'jquery';
 import slick from 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
-import MarkerClusterer  from '../libs/markerclusterer.js';
+import '../libs/markerclusterer.js';
 
 export default class MapResult {
   constructor() {
@@ -26,15 +26,13 @@ export default class MapResult {
 
     var _this = this;
 
-    // $('.page li').on('click', function(){
-    //   _this.refreshPopupList();
-    // });
   }
   
   init() {
-    googlemap({
+    var option = {
       key: 'AIzaSyBzlEqFy__g-R9CoVzOfdxTAFBdLAIbTOM'
-    }).then(result => {
+    };
+    googlemap(option).then(result => {
       let google = {
         maps: result
       };
@@ -60,16 +58,16 @@ export default class MapResult {
 
     var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-    var markers = this.storeArr.map((location, i) => {
-      return new google.maps.Marker({
-        position: this.storeArr,
-        label: labels[i % labels.length]
+    this.storeArr.forEach((item, i) => {
+      var markers = this.storeArr.map((location, i) => {
+        return new google.maps.Marker({
+          position: this.storeArr[i].location,
+          label: labels[i % labels.length]
+        });
       });
+
+      var markerCluster = new MarkerClusterer(this.map, markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
     });
-
-    var markerCluster = new MarkerClusterer(this.map, markers,
-      {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-
 
     const thisMap = this.map;
 
